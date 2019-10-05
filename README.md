@@ -14,7 +14,7 @@ Cheers! ✌️
 
 ## Days
 
-- Days 1-12: Introduction to Swift (Covered during the [100 Days of Swift](https://github.com/CypherPoet/100-days-of-swift) challenge)
+- Days 1-15: Introduction to Swift (Covered during the [100 Days of Swift](https://github.com/CypherPoet/100-days-of-swift) challenge)
 
 <!-- <details>
 <summary>Full List</summary>
