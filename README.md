@@ -15,7 +15,7 @@ Cheers! ✌️
 
 ## Days
 
-- Days 1-15: Introduction to Swift (Covered during the [100 Days of Swift](https://github.com/CypherPoet/100-days-of-swift) challenge)
+- **Days 1-15:** Introduction to Swift (Covered during the [100 Days of Swift](https://github.com/CypherPoet/100-days-of-swift) challenge.)
 
 <!-- <details>
 <summary>Full List</summary>
@@ -23,9 +23,9 @@ Cheers! ✌️
 - [Day : ](./)
 
 
-</details>
+</details> -->
 
-- [Day : ](./) -->
+- **Day 16:** [_Project 1: WeSplit_, Part One](./day-016/)
 
 
 ## Projects
