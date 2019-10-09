@@ -4,23 +4,23 @@
 _Follow along at https://www.hackingwithswift.com/100/swiftui/16_.
 
 
-## 📒 Field Notes
+# 📒 Field Notes
 
-> This day covers the first part of `Project 1: WeSplit` in the [100 Days of SwiftUI Challenge](https://www.hackingwithswift.com/100/swiftui/16)_.
->
-> It focuses on several specific topics:
->
-> - WeSplit: Introduction
-> - Understanding the basic structure of a SwiftUI app
-> - Creating a form
-> - Adding a navigation bar
-> - Modifying program state
-> - Binding state to user interface controls
-> - Creating views in a loop
+This day covers the first part of _`Project 1: WeSplit`_ in the [100 Days of SwiftUI Challenge](https://www.hackingwithswift.com/100/swiftui/16).
+
+It focuses on several specific topics:
+
+- WeSplit: Introduction
+- Understanding the basic structure of a SwiftUI app
+- Creating a form
+- Adding a navigation bar
+- Modifying program state
+- Binding state to user interface controls
+- Creating views in a loop
 
 
 
-### WeSplit: Introduction
+## WeSplit: Introduction
 
 The basic premise of `WeSplit` is that it's a check splitting app. From HWS:
 
@@ -30,7 +30,7 @@ The basic premise of `WeSplit` is that it's a check splitting app. From HWS:
 
 
 
-### Understanding the basic structure of a SwiftUI app
+## Understanding the basic structure of a SwiftUI app
 
 - Using `SceneDelegate` is the new paradigm for a lot of things that were previously stuffed into `AppDelegate`. This allows us to configure individual "windows" of an app, separate from the entire app process.
 
@@ -50,21 +50,21 @@ if let windowScene = scene as? UIWindowScene {
 ```
 
 
-### Creating a Form
+## Creating a Form
 
 SwiftUI has a dedicated `Form` view for handling data entry. Forms are scrolling lists of static controls -- which might remind `UIKit` developers of using a static table view for forms.
 
 
 
 
-### Adding a navigation bar
+## Adding a navigation bar
 
 
 Navigation bars get added to views wrapped in a `NavigationView` view. Important to note is that navigation bar titles are configured by the outer-most `navigationBarTitle` modifier on a view _within_ the `NavigationView`. That is, the modifier isn't used on `NavigationView` directly.
 
 
 
-### Modifying program state
+## Modifying program state
 
 SwiftUI views are structs. This means that we can't mutate their properties within computed property getters -- like the all-important `body` property. This won't compile:
 
@@ -97,7 +97,7 @@ struct ContentView: View {
 This means we don't need to sacrifice the advantages of using structs -- _and_ we can create bindings with that state while SwiftUI handles the updates under the hood.
 
 
-### Binding state to user interface controls
+## Binding state to user interface controls
 
 Whenever we want to pass off state to another view and create a two-way binding -- where updates in any location will be synched to the source of the state -- we can use the `$` symbol as preface:
 
@@ -115,7 +115,7 @@ struct ContentView: View {
 ```
 
 
-### Creating views in a loop
+## Creating views in a loop
 
 
 `ForEach` is a wonderful fusion of functional programming and SwiftUI's declarative approach to view building. Essentially, we can pass a sequence of values to it, and treat it as a generator for any kind of dynamic list of views. Even better, it integrates seamlessly with other components such as `List` or `Picker`:
@@ -138,6 +138,6 @@ struct ContentView: View {
 
 
 
-## 🔗 Additional/Related Links
+# 🔗 Additional Related Links
 
 - [Apple's SwiftUI Homepage](https://developer.apple.com/xcode/swiftui/)
