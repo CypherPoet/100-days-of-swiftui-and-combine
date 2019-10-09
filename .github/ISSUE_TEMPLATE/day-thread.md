@@ -7,4 +7,4 @@ assignees: ''
 
 ---
 
-_General feedback and discussion for [Day ](https://github.com/CypherPoet/100-days-of-swiftui/day-)._
+_General feedback and discussion for [Day ](https://github.com/CypherPoet/100-days-of-swiftui/tree/master/day-)._
