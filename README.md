@@ -15,17 +15,15 @@ Cheers! ✌️
 
 ## Days
 
-- **Days 1-15:** Introduction to Swift (Covered during the [100 Days of Swift](https://github.com/CypherPoet/100-days-of-swift) challenge.)
-
-<!-- <details>
+<details>
 <summary>Full List</summary>
 
-- [Day : ](./)
-
-
-</details> -->
-
+- **Days 1-15:** Introduction to Swift (Covered during the [100 Days of Swift](https://github.com/CypherPoet/100-days-of-swift) challenge.)
 - **Day 16:** [_Project 1: WeSplit_, Part One](./day-016/)
+
+</details>
+
+- **Day 17:** [_Project 1: WeSplit_, Part Two](./day-017/)
 
 
 ## Projects
