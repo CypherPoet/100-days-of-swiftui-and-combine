@@ -20,14 +20,20 @@ Cheers! ✌️
 
 - **Days 1-15:** Introduction to Swift (Covered during the [100 Days of Swift](https://github.com/CypherPoet/100-days-of-swift) challenge.)
 - **Day 16:** [_Project 1: WeSplit_, Part One](./day-016/)
+- **Day 17:** [_Project 1: WeSplit_, Part Two](./day-017/)
+
 </details>
 
-- **Day 17:** [_Project 1: WeSplit_, Part Two](./day-017/)
+- **Day 18:** [_Project 1: WeSplit_, Part Three](./day-018/)
 
 
 ## Projects
 
-<!-- - [Project 1: ](./) -->
-- TBD
+- [Project 1: WeSplit](./day-016/projects/WeSplit)
+
+<div style="text-align: center;">
+  <img src="./day-016/projects/WeSplit/Screenshots/recording-1.gif" width="300px"/>
+</div>
+
 
 
