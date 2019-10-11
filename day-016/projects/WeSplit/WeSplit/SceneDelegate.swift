@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = MainView()
+        
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
@@ -28,7 +29,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             setupNavBarAppearance()
             
-            window.rootViewController = UIHostingController(rootView: contentView)
+            window.rootViewController = UIHostingController(
+                rootView: contentView
+                    .onTapGesture {
+                        window.endEditing(true) // Initial solution for hiding keyboard in forms: https://stackoverflow.com/a/57931584
+                    }
+            )
             
             self.window = window
             window.makeKeyAndVisible()

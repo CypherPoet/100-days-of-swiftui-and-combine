@@ -10,22 +10,21 @@ import SwiftUI
 
 struct MainView: View {
     @State private var checkAmountString: String = ""
-    @State private var numberOfPeople = 1
+    @State private var numberOfPeopleString = ""
     @State private var tipPercentage = TipPercentageChoice.zero
     
     var body: some View {
         NavigationView {
             VStack {
                 Form {
-                    Section {
-                        TextField("Total Check Amount", text: $checkAmountString)
+                    Section(header: Text("Initial Check Amount")) {
+                        TextField("Number of Satoshis", text: $checkAmountString)
                             .keyboardType(.numberPad)
-                        
-                        Picker("Number of People", selection: $numberOfPeople) {
-                            ForEach(1...100, id: \.self) { number in
-                                Text("\(number) \(number == 1 ? "Person" : "People")")
-                            }
-                        }
+                    }
+                    
+                    Section(header: Text("Number of People")) {
+                        TextField("Number of People Splitting the Check", text: $numberOfPeopleString)
+                            .keyboardType(.numberPad)
                     }
                     
                     Section(header: Text("How much would you like to tip?")) {
@@ -46,7 +45,7 @@ struct MainView: View {
                                     .font(.title)
                                     .fontWeight(.bold)
                                     .foregroundColor(.pink)
-                                    .padding(.top, 64)
+                                    .padding(.top, 48)
                                     .padding(.bottom, 8 )
                                 Spacer()
                             },
@@ -67,8 +66,9 @@ struct MainView: View {
 
 
 extension MainView {
-     private var checkAmount: Double { Double(checkAmountString) ?? 0 }
+    private var checkAmount: Double { Double(checkAmountString) ?? 0 }
      
+    private var numberOfPeople: Int { Int(numberOfPeopleString) ?? 0 }
      
     private var totalCost: Double {
          checkAmount
