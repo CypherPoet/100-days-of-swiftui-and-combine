@@ -38,7 +38,7 @@ struct MainView: View {
                     }
                     
                     
-                    if formattedAmountPerPerson != nil {
+                    if formattedAmountPerPerson != nil && totalCost > 0 {
                         Section(
                             header: HStack {
                                 Spacer()
@@ -47,9 +47,13 @@ struct MainView: View {
                                     .fontWeight(.bold)
                                     .foregroundColor(.pink)
                                     .padding(.top, 64)
-                                    .padding(.bottom, 8)
+                                    .padding(.bottom, 8 )
                                 Spacer()
-                            }
+                            },
+                            footer:
+                                Text("Total including tip:")
+                                    .fontWeight(.bold)
+                                + Text(" \(formattedTotalCost) Satoshis")
                         ) {
                             Text("\(formattedAmountPerPerson!) Satoshis")
                         }
@@ -83,6 +87,11 @@ extension MainView {
          guard let amountPerPerson = amountPerPerson else { return nil }
          
          return Currency.formatter.string(from: amountPerPerson as NSNumber)
+     }
+    
+    
+    private var formattedTotalCost: String {
+         Currency.formatter.string(from: totalCost as NSNumber) ?? ""
      }
 }
 
