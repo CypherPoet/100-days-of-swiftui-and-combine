@@ -45,8 +45,9 @@ struct MainView: View {
                                 Text("Your Split")
                                     .font(.title)
                                     .fontWeight(.bold)
-                                    .foregroundColor(.purple)
+                                    .foregroundColor(.pink)
                                     .padding(.top, 64)
+                                    .padding(.bottom, 8)
                                 Spacer()
                             }
                         ) {

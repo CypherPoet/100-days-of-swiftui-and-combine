@@ -25,7 +25,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
+            
+            setupNavBarAppearance()
+            
             window.rootViewController = UIHostingController(rootView: contentView)
+            
             self.window = window
             window.makeKeyAndVisible()
         }
@@ -59,7 +63,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+}
 
 
+extension SceneDelegate {
+    
+    func setupNavBarAppearance() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .foregroundColor: UIColor.systemPink
+        ]
+    }
 }
 
