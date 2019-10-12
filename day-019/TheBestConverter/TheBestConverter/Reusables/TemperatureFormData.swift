@@ -63,25 +63,25 @@ extension TemperatureFormData {
 extension TemperatureFormData {
         
     private func topConversionValueChanged() {
-        let convertedBottomValue = topConversionValue != nil ?
+        let expectedBottomText = topConversionValue != nil ?
             "\(topConversionValue!.converted(to: bottomConversionOption.unit).value)"
             :
             "N/A"
         
-        if bottomConversionText != convertedBottomValue {
-            bottomConversionText = convertedBottomValue
+        if bottomConversionText != expectedBottomText {
+            bottomConversionText = expectedBottomText
         }
     }
     
     
     private func bottomConversionValueChanged() {
-        let convertedTopValue = bottomConversionValue != nil ?
+        let expectedTopText = bottomConversionValue != nil ?
             "\(bottomConversionValue!.converted(to: topConversionOption.unit).value)"
             :
             "N/A"
         
-        if topConversionText != convertedTopValue {
-            topConversionText = convertedTopValue
+        if topConversionText != expectedTopText {
+            topConversionText = expectedTopText
         }
     }
 }

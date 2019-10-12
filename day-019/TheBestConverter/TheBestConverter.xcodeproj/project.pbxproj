@@ -21,6 +21,8 @@
 		F36E1B112351F90F0059A6DA /* TemperatureSegmentControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36E1B102351F90F0059A6DA /* TemperatureSegmentControls.swift */; };
 		F36E1B13235201B70059A6DA /* TemperatureInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36E1B12235201B70059A6DA /* TemperatureInputs.swift */; };
 		F36E1B15235263660059A6DA /* TemperatureFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36E1B14235263660059A6DA /* TemperatureFormData.swift */; };
+		F36E1B17235267300059A6DA /* BitcoinFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36E1B16235267300059A6DA /* BitcoinFormData.swift */; };
+		F36E1B19235269540059A6DA /* Satoshi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36E1B18235269540059A6DA /* Satoshi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,9 @@
 		F36E1B102351F90F0059A6DA /* TemperatureSegmentControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureSegmentControls.swift; sourceTree = "<group>"; };
 		F36E1B12235201B70059A6DA /* TemperatureInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureInputs.swift; sourceTree = "<group>"; };
 		F36E1B14235263660059A6DA /* TemperatureFormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureFormData.swift; sourceTree = "<group>"; };
+		F36E1B16235267300059A6DA /* BitcoinFormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinFormData.swift; sourceTree = "<group>"; };
+		F36E1B18235269540059A6DA /* Satoshi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Satoshi.swift; sourceTree = "<group>"; };
+		F36E1B1D23526DD60059A6DA /* Satoshi.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Satoshi.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +78,7 @@
 		F36E1AE42350CE9D0059A6DA /* TheBestConverter */ = {
 			isa = PBXGroup;
 			children = (
+				F36E1B1D23526DD60059A6DA /* Satoshi.playground */,
 				F36E1B012350D8820059A6DA /* UnitConversion.playground */,
 				F36E1AFB2350CF2F0059A6DA /* Reusables */,
 				F36E1AF32350CE9F0059A6DA /* Info.plist */,
@@ -115,11 +121,13 @@
 		F36E1AFB2350CF2F0059A6DA /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F36E1B1A23526CB90059A6DA /* Extensions */,
 				F36E1B032350F9960059A6DA /* Enums */,
 				F36E1B022350F9720059A6DA /* Protocols */,
 				F36E1AFE2350D1A10059A6DA /* Models */,
 				F36E1AFC2350CF360059A6DA /* Views */,
 				F36E1B14235263660059A6DA /* TemperatureFormData.swift */,
+				F36E1B16235267300059A6DA /* BitcoinFormData.swift */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -134,6 +142,7 @@
 		F36E1AFE2350D1A10059A6DA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F36E1B18235269540059A6DA /* Satoshi.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +180,13 @@
 				F36E1B102351F90F0059A6DA /* TemperatureSegmentControls.swift */,
 			);
 			path = "Temperature Conversion";
+			sourceTree = "<group>";
+		};
+		F36E1B1A23526CB90059A6DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,8 +266,10 @@
 				F36E1B052350F9AF0059A6DA /* ConversionSet.swift in Sources */,
 				F36E1B15235263660059A6DA /* TemperatureFormData.swift in Sources */,
 				F36E1B112351F90F0059A6DA /* TemperatureSegmentControls.swift in Sources */,
+				F36E1B17235267300059A6DA /* BitcoinFormData.swift in Sources */,
 				F36E1AE62350CE9D0059A6DA /* AppDelegate.swift in Sources */,
 				F36E1AE82350CE9D0059A6DA /* SceneDelegate.swift in Sources */,
+				F36E1B19235269540059A6DA /* Satoshi.swift in Sources */,
 				F36E1B13235201B70059A6DA /* TemperatureInputs.swift in Sources */,
 				F36E1B0D23510D1A0059A6DA /* BitcoinConversionView.swift in Sources */,
 				F36E1AEA2350CE9D0059A6DA /* MainView.swift in Sources */,

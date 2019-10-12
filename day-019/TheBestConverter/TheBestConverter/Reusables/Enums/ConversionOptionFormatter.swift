@@ -14,7 +14,7 @@ enum ConversionOptionFormatter {
         let formatter = MeasurementFormatter()
         
         formatter.numberFormatter.usesSignificantDigits = true
-        formatter.numberFormatter.maximumSignificantDigits = 4
+        formatter.numberFormatter.maximumSignificantDigits = 5
         formatter.unitOptions = [.providedUnit]
         
         return formatter
@@ -25,7 +25,19 @@ enum ConversionOptionFormatter {
         let formatter = NumberFormatter()
         
         formatter.usesSignificantDigits = true
-        formatter.maximumSignificantDigits = 4
+        formatter.maximumSignificantDigits = 5
+        formatter.currencySymbol = "BTC"
+        
+        return formatter
+    }()
+    
+    
+    static let satoshiFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        
+        formatter.usesSignificantDigits = true
+        formatter.maximumSignificantDigits = 5
+        formatter.currencySymbol = "SAT"
         
         return formatter
     }()

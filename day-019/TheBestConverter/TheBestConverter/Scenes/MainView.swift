@@ -10,13 +10,12 @@ import SwiftUI
 
 
 struct MainView: View {
-    @State private var currentConversionSet: ConversionSet = .temperature
+    @State private var currentConversionSet: ConversionSet = .btc
     
     
-
     var body: some View {
         VStack {
-            
+
             // ConversionSet Header
             VStack {
                 Text("Conversion Category:")
@@ -49,12 +48,12 @@ struct MainView: View {
     }
     
     
-    private var headerBackgroundColor: Color {
+    private var headerBackgroundColor: some View {
         switch currentConversionSet {
         case .btc:
-            return .yellow
+            return Color.yellow.opacity(0.75)
         case .temperature:
-            return .pink
+            return Color.pink
         }
     }
 }
@@ -63,6 +62,11 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        Group {
+            MainView()
+
+            MainView()
+                .environment(\.colorScheme, .dark)
+        }
     }
 }

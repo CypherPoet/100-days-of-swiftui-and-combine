@@ -9,37 +9,35 @@
 import SwiftUI
 
 struct BitcoinConversionView: View {
-    @State private var baseUnit: ConversionSetOption = BitcoinOption(shortName: "BTC", fullName: "Bitcion")
+    @ObservedObject var bitcoinFormData = BitcoinFormData()
     
-    @State private var currentBTCString: String = ""
-    @State private var currentSatoshisString: String = ""
-    
-    private var conversionResult: ConversionSetOption = BitcoinOption(shortName: "SAT", fullName: "Satoshis")
-    
-
     var body: some View {
         ZStack(alignment: .center) {
             VStack {
                 Form {
                     Section(
                         header:
-                            Text("Bitcoin")
+                        Text(BitcoinOption.btc.fullName)
                                 .font(.headline)
                                 .fontWeight(.bold)
                     ) {
-                        TextField("Amount in BTC", text: $currentBTCString)
+                        TextField("Amount in BTC", text: $bitcoinFormData.btcConversionText)
                     }
                     
                     Section(
                         header:
-                            Text("Satoshis")
+                            Text(BitcoinOption.satoshi.fullName)
                                 .font(.headline)
                                 .fontWeight(.bold)
                     ) {
-                        TextField("Amount in SAT", text: $currentBTCString)
+                        TextField("Amount in SAT", text: $bitcoinFormData.satoshiConversionText)
                     }
                 }
+                .keyboardType(.numberPad)
             }
+        }
+        .onAppear {
+            self.bitcoinFormData.btcConversionText = "1"
         }
     }
 }
