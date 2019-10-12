@@ -30,6 +30,9 @@ struct TemperatureConversionView: View {
             
         }
         .keyboardType(.numberPad)
+        .onAppear {
+            self.formData.topConversionText = "1"
+        }
     }
 }
 

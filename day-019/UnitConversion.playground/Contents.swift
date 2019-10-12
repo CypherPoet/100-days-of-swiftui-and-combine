@@ -24,6 +24,8 @@ enum ConversionOptionFormatter {
         
         formatter.numberFormatter.usesSignificantDigits = true
         formatter.numberFormatter.maximumSignificantDigits = 4
+        formatter.unitStyle = .medium
+        formatter.numberFormatter.numberStyle = .decimal
         formatter.unitOptions = [.providedUnit]
         
         return formatter
@@ -109,3 +111,6 @@ let fahrenheit = Measurement<UnitTemperature>(value: 32, unit: .fahrenheit)
 
 conversionSet.formatter.string(for: celsius)
 conversionSet.formatter.string(for: fahrenheit)
+
+ConversionOptionFormatter.temperatureFormatter.numberFormatter.string(for: celsius.value)
+ConversionOptionFormatter.temperatureFormatter.numberFormatter.string(for: fahrenheit.value)

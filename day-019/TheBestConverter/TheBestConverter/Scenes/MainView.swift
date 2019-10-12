@@ -10,7 +10,7 @@ import SwiftUI
 
 
 struct MainView: View {
-    @State private var currentConversionSet: ConversionSet = .btc
+    @State private var currentConversionSet: ConversionSet = .temperature
     
     
     var body: some View {
@@ -53,7 +53,7 @@ struct MainView: View {
         case .btc:
             return Color.yellow.opacity(0.75)
         case .temperature:
-            return Color.pink
+            return Color.pink.opacity(0.75)
         }
     }
 }

@@ -15,6 +15,7 @@ enum ConversionOptionFormatter {
         
         formatter.numberFormatter.usesSignificantDigits = true
         formatter.numberFormatter.maximumSignificantDigits = 5
+        formatter.unitStyle = .short
         formatter.unitOptions = [.providedUnit]
         
         return formatter

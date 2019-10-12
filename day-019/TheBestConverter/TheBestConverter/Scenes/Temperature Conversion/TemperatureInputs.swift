@@ -15,10 +15,12 @@ struct TemperatureInputs: View {
     @Binding var topConversionText: String
     @Binding var bottomConversionText: String
     
+    
     var body: some View {
         Group {
             Section(
                 header: Text(topConversionOption.fullName)
+                    .font(.headline)
                     .fontWeight(.bold)
                     .padding(.top, 22)
             ) {
@@ -26,20 +28,19 @@ struct TemperatureInputs: View {
                     topConversionOption.fullName,
                     text: $topConversionText
                 )
-                    .frame(height: 64)
-                    .font(.title)
+                    .frame(height: 48)
             }
 
             Section(
                 header: Text(bottomConversionOption.fullName)
+                    .font(.headline)
                     .fontWeight(.bold)
             ) {
                 TextField(
                     bottomConversionOption.fullName,
                     text: $bottomConversionText
                 )
-                    .frame(height: 64)
-                    .font(.title)
+                    .frame(height: 48)
             }
         }
     }
