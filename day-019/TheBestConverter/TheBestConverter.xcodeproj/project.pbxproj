@@ -20,6 +20,7 @@
 		F36E1B0F2351EF200059A6DA /* TemperatureConversionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36E1B0E2351EF1F0059A6DA /* TemperatureConversionView.swift */; };
 		F36E1B112351F90F0059A6DA /* TemperatureSegmentControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36E1B102351F90F0059A6DA /* TemperatureSegmentControls.swift */; };
 		F36E1B13235201B70059A6DA /* TemperatureInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36E1B12235201B70059A6DA /* TemperatureInputs.swift */; };
+		F36E1B15235263660059A6DA /* TemperatureFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36E1B14235263660059A6DA /* TemperatureFormData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		F36E1B0E2351EF1F0059A6DA /* TemperatureConversionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureConversionView.swift; sourceTree = "<group>"; };
 		F36E1B102351F90F0059A6DA /* TemperatureSegmentControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureSegmentControls.swift; sourceTree = "<group>"; };
 		F36E1B12235201B70059A6DA /* TemperatureInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureInputs.swift; sourceTree = "<group>"; };
+		F36E1B14235263660059A6DA /* TemperatureFormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureFormData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				F36E1B022350F9720059A6DA /* Protocols */,
 				F36E1AFE2350D1A10059A6DA /* Models */,
 				F36E1AFC2350CF360059A6DA /* Views */,
+				F36E1B14235263660059A6DA /* TemperatureFormData.swift */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				F36E1B0F2351EF200059A6DA /* TemperatureConversionView.swift in Sources */,
 				F36E1B092350F9D90059A6DA /* ConversionSetOption.swift in Sources */,
 				F36E1B052350F9AF0059A6DA /* ConversionSet.swift in Sources */,
+				F36E1B15235263660059A6DA /* TemperatureFormData.swift in Sources */,
 				F36E1B112351F90F0059A6DA /* TemperatureSegmentControls.swift in Sources */,
 				F36E1AE62350CE9D0059A6DA /* AppDelegate.swift in Sources */,
 				F36E1AE82350CE9D0059A6DA /* SceneDelegate.swift in Sources */,

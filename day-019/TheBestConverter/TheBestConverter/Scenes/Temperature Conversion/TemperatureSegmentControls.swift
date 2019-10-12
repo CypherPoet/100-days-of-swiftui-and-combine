@@ -11,38 +11,35 @@ import SwiftUI
 struct TemperatureSegmentControls: View {
     var temperatureOptions: [TemperatureOption]
     
+    
     @Binding var topConversionOption: TemperatureOption
     @Binding var bottomConversionOption: TemperatureOption
+    
+    
+    var onTopConversionChanged: (() -> Void)?
+    var onBottomConversionChanged: (() -> Void)?
     
     
     var body: some View {
         Group {
             Section(
-                header: Text("Convert...")
+                header: Text("Temperature Units")
                     .font(.headline)
                     .fontWeight(.semibold)
             ) {
-                Picker("Conversion 1", selection: $topConversionOption) {
+                Picker("First Conversion Unit", selection: $topConversionOption) {
                     ForEach(temperatureOptions, id: \.self) { option in
                         Text(option.shortName)
                     }
                 }
-                .pickerStyle(SegmentedPickerStyle())
-            }
-            
-            
-            Section(
-                header: Text("To...")
-                    .font(.headline)
-                    .fontWeight(.semibold)
-            ) {
-                Picker("Conversion 1", selection: $bottomConversionOption) {
+
+                Picker("Second Conversion Unit", selection: $bottomConversionOption) {
                     ForEach(temperatureOptions, id: \.self) { option in
                         Text(option.shortName)
                     }
                 }
-                .pickerStyle(SegmentedPickerStyle())
             }
+            .pickerStyle(SegmentedPickerStyle())
         }
     }
 }

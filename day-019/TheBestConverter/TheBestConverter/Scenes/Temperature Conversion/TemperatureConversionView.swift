@@ -8,34 +8,32 @@
 
 import SwiftUI
 
-struct TemperatureConversionView: View {
-    private var temperatureOptions: [TemperatureOption] = [
-        .kelvin,
-        .celsius,
-        .fahrenheit,
-    ]
-    
-    @State private var topConversionOption: TemperatureOption = .kelvin
-    @State private var bottomConversionOption: TemperatureOption = .celsius
-    
 
+struct TemperatureConversionView: View {
+    @ObservedObject var formData = TemperatureFormData()
+    
+    
     var body: some View {
-        
         Form {
             TemperatureSegmentControls(
-                temperatureOptions: temperatureOptions,
-                topConversionOption: $topConversionOption,
-                bottomConversionOption: $bottomConversionOption
+                temperatureOptions: formData.options,
+                topConversionOption: $formData.topConversionOption,
+                bottomConversionOption: $formData.bottomConversionOption
             )
             
             TemperatureInputs(
-                topConversionOption: $topConversionOption,
-                bottomConversionOption: $bottomConversionOption
+                topConversionOption: $formData.topConversionOption,
+                bottomConversionOption: $formData.bottomConversionOption,
+                topConversionText: $formData.topConversionText,
+                bottomConversionText: $formData.bottomConversionText
             )
+            
         }
         .keyboardType(.numberPad)
     }
 }
+
+
 
 struct TemperatureConversionView_Previews: PreviewProvider {
     static var previews: some View {

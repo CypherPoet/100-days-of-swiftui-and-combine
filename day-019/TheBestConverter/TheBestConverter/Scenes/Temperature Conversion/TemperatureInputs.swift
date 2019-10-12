@@ -12,20 +12,19 @@ struct TemperatureInputs: View {
     @Binding var topConversionOption: TemperatureOption
     @Binding var bottomConversionOption: TemperatureOption
     
-    @State private var topConversionText: String = "0"
-    @State private var bottomConversionText: String = "0"
-    
+    @Binding var topConversionText: String
+    @Binding var bottomConversionText: String
     
     var body: some View {
         Group {
             Section(
                 header: Text(topConversionOption.fullName)
                     .fontWeight(.bold)
+                    .padding(.top, 22)
             ) {
                 TextField(
                     topConversionOption.fullName,
-                    text: $topConversionText,
-                    onEditingChanged: { _ in self.topConversionInputChanged() }
+                    text: $topConversionText
                 )
                     .frame(height: 64)
                     .font(.title)
@@ -37,8 +36,7 @@ struct TemperatureInputs: View {
             ) {
                 TextField(
                     bottomConversionOption.fullName,
-                    text: $bottomConversionText,
-                    onEditingChanged: { _ in self.bottomConversionInputChanged() }
+                    text: $bottomConversionText
                 )
                     .frame(height: 64)
                     .font(.title)
@@ -48,66 +46,13 @@ struct TemperatureInputs: View {
 }
 
 
-// MARK: - Computeds
-extension TemperatureInputs {
-    
-    private var topConversionValue: Measurement<UnitTemperature>? {
-        guard let topConversionNumber = Double(topConversionText) else { return nil }
-
-        return Measurement<UnitTemperature>(
-            value: topConversionNumber,
-            unit: topConversionOption.unit
-        )
-    }
-    
-    private var bottomConversionValue: Measurement<UnitTemperature>? {
-        guard let bottomConversionNumber = Double(bottomConversionText) else { return nil }
-
-        return Measurement<UnitTemperature>(
-            value: bottomConversionNumber,
-            unit: bottomConversionOption.unit
-        )
-    }
-}
-
-
-// MARK: - Change Handling
-extension TemperatureInputs {
-        
-    private func topConversionInputChanged() {
-        guard let topConversionValue = topConversionValue else {
-            bottomConversionText = "N/A"
-            return
-        }
-        
-        let formatter = ConversionOptionFormatter.temperatureFormatter
-        
-        bottomConversionText = formatter.string(
-            from: topConversionValue.converted(to: bottomConversionOption.unit)
-        )
-    }
-    
-    
-    private func bottomConversionInputChanged() {
-        guard let bottomConversionValue = bottomConversionValue else {
-            topConversionText = "N/A"
-            return
-        }
-        
-        let formatter = ConversionOptionFormatter.temperatureFormatter
-        
-        topConversionText = formatter.string(
-            from: bottomConversionValue.converted(to: topConversionOption.unit)
-        )
-    }
-}
-
-
 struct TemperatureInputs_Previews: PreviewProvider {
     static var previews: some View {
         TemperatureInputs(
             topConversionOption: .constant(.kelvin),
-            bottomConversionOption: .constant(.celsius)
+            bottomConversionOption: .constant(.celsius),
+            topConversionText: .constant("0"),
+            bottomConversionText: .constant("0")
         )
     }
 }

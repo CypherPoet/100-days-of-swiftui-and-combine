@@ -12,14 +12,16 @@ import SwiftUI
 struct MainView: View {
     @State private var currentConversionSet: ConversionSet = .temperature
     
+    
 
     var body: some View {
-        
         VStack {
             
             // ConversionSet Header
             VStack {
                 Text("Conversion Category:")
+                    .font(.headline)
+                    .fontWeight(.semibold)
                 
                 Picker("Unit", selection: $currentConversionSet) {
                     ForEach(ConversionSet.allCases, id: \.self) { conversionSet in
@@ -29,12 +31,10 @@ struct MainView: View {
                 .pickerStyle(SegmentedPickerStyle())
             }
             .padding()
-            .background(Color.pink)
+            .background(headerBackgroundColor)
             
 
             conversionView
-            
-            Spacer()
         }
     }
     
@@ -45,6 +45,16 @@ struct MainView: View {
             return AnyView(BitcoinConversionView())
         case .temperature:
             return AnyView(TemperatureConversionView())
+        }
+    }
+    
+    
+    private var headerBackgroundColor: Color {
+        switch currentConversionSet {
+        case .btc:
+            return .yellow
+        case .temperature:
+            return .pink
         }
     }
 }
