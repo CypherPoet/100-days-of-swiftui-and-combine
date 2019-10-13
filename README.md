@@ -21,10 +21,14 @@ Cheers! ✌️
 - **Days 1-15:** Introduction to Swift (Covered during the [100 Days of Swift](https://github.com/CypherPoet/100-days-of-swift) challenge.)
 - **Day 16:** [_Project 1: WeSplit_, Part One](./day-016/)
 - **Day 17:** [_Project 1: WeSplit_, Part Two](./day-017/)
+- **Day 18:** [_Project 1: WeSplit_, Part Three](./day-018/)
+- **Day 19:** [Challenge Day](./day-019/)
 
 </details>
 
-- **Day 18:** [_Project 1: WeSplit_, Part Three](./day-018/)
+- **Day 20:** [_Project 2: Guess The Flag_, Part One](./day-020/)
+
+
 
 
 ## Projects
