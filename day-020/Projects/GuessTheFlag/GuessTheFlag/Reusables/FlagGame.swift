@@ -18,6 +18,7 @@ final class FlagGame: ObservableObject {
     @Published var flagChoices: [CityFlag] = []
 
     var flagToGuess: CityFlag!
+    var latestChoice: CityFlag? = nil
     
     
     init() {
@@ -35,6 +36,8 @@ extension FlagGame {
         with flag: CityFlag,
         then completionHandler: ((Bool) -> Void)
     ) {
+        latestChoice = flag
+        
         if flag == flagToGuess {
             currentScore += 1
             completionHandler(true)

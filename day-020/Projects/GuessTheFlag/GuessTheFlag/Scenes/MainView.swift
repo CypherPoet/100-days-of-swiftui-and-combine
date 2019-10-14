@@ -73,7 +73,7 @@ struct MainView: View {
         .alert(isPresented: $isShowingAlert) {
             Alert(
                 title: Text(self.alertTitle),
-                message: Text(self.alertScoreMessage),
+                message: Text(self.alertMessage),
                 dismissButton: .default(
                     Text("Continue"),
                     action: {
@@ -87,17 +87,23 @@ struct MainView: View {
 
 
 extension MainView {
-    var alertTitle: String { answerWasCorrect ? "Correct 👏" : "Sorry" }
+    private var alertTitle: String { answerWasCorrect ? "Correct 👏" : "Sorry" }
 
     
-    var alertScoreMessage: String {
-        let feedbackLine = answerWasCorrect ?
-            ""
-            : "That's not the flag of \(flagGame.flagToGuess.cityName)\n"
+    private var alertFeedbackLine: String {
+        guard
+            let latestChoice = flagGame.latestChoice,
+            !answerWasCorrect
+        else { return "" }
         
+        return "That's the flag of \(latestChoice.cityName)\n"
+    }
+    
+    
+    private var alertMessage: String {
         let scoreLine = "Your score is now \(flagGame.currentScore)"
         
-        return "\(feedbackLine)\(scoreLine)"
+        return "\(alertFeedbackLine)\(scoreLine)"
     }
 }
 
