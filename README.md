@@ -24,11 +24,11 @@ Cheers! ✌️
 - **Day 18:** [_Project 1: WeSplit_, Part Three](./day-018/)
 - **Day 19:** [Challenge Day](./day-019/)
 - **Day 20:** [_Project 2: Guess The Flag_, Part One](./day-020/)
+- **Day 21:** [_Project 2: Guess The Flag_, Part Two](./day-021/)
 
 </details>
 
-- **Day 21:** [_Project 2: Guess The Flag_, Part Two](./day-021/)
-
+- **Day 22:** [_Project 2: Guess The Flag_, Part Three](./day-022/)
 
 
 
