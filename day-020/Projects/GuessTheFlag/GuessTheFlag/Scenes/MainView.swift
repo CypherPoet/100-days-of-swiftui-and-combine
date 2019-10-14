@@ -52,6 +52,19 @@ struct MainView: View {
                     }
                 }
                 
+                
+                HStack(alignment: .firstTextBaseline) {
+                    Text("Current Score:")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                    
+                    Text("\(flagGame.currentScore)")
+                        .font(.title)
+                        .fontWeight(.bold)
+                }
+                .foregroundColor(.yellow)
+
+                
                 Spacer()
             }
             .padding()
