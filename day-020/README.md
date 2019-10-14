@@ -6,7 +6,7 @@ _Follow along at https://www.hackingwithswift.com/100/swiftui/20_.
 
 # 📒 Field Notes
 
-This day covers Part One of _`Project 1: Guess The Flag`_ in the [100 Days of SwiftUI Challenge](https://www.hackingwithswift.com/100/swiftui/20).
+This day covers Part One of _`Project 2: Guess The Flag`_ in the [100 Days of SwiftUI Challenge](https://www.hackingwithswift.com/100/swiftui/20).
 
 It focuses on several specific topics:
 

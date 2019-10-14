@@ -7,25 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3562F6E2353EAA800BD7068 /* FlagGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3562F6D2353EAA800BD7068 /* FlagGame.swift */; };
 		F38E7AC123535BF600773357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E7AC023535BF600773357 /* AppDelegate.swift */; };
 		F38E7AC323535BF600773357 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E7AC223535BF600773357 /* SceneDelegate.swift */; };
-		F38E7AC523535BF600773357 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E7AC423535BF600773357 /* ContentView.swift */; };
+		F38E7AC523535BF600773357 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E7AC423535BF600773357 /* MainView.swift */; };
 		F38E7AC723535BF800773357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F38E7AC623535BF800773357 /* Assets.xcassets */; };
 		F38E7ACA23535BF800773357 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F38E7AC923535BF800773357 /* Preview Assets.xcassets */; };
 		F38E7ACD23535BF800773357 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38E7ACB23535BF800773357 /* LaunchScreen.storyboard */; };
-		F3C87F18235386FB000EEBA2 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87F17235386FB000EEBA2 /* Flag.swift */; };
+		F3C87F18235386FB000EEBA2 /* CityFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87F17235386FB000EEBA2 /* CityFlag.swift */; };
+		F3C87F1D2353BF15000EEBA2 /* FlagsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87F1C2353BF15000EEBA2 /* FlagsStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F3562F6D2353EAA800BD7068 /* FlagGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGame.swift; sourceTree = "<group>"; };
 		F38E7ABD23535BF600773357 /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38E7AC023535BF600773357 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F38E7AC223535BF600773357 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F38E7AC423535BF600773357 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F38E7AC423535BF600773357 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F38E7AC623535BF800773357 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F38E7AC923535BF800773357 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F38E7ACC23535BF800773357 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F38E7ACE23535BF800773357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3C87F17235386FB000EEBA2 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
+		F3C87F17235386FB000EEBA2 /* CityFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityFlag.swift; sourceTree = "<group>"; };
+		F3C87F1C2353BF15000EEBA2 /* FlagsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 				F38E7ACE23535BF800773357 /* Info.plist */,
 				F38E7AC023535BF600773357 /* AppDelegate.swift */,
 				F38E7AC223535BF600773357 /* SceneDelegate.swift */,
+				F3C87F1A2353BED5000EEBA2 /* Data */,
 				F38E7ACB23535BF800773357 /* LaunchScreen.storyboard */,
 				F38E7AC823535BF800773357 /* Preview Content */,
 				F3C87F142353862D000EEBA2 /* Resources */,
@@ -89,7 +94,7 @@
 		F3C87F1523538657000EEBA2 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
-				F3C87F162353865B000EEBA2 /* Models */,
+				F3562F6D2353EAA800BD7068 /* FlagGame.swift */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -97,7 +102,7 @@
 		F3C87F162353865B000EEBA2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F3C87F17235386FB000EEBA2 /* Flag.swift */,
+				F3C87F17235386FB000EEBA2 /* CityFlag.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,9 +110,26 @@
 		F3C87F1923538732000EEBA2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F38E7AC423535BF600773357 /* ContentView.swift */,
+				F38E7AC423535BF600773357 /* MainView.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F3C87F1A2353BED5000EEBA2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3C87F1B2353BEE6000EEBA2 /* Stores */,
+				F3C87F162353865B000EEBA2 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F3C87F1B2353BEE6000EEBA2 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				F3C87F1C2353BF15000EEBA2 /* FlagsStore.swift */,
+			);
+			path = Stores;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,10 +203,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C87F1D2353BF15000EEBA2 /* FlagsStore.swift in Sources */,
 				F38E7AC123535BF600773357 /* AppDelegate.swift in Sources */,
 				F38E7AC323535BF600773357 /* SceneDelegate.swift in Sources */,
-				F38E7AC523535BF600773357 /* ContentView.swift in Sources */,
-				F3C87F18235386FB000EEBA2 /* Flag.swift in Sources */,
+				F3562F6E2353EAA800BD7068 /* FlagGame.swift in Sources */,
+				F38E7AC523535BF600773357 /* MainView.swift in Sources */,
+				F3C87F18235386FB000EEBA2 /* CityFlag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
