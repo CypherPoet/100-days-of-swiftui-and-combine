@@ -48,3 +48,9 @@ Cheers! ✌️
 </div>
 
 
+- [Project 2: GuessTheFlag](./day-020/projects/GuessTheFlag)
+
+<div style="text-align: center;">
+  <img src="./day-020/Projects/GuessTheFlag/Screenshots/recording-2.gif" width="300px"/>
+</div>
+
