@@ -25,10 +25,11 @@ Cheers! ✌️
 - **Day 19:** [Challenge Day](./day-019/)
 - **Day 20:** [_Project 2: Guess The Flag_, Part One](./day-020/)
 - **Day 21:** [_Project 2: Guess The Flag_, Part Two](./day-021/)
+- **Day 22:** [_Project 2: Guess The Flag_, Part Three](./day-022/)
 
 </details>
 
-- **Day 22:** [_Project 2: Guess The Flag_, Part Three](./day-022/)
+- **Day 23:** [_Project 3: Views and Modifiers_, Part One](./day-023/)
 
 
 
