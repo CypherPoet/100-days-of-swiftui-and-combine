@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F317F7582357C94700B56343 /* BannerFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F317F7572357C94700B56343 /* BannerFont.swift */; };
+		F317F75A2357CB2500B56343 /* View+BannerFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F317F7592357CB2500B56343 /* View+BannerFont.swift */; };
 		F3CDC3F52356A80500FB7151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CDC3F42356A80500FB7151 /* AppDelegate.swift */; };
 		F3CDC3F72356A80500FB7151 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CDC3F62356A80500FB7151 /* SceneDelegate.swift */; };
 		F3CDC3F92356A80500FB7151 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CDC3F82356A80500FB7151 /* ContentView.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F317F7572357C94700B56343 /* BannerFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerFont.swift; sourceTree = "<group>"; };
+		F317F7592357CB2500B56343 /* View+BannerFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+BannerFont.swift"; sourceTree = "<group>"; };
 		F3CDC3F12356A80500FB7151 /* ViewsAndModifiers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewsAndModifiers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3CDC3F42356A80500FB7151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3CDC3F62356A80500FB7151 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F317F7552357C92100B56343 /* View Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F317F7562357C92A00B56343 /* Banner Font */,
+			);
+			path = "View Modifiers";
+			sourceTree = "<group>";
+		};
+		F317F7562357C92A00B56343 /* Banner Font */ = {
+			isa = PBXGroup;
+			children = (
+				F317F7572357C94700B56343 /* BannerFont.swift */,
+				F317F7592357CB2500B56343 /* View+BannerFont.swift */,
+			);
+			path = "Banner Font";
+			sourceTree = "<group>";
+		};
 		F3CDC3E82356A80500FB7151 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +77,7 @@
 		F3CDC3F32356A80500FB7151 /* ViewsAndModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				F317F7552357C92100B56343 /* View Modifiers */,
 				F3CDC3F42356A80500FB7151 /* AppDelegate.swift */,
 				F3CDC3F62356A80500FB7151 /* SceneDelegate.swift */,
 				F3CDC3F82356A80500FB7151 /* ContentView.swift */,
@@ -146,9 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F317F7582357C94700B56343 /* BannerFont.swift in Sources */,
 				F3CDC3F52356A80500FB7151 /* AppDelegate.swift in Sources */,
 				F3CDC3F72356A80500FB7151 /* SceneDelegate.swift in Sources */,
 				F3CDC3F92356A80500FB7151 /* ContentView.swift in Sources */,
+				F317F75A2357CB2500B56343 /* View+BannerFont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
