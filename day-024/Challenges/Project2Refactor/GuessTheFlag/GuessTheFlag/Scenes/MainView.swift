@@ -36,20 +36,14 @@ struct MainView: View {
                 .foregroundColor(.black)
                 
                 ForEach(flagGame.flagChoices) { flag in
-                    Button(action: {
-                        self.flagGame.makeGuess(with: flag) { (wasCorrect) in
-                            self.answerWasCorrect = wasCorrect
-                            self.isShowingAlert = true
-                        }
-                    }) {
-                        Image(flag.imageName)
-                            .renderingMode(.original)
-                            .resizable()
-                            .aspectRatio(1.75, contentMode: .fit)
-                            .clipped()
-                            .cornerRadius(42)
-                            .shadow(color: .purple, radius: 9, x: 0, y: -1.3)
-                    }
+                    FlagButton(
+                        flag: flag,
+                        onTap: {
+                            self.flagGame.makeGuess(with: flag) { (wasCorrect) in
+                                self.answerWasCorrect = wasCorrect
+                                self.isShowingAlert = true
+                            }
+                    })
                 }
                 
                 
@@ -113,3 +107,4 @@ struct MainView_Previews: PreviewProvider {
         MainView(flagGame: FlagGame())
     }
 }
+

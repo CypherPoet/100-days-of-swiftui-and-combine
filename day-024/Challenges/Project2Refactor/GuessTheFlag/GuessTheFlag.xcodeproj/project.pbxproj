@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F3562F6E2353EAA800BD7068 /* FlagGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3562F6D2353EAA800BD7068 /* FlagGame.swift */; };
+		F380E2F623580E630048B6F3 /* FlagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F380E2F523580E630048B6F3 /* FlagButton.swift */; };
 		F38E7AC123535BF600773357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E7AC023535BF600773357 /* AppDelegate.swift */; };
 		F38E7AC323535BF600773357 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E7AC223535BF600773357 /* SceneDelegate.swift */; };
 		F38E7AC523535BF600773357 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E7AC423535BF600773357 /* MainView.swift */; };
@@ -20,7 +21,8 @@
 
 /* Begin PBXFileReference section */
 		F3562F6D2353EAA800BD7068 /* FlagGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGame.swift; sourceTree = "<group>"; };
-		F38E7ABD23535BF600773357 /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F380E2F523580E630048B6F3 /* FlagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagButton.swift; sourceTree = "<group>"; };
+		F38E7ABD23535BF600773357 /* GuessTheFlag 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GuessTheFlag 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38E7AC023535BF600773357 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F38E7AC223535BF600773357 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F38E7AC423535BF600773357 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F380E2F423580E590048B6F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F380E2F523580E630048B6F3 /* FlagButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F38E7AB423535BF600773357 = {
 			isa = PBXGroup;
 			children = (
@@ -54,7 +64,7 @@
 		F38E7ABE23535BF600773357 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F38E7ABD23535BF600773357 /* GuessTheFlag.app */,
+				F38E7ABD23535BF600773357 /* GuessTheFlag 2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,6 +104,7 @@
 		F3C87F1523538657000EEBA2 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F380E2F423580E590048B6F3 /* Views */,
 				F3562F6D2353EAA800BD7068 /* FlagGame.swift */,
 			);
 			path = Reusables;
@@ -135,9 +146,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F38E7ABC23535BF600773357 /* GuessTheFlag */ = {
+		F38E7ABC23535BF600773357 /* GuessTheFlag 2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F38E7AD123535BF800773357 /* Build configuration list for PBXNativeTarget "GuessTheFlag" */;
+			buildConfigurationList = F38E7AD123535BF800773357 /* Build configuration list for PBXNativeTarget "GuessTheFlag 2" */;
 			buildPhases = (
 				F38E7AB923535BF600773357 /* Sources */,
 				F38E7ABA23535BF600773357 /* Frameworks */,
@@ -147,9 +158,9 @@
 			);
 			dependencies = (
 			);
-			name = GuessTheFlag;
+			name = "GuessTheFlag 2";
 			productName = GuessTheFlag;
-			productReference = F38E7ABD23535BF600773357 /* GuessTheFlag.app */;
+			productReference = F38E7ABD23535BF600773357 /* GuessTheFlag 2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -180,7 +191,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F38E7ABC23535BF600773357 /* GuessTheFlag */,
+				F38E7ABC23535BF600773357 /* GuessTheFlag 2 */,
 			);
 		};
 /* End PBXProject section */
@@ -203,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F380E2F623580E630048B6F3 /* FlagButton.swift in Sources */,
 				F3C87F1D2353BF15000EEBA2 /* FlagsStore.swift in Sources */,
 				F38E7AC123535BF600773357 /* AppDelegate.swift in Sources */,
 				F38E7AC323535BF600773357 /* SceneDelegate.swift in Sources */,
@@ -392,7 +404,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F38E7AD123535BF800773357 /* Build configuration list for PBXNativeTarget "GuessTheFlag" */ = {
+		F38E7AD123535BF800773357 /* Build configuration list for PBXNativeTarget "GuessTheFlag 2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F38E7AD223535BF800773357 /* Debug */,
