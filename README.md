@@ -19,17 +19,18 @@ Cheers! ✌️
 <summary>Full List</summary>
 
 - **Days 1-15:** Introduction to Swift (Covered during the [100 Days of Swift](https://github.com/CypherPoet/100-days-of-swift) challenge.)
-- **Day 16:** [_Project 1: WeSplit_, Part One](./day-016/)
-- **Day 17:** [_Project 1: WeSplit_, Part Two](./day-017/)
-- **Day 18:** [_Project 1: WeSplit_, Part Three](./day-018/)
+- **Day 16:** [_Project 1: WeSplit_ (Part One)](./day-016/)
+- **Day 17:** [_Project 1: WeSplit_ (Part Two)](./day-017/)
+- **Day 18:** [_Project 1: WeSplit_ (Part Three)](./day-018/)
 - **Day 19:** [Challenge Day](./day-019/)
-- **Day 20:** [_Project 2: Guess The Flag_, Part One](./day-020/)
-- **Day 21:** [_Project 2: Guess The Flag_, Part Two](./day-021/)
-- **Day 22:** [_Project 2: Guess The Flag_, Part Three](./day-022/)
+- **Day 20:** [_Project 2: Guess The Flag_ (Part One)](./day-020/)
+- **Day 21:** [_Project 2: Guess The Flag_ (Part Two)](./day-021/)
+- **Day 22:** [_Project 2: Guess The Flag_ (Part Three)](./day-022/)
+- **Day 23:** [_Project 3: Views and Modifiers_ (Part One)](./day-023/)
 
 </details>
 
-- **Day 23:** [_Project 3: Views and Modifiers_, Part One](./day-023/)
+- **Day 24:** [_Project 3: Views and Modifiers_ (Part Two)](./day-024/)
 
 
 
