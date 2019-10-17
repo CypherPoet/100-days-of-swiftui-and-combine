@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:"
+      name = "WeSplit Refactor - Day 24">
+      <FileRef
+         location = "group:day-024/Challenges/Project1Refactor/WeSplit/WeSplit.xcodeproj">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:day-023/Projects/ViewsAndModifiers/ViewsAndModifiers.xcodeproj">
    </FileRef>
