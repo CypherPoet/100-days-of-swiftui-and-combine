@@ -80,13 +80,13 @@
 			children = (
 				F36E1B1D23526DD60059A6DA /* Satoshi.playground */,
 				F36E1B012350D8820059A6DA /* UnitConversion.playground */,
-				F36E1AFB2350CF2F0059A6DA /* Reusables */,
 				F36E1AF32350CE9F0059A6DA /* Info.plist */,
 				F36E1AE52350CE9D0059A6DA /* AppDelegate.swift */,
 				F36E1AE72350CE9D0059A6DA /* SceneDelegate.swift */,
 				F36E1AF02350CE9F0059A6DA /* LaunchScreen.storyboard */,
 				F36E1AED2350CE9F0059A6DA /* Preview Content */,
 				F36E1AFA2350CF000059A6DA /* Resources */,
+				F36E1AFB2350CF2F0059A6DA /* Reusables */,
 				F36E1AF92350CEF30059A6DA /* Scenes */,
 			);
 			path = TheBestConverter;

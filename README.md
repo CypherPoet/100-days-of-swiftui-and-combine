@@ -27,10 +27,11 @@ Cheers! ✌️
 - **Day 21:** [_Project 2: Guess The Flag_ (Part Two)](./day-021/)
 - **Day 22:** [_Project 2: Guess The Flag_ (Part Three)](./day-022/)
 - **Day 23:** [_Project 3: Views and Modifiers_ (Part One)](./day-023/)
+- **Day 24:** [_Project 3: Views and Modifiers_ (Part Two)](./day-024/)
 
 </details>
 
-- **Day 24:** [_Project 3: Views and Modifiers_ (Part Two)](./day-024/)
+- **Day 25:** [Milestone for Projects 1-3](./day-025/)
 
 
 
@@ -56,3 +57,9 @@ Cheers! ✌️
   <img src="./day-020/Projects/GuessTheFlag/Screenshots/recording-2.gif" width="300px"/>
 </div>
 
+
+- [Milestone 1: RockPaperQuizzers](./day-019/TheBestConverter/)
+
+<div style="text-align: center;">
+  <img src="./day-025/RockPaperQuizzers/Screenshots/recording-1.gif" width="300px"/>
+</div>
