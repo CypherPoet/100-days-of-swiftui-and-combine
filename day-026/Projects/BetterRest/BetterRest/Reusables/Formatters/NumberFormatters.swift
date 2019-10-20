@@ -13,9 +13,19 @@ enum NumberFormatters {
     static let sleepAmount: NumberFormatter = {
         let formatter = NumberFormatter()
         
-        formatter.maximumSignificantDigits = 4
         formatter.maximumFractionDigits = 2
         
         return formatter
     }()
+    
+    
+    static let coffeeAmount: NumberFormatter = {
+        let formatter = NumberFormatter()
+        
+        formatter.maximumSignificantDigits = 4
+        formatter.maximumFractionDigits = 1
+        
+        return formatter
+    }()
+    
 }

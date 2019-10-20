@@ -29,10 +29,11 @@ Cheers! ✌️
 - **Day 23:** [_Project 3: Views and Modifiers_ (Part One)](./day-023/)
 - **Day 24:** [_Project 3: Views and Modifiers_ (Part Two)](./day-024/)
 - **Day 25:** [Milestone for Projects 1-3](./day-025/)
+- **Day 26:** [_Project 4: BetterRest_ (Part One)](./day-026/)
 
 </details>
 
-- **Day 26:** [_Project 4: BetterRest_ (Part One)](./day-026/)
+- **Day 27:** [_Project 4: BetterRest_ (Part Two)](./day-027/)
 
 
 
