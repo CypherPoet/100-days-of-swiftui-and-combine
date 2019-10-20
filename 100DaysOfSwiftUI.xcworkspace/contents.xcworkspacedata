@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <FileRef
+      location = "group:day-026/Projects/BetterRest/BetterRest.xcodeproj">
+   </FileRef>
+   <Group
+      location = "container:"
+      name = "Project 4 - BetterRest">
+   </Group>
    <Group
       location = "container:"
       name = "Project 1 - WeSplit">

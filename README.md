@@ -28,10 +28,11 @@ Cheers! ✌️
 - **Day 22:** [_Project 2: Guess The Flag_ (Part Three)](./day-022/)
 - **Day 23:** [_Project 3: Views and Modifiers_ (Part One)](./day-023/)
 - **Day 24:** [_Project 3: Views and Modifiers_ (Part Two)](./day-024/)
+- **Day 25:** [Milestone for Projects 1-3](./day-025/)
 
 </details>
 
-- **Day 25:** [Milestone for Projects 1-3](./day-025/)
+- **Day 26:** [_Project 4: BetterRest_ (Part One)](./day-026/)
 
 
 
