@@ -30,10 +30,11 @@ Cheers! ✌️
 - **Day 24:** [_Project 3: Views and Modifiers_ (Part Two)](./day-024/)
 - **Day 25:** [Milestone for Projects 1-3](./day-025/)
 - **Day 26:** [_Project 4: BetterRest_ (Part One)](./day-026/)
+- **Day 27:** [_Project 4: BetterRest_ (Part Two)](./day-027/)
 
 </details>
 
-- **Day 27:** [_Project 4: BetterRest_ (Part Two)](./day-027/)
+- **Day 28:** [_Project 4: BetterRest_ (Part Three)](./day-028/)
 
 
 
@@ -65,3 +66,11 @@ Cheers! ✌️
 <div style="text-align: center;">
   <img src="./day-025/RockPaperQuizzers/Screenshots/recording-1.gif" width="300px"/>
 </div>
+
+
+- [Project 4: BetterRest](./day-026/projects/BetterRest)
+
+<div style="text-align: center;">
+  <img src="./day-026/Projects/BetterRest/Screenshots/recording-1.gif" width="300px"/>
+</div>
+

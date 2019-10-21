@@ -76,7 +76,8 @@ extension SceneDelegate {
             .foregroundColor: UIColor.systemPink
         ]
         
-        UINavigationBar.appearance().tintColor = UIColor.systemPink
+        UINavigationBar.appearance().tintColor = .systemPink
+        UIView.appearance().tintColor = .systemPink
     }
 }
 
