@@ -72,6 +72,10 @@ extension SceneDelegate {
             .foregroundColor: UIColor.systemPink
         ]
         
+        UINavigationBar.appearance().titleTextAttributes = [
+            .foregroundColor: UIColor.systemPink
+        ]
+        
         UINavigationBar.appearance().tintColor = UIColor.systemPink
     }
 }

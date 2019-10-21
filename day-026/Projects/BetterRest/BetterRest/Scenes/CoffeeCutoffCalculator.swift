@@ -11,17 +11,7 @@ import Foundation
 
 
 struct CoffeeCutoffCalculator: View {
-    typealias Hours = Double
-    typealias Cups = Double
-    
-    @State private var desiredSleepAmount: Hours = 7.5
-    @State private var desiredWakeup = Date.defaultWakeUp()
-    @State private var desiredCoffeeAmount: Cups = 5
-
     @ObservedObject private var viewModel = CoffeeCutoffCalculatorViewModel()
-    
-    private let sleepAmountFormatter = NumberFormatters.sleepAmount
-    private let coffeeAmountFormatter = NumberFormatters.coffeeAmount
 }
  
 
@@ -31,22 +21,18 @@ extension CoffeeCutoffCalculator {
         
         NavigationView {
             
-            VStack(alignment: .leading) {
-                Text("Coffee Cut-Off Calculator")
-                    .padding(.leading, 20)
-                    .font(.subheadline)
+            VStack(alignment: .center, spacing: 24.0) {
+                CoffeeCutoffNotice(cutoffTime: viewModel.calculatedCutoffTime)
                 
                 Form {
                     wakeUpTimeSection
                     sleepTargetSection
                     coffeeTargetSection
                 }
-                .navigationBarTitle("BetterRest")
-                .navigationBarItems(trailing: navbarCalculationButton)
+                
+                Spacer()
             }
-            .alert(isPresented: $viewModel.isShowingAlert) {
-                calculationAlert
-            }
+            .navigationBarTitle("BetterRest", displayMode: .large)
         }
     }
 }
@@ -64,7 +50,7 @@ extension CoffeeCutoffCalculator {
 
             DatePicker(
                 "Desired Wake Up Time",
-                selection: $desiredWakeup,
+                selection: $viewModel.desiredWakeup,
                 in: Date()...,
                 displayedComponents: .hourAndMinute
             )
@@ -82,19 +68,14 @@ extension CoffeeCutoffCalculator {
         ) {
             VStack {
                 Slider(
-                    value: $desiredCoffeeAmount,
+                    value: $viewModel.desiredCoffeeAmount,
                     in: 0...20,
                     minimumValueLabel: Text("0"),
                     maximumValueLabel: Text("20"),
                     label: { Text("Desired 8-ounce cups of coffee") }
                 )
     
-                Text(
-                    "\(coffeeAmountFormatter.string(from: desiredCoffeeAmount as! NSNumber)!)" +
-                    " Cups" +
-                    " (\(coffeeAmountFormatter.string(from: (5 * desiredCoffeeAmount) as! NSNumber)!)" +
-                    " ounces)"
-                )
+                Text(viewModel.formattedDesiredCoffeeAmount)
             }
         }
     }
@@ -107,60 +88,15 @@ extension CoffeeCutoffCalculator {
                     .font(.headline)
         ) {
             Stepper(
-                value: $desiredSleepAmount,
+                value: $viewModel.desiredSleepAmount,
                 in: 1...16,
-                step: 0.25
-            ) {
-                Text(
-                    "\(sleepAmountFormatter.string(from: desiredSleepAmount as! NSNumber)!)" +
-                    " Hours"
-                )
-            }
+                step: 0.25,
+                label: { Text(viewModel.formattedDesiredSleepAmount) }
+            )
             .accessibility(label: Text("Hours of desired sleep"))
         }
     }
-    
-    
-    private var navbarCalculationButton: some View {
-        Button(action: calculateCutoffTime) {
-            Text("Calculate")
-        }
-    }
-    
-    
-    private var calculationAlert: Alert {
-        Alert(
-            title: Text(viewModel.alertTitle),
-            message: Text(viewModel.alertMessage),
-            dismissButton: .default(Text("👌 OK"))
-        )
-    }
 }
-
-
-// MARK: - Private Helpers
-extension CoffeeCutoffCalculator {
-
-    func calculateCutoffTime() {
-        let secondsSinceMidnight = desiredWakeup.secondsSinceMidnight
-
-        do {
-            let prediction = try SleepCalculator().prediction(
-                wake: secondsSinceMidnight,
-                estimatedSleep: desiredSleepAmount,
-                coffee: desiredCoffeeAmount
-            )
-
-            let sleepTimePlusCoffeeCutoffTime = prediction.actualSleep
-            
-            viewModel.calculatedCutoffTime = desiredWakeup - sleepTimePlusCoffeeCutoffTime
-            viewModel.isShowingAlert = true
-        } catch {
-            fatalError("CoreML prediction failure: \(error.localizedDescription)")
-        }
-    }
-}
-
 
 
 struct MainView_Previews: PreviewProvider {

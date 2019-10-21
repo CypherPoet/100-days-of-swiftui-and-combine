@@ -18,6 +18,7 @@
 		F3A34A93235C4B3700F7C256 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F3A34A92235C4B3600F7C256 /* SleepCalculator.mlmodel */; };
 		F3A34A99235D51F100F7C256 /* CoffeeCutoffCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A34A98235D51F100F7C256 /* CoffeeCutoffCalculatorViewModel.swift */; };
 		F3A34A9B235D636900F7C256 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A34A9A235D636900F7C256 /* DateFormatters.swift */; };
+		F3A34AA7235DBA4B00F7C256 /* CoffeeCutoffNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A34AA6235DBA4A00F7C256 /* CoffeeCutoffNotice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		F3A34A92235C4B3600F7C256 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SleepCalculator.mlmodel; path = MLModels/SleepCalculator.mlmodel; sourceTree = SOURCE_ROOT; };
 		F3A34A98235D51F100F7C256 /* CoffeeCutoffCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCutoffCalculatorViewModel.swift; sourceTree = "<group>"; };
 		F3A34A9A235D636900F7C256 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
+		F3A34AA6235DBA4A00F7C256 /* CoffeeCutoffNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCutoffNotice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				F3A34A8D235BE1D900F7C256 /* Extensions */,
 				F34D24A2235AF6E600E4E20B /* Formatters */,
+				F3A34AA6235DBA4A00F7C256 /* CoffeeCutoffNotice.swift */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				F34D2487235AEC4F00E4E20B /* AppDelegate.swift in Sources */,
 				F34D24A4235AF8E300E4E20B /* NumberFormatters.swift in Sources */,
 				F34D249C235AEC8400E4E20B /* CoffeeCutoffCalculator.swift in Sources */,
+				F3A34AA7235DBA4B00F7C256 /* CoffeeCutoffNotice.swift in Sources */,
 				F3A34A9B235D636900F7C256 /* DateFormatters.swift in Sources */,
 				F3A34A93235C4B3700F7C256 /* SleepCalculator.mlmodel in Sources */,
 				F34D2489235AEC4F00E4E20B /* SceneDelegate.swift in Sources */,
