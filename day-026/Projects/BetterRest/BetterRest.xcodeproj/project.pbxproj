@@ -12,9 +12,12 @@
 		F34D248D235AEC5100E4E20B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34D248C235AEC5100E4E20B /* Assets.xcassets */; };
 		F34D2490235AEC5100E4E20B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34D248F235AEC5100E4E20B /* Preview Assets.xcassets */; };
 		F34D2493235AEC5100E4E20B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F34D2491235AEC5100E4E20B /* LaunchScreen.storyboard */; };
-		F34D249C235AEC8400E4E20B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34D249B235AEC8400E4E20B /* MainView.swift */; };
+		F34D249C235AEC8400E4E20B /* CoffeeCutoffCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34D249B235AEC8400E4E20B /* CoffeeCutoffCalculator.swift */; };
 		F34D24A4235AF8E300E4E20B /* NumberFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34D24A3235AF8E300E4E20B /* NumberFormatters.swift */; };
 		F3A34A91235BEA3E00F7C256 /* Date+TimePointUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A34A90235BEA3E00F7C256 /* Date+TimePointUtils.swift */; };
+		F3A34A93235C4B3700F7C256 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F3A34A92235C4B3600F7C256 /* SleepCalculator.mlmodel */; };
+		F3A34A99235D51F100F7C256 /* CoffeeCutoffCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A34A98235D51F100F7C256 /* CoffeeCutoffCalculatorViewModel.swift */; };
+		F3A34A9B235D636900F7C256 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A34A9A235D636900F7C256 /* DateFormatters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +28,12 @@
 		F34D248F235AEC5100E4E20B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F34D2492235AEC5100E4E20B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F34D2494235AEC5100E4E20B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F34D249B235AEC8400E4E20B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F34D249B235AEC8400E4E20B /* CoffeeCutoffCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCutoffCalculator.swift; sourceTree = "<group>"; };
 		F34D24A3235AF8E300E4E20B /* NumberFormatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFormatters.swift; sourceTree = "<group>"; };
 		F3A34A90235BEA3E00F7C256 /* Date+TimePointUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+TimePointUtils.swift"; sourceTree = "<group>"; };
+		F3A34A92235C4B3600F7C256 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SleepCalculator.mlmodel; path = MLModels/SleepCalculator.mlmodel; sourceTree = SOURCE_ROOT; };
+		F3A34A98235D51F100F7C256 /* CoffeeCutoffCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCutoffCalculatorViewModel.swift; sourceTree = "<group>"; };
+		F3A34A9A235D636900F7C256 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +66,14 @@
 		F34D2485235AEC4F00E4E20B /* BetterRest */ = {
 			isa = PBXGroup;
 			children = (
-				F34D249E235AF6B800E4E20B /* Reusables */,
+				F3A34A94235C4B8400F7C256 /* Data */,
 				F34D2494235AEC5100E4E20B /* Info.plist */,
 				F34D2486235AEC4F00E4E20B /* AppDelegate.swift */,
 				F34D2488235AEC4F00E4E20B /* SceneDelegate.swift */,
 				F34D2491235AEC5100E4E20B /* LaunchScreen.storyboard */,
 				F34D248E235AEC5100E4E20B /* Preview Content */,
 				F34D249D235AECA200E4E20B /* Resources */,
+				F34D249E235AF6B800E4E20B /* Reusables */,
 				F34D249A235AEC7800E4E20B /* Scenes */,
 			);
 			path = BetterRest;
@@ -83,7 +90,8 @@
 		F34D249A235AEC7800E4E20B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F34D249B235AEC8400E4E20B /* MainView.swift */,
+				F34D249B235AEC8400E4E20B /* CoffeeCutoffCalculator.swift */,
+				F3A34A98235D51F100F7C256 /* CoffeeCutoffCalculatorViewModel.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -91,6 +99,7 @@
 		F34D249D235AECA200E4E20B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F3A34A92235C4B3600F7C256 /* SleepCalculator.mlmodel */,
 				F34D248C235AEC5100E4E20B /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -109,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				F34D24A3235AF8E300E4E20B /* NumberFormatters.swift */,
+				F3A34A9A235D636900F7C256 /* DateFormatters.swift */,
 			);
 			path = Formatters;
 			sourceTree = "<group>";
@@ -119,6 +129,21 @@
 				F3A34A90235BEA3E00F7C256 /* Date+TimePointUtils.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F3A34A94235C4B8400F7C256 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3A34A95235C4B8600F7C256 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F3A34A95235C4B8600F7C256 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,8 +220,11 @@
 				F3A34A91235BEA3E00F7C256 /* Date+TimePointUtils.swift in Sources */,
 				F34D2487235AEC4F00E4E20B /* AppDelegate.swift in Sources */,
 				F34D24A4235AF8E300E4E20B /* NumberFormatters.swift in Sources */,
-				F34D249C235AEC8400E4E20B /* MainView.swift in Sources */,
+				F34D249C235AEC8400E4E20B /* CoffeeCutoffCalculator.swift in Sources */,
+				F3A34A9B235D636900F7C256 /* DateFormatters.swift in Sources */,
+				F3A34A93235C4B3700F7C256 /* SleepCalculator.mlmodel in Sources */,
 				F34D2489235AEC4F00E4E20B /* SceneDelegate.swift in Sources */,
+				F3A34A99235D51F100F7C256 /* CoffeeCutoffCalculatorViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

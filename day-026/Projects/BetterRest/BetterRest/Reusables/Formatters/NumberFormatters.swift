@@ -27,5 +27,4 @@ enum NumberFormatters {
         
         return formatter
     }()
-    
 }

@@ -48,4 +48,21 @@ extension Date {
         
         return calendar.date(byAdding: components, to: startOfTomorrow)!
     }
+    
+    
+    var secondsSinceMidnight: Double {
+        let components = Calendar.current.dateComponents([.hour, .minute], from: self)
+        
+        guard
+            let hoursSinceMidnight = components.value(for: .hour),
+            let minutesSinceMidnight = components.value(for: .minute)
+        else {
+            fatalError("No seconds could be computed for date")
+        }
+        
+        return Double(
+            (hoursSinceMidnight * 60 * 60)
+            + (minutesSinceMidnight * 60)
+        )
+    }
 }

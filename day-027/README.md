@@ -9,55 +9,45 @@ This day covers Part Two of _`Project 4: BetterRest`_ in the [100 Days of SwiftU
 
 It focuses on several specific topics:
 
-- BetterRest: Introduction
-- Entering numbers with Stepper
-- Selecting dates and times with DatePicker
-- Working with dates
-- Training a model with Create ML
+- Building a basic layout
+- Connecting SwiftUI to Core ML
+- Cleaning up the user interface
 
 
-## BetterRest: Introduction
 
-From the project description:
+## Building a basic layout
 
-> The actual app we’re build is called BetterRest, and it’s designed to help coffee drinkers get a good night’s sleep by asking them three questions:
->
->   - When do they want to wake up?
->   - Roughly how many hours of sleep do they want?
->   - How many cups of coffee do they drink per day?
-
-In my coffee-drinking experience -- which rivals this project's training data in voluminousness -- you really just need to stop drinking coffee about six hours before sleeping so it can exit your system in time. But I digress... I'm just here for the awesomeness that is CoreML 😛. So let's get to it!.
-
-
-## Entering numbers with Stepper
-
-You _could_ use a stepper as a button-based replacement for `Slider`, but that would be missing out on its eponymous killer feature: the `step` argument. This is a great way to tailor data entry around the values that users would frequently enter within a range -- for instance, hours of sleep in increments of 15 minutes.
-
-
-## Selecting dates and times with DatePicker
-
-Speaking of killer features... [partial ranges](https://developer.apple.com/documentation/swift/partialrangefrom). So often, we just want to make sure that the user selects a date that hasn't come into existence yet, and thanks to the robustness of `DatePicker`'s `in` argument, we can do it like this:
+Rendering the `DatePickers` label directly can be a bit visually awkward. I wrote up an article
+recently on [a solution I tend to prefer instead](https://theswiftness.com/swiftui-rendering-a-datepicker-without-its-default-label/), which includes rendering the label as a separate `Text` element above the picker.
 
 ```swift
-DatePicker("Please enter a date", selection: $wakeUp, in: Date()...)
+VStack {
+    Text("When do you want to wake up?")
+        .font(.headline)
+
+    DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+        .labelsHidden()
+
+    // more to come
+}
 ```
 
+## Connecting SwiftUI to Core ML
 
-## Working with dates
+Dragging an output CreateML model into our Xcode project will generate a Swift class
+with the same name (in camel-case).
 
-[Time doesn't actually exist](https://qz.com/1279371/this-physicists-ideas-of-time-will-blow-your-mind/) -- so I'll admit that it's not easy to develop a system for measuring state change in the universe and maintaining it throughout human history. But in any case, dates are beasts.
-
-Fortunately, Swift and Foundation come packed with several handy classes that let us tame them as needed -- particularly `DateComponents`, `DateFormatter`, and the `Calendar` class.
-
-
-## Training a model with Create ML
-
-Not unlike `SwiftUI` for building interfaces, the tools Apple is building for letting developers integrate Machine Learning into their apps are nothing short of amazing. I can't wait to see where CreateML and CoreML go in the future ⚡️.
+Through this model, we're given a `prediction` function that can take whatever features
+it's parameterized on and generate a value for the result that it's trained to predict. That's [really just scratching the surface](https://developer.apple.com/documentation/createml/creating_a_model_from_tabular_data), but it's perfect for our app's coffee cut-off time prediction.
 
 
+## Cleaning up the user interface
+
+Lookin' alright...
 
 
-# 🔗 Additional Related Links
+<div style="text-align: center;">
+  <img src="../day-026/Projects/BetterRest/Screenshots/day-27-ui.png" width="400px"/>
+</div>
 
-- [Swift By Sundell: Computing dates in Swift](https://www.swiftbysundell.com/articles/computing-dates-in-swift/)
-- [Apple's Documentation for CreateML](https://developer.apple.com/documentation/createml)
+
