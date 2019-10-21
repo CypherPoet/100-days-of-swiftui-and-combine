@@ -80,17 +80,22 @@ extension CoffeeCutoffCalculator {
                 Text("☕️ Coffee Target")
                     .font(.headline)
         ) {
-            Stepper(
-                value: $desiredCoffeeAmount,
-                in: 0...20,
-                step: 0.5
-            ) {
+            VStack {
+                Slider(
+                    value: $desiredCoffeeAmount,
+                    in: 0...20,
+                    minimumValueLabel: Text("0"),
+                    maximumValueLabel: Text("20"),
+                    label: { Text("Desired 8-ounce cups of coffee") }
+                )
+    
                 Text(
                     "\(coffeeAmountFormatter.string(from: desiredCoffeeAmount as! NSNumber)!)" +
-                    " Cups"
+                    " Cups" +
+                    " (\(coffeeAmountFormatter.string(from: (5 * desiredCoffeeAmount) as! NSNumber)!)" +
+                    " ounces)"
                 )
             }
-            .accessibility(label: Text("Cups of desired coffee"))
         }
     }
 
