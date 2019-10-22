@@ -31,10 +31,11 @@ Cheers! ✌️
 - **Day 25:** [Milestone for Projects 1-3](./day-025/)
 - **Day 26:** [_Project 4: BetterRest_ (Part One)](./day-026/)
 - **Day 27:** [_Project 4: BetterRest_ (Part Two)](./day-027/)
+- **Day 28:** [_Project 4: BetterRest_ (Part Three)](./day-028/)
 
 </details>
 
-- **Day 28:** [_Project 4: BetterRest_ (Part Three)](./day-028/)
+- **Day 29:** [_Project 5: WordScramble_ (Part One)](./day-029/)
 
 
 
