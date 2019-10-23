@@ -1,11 +1,11 @@
-# Day 29: _Project 5: WordScramble_ (Part One)
+# Day 30: _Project 5: WordScramble_ (Part One)
 
-_Follow along at https://www.hackingwithswift.com/100/swiftui/29_.
+_Follow along at https://www.hackingwithswift.com/100/swiftui/30_.
 
 
 # 📒 Field Notes
 
-This day covers Part One of _`Project 5: WordScramble`_ in the [100 Days of SwiftUI Challenge](https://www.hackingwithswift.com/100/swiftui/29).
+This day covers Part One of _`Project 5: WordScramble`_ in the [100 Days of SwiftUI Challenge](https://www.hackingwithswift.com/100/swiftui/30).
 
 It focuses on several specific topics:
 
@@ -23,7 +23,6 @@ From the description:
 >
 > For example, if the starter word is “alarming” they might spell “alarm”, “ring”, “main”, and so on.
 
-These "words from another word" are also known as [anagrams](https://en.wikipedia.org/wiki/Anagram).
 
 ## Introducing List, your best friend
 
