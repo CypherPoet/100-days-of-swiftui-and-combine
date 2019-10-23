@@ -1,71 +1,51 @@
-# Day 30: _Project 5: WordScramble_ (Part One)
+# Day 30: _Project 5: WordScramble_ (Part Two)
 
 _Follow along at https://www.hackingwithswift.com/100/swiftui/30_.
 
 
 # 📒 Field Notes
 
-This day covers Part One of _`Project 5: WordScramble`_ in the [100 Days of SwiftUI Challenge](https://www.hackingwithswift.com/100/swiftui/30).
+This day covers Part Two of _`Project 5: WordScramble`_ in the [100 Days of SwiftUI Challenge](https://www.hackingwithswift.com/100/swiftui/30). (Project 5 files can be found in the [directory for Part One](../day-029/).)
 
 It focuses on several specific topics:
 
-- Word Scramble: Introduction
-- Introducing List, your best friend
-- Loading resources from your app bundle
-- Working with strings
+- Adding to a list of words
+- Running code when our app launches
+- Validating words with UITextChecker
 
 
-## Word Scramble: Introduction
 
-From the description:
+## Running code when our app launches
 
-> The game will show players a random eight-letter word, and ask them to make words out of it.
->
-> For example, if the starter word is “alarming” they might spell “alarm”, “ring”, “main”, and so on.
+The `onAppear` modifier is your friend here.
 
 
-## Introducing List, your best friend
 
-`List`s are essentially SwiftUI's version of UIKit's TableView. But one neat difference is their ability to seamlessly integrate static and dynamic content within the same `List` element:
+## Validating words with UITextChecker
+
+Now we're getting our hands dirty. In order to check if a word is "valid English" (ideally, though, we'd localize the language), we can utilize `UITextChecker` -- which is available through `UIKit`... but which mainly serves as a bridge to Objective-C-based range operations:
 
 ```swift
-List {
-    Section(header: Text("Section 1")) {
-        Text("Static row 1")
-        Text("Static row 2")
-    }
+var currentGuessIsRealWord: Bool {
+    let wordRange = NSRange(location: 0, length: currentRootWord.utf16.count)
 
-    Section(header: Text("Section 2")) {
-        ForEach(0..<5) {
-            Text("Dynamic row \($0)")
-        }
-    }
+    let misspelledRange = Self.textChecker.rangeOfMisspelledWord(
+        in: currentRootWord,
+        range: wordRange,
+        startingAt: 0,
+        wrap: false,
+        language: "en"
+    )
 
-    Section(header: Text("Section 3")) {
-        Text("Static row 3")
-        Text("Static row 4")
-    }
+    return misspelledRange.location == NSNotFound
 }
 ```
 
-Oh... and, that tight integration with the `Section` element is pretty sweet, too 🙂.
+It's all good, though. Clunky as it may be, it's pretty cool that this kind of magic is within reach through some of Apple's lower-level APIs.
 
 
-## Loading resources from your app bundle
+# 📸 Screenshots
 
-Whenever we have something in our app's `Bundle` that we want to deal with in code, we first need to locate it with a URL (which is why it's called a "Uniform Resource Locator").
-
-In many cases, we'd use this URL to create an instance of `Data`, and then decode that data into some kind of structured model based upon the structure of the file.
-
-In this app, though, we'll be grabbing the contents of a plain-text file that lacks the structure of something like JSON.
-
-
-Fortunately, because Swift `String`s are weapons-grade, we can also create them directly from the content's of a file:
-
-```swift
-if let fileContents = try? String(contentsOf: fileURL) {
-    // we loaded the file into a string!
-}
-```
-
-
+<div style="text-align: center;">
+  <img src="../day-029/Projects/WordScramble/Screenshots/recording-day-30.gif" width="400px"/>
+</div>

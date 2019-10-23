@@ -56,11 +56,11 @@ extension GameViewModel {
     
     
     var currentGuessIsRealWord: Bool {
-        let range = NSRange(location: 0, length: currentRootWord.utf16.count)
+        let wordRange = NSRange(location: 0, length: currentGuess.utf16.count)
         
         let misspelledRange = Self.textChecker.rangeOfMisspelledWord(
-            in: currentRootWord,
-            range: range,
+            in: currentGuess,
+            range: wordRange,
             startingAt: 0,
             wrap: false,
             language: "en"
