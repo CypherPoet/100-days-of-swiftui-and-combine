@@ -32,10 +32,12 @@ Cheers! ✌️
 - **Day 26:** [_Project 4: BetterRest_ (Part One)](./day-026/)
 - **Day 27:** [_Project 4: BetterRest_ (Part Two)](./day-027/)
 - **Day 28:** [_Project 4: BetterRest_ (Part Three)](./day-028/)
+- **Day 29:** [_Project 5: WordScramble_ (Part One)](./day-029/)
+- **Day 30:** [_Project 5: WordScramble_ (Part Two)](./day-030/)
 
 </details>
 
-- **Day 29:** [_Project 5: WordScramble_ (Part One)](./day-029/)
+- **Day 31:** [_Project 5: WordScramble_ (Part Three)](./day-031/)
 
 
 
@@ -73,5 +75,12 @@ Cheers! ✌️
 
 <div style="text-align: center;">
   <img src="./day-026/Projects/BetterRest/Screenshots/recording-1.gif" width="300px"/>
+</div>
+
+
+- [Project 5: WordScramble](./day-029/projects/WordScramble)
+
+<div style="text-align: center;">
+  <img src="./day-029/Projects/WordScramble/Screenshots/recording-day-31.gif" width="300px"/>
 </div>
 
