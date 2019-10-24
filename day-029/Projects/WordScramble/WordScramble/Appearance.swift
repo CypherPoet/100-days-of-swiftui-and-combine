@@ -16,13 +16,13 @@ enum Appearance {
             let appearance = UINavigationBarAppearance()
             
             appearance.titleTextAttributes = [
-                .foregroundColor: UIColor.systemPink,
+                .foregroundColor: UIColor.darkText,
             ]
             
             appearance.largeTitleTextAttributes = [
-                .foregroundColor: UIColor.systemPink,
+                .foregroundColor: UIColor.darkText,
             ]
-            
+
             appearance.configureWithTransparentBackground()
             
             return appearance
@@ -30,7 +30,11 @@ enum Appearance {
     }
     
     
-    static func set(navBarAppearance: UINavigationBarAppearance) {
+    static func set(
+        navBarAppearance: UINavigationBarAppearance,
+        withTintColor tintColor: UIColor = .systemPink
+    ) {
+        UINavigationBar.appearance().tintColor = tintColor
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
     }

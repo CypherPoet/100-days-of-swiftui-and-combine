@@ -48,6 +48,7 @@ extension GameView {
                 }
             }
             .navigationBarTitle("Anagrams")
+            .navigationBarItems(leading: restartButton)
             .alert(isPresented: $viewModel.shouldShowErrorAlert) {
                 Alert(
                     title: Text(self.viewModel.errorTitle),
@@ -55,6 +56,17 @@ extension GameView {
                     dismissButton: .default(Text("OK"))
                 )
             }
+        }
+    }
+}
+
+
+extension GameView {
+    
+    var restartButton: some View {
+        Button(action: viewModel.startNewRound) {
+            Image(systemName: "arrow.clockwise")
+            Text("Restart")
         }
     }
 }
