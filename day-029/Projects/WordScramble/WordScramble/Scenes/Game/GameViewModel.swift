@@ -39,11 +39,7 @@ extension GameViewModel {
 
 // MARK: - Computeds
 extension GameViewModel {
-    
-    var currentGuessIsOriginal: Bool {
-        !usedWords.contains(currentGuess)
-    }
-    
+    var currentGuessIsOriginal: Bool { !usedWords.contains(currentGuess) }
     
     var currentGuessIsAnagram: Bool {
         let guessSet = NSCountedSet(array: Array(currentGuess))
@@ -85,8 +81,16 @@ extension GameViewModel {
     func checkNewWord() {
         let word = currentGuess.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
             
-        guard !word.isEmpty else { return } // TODO: Better error handling here
+        guard !word.isEmpty else { return } // Ignore the input
  
+        guard word.count > 1 else {
+            setWordError(
+                title: "Ha!",
+                message: "We like letters, too. But you'll have to use more than one for a valid word."
+            )
+            return
+        }
+        
         guard word != currentRootWord else {
             setWordError(
                 title: "Mix it up!",
@@ -94,6 +98,8 @@ extension GameViewModel {
             )
             return
         }
+        
+
         
         guard currentGuessIsOriginal else {
             setWordError(
