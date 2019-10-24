@@ -16,7 +16,7 @@ final class GameViewModel: ObservableObject {
     @Published var currentRootWord: String = ""
     @Published var currentGuess: String = ""
     @Published var usedWords: [String] = []
-    
+    @Published var currentScore = 0
 
     @Published var shouldShowErrorAlert: Bool = false
     @Published var errorTitle = ""
@@ -73,6 +73,7 @@ extension GameViewModel {
     func startNewRound() {
         usedWords.removeAll(keepingCapacity: true)
         currentGuess = ""
+        currentScore = 0
         
         currentRootWord = allRootWords.randomElement()!
     }
@@ -125,7 +126,7 @@ extension GameViewModel {
             return
         }
         
-        
+        currentScore += word.count
         usedWords.insert(word, at: 0)
         currentGuess = ""
     }

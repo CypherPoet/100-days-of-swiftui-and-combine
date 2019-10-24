@@ -31,6 +31,7 @@ extension GameView {
                 }
                 .padding()
                 
+                
                 TextField(
                     "Enter your word",
                     text: $viewModel.currentGuess,
@@ -38,13 +39,27 @@ extension GameView {
                 )
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocapitalization(.none)
+                    .disableAutocorrection(true)
                     .padding()
+
                 
-                List(viewModel.usedWords, id: \.self) { word in
-                    Text(word)
-                    Spacer()
-                    Image(systemName: "\(word.count).circle")
-                        .imageScale(.large)
+                Form {
+                    Section(
+                        header: HStack {
+                            Text("Used Words")
+                            Spacer()
+                            Text("Current Score: \(viewModel.currentScore)")
+                        }
+                        .font(.headline)
+                        .padding()
+                    ) {
+                        List(viewModel.usedWords, id: \.self) { word in
+                            Text(word)
+                            Spacer()
+                            Image(systemName: "\(word.count).circle")
+                                .imageScale(.large)
+                        }
+                    }
                 }
             }
             .navigationBarTitle("Anagrams")
