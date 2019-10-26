@@ -13,6 +13,14 @@
 		F374C3612363BFD40050A01B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F374C3602363BFD40050A01B /* Preview Assets.xcassets */; };
 		F374C3642363BFD40050A01B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F374C3622363BFD40050A01B /* LaunchScreen.storyboard */; };
 		F374C36D2363BFFE0050A01B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374C36C2363BFFE0050A01B /* MainView.swift */; };
+		F374C3712364A2980050A01B /* PulseRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374C3702364A2980050A01B /* PulseRingView.swift */; };
+		F374C3752364A3D00050A01B /* DraggingGradientExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374C3742364A3D00050A01B /* DraggingGradientExample.swift */; };
+		F374C3772364B0300050A01B /* SnakyLettersExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374C3762364B0300050A01B /* SnakyLettersExample.swift */; };
+		F374C3792364C1110050A01B /* VisibilityTransitionExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374C3782364C1110050A01B /* VisibilityTransitionExample.swift */; };
+		F374C37B2364CEAA0050A01B /* CornerRotationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374C37A2364CEAA0050A01B /* CornerRotationExample.swift */; };
+		F374C3802364D2A50050A01B /* CornerRotationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374C37F2364D2A50050A01B /* CornerRotationModifier.swift */; };
+		F374C3832364D2E20050A01B /* View+CornerRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374C3822364D2E20050A01B /* View+CornerRotation.swift */; };
+		F374C3852364D3090050A01B /* PivotTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374C3842364D3090050A01B /* PivotTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		F374C3632363BFD40050A01B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F374C3652363BFD40050A01B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F374C36C2363BFFE0050A01B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F374C3702364A2980050A01B /* PulseRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseRingView.swift; sourceTree = "<group>"; };
+		F374C3742364A3D00050A01B /* DraggingGradientExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggingGradientExample.swift; sourceTree = "<group>"; };
+		F374C3762364B0300050A01B /* SnakyLettersExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakyLettersExample.swift; sourceTree = "<group>"; };
+		F374C3782364C1110050A01B /* VisibilityTransitionExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityTransitionExample.swift; sourceTree = "<group>"; };
+		F374C37A2364CEAA0050A01B /* CornerRotationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRotationExample.swift; sourceTree = "<group>"; };
+		F374C37F2364D2A50050A01B /* CornerRotationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRotationModifier.swift; sourceTree = "<group>"; };
+		F374C3822364D2E20050A01B /* View+CornerRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+CornerRotation.swift"; sourceTree = "<group>"; };
+		F374C3842364D3090050A01B /* PivotTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PivotTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +72,14 @@
 		F374C3562363BFD20050A01B /* AnimationSandbox */ = {
 			isa = PBXGroup;
 			children = (
-				F374C36B2363BFF50050A01B /* Scenes */,
+				F374C37C2364CED80050A01B /* Reusables */,
+				F374C3652363BFD40050A01B /* Info.plist */,
 				F374C3572363BFD20050A01B /* AppDelegate.swift */,
 				F374C3592363BFD20050A01B /* SceneDelegate.swift */,
 				F374C35D2363BFD40050A01B /* Assets.xcassets */,
 				F374C3622363BFD40050A01B /* LaunchScreen.storyboard */,
-				F374C3652363BFD40050A01B /* Info.plist */,
 				F374C35F2363BFD40050A01B /* Preview Content */,
+				F374C36B2363BFF50050A01B /* Scenes */,
 			);
 			path = AnimationSandbox;
 			sourceTree = "<group>";
@@ -79,8 +96,47 @@
 			isa = PBXGroup;
 			children = (
 				F374C36C2363BFFE0050A01B /* MainView.swift */,
+				F374C3742364A3D00050A01B /* DraggingGradientExample.swift */,
+				F374C3762364B0300050A01B /* SnakyLettersExample.swift */,
+				F374C3782364C1110050A01B /* VisibilityTransitionExample.swift */,
+				F374C37A2364CEAA0050A01B /* CornerRotationExample.swift */,
+				F374C3702364A2980050A01B /* PulseRingView.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F374C37C2364CED80050A01B /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				F374C37E2364D28D0050A01B /* Transitions */,
+				F374C37D2364CEDC0050A01B /* View Modifiers */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		F374C37D2364CEDC0050A01B /* View Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F374C3812364D2C40050A01B /* Corner Rotation */,
+			);
+			path = "View Modifiers";
+			sourceTree = "<group>";
+		};
+		F374C37E2364D28D0050A01B /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				F374C3842364D3090050A01B /* PivotTransition.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		F374C3812364D2C40050A01B /* Corner Rotation */ = {
+			isa = PBXGroup;
+			children = (
+				F374C37F2364D2A50050A01B /* CornerRotationModifier.swift */,
+				F374C3822364D2E20050A01B /* View+CornerRotation.swift */,
+			);
+			path = "Corner Rotation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +212,15 @@
 			files = (
 				F374C3582363BFD20050A01B /* AppDelegate.swift in Sources */,
 				F374C36D2363BFFE0050A01B /* MainView.swift in Sources */,
+				F374C3752364A3D00050A01B /* DraggingGradientExample.swift in Sources */,
+				F374C3792364C1110050A01B /* VisibilityTransitionExample.swift in Sources */,
 				F374C35A2363BFD20050A01B /* SceneDelegate.swift in Sources */,
+				F374C3712364A2980050A01B /* PulseRingView.swift in Sources */,
+				F374C37B2364CEAA0050A01B /* CornerRotationExample.swift in Sources */,
+				F374C3802364D2A50050A01B /* CornerRotationModifier.swift in Sources */,
+				F374C3852364D3090050A01B /* PivotTransition.swift in Sources */,
+				F374C3772364B0300050A01B /* SnakyLettersExample.swift in Sources */,
+				F374C3832364D2E20050A01B /* View+CornerRotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

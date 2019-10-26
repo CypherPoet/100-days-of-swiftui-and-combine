@@ -35,10 +35,11 @@ Cheers! ✌️
 - **Day 29:** [_Project 5: WordScramble_ (Part One)](./day-029/)
 - **Day 30:** [_Project 5: WordScramble_ (Part Two)](./day-030/)
 - **Day 31:** [_Project 5: WordScramble_ (Part Three)](./day-031/)
+- **Day 32:** [_Project 6: Animation_ (Part One)](./day-032/)
 
 </details>
 
-- **Day 32:** [_Project 6: Animation_ (Part One)](./day-032/)
+- **Day 33:** [_Project 6: Animation_ (Part Two)](./day-033/)
 
 
 
