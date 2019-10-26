@@ -34,10 +34,11 @@ Cheers! ✌️
 - **Day 28:** [_Project 4: BetterRest_ (Part Three)](./day-028/)
 - **Day 29:** [_Project 5: WordScramble_ (Part One)](./day-029/)
 - **Day 30:** [_Project 5: WordScramble_ (Part Two)](./day-030/)
+- **Day 31:** [_Project 5: WordScramble_ (Part Three)](./day-031/)
 
 </details>
 
-- **Day 31:** [_Project 5: WordScramble_ (Part Three)](./day-031/)
+- **Day 32:** [_Project 6: Animation_ (Part One)](./day-032/)
 
 
 
