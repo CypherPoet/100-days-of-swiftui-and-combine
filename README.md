@@ -36,10 +36,11 @@ Cheers! ✌️
 - **Day 30:** [_Project 5: WordScramble_ (Part Two)](./day-030/)
 - **Day 31:** [_Project 5: WordScramble_ (Part Three)](./day-031/)
 - **Day 32:** [_Project 6: Animation_ (Part One)](./day-032/)
+- **Day 33:** [_Project 6: Animation_ (Part Two)](./day-033/)
 
 </details>
 
-- **Day 33:** [_Project 6: Animation_ (Part Two)](./day-033/)
+- **Day 34:** [_Project 6: Animation_ (Part Three)](./day-034/)
 
 
 
@@ -84,5 +85,12 @@ Cheers! ✌️
 
 <div style="text-align: center;">
   <img src="./day-029/Projects/WordScramble/Screenshots/recording-day-31.gif" width="300px"/>
+</div>
+
+
+- [Project 6: Animation](./day-32/Projects/AnimationSandbox)
+
+<div style="text-align: center;">
+  <img src="./day-032/Projects/AnimationSandbox/Screenshots/day-33-recording.gif" width="300px"/>
 </div>
 
