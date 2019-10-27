@@ -14,15 +14,19 @@ struct MainView: View {
     @State private var isShowingAlert = false
     @State private var answerWasCorrect = false
     
+    @State private var backgroundGradientColors: [Color] = [
+        .white, .blue, .gray
+    ]
+    
     
     var body: some View {
         ZStack {
             LinearGradient(
-                gradient: Gradient(colors: [.white, .blue, .gray]),
+                gradient: Gradient(colors: backgroundGradientColors),
                 startPoint: .top,
                 endPoint: .bottom
             )
-                .edgesIgnoringSafeArea(.all)
+            .edgesIgnoringSafeArea(.all)
             
             
             VStack(spacing: 36) {
@@ -43,6 +47,10 @@ struct MainView: View {
                             self.flagGame.makeGuess(with: self.flagGame.flagChoices[index]) { (wasCorrect) in
                                 self.answerWasCorrect = wasCorrect
                                 self.isShowingAlert = true
+                                
+                                if !wasCorrect {
+                                    self.changeBackgroundGradientAfterWrongAnswer()
+                                }
                             }
                         }
                     )
@@ -81,6 +89,7 @@ struct MainView: View {
                         if self.flagGame.latestChoiceWasCorrect {
                             self.performVictorySpin()
                         } else {
+                            self.refreshBackgroundGradient()
                             self.flagGame.incrementRound()
                         }
                     }
@@ -114,10 +123,11 @@ extension MainView {
 }
 
 
+
 // MARK: - Private Helpers
 extension MainView {
     
-    func performVictorySpin() {
+    private func performVictorySpin() {
         guard
             let latestChoice = flagGame.latestChoice,
             let indexToSpin = flagGame.flagChoices.firstIndex(of: latestChoice)
@@ -143,6 +153,20 @@ extension MainView {
         DispatchQueue.main.asyncAfter(deadline: .now() + (spinDuration + 0.6)) {
             self.flagGame.incrementRound()
         }
+    }
+    
+    
+    private func refreshBackgroundGradient() {
+        backgroundGradientColors[0] = .white
+        backgroundGradientColors[1] = .blue
+        backgroundGradientColors[2] = .gray
+    }
+    
+    
+    private func changeBackgroundGradientAfterWrongAnswer() {
+        backgroundGradientColors[0] = .gray
+        backgroundGradientColors[1] = .red
+        backgroundGradientColors[2] = .gray
     }
 }
 
