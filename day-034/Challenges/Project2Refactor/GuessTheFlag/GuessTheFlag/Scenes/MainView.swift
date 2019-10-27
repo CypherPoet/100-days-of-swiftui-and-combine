@@ -15,13 +15,6 @@ struct MainView: View {
     @State private var answerWasCorrect = false
     
     
-    @State private var flagRotations: [Double] = [
-        0.0,
-        0.0,
-        0.0
-    ]
-    
-    
     var body: some View {
         ZStack {
             LinearGradient(
@@ -54,10 +47,10 @@ struct MainView: View {
                         }
                     )
                     .rotation3DEffect(
-                        .radians(self.flagRotations[index]),
+                        .radians(self.flagGame.flagRotations[index]),
                         axis: (x: 0, y: 1, z: 0)
                     )
-                    .animation(.easeInOut(duration: 0.5))
+                    .opacity(self.flagGame.flagOpacities[index])
                 }
                 
                 
@@ -136,10 +129,18 @@ extension MainView {
         let spinAnimation = Animation.easeInOut(duration: spinDuration)
         
         withAnimation(spinAnimation) {
-            self.flagRotations[indexToSpin] += 2 * .pi
+            self.flagGame.flagRotations[indexToSpin] += 2 * .pi
+            
+            for (index, flag) in self.flagGame.flagChoices.enumerated() {
+                if flag != latestChoice {
+                    self.flagGame.flagOpacities[index] = 0.2
+                } else {
+                    self.flagGame.flagOpacities[index] = 1.0
+                }
+            }
         }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + (spinDuration + 0.2)) {
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + (spinDuration + 0.6)) {
             self.flagGame.incrementRound()
         }
     }

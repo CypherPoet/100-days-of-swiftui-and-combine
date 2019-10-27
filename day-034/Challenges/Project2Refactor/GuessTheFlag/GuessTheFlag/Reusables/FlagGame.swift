@@ -24,6 +24,19 @@ final class FlagGame: ObservableObject {
     @Published var latestChoiceWasCorrect = false
     
     
+    @Published var flagRotations: [Double] = [
+        0.0,
+        0.0,
+        0.0,
+    ]
+    
+    @Published var flagOpacities: [Double] = [
+        1.0,
+        1.0,
+        1.0,
+    ]
+    
+    
     init() {
         startNewGame()
     }
@@ -44,12 +57,12 @@ extension FlagGame {
         if flag == flagToGuess {
             currentScore += 1
             latestChoiceWasCorrect = true
-            completionHandler(true)
         } else {
             currentScore = max(0, currentScore - 3)
             latestChoiceWasCorrect = false
-            completionHandler(false)
         }
+        
+        completionHandler(latestChoiceWasCorrect)
     }
     
     
@@ -57,12 +70,15 @@ extension FlagGame {
         currentRound = 1
         currentScore = 0
         
+        resetFlagAppearances()
         computedNewFlagChoices()
     }
     
     
     public func incrementRound() {
         currentRound += 1
+        
+        resetFlagAppearances()
         computedNewFlagChoices()
     }
 }
@@ -70,8 +86,26 @@ extension FlagGame {
 
 // MARK: - Private Helpers
 extension FlagGame {
+    
     private func computedNewFlagChoices() {
         flagChoices = Array(flagsStore.flags.shuffled()[0...2])
         flagToGuess = flagChoices.randomElement()
+    }
+    
+    
+    func resetFlagAppearances() {
+        flagOpacities = [1.0, 1.0, 1.0]
+    }
+    
+    
+    private func updateFlagAppearancesAfterGuess() {
+        guard
+            let latestChoice = latestChoice,
+            let choiceIndex = flagChoices.firstIndex(of: latestChoice)
+        else { fatalError() }
+        
+ 
+        flagRotations[choiceIndex] = latestChoiceWasCorrect ? 0.0 : (2 * .pi)
+        flagOpacities[choiceIndex] = latestChoiceWasCorrect ? 1.0 : 0.2
     }
 }
