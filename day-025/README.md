@@ -5,10 +5,7 @@ _Follow along at https://www.hackingwithswift.com/100/swiftui/25_.
 
 # 📒 Field Notes
 
-This This day resolves around recapping the content covered while going through Projects 1-3 in the [100 Days of SwiftUI Challenge](https://www.hackingwithswift.com/100/swiftui), and then implementing a challenge project.
-
-
-In addition to recapping the material covered during the project's other days, Day 25 focuses on extending the project according to a set of challenges.
+This day resolves around recapping the content covered while going through Projects 1-3 in the [100 Days of SwiftUI Challenge](https://www.hackingwithswift.com/100/swiftui), and then implementing a challenge project.
 
 
 # 🥅 Challenge Project
