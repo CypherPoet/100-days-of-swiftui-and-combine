@@ -37,10 +37,11 @@ Cheers! ✌️
 - **Day 31:** [_Project 5: WordScramble_ (Part Three)](./day-031/)
 - **Day 32:** [_Project 6: Animation_ (Part One)](./day-032/)
 - **Day 33:** [_Project 6: Animation_ (Part Two)](./day-033/)
+- **Day 34:** [_Project 6: Animation_ (Part Three)](./day-034/)
 
 </details>
 
-- **Day 34:** [_Project 6: Animation_ (Part Three)](./day-034/)
+- **Day 35:** [Milestone for Projects 4-6](./day-035/)
 
 
 
@@ -67,7 +68,7 @@ Cheers! ✌️
 </div>
 
 
-- [Milestone 1: RockPaperQuizzers](./day-019/TheBestConverter/)
+- [Milestone 1: RockPaperQuizzers](./day-025/RockPaperQuizzers/)
 
 <div style="text-align: center;">
   <img src="./day-025/RockPaperQuizzers/Screenshots/recording-1.gif" width="300px"/>
@@ -94,3 +95,5 @@ Cheers! ✌️
   <img src="./day-032/Projects/AnimationSandbox/Screenshots/day-33-recording.gif" width="300px"/>
 </div>
 
+
+<!-- - [Milestone 2: MultiplicationTables](./day-035/MultiplicationTables/) -->
