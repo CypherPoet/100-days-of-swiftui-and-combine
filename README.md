@@ -38,10 +38,11 @@ Cheers! ✌️
 - **Day 32:** [_Project 6: Animation_ (Part One)](./day-032/)
 - **Day 33:** [_Project 6: Animation_ (Part Two)](./day-033/)
 - **Day 34:** [_Project 6: Animation_ (Part Three)](./day-034/)
+- **Day 35:** [Milestone for Projects 4-6](./day-035/)
 
 </details>
 
-- **Day 35:** [Milestone for Projects 4-6](./day-035/)
+- **Day 36:** [_Project 7: iExpense_ (Part One)](./day-036/)
 
 
 
