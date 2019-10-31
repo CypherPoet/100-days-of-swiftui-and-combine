@@ -28,8 +28,7 @@ final class ExpensesListViewModel: ObservableObject {
     
     
     init() {
-//        self.expenses = loadSavedExpenses()
-        self.expenses = SampleExpenses.default
+        self.expenses = loadSavedExpenses()
     }
 }
 
