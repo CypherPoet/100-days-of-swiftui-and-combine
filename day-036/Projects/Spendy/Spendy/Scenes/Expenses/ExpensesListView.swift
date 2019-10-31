@@ -26,7 +26,10 @@ extension ExpensesListView {
             }
             .onDelete(perform: removeItems(at:))
         }
-        .navigationBarItems(trailing: addButton)
+        .navigationBarItems(
+            leading: EditButton(),
+            trailing: addButton
+        )
     }
 }
 
