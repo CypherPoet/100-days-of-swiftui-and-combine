@@ -3,27 +3,42 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		F3E011AD2367EEED0086C207 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E011AC2367EEED0086C207 /* AppDelegate.swift */; };
 		F3E011AF2367EEED0086C207 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E011AE2367EEED0086C207 /* SceneDelegate.swift */; };
-		F3E011B12367EEED0086C207 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E011B02367EEED0086C207 /* ContentView.swift */; };
 		F3E011B32367EEEE0086C207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E011B22367EEEE0086C207 /* Assets.xcassets */; };
 		F3E011B62367EEEE0086C207 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E011B52367EEEE0086C207 /* Preview Assets.xcassets */; };
 		F3E011B92367EEEE0086C207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E011B72367EEEE0086C207 /* LaunchScreen.storyboard */; };
+		F3E011F1236A47040086C207 /* ExpensesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E011F0236A47040086C207 /* ExpensesListView.swift */; };
+		F3E011F3236A4C920086C207 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E011F2236A4C920086C207 /* ExpenseItem.swift */; };
+		F3E011F6236A4F090086C207 /* ExpenseItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E011F5236A4F090086C207 /* ExpenseItem+Category.swift */; };
+		F3E011F8236A4F360086C207 /* ExpensesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E011F7236A4F360086C207 /* ExpensesListViewModel.swift */; };
+		F3E011FA236A4F4E0086C207 /* ExpensesListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E011F9236A4F4E0086C207 /* ExpensesListContainerView.swift */; };
+		F3E011FC236A56AC0086C207 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E011FB236A56AC0086C207 /* SampleData.swift */; };
+		F3E011FE236A60440086C207 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E011FD236A60440086C207 /* AddExpenseView.swift */; };
+		F3E01201236A6A6D0086C207 /* NumberFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E01200236A6A6D0086C207 /* NumberFormatters.swift */; };
+		F3E01204236A77580086C207 /* Burritos in Frameworks */ = {isa = PBXBuildFile; productRef = F3E01203236A77580086C207 /* Burritos */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F3E011A92367EEED0086C207 /* Spendy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spendy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E011AC2367EEED0086C207 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3E011AE2367EEED0086C207 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3E011B02367EEED0086C207 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F3E011B22367EEEE0086C207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3E011B52367EEEE0086C207 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3E011B82367EEEE0086C207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3E011BA2367EEEE0086C207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3E011F0236A47040086C207 /* ExpensesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListView.swift; sourceTree = "<group>"; };
+		F3E011F2236A4C920086C207 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
+		F3E011F5236A4F090086C207 /* ExpenseItem+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseItem+Category.swift"; sourceTree = "<group>"; };
+		F3E011F7236A4F360086C207 /* ExpensesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListViewModel.swift; sourceTree = "<group>"; };
+		F3E011F9236A4F4E0086C207 /* ExpensesListContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListContainerView.swift; sourceTree = "<group>"; };
+		F3E011FB236A56AC0086C207 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		F3E011FD236A60440086C207 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		F3E01200236A6A6D0086C207 /* NumberFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3E01204236A77580086C207 /* Burritos in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,13 +72,15 @@
 		F3E011AB2367EEED0086C207 /* Spendy */ = {
 			isa = PBXGroup;
 			children = (
+				F3E011BA2367EEEE0086C207 /* Info.plist */,
 				F3E011AC2367EEED0086C207 /* AppDelegate.swift */,
 				F3E011AE2367EEED0086C207 /* SceneDelegate.swift */,
-				F3E011B02367EEED0086C207 /* ContentView.swift */,
 				F3E011B22367EEEE0086C207 /* Assets.xcassets */,
+				F3E011EA236A447E0086C207 /* Data */,
 				F3E011B72367EEEE0086C207 /* LaunchScreen.storyboard */,
-				F3E011BA2367EEEE0086C207 /* Info.plist */,
 				F3E011B42367EEEE0086C207 /* Preview Content */,
+				F3E011ED236A449E0086C207 /* Reusables */,
+				F3E011EE236A44A40086C207 /* Scenes */,
 			);
 			path = Spendy;
 			sourceTree = "<group>";
@@ -71,8 +89,77 @@
 			isa = PBXGroup;
 			children = (
 				F3E011B52367EEEE0086C207 /* Preview Assets.xcassets */,
+				F3E011FB236A56AC0086C207 /* SampleData.swift */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F3E011EA236A447E0086C207 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3E011EC236A44990086C207 /* Models */,
+				F3E011EB236A44910086C207 /* State */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F3E011EB236A44910086C207 /* State */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		F3E011EC236A44990086C207 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3E011F4236A4EF80086C207 /* ExpenseItem */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F3E011ED236A449E0086C207 /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				F3E011FF236A6A480086C207 /* Formatters */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		F3E011EE236A44A40086C207 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F3E011EF236A46B80086C207 /* Expenses */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F3E011EF236A46B80086C207 /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				F3E011FD236A60440086C207 /* AddExpenseView.swift */,
+				F3E011F9236A4F4E0086C207 /* ExpensesListContainerView.swift */,
+				F3E011F0236A47040086C207 /* ExpensesListView.swift */,
+				F3E011F7236A4F360086C207 /* ExpensesListViewModel.swift */,
+			);
+			path = Expenses;
+			sourceTree = "<group>";
+		};
+		F3E011F4236A4EF80086C207 /* ExpenseItem */ = {
+			isa = PBXGroup;
+			children = (
+				F3E011F2236A4C920086C207 /* ExpenseItem.swift */,
+				F3E011F5236A4F090086C207 /* ExpenseItem+Category.swift */,
+			);
+			path = ExpenseItem;
+			sourceTree = "<group>";
+		};
+		F3E011FF236A6A480086C207 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				F3E01200236A6A6D0086C207 /* NumberFormatters.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +178,9 @@
 			dependencies = (
 			);
 			name = Spendy;
+			packageProductDependencies = (
+				F3E01203236A77580086C207 /* Burritos */,
+			);
 			productName = Spendy;
 			productReference = F3E011A92367EEED0086C207 /* Spendy.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +209,9 @@
 				Base,
 			);
 			mainGroup = F3E011A02367EEEC0086C207;
+			packageReferences = (
+				F3E01202236A77580086C207 /* XCRemoteSwiftPackageReference "Burritos" */,
+			);
 			productRefGroup = F3E011AA2367EEED0086C207 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,9 +239,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3E011FE236A60440086C207 /* AddExpenseView.swift in Sources */,
+				F3E011F1236A47040086C207 /* ExpensesListView.swift in Sources */,
+				F3E011F8236A4F360086C207 /* ExpensesListViewModel.swift in Sources */,
+				F3E011F6236A4F090086C207 /* ExpenseItem+Category.swift in Sources */,
+				F3E011FA236A4F4E0086C207 /* ExpensesListContainerView.swift in Sources */,
 				F3E011AD2367EEED0086C207 /* AppDelegate.swift in Sources */,
 				F3E011AF2367EEED0086C207 /* SceneDelegate.swift in Sources */,
-				F3E011B12367EEED0086C207 /* ContentView.swift in Sources */,
+				F3E011F3236A4C920086C207 /* ExpenseItem.swift in Sources */,
+				F3E011FC236A56AC0086C207 /* SampleData.swift in Sources */,
+				F3E01201236A6A6D0086C207 /* NumberFormatters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +442,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3E01202236A77580086C207 /* XCRemoteSwiftPackageReference "Burritos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/guillermomuntaner/Burritos.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3E01203236A77580086C207 /* Burritos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3E01202236A77580086C207 /* XCRemoteSwiftPackageReference "Burritos" */;
+			productName = Burritos;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F3E011A12367EEEC0086C207 /* Project object */;
 }

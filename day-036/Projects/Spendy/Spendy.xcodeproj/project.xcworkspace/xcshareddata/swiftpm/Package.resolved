@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Burritos",
+        "repositoryURL": "https://github.com/guillermomuntaner/Burritos.git",
+        "state": {
+          "branch": null,
+          "revision": "309dbe1b5b3af8839ca6a7ebb2ad6ddf041bf420",
+          "version": "0.0.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
