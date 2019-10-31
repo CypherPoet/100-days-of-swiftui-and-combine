@@ -11,23 +11,9 @@ import SwiftUI
 
 struct AddExpenseView: View {
     @Environment(\.presentationMode) var presentationMode
-    
-    // Ideally, we'd have a view-model ObservableObject publish these and handle
-    // validation logic.
-    @State private var expenseName: String = ""
-    @State private var satoshis: Double? = nil
-    @State private var category: ExpenseItem.Category = .coffee
-    
+    @ObservedObject private var viewModel = AddExpenseViewModel()
+
     var save: ((ExpenseItem) -> Void)
-}
-
-
-// MARK: - Computeds
-extension AddExpenseView {
-    
-    private var newExpenseItem: ExpenseItem {
-        .init(name: expenseName, category: category, satoshis: satoshis ?? 0)
-    }
 }
 
 
@@ -37,21 +23,25 @@ extension AddExpenseView {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Name")) {
-                    TextField("Expense Name", text: $expenseName)
+                Section(
+                    header: Text("Name"),
+                    footer: Text(viewModel.nameErrorMessage ?? "")
+                        .foregroundColor(.red)
+                ) {
+                    TextField("Expense Name", text: $viewModel.expenseName)
                 }
                 
                 
                 Section(header: Text("Category")) {
                     VStack(spacing: 14.0) {
-                        Picker("Category", selection: $category) {
+                        Picker("Category", selection: $viewModel.category) {
                             ForEach(ExpenseItem.Category.allCases, id: \.self) { category in
                                 Image(systemName: category.systemImageName)
                             }
                         }
                         .pickerStyle(SegmentedPickerStyle())
                         
-                        Text(category.displayName)
+                        Text(viewModel.category.displayName)
                             .font(.headline)
                             .fontWeight(.bold)
                     }
@@ -59,8 +49,12 @@ extension AddExpenseView {
                 }
                 
                 
-                Section(header: Text("Amount")) {
-                    TextField("Amount of satoshis spent", value: $satoshis, formatter: NumberFormatters.satoshis)
+                Section(
+                    header: Text("Amount"),
+                    footer: Text(viewModel.satoshisErrorMessage ?? "")
+                        .foregroundColor(.red)
+                ) {
+                    TextField("Amount of satoshis spent", text: $viewModel.amountText)
                         .keyboardType(.numberPad)
                 }
             }
@@ -76,11 +70,16 @@ extension AddExpenseView {
 
     private var saveButton: some View {
         Button(action: {
-            self.save(self.newExpenseItem)
+            guard let newExpenseItem = self.viewModel.newExpenseItem else {
+                preconditionFailure()
+            }
+            
+            self.save(newExpenseItem)
             self.presentationMode.wrappedValue.dismiss()
         }) {
             Text("Save")
         }
+        .disabled(!viewModel.isFormValid)
     }
 }
 

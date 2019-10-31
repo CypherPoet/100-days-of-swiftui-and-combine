@@ -53,11 +53,11 @@ extension ExpenseItem {
             case .coffee:
                 return .orange
             case .food:
-                return .yellow
+                return .pink
             case .books:
                 return .purple
             case .tools:
-                return .blue
+                return .green
             }
         }
     }
