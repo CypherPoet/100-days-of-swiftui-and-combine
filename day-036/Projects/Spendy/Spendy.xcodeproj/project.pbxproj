@@ -21,6 +21,7 @@
 		F3E011FE236A60440086C207 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E011FD236A60440086C207 /* AddExpenseView.swift */; };
 		F3E01201236A6A6D0086C207 /* NumberFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E01200236A6A6D0086C207 /* NumberFormatters.swift */; };
 		F3E01204236A77580086C207 /* Burritos in Frameworks */ = {isa = PBXBuildFile; productRef = F3E01203236A77580086C207 /* Burritos */; };
+		F3E01206236AA9580086C207 /* ExpenseListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E01205236AA9580086C207 /* ExpenseListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		F3E011FB236A56AC0086C207 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		F3E011FD236A60440086C207 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
 		F3E01200236A6A6D0086C207 /* NumberFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatters.swift; sourceTree = "<group>"; };
+		F3E01205236AA9580086C207 /* ExpenseListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				F3E011FD236A60440086C207 /* AddExpenseView.swift */,
 				F3E011F9236A4F4E0086C207 /* ExpensesListContainerView.swift */,
 				F3E011F0236A47040086C207 /* ExpensesListView.swift */,
+				F3E01205236AA9580086C207 /* ExpenseListItemView.swift */,
 				F3E011F7236A4F360086C207 /* ExpensesListViewModel.swift */,
 			);
 			path = Expenses;
@@ -248,6 +251,7 @@
 				F3E011AF2367EEED0086C207 /* SceneDelegate.swift in Sources */,
 				F3E011F3236A4C920086C207 /* ExpenseItem.swift in Sources */,
 				F3E011FC236A56AC0086C207 /* SampleData.swift in Sources */,
+				F3E01206236AA9580086C207 /* ExpenseListItemView.swift in Sources */,
 				F3E01201236A6A6D0086C207 /* NumberFormatters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,7 +22,7 @@ extension ExpensesListView {
     var body: some View {
         List {
             ForEach(viewModel.expenses) { expenseItem in
-                ExpenseItemView(expenseItem: expenseItem)
+                ExpenseListItemView(expenseItem: expenseItem)
             }
             .onDelete(perform: removeItems(at:))
         }
@@ -65,30 +65,5 @@ struct ExpensesList_Previews: PreviewProvider {
             onAddExpense: {}
         )
         .accentColor(.pink)
-    }
-}
-
-
-struct ExpenseItemView: View {
-    let expenseItem: ExpenseItem
-    
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text("\(expenseItem.name)")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                
-                Text(expenseItem.category.displayName)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-            }
-            
-            Spacer()
-            
-            
-            Text("\(NumberFormatters.satoshis.string(from: expenseItem.satoshis as NSNumber) ?? "") sat")
-                .foregroundColor(.secondary)
-        }
     }
 }

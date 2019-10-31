@@ -20,7 +20,6 @@ struct ExpensesListContainerView: View {
 extension ExpensesListContainerView {
 
     var body: some View {
-        
         NavigationView {
             ExpensesListView(
                 viewModel: viewModel,

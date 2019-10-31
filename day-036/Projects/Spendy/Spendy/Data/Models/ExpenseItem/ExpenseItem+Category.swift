@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 
 
@@ -40,9 +41,23 @@ extension ExpenseItem {
             case .food:
                 return "hare"
             case .books:
-                return "book.circle"
+                return "book"
             case .tools:
                 return "wrench"
+            }
+        }
+        
+        
+        var iconColor: Color {
+            switch self {
+            case .coffee:
+                return .orange
+            case .food:
+                return .yellow
+            case .books:
+                return .purple
+            case .tools:
+                return .blue
             }
         }
     }
