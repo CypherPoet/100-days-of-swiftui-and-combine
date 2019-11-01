@@ -65,12 +65,46 @@ extension AddExpenseViewModel {
     }
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     private var isNameEmptyPublisher: AnyPublisher<Bool, Never> {
         nameTextPublisher
             .dropFirst()
             .map { $0.isEmpty }
             .eraseToAnyPublisher()
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     private var isAmountEmptyPublisher: AnyPublisher<Bool, Never> {
@@ -214,7 +248,7 @@ private extension AddExpenseViewModel {
             .map { validation in
                 switch validation {
                 case .empty:
-                    return "Value can not be empty"
+                    return "This field can't be empty"
                 case .valid:
                     return nil
                 }
