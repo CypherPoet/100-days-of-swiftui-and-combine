@@ -42,10 +42,11 @@ Cheers! ✌️
 - **Day 36:** [_Project 7: iExpense_ (Part One)](./day-036/)
 - **Day 37:** [_Project 7: iExpense_ (Part Two)](./day-037/)
 - **Day 38:** [_Project 7: iExpense_ (Part Three)](./day-038/)
+- **Day 39:** [_Project 8: Moonshot_ (Part One)](./day-039/)
 
 </details>
 
-- **Day 39:** [_Project 8: Moonshot_ (Part One)](./day-039/)
+- **Day 40:** [_Project 8: Moonshot_ (Part Two)](./day-040/)
 
 
 
