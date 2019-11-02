@@ -3,27 +3,51 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		F3AE83CB236C2E610017AF2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE83CA236C2E610017AF2C /* AppDelegate.swift */; };
 		F3AE83CD236C2E610017AF2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE83CC236C2E610017AF2C /* SceneDelegate.swift */; };
-		F3AE83CF236C2E610017AF2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE83CE236C2E610017AF2C /* ContentView.swift */; };
 		F3AE83D1236C2E620017AF2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3AE83D0236C2E620017AF2C /* Assets.xcassets */; };
 		F3AE83D4236C2E620017AF2C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3AE83D3236C2E620017AF2C /* Preview Assets.xcassets */; };
 		F3AE83D7236C2E620017AF2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3AE83D5236C2E620017AF2C /* LaunchScreen.storyboard */; };
+		F3AE83F7236D6E540017AF2C /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE83F6236D6E540017AF2C /* Astronaut.swift */; };
+		F3AE83FA236D71BE0017AF2C /* CypherPoetCore.FileSystem in Frameworks */ = {isa = PBXBuildFile; productRef = F3AE83F9236D71BE0017AF2C /* CypherPoetCore.FileSystem */; };
+		F3AE83FD236D741D0017AF2C /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = F3AE83FB236D741C0017AF2C /* missions.json */; };
+		F3AE83FE236D741D0017AF2C /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = F3AE83FC236D741D0017AF2C /* astronauts.json */; };
+		F3AE8400236D74870017AF2C /* Mission+CrewMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE83FF236D74870017AF2C /* Mission+CrewMember.swift */; };
+		F3AE8402236D74950017AF2C /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE8401236D74950017AF2C /* Mission.swift */; };
+		F3AE8406236D796A0017AF2C /* MissionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE8405236D796A0017AF2C /* MissionState.swift */; };
+		F3AE8409236D79A40017AF2C /* CypherPoetSwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3AE8408236D79A40017AF2C /* CypherPoetSwiftUIKit */; };
+		F3AE840B236DA3030017AF2C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE840A236DA3030017AF2C /* AppState.swift */; };
+		F3AE840D236DA7550017AF2C /* MissionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE840C236DA7550017AF2C /* MissionsListView.swift */; };
+		F3AE8410236DA8370017AF2C /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE840F236DA8370017AF2C /* SampleData.swift */; };
+		F3AE8413236DB3BA0017AF2C /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE8412236DB3BA0017AF2C /* DataLoader.swift */; };
+		F3AE8417236DC1A30017AF2C /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE8416236DC1A30017AF2C /* DateFormatters.swift */; };
+		F3AE841A236DC1F40017AF2C /* MissionDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE8419236DC1F40017AF2C /* MissionDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F3AE83C7236C2E610017AF2C /* Moonshot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonshot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3AE83CA236C2E610017AF2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3AE83CC236C2E610017AF2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3AE83CE236C2E610017AF2C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F3AE83D0236C2E620017AF2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3AE83D3236C2E620017AF2C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3AE83D6236C2E620017AF2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3AE83D8236C2E620017AF2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3AE83F6236D6E540017AF2C /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
+		F3AE83FB236D741C0017AF2C /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = missions.json; path = Resources/Data/missions.json; sourceTree = SOURCE_ROOT; };
+		F3AE83FC236D741D0017AF2C /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = astronauts.json; path = Resources/Data/astronauts.json; sourceTree = SOURCE_ROOT; };
+		F3AE83FF236D74870017AF2C /* Mission+CrewMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mission+CrewMember.swift"; sourceTree = "<group>"; };
+		F3AE8401236D74950017AF2C /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		F3AE8405236D796A0017AF2C /* MissionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionState.swift; sourceTree = "<group>"; };
+		F3AE840A236DA3030017AF2C /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F3AE840C236DA7550017AF2C /* MissionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsListView.swift; sourceTree = "<group>"; };
+		F3AE840F236DA8370017AF2C /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		F3AE8412236DB3BA0017AF2C /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		F3AE8416236DC1A30017AF2C /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
+		F3AE8419236DC1F40017AF2C /* MissionDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3AE8409236D79A40017AF2C /* CypherPoetSwiftUIKit in Frameworks */,
+				F3AE83FA236D71BE0017AF2C /* CypherPoetCore.FileSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,13 +82,15 @@
 		F3AE83C9236C2E610017AF2C /* Moonshot */ = {
 			isa = PBXGroup;
 			children = (
+				F3AE83D8236C2E620017AF2C /* Info.plist */,
 				F3AE83CA236C2E610017AF2C /* AppDelegate.swift */,
 				F3AE83CC236C2E610017AF2C /* SceneDelegate.swift */,
-				F3AE83CE236C2E610017AF2C /* ContentView.swift */,
-				F3AE83D0236C2E620017AF2C /* Assets.xcassets */,
+				F3AE83F3236D6BCF0017AF2C /* Data */,
 				F3AE83D5236C2E620017AF2C /* LaunchScreen.storyboard */,
-				F3AE83D8236C2E620017AF2C /* Info.plist */,
 				F3AE83D2236C2E620017AF2C /* Preview Content */,
+				F3AE83F2236D6BC70017AF2C /* Resources */,
+				F3AE8414236DC17B0017AF2C /* Reusables */,
+				F3AE83F5236D6BDF0017AF2C /* Scenes */,
 			);
 			path = Moonshot;
 			sourceTree = "<group>";
@@ -70,9 +98,106 @@
 		F3AE83D2236C2E620017AF2C /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				F3AE840E236DA7C50017AF2C /* Sample Data */,
 				F3AE83D3236C2E620017AF2C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F3AE83F2236D6BC70017AF2C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE83FC236D741D0017AF2C /* astronauts.json */,
+				F3AE83FB236D741C0017AF2C /* missions.json */,
+				F3AE83D0236C2E620017AF2C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F3AE83F3236D6BCF0017AF2C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE83F4236D6BDB0017AF2C /* Models */,
+				F3AE8411236DB3A70017AF2C /* Services */,
+				F3AE8404236D79560017AF2C /* State */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F3AE83F4236D6BDB0017AF2C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE83F6236D6E540017AF2C /* Astronaut.swift */,
+				F3AE83FF236D74870017AF2C /* Mission+CrewMember.swift */,
+				F3AE8401236D74950017AF2C /* Mission.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F3AE83F5236D6BDF0017AF2C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE8403236D76280017AF2C /* Missions */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F3AE8403236D76280017AF2C /* Missions */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE840C236DA7550017AF2C /* MissionsListView.swift */,
+			);
+			path = Missions;
+			sourceTree = "<group>";
+		};
+		F3AE8404236D79560017AF2C /* State */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE8405236D796A0017AF2C /* MissionState.swift */,
+				F3AE840A236DA3030017AF2C /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		F3AE840E236DA7C50017AF2C /* Sample Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE840F236DA8370017AF2C /* SampleData.swift */,
+			);
+			path = "Sample Data";
+			sourceTree = "<group>";
+		};
+		F3AE8411236DB3A70017AF2C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE8412236DB3BA0017AF2C /* DataLoader.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F3AE8414236DC17B0017AF2C /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE8418236DC1E80017AF2C /* Decoders */,
+				F3AE8415236DC1850017AF2C /* Formatters */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		F3AE8415236DC1850017AF2C /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE8416236DC1A30017AF2C /* DateFormatters.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		F3AE8418236DC1E80017AF2C /* Decoders */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE8419236DC1F40017AF2C /* MissionDecoder.swift */,
+			);
+			path = Decoders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +216,10 @@
 			dependencies = (
 			);
 			name = Moonshot;
+			packageProductDependencies = (
+				F3AE83F9236D71BE0017AF2C /* CypherPoetCore.FileSystem */,
+				F3AE8408236D79A40017AF2C /* CypherPoetSwiftUIKit */,
+			);
 			productName = Moonshot;
 			productReference = F3AE83C7236C2E610017AF2C /* Moonshot.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +248,10 @@
 				Base,
 			);
 			mainGroup = F3AE83BE236C2E610017AF2C;
+			packageReferences = (
+				F3AE83F8236D71BE0017AF2C /* XCRemoteSwiftPackageReference "CypherPoetCore" */,
+				F3AE8407236D79A40017AF2C /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
+			);
 			productRefGroup = F3AE83C8236C2E610017AF2C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -135,6 +268,8 @@
 			files = (
 				F3AE83D7236C2E620017AF2C /* LaunchScreen.storyboard in Resources */,
 				F3AE83D4236C2E620017AF2C /* Preview Assets.xcassets in Resources */,
+				F3AE83FD236D741D0017AF2C /* missions.json in Resources */,
+				F3AE83FE236D741D0017AF2C /* astronauts.json in Resources */,
 				F3AE83D1236C2E620017AF2C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,9 +281,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3AE8413236DB3BA0017AF2C /* DataLoader.swift in Sources */,
+				F3AE8406236D796A0017AF2C /* MissionState.swift in Sources */,
+				F3AE8400236D74870017AF2C /* Mission+CrewMember.swift in Sources */,
+				F3AE841A236DC1F40017AF2C /* MissionDecoder.swift in Sources */,
+				F3AE840B236DA3030017AF2C /* AppState.swift in Sources */,
+				F3AE8417236DC1A30017AF2C /* DateFormatters.swift in Sources */,
+				F3AE83F7236D6E540017AF2C /* Astronaut.swift in Sources */,
 				F3AE83CB236C2E610017AF2C /* AppDelegate.swift in Sources */,
+				F3AE840D236DA7550017AF2C /* MissionsListView.swift in Sources */,
+				F3AE8402236D74950017AF2C /* Mission.swift in Sources */,
+				F3AE8410236DA8370017AF2C /* SampleData.swift in Sources */,
 				F3AE83CD236C2E610017AF2C /* SceneDelegate.swift in Sources */,
-				F3AE83CF236C2E610017AF2C /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +486,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3AE83F8236D71BE0017AF2C /* XCRemoteSwiftPackageReference "CypherPoetCore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetCore.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.18;
+			};
+		};
+		F3AE8407236D79A40017AF2C /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.21;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3AE83F9236D71BE0017AF2C /* CypherPoetCore.FileSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3AE83F8236D71BE0017AF2C /* XCRemoteSwiftPackageReference "CypherPoetCore" */;
+			productName = CypherPoetCore.FileSystem;
+		};
+		F3AE8408236D79A40017AF2C /* CypherPoetSwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3AE8407236D79A40017AF2C /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */;
+			productName = CypherPoetSwiftUIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F3AE83BF236C2E610017AF2C /* Project object */;
 }
