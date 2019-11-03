@@ -26,20 +26,8 @@ extension MissionsListView {
     var body: some View {
         NavigationView {
             List(missions) { mission in
-                NavigationLink(destination: Text("Detail View")) {
-                    Image(mission.imageName)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 44, height: 44)
-                    
-                    VStack(alignment: .leading) {
-                        Text("\(mission.displayName)")
-                            .font(.headline)
-                        
-                        Text("Launch Date: \(mission.formattedLaunchDate)")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
+                NavigationLink(destination: MissionDetailsView(mission: mission)) {
+                    MissionsListItemRow(mission: mission)
                 }
             }
             .navigationBarTitle("Missions")
