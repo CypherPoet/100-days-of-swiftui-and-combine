@@ -1,5 +1,5 @@
 //
-//  MissionState.swift
+//  MissionsState.swift
 //  Moonshot
 //
 //  Created by CypherPoet on 11/2/19.
@@ -33,13 +33,13 @@ enum MissionAction {
 
 
 
-struct MissionState {
+struct MissionsState {
     var missions: [Mission] = []
 }
 
 
 // MARK: - Reducer
-let missionReducer = Reducer<MissionState, MissionAction> { state, action in
+let missionReducer = Reducer<MissionsState, MissionAction> { state, action in
     switch action {
     case let .setMissions(missions):
         state.missions = missions

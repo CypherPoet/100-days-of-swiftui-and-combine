@@ -16,7 +16,7 @@ struct MissionsListView: View {
 
 // MARK: - Computeds
 extension MissionsListView {
-    var missions: [Mission] { store.state.missionState.missions }
+    var missions: [Mission] { store.state.missionsState.missions }
 }
 
 
@@ -26,7 +26,7 @@ extension MissionsListView {
     var body: some View {
         NavigationView {
             List(missions) { mission in
-                NavigationLink(destination: MissionDetailsView(mission: mission)) {
+                NavigationLink(destination: MissionDetailsContainerView(mission: mission)) {
                     MissionsListItemRow(mission: mission)
                 }
             }

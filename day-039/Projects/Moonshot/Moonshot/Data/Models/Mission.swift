@@ -17,6 +17,7 @@ struct Mission: Identifiable {
 }
 
 extension Mission: Codable {}
+extension Mission: Hashable {}
 
 
 // MARK: - Computeds

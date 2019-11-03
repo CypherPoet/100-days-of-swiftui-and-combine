@@ -30,6 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 .environmentObject(store)
                 .accentColor(.purple)
                 .onAppear {
+                    store.send(AstronautSideEffect.loadAstronauts)
                     store.send(MissionSideEffect.loadMissions)
                 }
             

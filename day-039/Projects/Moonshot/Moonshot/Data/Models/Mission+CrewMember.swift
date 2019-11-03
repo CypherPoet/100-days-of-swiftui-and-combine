@@ -19,3 +19,4 @@ extension Mission {
 
 
 extension Mission.CrewMember: Codable {}
+extension Mission.CrewMember: Hashable {}

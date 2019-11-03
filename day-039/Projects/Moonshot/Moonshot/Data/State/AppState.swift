@@ -14,13 +14,15 @@ import CypherPoetSwiftUIKit_DataFlowUtils
 
 
 enum AppAction {
+    case astronaut(_ astronautAction: AstronautAction)
     case mission(_ missionAction: MissionAction)
 }
 
 
 
 struct AppState {
-    var missionState = MissionState()
+    var astronautsState = AstronautsState()
+    var missionsState = MissionsState()
 }
 
 
@@ -28,7 +30,9 @@ struct AppState {
 let appReducer = Reducer<AppState, AppAction> { appState, action in
     switch action {
     case let .mission(action):
-        missionReducer.reduce(&appState.missionState, action)
+        missionReducer.reduce(&appState.missionsState, action)
+    case let .astronaut(action):
+        astronautReducer.reduce(&appState.astronautsState, action)
     }
 }
 
