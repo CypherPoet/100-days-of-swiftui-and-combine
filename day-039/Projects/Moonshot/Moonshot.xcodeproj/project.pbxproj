@@ -31,6 +31,7 @@
 		F3E53669236F0A4400C512B8 /* MissionDetailsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E53668236F0A4400C512B8 /* MissionDetailsContainerView.swift */; };
 		F3E5366B236F123200C512B8 /* AstronautsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E5366A236F123200C512B8 /* AstronautsState.swift */; };
 		F3E5366D236F14A700C512B8 /* MissionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E5366C236F14A700C512B8 /* MissionDetailsView.swift */; };
+		F3E53670236F2C4C00C512B8 /* CrewMemberDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E5366F236F2C4C00C512B8 /* CrewMemberDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		F3E53668236F0A4400C512B8 /* MissionDetailsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsContainerView.swift; sourceTree = "<group>"; };
 		F3E5366A236F123200C512B8 /* AstronautsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautsState.swift; sourceTree = "<group>"; };
 		F3E5366C236F14A700C512B8 /* MissionDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionDetailsView.swift; sourceTree = "<group>"; };
+		F3E5366F236F2C4C00C512B8 /* CrewMemberDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMemberDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,9 +157,9 @@
 		F3AE8403236D76280017AF2C /* Missions */ = {
 			isa = PBXGroup;
 			children = (
-				F3E53665236F086400C512B8 /* Mission Details */,
-				F3AE840C236DA7550017AF2C /* MissionsListView.swift */,
 				F3E53661236EF78C00C512B8 /* MissionsListItemRow.swift */,
+				F3AE840C236DA7550017AF2C /* MissionsListView.swift */,
+				F3E53665236F086400C512B8 /* Mission Details */,
 			);
 			path = Missions;
 			sourceTree = "<group>";
@@ -216,11 +218,20 @@
 		F3E53665236F086400C512B8 /* Mission Details */ = {
 			isa = PBXGroup;
 			children = (
-				F3E5366C236F14A700C512B8 /* MissionDetailsView.swift */,
+				F3E5366E236F2C2E00C512B8 /* Crew Member Details */,
 				F3E53668236F0A4400C512B8 /* MissionDetailsContainerView.swift */,
+				F3E5366C236F14A700C512B8 /* MissionDetailsView.swift */,
 				F3E53666236F088E00C512B8 /* MissionDetailsViewModel.swift */,
 			);
 			path = "Mission Details";
+			sourceTree = "<group>";
+		};
+		F3E5366E236F2C2E00C512B8 /* Crew Member Details */ = {
+			isa = PBXGroup;
+			children = (
+				F3E5366F236F2C4C00C512B8 /* CrewMemberDetails.swift */,
+			);
+			path = "Crew Member Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +328,7 @@
 				F3E53667236F088E00C512B8 /* MissionDetailsViewModel.swift in Sources */,
 				F3E53662236EF78C00C512B8 /* MissionsListItemRow.swift in Sources */,
 				F3AE8402236D74950017AF2C /* Mission.swift in Sources */,
+				F3E53670236F2C4C00C512B8 /* CrewMemberDetails.swift in Sources */,
 				F3AE8410236DA8370017AF2C /* SampleData.swift in Sources */,
 				F3E5366D236F14A700C512B8 /* MissionDetailsView.swift in Sources */,
 				F3E5366B236F123200C512B8 /* AstronautsState.swift in Sources */,

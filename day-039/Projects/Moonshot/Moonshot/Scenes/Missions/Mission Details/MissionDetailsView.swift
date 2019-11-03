@@ -19,7 +19,6 @@ struct MissionDetailsView: View {
 // MARK: - Computeds
 extension MissionDetailsView {
 
-
 }
 
 
@@ -64,23 +63,36 @@ extension MissionDetailsView {
     private var crewDetails: some View {
         VStack(spacing: 12.0) {
             ForEach(viewModel.astronautsByRole, id: \.1) { (role, astronaut) in
-                HStack {
-                    Image(astronaut.imageName)
-                        .resizable()
-                        .frame(width: 83, height: 60)
-                        .clipShape(Capsule())
-                        .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
-                    
-                    VStack(alignment: .leading) {
-                        Text(astronaut.name)
-                            .font(.headline)
-                        Text(role)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
-                    
-                    Spacer()
+                NavigationLink(destination: CrewMemberDetails(astronaut: astronaut, role: role)) {
+                    CrewMemberItem(astronaut: astronaut, role: role)
                 }
+                .buttonStyle(PlainButtonStyle())
+            }
+        }
+    }
+    
+    
+    private struct CrewMemberItem: View {
+        let astronaut: Astronaut
+        let role: String
+        
+        var body: some View {
+            HStack {
+                Image(astronaut.imageName)
+                    .resizable()
+                    .frame(width: 83, height: 60)
+                    .clipShape(Capsule())
+                    .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
+                
+                VStack(alignment: .leading) {
+                    Text(astronaut.name)
+                        .font(.headline)
+                    Text(role)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                
+                Spacer()
             }
         }
     }
@@ -106,3 +118,5 @@ struct MissionDetailsView_Previews: PreviewProvider {
         .environmentObject(store)
     }
 }
+
+
