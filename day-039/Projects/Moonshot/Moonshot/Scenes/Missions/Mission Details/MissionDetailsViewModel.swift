@@ -48,4 +48,11 @@ extension MissionDetailsViewModel {
             return (crewMember.role, astronaut)
         }
     }
+    
+    
+    var missionLaunchDateText: String? {
+        guard mission.launchDate != nil else { return nil }
+        
+        return "🚀 \(mission.formattedLaunchDate)"
+    }
 }

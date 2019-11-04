@@ -27,13 +27,11 @@ extension MissionDetailsView {
 
     var body: some View {
         ScrollView(.vertical) {
-            VStack {
+            VStack(spacing: 20) {
+                
                 badgeImage
                 
-                Text(viewModel.missionDescription)
-                    .padding()
-                
-                Spacer(minLength: 25)
+                descriptionSection
                 
                 Text("Crew")
                     .font(.largeTitle)
@@ -42,6 +40,8 @@ extension MissionDetailsView {
                 
                 crewDetails
                     .padding(.horizontal)
+    
+                Spacer(minLength: 25)
             }
             .padding()
         }
@@ -57,6 +57,20 @@ extension MissionDetailsView {
             .resizable()
             .scaledToFit()
             .frame(maxWidth: geometry.size.width * 0.7)
+    }
+    
+    
+    private var descriptionSection: some View {
+        VStack(spacing: 14) {
+            if viewModel.missionLaunchDateText != nil {
+                Text(viewModel.missionLaunchDateText!)
+                    .font(.title)
+                    .fontWeight(.semibold)
+            }
+            
+            Text(viewModel.missionDescription)
+                .padding()
+        }
     }
     
     
@@ -110,7 +124,7 @@ struct MissionDetailsView_Previews: PreviewProvider {
             MissionDetailsView(
                 viewModel: MissionDetailsViewModel(
                     store: store,
-                    mission: store.state.missionsState.missions[0]
+                    mission: store.state.missionsState.missions[1]
                 ),
                 geometry: geometry
             )
