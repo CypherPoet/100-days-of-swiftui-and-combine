@@ -44,10 +44,11 @@ Cheers! ✌️
 - **Day 38:** [_Project 7: iExpense_ (Part Three)](./day-038/)
 - **Day 39:** [_Project 8: Moonshot_ (Part One)](./day-039/)
 - **Day 40:** [_Project 8: Moonshot_ (Part Two)](./day-040/)
+- **Day 41:** [_Project 8: Moonshot_ (Part Three)](./day-041/)
 
 </details>
 
-- **Day 41:** [_Project 8: Moonshot_ (Part Three)](./day-041/)
+- **Day 42:** [_Project 8: Moonshot_ (Part Four)](./day-042/)
 
 
 
@@ -110,5 +111,12 @@ Cheers! ✌️
 
 <div style="text-align: center;">
   <img src="./day-036/Projects/Spendy/Screenshots/day-38-recording.gif" width="300px"/>
+</div>
+
+
+- [Project 8: Moonshot)](./day-39/Projects/Moonshot)
+
+<div style="text-align: center;">
+  <img src="./day-039/Projects/Moonshot/Screenshots/day-42-recording-1.gif" width="300px"/>
 </div>
 
