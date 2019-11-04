@@ -11,12 +11,27 @@ import SwiftUI
 
 struct MissionsListView: View {
     @EnvironmentObject var store: AppStore
+    
+    @State private var itemDisplayMode: MissionsListItemRow.DisplayMode = .launchDate
 }
 
 
 // MARK: - Computeds
 extension MissionsListView {
     var missions: [Mission] { store.state.missionsState.missions }
+    
+    var itemDisplayModeButtonTitle: String {
+        switch itemDisplayMode {
+        case .crew:
+            return "Show Launch Dates"
+        case .launchDate:
+            // 📝 The extra left padding is a hack to prevent the text from
+            // drifting leftwards after the longer "Show Launch Dates" text
+            // is rendered, and then toggled back to "Show Crew" again.
+            // Would love to know of a cleaner solution here 🙂.
+            return "           Show Crew"
+        }
+    }
 }
 
 
@@ -27,10 +42,11 @@ extension MissionsListView {
         NavigationView {
             List(missions) { mission in
                 NavigationLink(destination: MissionDetailsContainerView(mission: mission)) {
-                    MissionsListItemRow(mission: mission)
+                    MissionsListItemRow(mission: mission, displayMode: self.itemDisplayMode)
                 }
             }
             .navigationBarTitle("Missions")
+            .navigationBarItems(trailing: displayModeButton)
         }
     }
 }
@@ -39,7 +55,13 @@ extension MissionsListView {
 // MARK: - View Variables
 extension MissionsListView {
 
-
+    var displayModeButton: some View {
+        Button(action: {
+            self.itemDisplayMode = self.itemDisplayMode == .launchDate ? .crew : .launchDate
+        }, label: {
+            Text(self.itemDisplayModeButtonTitle)
+        })
+    }
 }
 
 

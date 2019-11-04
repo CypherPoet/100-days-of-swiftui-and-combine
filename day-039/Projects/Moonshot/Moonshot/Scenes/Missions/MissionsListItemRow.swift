@@ -11,13 +11,47 @@ import SwiftUI
 
 struct MissionsListItemRow: View {
     let mission: Mission
+    let displayMode: DisplayMode
+    
+    
+    init(
+        mission: Mission,
+        displayMode: DisplayMode = .launchDate
+    ) {
+        self.mission = mission
+        self.displayMode = displayMode
+    }
+}
+
+
+// MARK: - DisplayMode
+extension MissionsListItemRow {
+    enum DisplayMode {
+        case launchDate
+        case crew
+    }
 }
 
 
 // MARK: - Computeds
 extension MissionsListItemRow {
 
-
+    private var crewNameString: String {
+        mission.crew
+            .map { $0.name }
+            .joined(separator: ", ")
+            .capitalized
+    }
+    
+    
+    private var subheadlineString: String {
+        switch displayMode {
+        case .crew:
+            return crewNameString
+        case .launchDate:
+            return "Launch Date: \(mission.formattedLaunchDate)"
+        }
+    }
 }
 
 
@@ -35,7 +69,7 @@ extension MissionsListItemRow {
                 Text("\(mission.displayName)")
                     .font(.headline)
                 
-                Text("Launch Date: \(mission.formattedLaunchDate)")
+                Text(subheadlineString)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
@@ -46,8 +80,7 @@ extension MissionsListItemRow {
 
 // MARK: - View Variables
 extension MissionsListItemRow {
-
-
+    
 }
 
 
@@ -56,6 +89,9 @@ extension MissionsListItemRow {
 struct MissionsListItemRow_Previews: PreviewProvider {
 
     static var previews: some View {
-        MissionsListItemRow(mission: generateSampleMissions()[0])
+        Group {
+            MissionsListItemRow(mission: generateSampleMissions()[0], displayMode: .launchDate)
+            MissionsListItemRow(mission: generateSampleMissions()[0], displayMode: .crew)
+        }
     }
 }
