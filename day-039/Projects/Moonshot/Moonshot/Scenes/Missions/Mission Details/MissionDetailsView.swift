@@ -10,7 +10,8 @@ import SwiftUI
 
 
 struct MissionDetailsView: View {
-    @ObservedObject private(set) var viewModel: MissionDetailsViewModel
+    @EnvironmentObject private var store: AppStore
+    private(set) var viewModel: MissionDetailsViewModel
     
     let geometry: GeometryProxy
 }
@@ -77,7 +78,16 @@ extension MissionDetailsView {
     private var crewDetails: some View {
         VStack(spacing: 12.0) {
             ForEach(viewModel.astronautsByRole, id: \.1) { (role, astronaut) in
-                NavigationLink(destination: CrewMemberDetails(astronaut: astronaut, role: role)) {
+                NavigationLink(
+                    destination: CrewMemberDetails(
+                        viewModel: CrewMemberDetailsViewModel(
+                            store: self.store,
+                            astronaut: astronaut,
+                            role: role,
+                            mission: self.viewModel.mission
+                        )
+                    )
+                ) {
                     CrewMemberItem(astronaut: astronaut, role: role)
                 }
                 .buttonStyle(PlainButtonStyle())

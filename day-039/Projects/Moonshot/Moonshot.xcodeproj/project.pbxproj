@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F30444A123706FA200DF3F55 /* CrewMemberDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30444A023706FA200DF3F55 /* CrewMemberDetailsViewModel.swift */; };
 		F3AE83CB236C2E610017AF2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE83CA236C2E610017AF2C /* AppDelegate.swift */; };
 		F3AE83CD236C2E610017AF2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE83CC236C2E610017AF2C /* SceneDelegate.swift */; };
 		F3AE83D1236C2E620017AF2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3AE83D0236C2E620017AF2C /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F30444A023706FA200DF3F55 /* CrewMemberDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMemberDetailsViewModel.swift; sourceTree = "<group>"; };
 		F3AE83C7236C2E610017AF2C /* Moonshot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonshot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3AE83CA236C2E610017AF2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3AE83CC236C2E610017AF2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				F3E5366F236F2C4C00C512B8 /* CrewMemberDetails.swift */,
+				F30444A023706FA200DF3F55 /* CrewMemberDetailsViewModel.swift */,
 			);
 			path = "Crew Member Details";
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				F3AE8400236D74870017AF2C /* Mission+CrewMember.swift in Sources */,
 				F3AE841A236DC1F40017AF2C /* MissionDecoder.swift in Sources */,
 				F3AE840B236DA3030017AF2C /* AppState.swift in Sources */,
+				F30444A123706FA200DF3F55 /* CrewMemberDetailsViewModel.swift in Sources */,
 				F3E53669236F0A4400C512B8 /* MissionDetailsContainerView.swift in Sources */,
 				F3AE8417236DC1A30017AF2C /* DateFormatters.swift in Sources */,
 				F3AE83F7236D6E540017AF2C /* Astronaut.swift in Sources */,

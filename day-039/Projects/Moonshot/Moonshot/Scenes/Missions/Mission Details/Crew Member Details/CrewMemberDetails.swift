@@ -10,41 +10,64 @@ import SwiftUI
 
 
 struct CrewMemberDetails: View {
-    let astronaut: Astronaut
-    let role: String
+    private(set) var viewModel: CrewMemberDetailsViewModel
 }
 
 
 // MARK: - Body
 extension CrewMemberDetails {
-
+    
     var body: some View {
-        ScrollView {
-            VStack {
-                Image(self.astronaut.imageName)
+        List {
+            
+            Section {
+                Image(viewModel.astronautImageName)
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: .infinity)
-                
-                Text(astronaut.description)
-                    .padding()
-                    .layoutPriority(1)
-                
-                Spacer()
+                    .edgesIgnoringSafeArea(.horizontal)
             }
-            .navigationBarTitle(astronaut.name)
+            .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+            
+            
+            Section(header: Text(viewModel.roleTitleText)) {
+                Text(viewModel.role)
+                    .padding(.vertical)
+            }
+            
+            
+            if viewModel.otherMissionRoles != nil {
+                Section(header: Text("Other Mission Roles")) {
+                    ForEach(viewModel.otherMissionRoles!, id: \.missionName) { (missionName, role) in
+                        Text("\(missionName):").fontWeight(.bold)
+                            + Text(" \(role)")
+                    }
+                    .padding(.vertical)
+                }
+            }
+            
+            
+            Section(header: Text("Bio")) {
+                Text(viewModel.astronautDescription)
+                    .padding(.vertical)
+            }
         }
+        .navigationBarTitle(viewModel.astronautName)
     }
 }
 
 
 // MARK: - Preview
 struct CrewMemberDetails_Previews: PreviewProvider {
-
+    
     static var previews: some View {
         CrewMemberDetails(
-            astronaut: SampleAstronautsState.default.astronauts[6],
-            role: "Star Fleet Adrimal"
+            viewModel: CrewMemberDetailsViewModel(
+                store: SampleStore.default,
+                astronaut: SampleAstronautsState.default.astronauts[6],
+                role: "Star Fleet Adrimal",
+                mission: SampleMissionsState.default.missions[0]
+            )
         )
     }
 }

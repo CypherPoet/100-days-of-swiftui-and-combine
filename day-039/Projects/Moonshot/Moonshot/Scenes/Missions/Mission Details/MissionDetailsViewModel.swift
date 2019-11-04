@@ -7,12 +7,11 @@
 //
 
 import SwiftUI
-import Combine
 
 
-final class MissionDetailsViewModel: ObservableObject {
+struct MissionDetailsViewModel {
     private let store: AppStore
-    private let mission: Mission
+    let mission: Mission
 
     
     init(
