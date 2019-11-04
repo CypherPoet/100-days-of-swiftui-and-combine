@@ -36,9 +36,9 @@ extension CrewMemberDetails {
             }
             
             
-            if viewModel.otherMissionRoles != nil {
+            if !viewModel.otherMissionRoles.isEmpty {
                 Section(header: Text("Other Mission Roles")) {
-                    ForEach(viewModel.otherMissionRoles!, id: \.missionName) { (missionName, role) in
+                    ForEach(viewModel.otherMissionRoles, id: \.missionName) { (missionName, role) in
                         Text("\(missionName):").fontWeight(.bold)
                             + Text(" \(role)")
                     }

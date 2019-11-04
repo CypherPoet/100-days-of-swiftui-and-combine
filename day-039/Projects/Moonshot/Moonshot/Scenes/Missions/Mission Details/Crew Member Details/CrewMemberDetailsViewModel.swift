@@ -15,6 +15,7 @@ struct CrewMemberDetailsViewModel {
     let astronaut: Astronaut
     let role: String
     let mission: Mission
+    var otherMissionRoles: [(missionName: String, role: String)] = []
     
     
     init(
@@ -27,6 +28,11 @@ struct CrewMemberDetailsViewModel {
         self.astronaut = astronaut
         self.role = role
         self.mission = mission
+        
+        // 📝 Having this run during init allows the data to be pre-loaded
+        // when the view is wrapped as a `NavigationLink` destination in our
+        // Mission Details View
+        self.otherMissionRoles = computeOtherMissionRoles()
     }
 }
 
@@ -44,15 +50,16 @@ extension CrewMemberDetailsViewModel {
     var roleTitleText: String {
         "Role on \(mission.displayName)"
     }
+}
+
+
+private extension CrewMemberDetailsViewModel {
     
-    
-    var otherMissionRoles: [(missionName: String, role: String)]? {
-        let missionsByRole = missionsState.missionsByRole(for: astronaut)
-        
-        guard !missionsByRole.isEmpty else { return nil }
-        
-        return missionsByRole.map { roleMissionPair in
-            (roleMissionPair.mission.displayName, roleMissionPair.role)
+    func computeOtherMissionRoles() -> [(missionName: String, role: String)] {
+        missionsState.missionsByRole(for: astronaut).compactMap { roleMissionPair in
+            guard roleMissionPair.mission != mission else { return nil }
+
+            return (roleMissionPair.mission.displayName, roleMissionPair.role)
         }
     }
 }
