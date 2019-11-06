@@ -26,7 +26,7 @@ extension MainView {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Day 42")) {
+                Section(header: Text("Day 43")) {
                     NavigationLink(destination: TrianglePathExample()) {
                         Text("Basic Triangle Path")
                     }
@@ -35,7 +35,7 @@ extension MainView {
                     }
                 }
                 
-                Section(header: Text("Day 43")) {
+                Section(header: Text("Day 44")) {
                     NavigationLink(destination: RadialFlowerExample()) {
                         Text("CGAffineTransform & Even-Odd Fills")
                     }
