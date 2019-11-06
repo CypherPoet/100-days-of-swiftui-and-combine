@@ -36,9 +36,13 @@ extension MainView {
                 }
                 
                 Section(header: Text("Day 43")) {
-                    NavigationLink(destination: TrianglePathExample()) {
+                    NavigationLink(destination: RadialFlowerExample()) {
                         Text("CGAffineTransform & Even-Odd Fills")
                     }
+                    
+                    NavigationLink(destination: ColorGradientCyclingExample()) {
+                         Text("Activating Metal Rendering")
+                     }
                 }
             }
             .navigationBarTitle("SwiftUI Drawing")
