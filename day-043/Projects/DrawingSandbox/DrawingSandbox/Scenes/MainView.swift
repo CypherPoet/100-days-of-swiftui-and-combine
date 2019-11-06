@@ -26,11 +26,19 @@ extension MainView {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: TrianglePathExample()) {
-                    Text("Basic Triangle Path")
+                Section(header: Text("Day 42")) {
+                    NavigationLink(destination: TrianglePathExample()) {
+                        Text("Basic Triangle Path")
+                    }
+                    NavigationLink(destination: CustomShapesExample()) {
+                        Text("Custom Shapes")
+                    }
                 }
-                NavigationLink(destination: CustomShapesExample()) {
-                    Text("Custom Shapes")
+                
+                Section(header: Text("Day 43")) {
+                    NavigationLink(destination: TrianglePathExample()) {
+                        Text("CGAffineTransform & Even-Odd Fills")
+                    }
                 }
             }
             .navigationBarTitle("SwiftUI Drawing")
