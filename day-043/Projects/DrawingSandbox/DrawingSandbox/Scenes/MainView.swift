@@ -44,6 +44,29 @@ extension MainView {
                          Text("Activating Metal Rendering")
                      }
                 }
+                
+                
+                Section(header: Text("Day 45")) {
+                    NavigationLink(destination: BlendModesListView()) {
+                        Text("All the Blend modes")
+                    }
+
+                    NavigationLink(destination: ScreenedCirclesExample()) {
+                        Text("Screened Circles")
+                    }
+                    
+                    NavigationLink(destination: AnimatableDataExample()) {
+                        Text("Animating Custom Shapes w/ AnimatableData")
+                    }
+                    
+                    NavigationLink(destination: AnimatablePairExample()) {
+                        Text("Using AnimatablePair for multiple properties")
+                    }
+                    
+                    NavigationLink(destination: SpirographExample()) {
+                        Text("Drawing a Spirograph")
+                    }
+                }
             }
             .navigationBarTitle("SwiftUI Drawing")
         }

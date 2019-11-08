@@ -47,10 +47,11 @@ Cheers! ✌️
 - **Day 41:** [_Project 8: Moonshot_ (Part Three)](./day-041/)
 - **Day 42:** [_Project 8: Moonshot_ (Part Four)](./day-042/)
 - **Day 43:** [_Project 9: Drawing_ (Part One)](./day-043/)
+- **Day 44:** [_Project 9: Drawing_ (Part Two)](./day-044/)
 
 </details>
 
-- **Day 44:** [_Project 9: Drawing_ (Part Two)](./day-044/)
+- **Day 45:** [_Project 9: Drawing_ (Part Three)](./day-045/)
 
 
 

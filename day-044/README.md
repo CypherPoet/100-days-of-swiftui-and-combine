@@ -7,7 +7,7 @@ _Follow along at https://www.hackingwithswift.com/100/swiftui/44_.
 
 # 📒 Field Notes
 
-This day covers Part One of _`Project 9: Drawing`_ in the [100 Days of SwiftUI Challenge](https://www.hackingwithswift.com/100/swiftui/44). (Project 9 files can be found in the [directory for Part One](../day-043/).)
+This day covers Part Two of _`Project 9: Drawing`_ in the [100 Days of SwiftUI Challenge](https://www.hackingwithswift.com/100/swiftui/44). (Project 9 files can be found in the [directory for Part One](../day-043/).)
 
 It focuses on several specific topics:
 
