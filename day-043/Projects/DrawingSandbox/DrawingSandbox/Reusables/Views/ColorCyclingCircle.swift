@@ -79,9 +79,9 @@ struct ColorCyclingCircle_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             ColorCyclingCircle(ringCount: 100, hueStep: 0.02)
-            ColorCyclingCircle(ringCount: 100, hueStep: 0.2)
-            ColorCyclingCircle(ringCount: 100, hueStep: 0.4)
-            ColorCyclingCircle(ringCount: 100, hueStep: 1)
+//            ColorCyclingCircle(ringCount: 100, hueStep: 0.2)
+//            ColorCyclingCircle(ringCount: 100, hueStep: 0.4)
+//            ColorCyclingCircle(ringCount: 100, hueStep: 1)
         }
     }
 }

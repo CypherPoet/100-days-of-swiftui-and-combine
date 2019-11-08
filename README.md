@@ -48,10 +48,11 @@ Cheers! ✌️
 - **Day 42:** [_Project 8: Moonshot_ (Part Four)](./day-042/)
 - **Day 43:** [_Project 9: Drawing_ (Part One)](./day-043/)
 - **Day 44:** [_Project 9: Drawing_ (Part Two)](./day-044/)
+- **Day 45:** [_Project 9: Drawing_ (Part Three)](./day-045/)
 
 </details>
 
-- **Day 45:** [_Project 9: Drawing_ (Part Three)](./day-045/)
+- **Day 46:** [_Project 9: Drawing_ (Part Four)](./day-046/)
 
 
 
@@ -121,5 +122,12 @@ Cheers! ✌️
 
 <div style="text-align: center;">
   <img src="./day-039/Projects/Moonshot/Screenshots/day-42-recording-1.gif" width="300px"/>
+</div>
+
+
+- [Project 9: Drawing)](./day-43/Projects/DrawingSandbox)
+
+<div style="text-align: center;">
+  <img src="./day-043/Projects/DrawingSandbox/Screenshots/day-45-spirograph.gif" width="300px"/>
 </div>
 
