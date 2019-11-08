@@ -71,6 +71,10 @@ extension MainView {
                     NavigationLink(destination: ArrowExample()) {
                         Text("Custom Arrow Shape")
                     }
+                    
+                    NavigationLink(destination: ColorCyclingRectangleExample()) {
+                        Text("Color-Cyling Rectangle")
+                    }
                 }
             }
             .navigationBarTitle("SwiftUI Drawing")
