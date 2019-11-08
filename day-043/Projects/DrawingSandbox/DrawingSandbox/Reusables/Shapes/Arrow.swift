@@ -24,8 +24,12 @@ struct Arrow {
 // MARK: - AnimatableData
 extension Arrow {
 
-    var animatableData: EmptyAnimatableData {
-        .init()
+    var animatableData: AnimatablePair<CGFloat, CGFloat> {
+        get { AnimatablePair(baseWidthPct, baseHeightPct) }
+        set {
+            baseWidthPct = newValue.first
+            baseHeightPct = newValue.second
+        }
     }
 }
 

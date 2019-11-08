@@ -24,10 +24,12 @@ extension ArrowExample {
                 baseWidthPct: arrowBaseWidthPercentage,
                 baseHeightPct: arrowBaseHeightPercentage
             )
+                .animation(.easeInOut(duration: 0.8))
             
             controls
-                .padding()
+                .padding(.vertical)
         }
+        .padding()
         .navigationBarTitle("Custom Arrow Shape")
     }
 }
