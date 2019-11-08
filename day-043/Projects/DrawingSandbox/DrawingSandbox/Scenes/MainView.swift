@@ -45,7 +45,6 @@ extension MainView {
                      }
                 }
                 
-                
                 Section(header: Text("Day 45")) {
                     NavigationLink(destination: BlendModesListView()) {
                         Text("All the Blend modes")
@@ -65,6 +64,12 @@ extension MainView {
                     
                     NavigationLink(destination: SpirographExample()) {
                         Text("Drawing a Spirograph")
+                    }
+                }
+                
+                Section(header: Text("Day 46: Challenges")) {
+                    NavigationLink(destination: ArrowExample()) {
+                        Text("Custom Arrow Shape")
                     }
                 }
             }

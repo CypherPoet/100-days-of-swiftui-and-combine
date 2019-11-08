@@ -18,6 +18,8 @@
 		F3171A632371CA470015255E /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3171A622371CA470015255E /* Triangle.swift */; };
 		F3171A652371D09F0015255E /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3171A642371D09F0015255E /* Arc.swift */; };
 		F348F3D62374EF1800931339 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F348F3D52374EF1800931339 /* GCD.swift */; };
+		F3BBE753237506A900072E27 /* ArrowExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BBE752237506A900072E27 /* ArrowExample.swift */; };
+		F3BBE755237506F800072E27 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BBE754237506F800072E27 /* Arrow.swift */; };
 		F3D0D355237253DB001524CD /* RadialFlowerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0D354237253DB001524CD /* RadialFlowerExample.swift */; };
 		F3D0D35723725622001524CD /* RadialFlower.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0D35623725622001524CD /* RadialFlower.swift */; };
 		F3D0D35923733AAF001524CD /* ColorGradientCyclingExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0D35823733AAF001524CD /* ColorGradientCyclingExample.swift */; };
@@ -47,6 +49,8 @@
 		F3171A622371CA470015255E /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		F3171A642371D09F0015255E /* Arc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
 		F348F3D52374EF1800931339 /* GCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
+		F3BBE752237506A900072E27 /* ArrowExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowExample.swift; sourceTree = "<group>"; };
+		F3BBE754237506F800072E27 /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		F3D0D354237253DB001524CD /* RadialFlowerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialFlowerExample.swift; sourceTree = "<group>"; };
 		F3D0D35623725622001524CD /* RadialFlower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialFlower.swift; sourceTree = "<group>"; };
 		F3D0D35823733AAF001524CD /* ColorGradientCyclingExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGradientCyclingExample.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 				F3171A5F2371C9E70015255E /* CustomShapesExample.swift */,
 				F3171A562371B83D0015255E /* MainView.swift */,
 				F3D0D3922374A8F7001524CD /* SpirographExample.swift */,
+				F3BBE752237506A900072E27 /* ArrowExample.swift */,
 				F3D0D389237484EF001524CD /* AnimatableDataExample.swift */,
 				F3D0D38E23748F67001524CD /* AnimatablePairExample.swift */,
 				F3D0D354237253DB001524CD /* RadialFlowerExample.swift */,
@@ -161,6 +166,7 @@
 				F3D0D38C23748521001524CD /* Trapezoid.swift */,
 				F3D0D39023748FD6001524CD /* Checkerboard.swift */,
 				F3D0D3942374A958001524CD /* Spirograph.swift */,
+				F3BBE754237506F800072E27 /* Arrow.swift */,
 				F3D0D35623725622001524CD /* RadialFlower.swift */,
 				F3171A642371D09F0015255E /* Arc.swift */,
 			);
@@ -275,6 +281,7 @@
 				F3D0D3952374A958001524CD /* Spirograph.swift in Sources */,
 				F3171A572371B83D0015255E /* MainView.swift in Sources */,
 				F3D0D38A237484EF001524CD /* AnimatableDataExample.swift in Sources */,
+				F3BBE753237506A900072E27 /* ArrowExample.swift in Sources */,
 				F3D0D38D23748521001524CD /* Trapezoid.swift in Sources */,
 				F3D0D355237253DB001524CD /* RadialFlowerExample.swift in Sources */,
 				F3D0D35C23733C94001524CD /* ColorCyclingCircle.swift in Sources */,
@@ -285,6 +292,7 @@
 				F3D0D35723725622001524CD /* RadialFlower.swift in Sources */,
 				F3D0D39123748FD6001524CD /* Checkerboard.swift in Sources */,
 				F3D0D38F23748F67001524CD /* AnimatablePairExample.swift in Sources */,
+				F3BBE755237506F800072E27 /* Arrow.swift in Sources */,
 				F3171A5E2371BC300015255E /* TrianglePathExample.swift in Sources */,
 				F3D0D3932374A8F7001524CD /* SpirographExample.swift in Sources */,
 				F3171A442371B5360015255E /* SceneDelegate.swift in Sources */,
