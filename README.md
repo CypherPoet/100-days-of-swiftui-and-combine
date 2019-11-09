@@ -49,10 +49,11 @@ Cheers! ✌️
 - **Day 43:** [_Project 9: Drawing_ (Part One)](./day-043/)
 - **Day 44:** [_Project 9: Drawing_ (Part Two)](./day-044/)
 - **Day 45:** [_Project 9: Drawing_ (Part Three)](./day-045/)
+- **Day 46:** [_Project 9: Drawing_ (Part Four)](./day-046/)
 
 </details>
 
-- **Day 46:** [_Project 9: Drawing_ (Part Four)](./day-046/)
+- **Day 47:** [Milestone for Projects 7-9](./day-047/)
 
 
 
