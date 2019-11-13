@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,21 @@
 		F38A0E8A23793E4600294E27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F38A0E8923793E4600294E27 /* Assets.xcassets */; };
 		F38A0E8D23793E4600294E27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F38A0E8C23793E4600294E27 /* Preview Assets.xcassets */; };
 		F38A0E9023793E4700294E27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38A0E8E23793E4700294E27 /* LaunchScreen.storyboard */; };
+		F398F9F7237AB17F00A82FF8 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398F9F4237AB17F00A82FF8 /* AppState.swift */; };
+		F398F9FC237AB1A600A82FF8 /* CypherPoetSwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = F398F9FB237AB1A600A82FF8 /* CypherPoetSwiftUIKit */; };
+		F398F9FE237AB1F600A82FF8 /* OrdersState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398F9FD237AB1F600A82FF8 /* OrdersState.swift */; };
+		F398FA00237AB2B200A82FF8 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398F9FF237AB2B200A82FF8 /* Order.swift */; };
+		F398FA03237AB41E00A82FF8 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA02237AB41E00A82FF8 /* SampleData.swift */; };
+		F398FA05237AB66600A82FF8 /* Cupcake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA04237AB66600A82FF8 /* Cupcake.swift */; };
+		F398FA08237AB8B400A82FF8 /* OrderFormContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA07237AB8B400A82FF8 /* OrderFormContainerView.swift */; };
+		F398FA0A237AB94D00A82FF8 /* OrderFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA09237AB94D00A82FF8 /* OrderFormView.swift */; };
+		F398FA0C237AB95C00A82FF8 /* OrderFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA0B237AB95B00A82FF8 /* OrderFormViewModel.swift */; };
+		F398FA0E237BF79E00A82FF8 /* DeliveryAddressFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA0D237BF79E00A82FF8 /* DeliveryAddressFormView.swift */; };
+		F398FA10237BF8CE00A82FF8 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA0F237BF8CE00A82FF8 /* CheckoutView.swift */; };
+		F398FA12237BFA3600A82FF8 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA11237BFA3600A82FF8 /* Address.swift */; };
+		F398FA15237C101400A82FF8 /* DeliveryAddressFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA14237C101400A82FF8 /* DeliveryAddressFormViewModel.swift */; };
+		F398FA18237C107F00A82FF8 /* CheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA17237C107F00A82FF8 /* CheckoutViewModel.swift */; };
+		F398FA1C237C283E00A82FF8 /* NumberFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA1B237C283E00A82FF8 /* NumberFormatters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +37,20 @@
 		F38A0E8C23793E4600294E27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F38A0E8F23793E4700294E27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F38A0E9123793E4700294E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F398F9F4237AB17F00A82FF8 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F398F9FD237AB1F600A82FF8 /* OrdersState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersState.swift; sourceTree = "<group>"; };
+		F398F9FF237AB2B200A82FF8 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		F398FA02237AB41E00A82FF8 /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		F398FA04237AB66600A82FF8 /* Cupcake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupcake.swift; sourceTree = "<group>"; };
+		F398FA07237AB8B400A82FF8 /* OrderFormContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFormContainerView.swift; sourceTree = "<group>"; };
+		F398FA09237AB94D00A82FF8 /* OrderFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFormView.swift; sourceTree = "<group>"; };
+		F398FA0B237AB95B00A82FF8 /* OrderFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFormViewModel.swift; sourceTree = "<group>"; };
+		F398FA0D237BF79E00A82FF8 /* DeliveryAddressFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAddressFormView.swift; sourceTree = "<group>"; };
+		F398FA0F237BF8CE00A82FF8 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		F398FA11237BFA3600A82FF8 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		F398FA14237C101400A82FF8 /* DeliveryAddressFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAddressFormViewModel.swift; sourceTree = "<group>"; };
+		F398FA17237C107F00A82FF8 /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
+		F398FA1B237C283E00A82FF8 /* NumberFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F398F9FC237AB1A600A82FF8 /* CypherPoetSwiftUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				F38A0E9123793E4700294E27 /* Info.plist */,
+				F398FA19237C280600A82FF8 /* Reusables */,
 				F38A0E8323793E4600294E27 /* AppDelegate.swift */,
 				F38A0E8523793E4600294E27 /* SceneDelegate.swift */,
 				F38A0E9A23793E9B00294E27 /* Data */,
@@ -69,6 +100,7 @@
 		F38A0E8B23793E4600294E27 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				F398FA01237AB3DC00A82FF8 /* Sample Data */,
 				F38A0E8C23793E4600294E27 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -77,6 +109,7 @@
 		F38A0E9723793E8300294E27 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F398FA06237AB87E00A82FF8 /* Order Form */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -101,6 +134,8 @@
 		F38A0E9B23793E9D00294E27 /* State */ = {
 			isa = PBXGroup;
 			children = (
+				F398F9FD237AB1F600A82FF8 /* OrdersState.swift */,
+				F398F9F4237AB17F00A82FF8 /* AppState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -108,8 +143,65 @@
 		F38A0E9C23793EA100294E27 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F398F9FF237AB2B200A82FF8 /* Order.swift */,
+				F398FA04237AB66600A82FF8 /* Cupcake.swift */,
+				F398FA11237BFA3600A82FF8 /* Address.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F398FA01237AB3DC00A82FF8 /* Sample Data */ = {
+			isa = PBXGroup;
+			children = (
+				F398FA02237AB41E00A82FF8 /* SampleData.swift */,
+			);
+			path = "Sample Data";
+			sourceTree = "<group>";
+		};
+		F398FA06237AB87E00A82FF8 /* Order Form */ = {
+			isa = PBXGroup;
+			children = (
+				F398FA07237AB8B400A82FF8 /* OrderFormContainerView.swift */,
+				F398FA09237AB94D00A82FF8 /* OrderFormView.swift */,
+				F398FA0B237AB95B00A82FF8 /* OrderFormViewModel.swift */,
+				F398FA16237C106900A82FF8 /* Checkout */,
+				F398FA13237C0FFD00A82FF8 /* Delivery Address */,
+			);
+			path = "Order Form";
+			sourceTree = "<group>";
+		};
+		F398FA13237C0FFD00A82FF8 /* Delivery Address */ = {
+			isa = PBXGroup;
+			children = (
+				F398FA0D237BF79E00A82FF8 /* DeliveryAddressFormView.swift */,
+				F398FA14237C101400A82FF8 /* DeliveryAddressFormViewModel.swift */,
+			);
+			path = "Delivery Address";
+			sourceTree = "<group>";
+		};
+		F398FA16237C106900A82FF8 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				F398FA0F237BF8CE00A82FF8 /* CheckoutView.swift */,
+				F398FA17237C107F00A82FF8 /* CheckoutViewModel.swift */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		F398FA19237C280600A82FF8 /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				F398FA1A237C281F00A82FF8 /* Formatters */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		F398FA1A237C281F00A82FF8 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				F398FA1B237C283E00A82FF8 /* NumberFormatters.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +220,9 @@
 			dependencies = (
 			);
 			name = CupcakeCorner;
+			packageProductDependencies = (
+				F398F9FB237AB1A600A82FF8 /* CypherPoetSwiftUIKit */,
+			);
 			productName = CupcakeCorner;
 			productReference = F38A0E8023793E4600294E27 /* CupcakeCorner.app */;
 			productType = "com.apple.product-type.application";
@@ -156,6 +251,9 @@
 				Base,
 			);
 			mainGroup = F38A0E7723793E4600294E27;
+			packageReferences = (
+				F398F9FA237AB1A600A82FF8 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
+			);
 			productRefGroup = F38A0E8123793E4600294E27 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -183,7 +281,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F398FA18237C107F00A82FF8 /* CheckoutViewModel.swift in Sources */,
+				F398FA1C237C283E00A82FF8 /* NumberFormatters.swift in Sources */,
+				F398FA0E237BF79E00A82FF8 /* DeliveryAddressFormView.swift in Sources */,
+				F398F9F7237AB17F00A82FF8 /* AppState.swift in Sources */,
+				F398FA12237BFA3600A82FF8 /* Address.swift in Sources */,
+				F398FA10237BF8CE00A82FF8 /* CheckoutView.swift in Sources */,
+				F398FA03237AB41E00A82FF8 /* SampleData.swift in Sources */,
+				F398FA15237C101400A82FF8 /* DeliveryAddressFormViewModel.swift in Sources */,
 				F38A0E8423793E4600294E27 /* AppDelegate.swift in Sources */,
+				F398FA00237AB2B200A82FF8 /* Order.swift in Sources */,
+				F398FA05237AB66600A82FF8 /* Cupcake.swift in Sources */,
+				F398FA08237AB8B400A82FF8 /* OrderFormContainerView.swift in Sources */,
+				F398F9FE237AB1F600A82FF8 /* OrdersState.swift in Sources */,
+				F398FA0C237AB95C00A82FF8 /* OrderFormViewModel.swift in Sources */,
+				F398FA0A237AB94D00A82FF8 /* OrderFormView.swift in Sources */,
 				F38A0E8623793E4600294E27 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +488,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F398F9FA237AB1A600A82FF8 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.22;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F398F9FB237AB1A600A82FF8 /* CypherPoetSwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F398F9FA237AB1A600A82FF8 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */;
+			productName = CypherPoetSwiftUIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F38A0E7823793E4600294E27 /* Project object */;
 }
