@@ -52,10 +52,11 @@ Cheers! ✌️
 - **Day 46:** [_Project 9: Drawing_ (Part Four)](./day-046/)
 - **Day 47:** [Milestone for Projects 7-9](./day-047/)
 - **Day 48:** [What Star Wars can Teach Us About Swift](./day-048/)
+- **Day 49:** [_Project 10: CupcakeCorner_ (Part One)](./day-049/)
 
 </details>
 
-- **Day 49:** [_Project 10: CupcakeCorner_ (Part One)](./day-049/)
+- **Day 50:** [_Project 10: CupcakeCorner_ (Part Two)](./day-050/)
 
 
 
