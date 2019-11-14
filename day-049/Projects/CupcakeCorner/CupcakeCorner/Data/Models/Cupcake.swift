@@ -13,6 +13,9 @@ struct Cupcake {
     var flavor: Flavor = .vanilla
 }
 
+extension Cupcake: Codable {}
+
+
 extension Cupcake {
     enum Flavor: String, CaseIterable {
         case vanilla
@@ -23,6 +26,7 @@ extension Cupcake {
 }
 
 extension Cupcake.Flavor: Hashable {}
+extension Cupcake.Flavor: Codable {}
 
 extension Cupcake.Flavor: Identifiable {
     var id: String { rawValue }

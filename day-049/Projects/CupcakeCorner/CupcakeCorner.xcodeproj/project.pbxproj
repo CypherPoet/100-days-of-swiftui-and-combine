@@ -27,6 +27,11 @@
 		F398FA15237C101400A82FF8 /* DeliveryAddressFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA14237C101400A82FF8 /* DeliveryAddressFormViewModel.swift */; };
 		F398FA18237C107F00A82FF8 /* CheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA17237C107F00A82FF8 /* CheckoutViewModel.swift */; };
 		F398FA1C237C283E00A82FF8 /* NumberFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA1B237C283E00A82FF8 /* NumberFormatters.swift */; };
+		F398FA1F237CA39600A82FF8 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA1E237CA39600A82FF8 /* Dependencies.swift */; };
+		F398FA22237CA4BA00A82FF8 /* NetStack in Frameworks */ = {isa = PBXBuildFile; productRef = F398FA21237CA4BA00A82FF8 /* NetStack */; };
+		F398FA24237CA58A00A82FF8 /* Endpoint+Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA23237CA58A00A82FF8 /* Endpoint+Order.swift */; };
+		F398FA26237CA62400A82FF8 /* CupcakeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA25237CA62400A82FF8 /* CupcakeAPIService.swift */; };
+		F398FA28237CB0E600A82FF8 /* OrderFormContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F398FA27237CB0E600A82FF8 /* OrderFormContainerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +56,10 @@
 		F398FA14237C101400A82FF8 /* DeliveryAddressFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAddressFormViewModel.swift; sourceTree = "<group>"; };
 		F398FA17237C107F00A82FF8 /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
 		F398FA1B237C283E00A82FF8 /* NumberFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatters.swift; sourceTree = "<group>"; };
+		F398FA1E237CA39600A82FF8 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		F398FA23237CA58A00A82FF8 /* Endpoint+Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Order.swift"; sourceTree = "<group>"; };
+		F398FA25237CA62400A82FF8 /* CupcakeAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeAPIService.swift; sourceTree = "<group>"; };
+		F398FA27237CB0E600A82FF8 /* OrderFormContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFormContainerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F398F9FC237AB1A600A82FF8 /* CypherPoetSwiftUIKit in Frameworks */,
+				F398FA22237CA4BA00A82FF8 /* NetStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +94,7 @@
 		F38A0E8223793E4600294E27 /* CupcakeCorner */ = {
 			isa = PBXGroup;
 			children = (
+				F398FA1D237CA38B00A82FF8 /* Networking */,
 				F38A0E9123793E4700294E27 /* Info.plist */,
 				F398FA19237C280600A82FF8 /* Reusables */,
 				F38A0E8323793E4600294E27 /* AppDelegate.swift */,
@@ -162,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				F398FA07237AB8B400A82FF8 /* OrderFormContainerView.swift */,
+				F398FA27237CB0E600A82FF8 /* OrderFormContainerViewModel.swift */,
 				F398FA09237AB94D00A82FF8 /* OrderFormView.swift */,
 				F398FA0B237AB95B00A82FF8 /* OrderFormViewModel.swift */,
 				F398FA16237C106900A82FF8 /* Checkout */,
@@ -204,6 +216,16 @@
 			path = Formatters;
 			sourceTree = "<group>";
 		};
+		F398FA1D237CA38B00A82FF8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F398FA1E237CA39600A82FF8 /* Dependencies.swift */,
+				F398FA25237CA62400A82FF8 /* CupcakeAPIService.swift */,
+				F398FA23237CA58A00A82FF8 /* Endpoint+Order.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -222,6 +244,7 @@
 			name = CupcakeCorner;
 			packageProductDependencies = (
 				F398F9FB237AB1A600A82FF8 /* CypherPoetSwiftUIKit */,
+				F398FA21237CA4BA00A82FF8 /* NetStack */,
 			);
 			productName = CupcakeCorner;
 			productReference = F38A0E8023793E4600294E27 /* CupcakeCorner.app */;
@@ -253,6 +276,7 @@
 			mainGroup = F38A0E7723793E4600294E27;
 			packageReferences = (
 				F398F9FA237AB1A600A82FF8 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
+				F398FA20237CA4BA00A82FF8 /* XCRemoteSwiftPackageReference "NetStack" */,
 			);
 			productRefGroup = F38A0E8123793E4600294E27 /* Products */;
 			projectDirPath = "";
@@ -284,9 +308,13 @@
 				F398FA18237C107F00A82FF8 /* CheckoutViewModel.swift in Sources */,
 				F398FA1C237C283E00A82FF8 /* NumberFormatters.swift in Sources */,
 				F398FA0E237BF79E00A82FF8 /* DeliveryAddressFormView.swift in Sources */,
+				F398FA1F237CA39600A82FF8 /* Dependencies.swift in Sources */,
 				F398F9F7237AB17F00A82FF8 /* AppState.swift in Sources */,
+				F398FA26237CA62400A82FF8 /* CupcakeAPIService.swift in Sources */,
 				F398FA12237BFA3600A82FF8 /* Address.swift in Sources */,
 				F398FA10237BF8CE00A82FF8 /* CheckoutView.swift in Sources */,
+				F398FA24237CA58A00A82FF8 /* Endpoint+Order.swift in Sources */,
+				F398FA28237CB0E600A82FF8 /* OrderFormContainerViewModel.swift in Sources */,
 				F398FA03237AB41E00A82FF8 /* SampleData.swift in Sources */,
 				F398FA15237C101400A82FF8 /* DeliveryAddressFormViewModel.swift in Sources */,
 				F38A0E8423793E4600294E27 /* AppDelegate.swift in Sources */,
@@ -498,6 +526,14 @@
 				minimumVersion = 0.0.22;
 			};
 		};
+		F398FA20237CA4BA00A82FF8 /* XCRemoteSwiftPackageReference "NetStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/NetStack.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.17;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -505,6 +541,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F398F9FA237AB1A600A82FF8 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */;
 			productName = CypherPoetSwiftUIKit;
+		};
+		F398FA21237CA4BA00A82FF8 /* NetStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F398FA20237CA4BA00A82FF8 /* XCRemoteSwiftPackageReference "NetStack" */;
+			productName = NetStack;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

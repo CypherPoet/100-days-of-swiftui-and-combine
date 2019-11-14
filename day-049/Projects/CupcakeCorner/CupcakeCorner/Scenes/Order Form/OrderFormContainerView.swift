@@ -11,9 +11,22 @@ import SwiftUI
 
 struct OrderFormContainerView: View {
     @EnvironmentObject var store: AppStore
+
+    @ObservedObject var viewModel: OrderFormContainerViewModel
     
-    private var orderFormViewModel = OrderFormViewModel()
-    private var deliveryAddressViewModel = DeliveryAddressFormViewModel()
+    private var orderFormViewModel: OrderFormViewModel
+    private var deliveryAddressViewModel: DeliveryAddressFormViewModel
+
+    
+    init(
+        viewModel: OrderFormContainerViewModel,
+        orderFormViewModel: OrderFormViewModel = .init(),
+        deliveryAddressViewModel: DeliveryAddressFormViewModel = .init()
+    ) {
+        self.viewModel = viewModel
+        self.orderFormViewModel = orderFormViewModel
+        self.deliveryAddressViewModel = deliveryAddressViewModel
+    }
 }
 
 
@@ -29,7 +42,9 @@ extension OrderFormContainerView {
                         viewModel: self.deliveryAddressViewModel,
                         buildDestination: {
                             CheckoutView(
-                                viewModel: CheckoutViewModel(order: self.orderFromFormData),
+                                viewModel: CheckoutViewModel(
+                                    order: self.orderFromFormData
+                                ),
                                 onSubmit: self.submitOrder(_:)
                             )
                         }
@@ -37,14 +52,19 @@ extension OrderFormContainerView {
                 }
             )
             .navigationBarTitle("🧁 Cupcake Corner")
+            .alert(isPresented: $viewModel.isShowingSaveConfirmationAlert, content: { self.saveConfirmationAlert })
+            .alert(isPresented: $viewModel.isShowingSaveErrorAlert, content: { self.saveErrorAlert })
         }
     }
 }
 
 
+
 // MARK: - Computeds
 extension OrderFormContainerView {
 
+    var ordersState: OrdersState { store.state.ordersState }
+    
     var orderFromFormData: Order {
         guard let cupcakeFlavor = orderFormViewModel.selectedFlavor else {
             preconditionFailure("Attempted to checkout without valid data")
@@ -61,7 +81,7 @@ extension OrderFormContainerView {
             deliveryAddress: deliveryAddressFromFormData
         )
     }
-    
+
     
     var deliveryAddressFromFormData: Address {
         Address(
@@ -70,6 +90,21 @@ extension OrderFormContainerView {
             city: deliveryAddressViewModel.city,
             zipCode: deliveryAddressViewModel.zipCode
         )
+    }
+    
+    
+    var saveConfirmationAlert: Alert {
+        .init(
+            title: Text("Order Confirmed"),
+            message: Text(viewModel.saveConfirmationMessage),
+            dismissButton: .default(Text("OK")))
+    }
+    
+    var saveErrorAlert: Alert {
+        .init(
+            title: Text("An error occurred while processing your order"),
+            message: Text(viewModel.saveConfirmationMessage),
+            dismissButton: .default(Text("OK")))
     }
 }
 
@@ -85,7 +120,7 @@ extension OrderFormContainerView {
 extension OrderFormContainerView {
     
     private func submitOrder(_ order: Order) {
-        // TODO: Implement
+        store.send(OrdersSideEffect.saveCurrent(order: order))
     }
 }
 
@@ -94,7 +129,9 @@ extension OrderFormContainerView {
 struct OrderFormContainerView_Previews: PreviewProvider {
 
     static var previews: some View {
-        OrderFormContainerView()
-            .environmentObject(SampleStore.default)
+        OrderFormContainerView(
+            viewModel: OrderFormContainerViewModel(store: SampleStore.default)
+        )
+        .environmentObject(SampleStore.default)
     }
 }

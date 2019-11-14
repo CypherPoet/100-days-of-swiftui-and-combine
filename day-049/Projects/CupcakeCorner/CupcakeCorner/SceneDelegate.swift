@@ -26,9 +26,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let store = AppStore(initialState: AppState(), appReducer: appReducer)
             
             // Create the SwiftUI view that provides the window contents.
-            let contentView = OrderFormContainerView()
-                .accentColor(.pink)
-                .environmentObject(store)
+            let contentView = OrderFormContainerView(
+                viewModel: OrderFormContainerViewModel(store: store)
+            )
+            .accentColor(.pink)
+            .environmentObject(store)
             
 
             window.rootViewController = UIHostingController(rootView: contentView)

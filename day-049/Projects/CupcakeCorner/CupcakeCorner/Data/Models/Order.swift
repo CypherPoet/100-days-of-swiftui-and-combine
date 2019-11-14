@@ -16,6 +16,9 @@ struct Order {
     var deliveryAddress: Address?
 }
 
+extension Order: Codable {}
+
+
 
 // MARK: - Preferences
 extension Order {
@@ -32,6 +35,8 @@ extension Order {
         )
     }
 }
+
+extension Order.Preferences: Codable {}
 
 
 // MARK: - Computeds

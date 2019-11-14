@@ -15,3 +15,5 @@ struct Address {
     var city: String
     var zipCode: String
 }
+
+extension Address: Codable {}

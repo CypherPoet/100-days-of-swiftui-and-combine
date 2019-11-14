@@ -9,6 +9,15 @@
           "revision": "1a2b0e98984a36f5a480cafd815c386e2f777b1f",
           "version": "0.0.22"
         }
+      },
+      {
+        "package": "NetStack",
+        "repositoryURL": "https://github.com/CypherPoet/NetStack.git",
+        "state": {
+          "branch": null,
+          "revision": "9e91fb421ba72eb0c63cdcae5fc3cf0095594dc5",
+          "version": "0.0.17"
+        }
       }
     ]
   },
