@@ -17,7 +17,7 @@ final class OrderFormContainerViewModel: ObservableObject {
     var store: AppStore
     
     
-    // MARK: - Published Properties
+    // MARK: - Published Outputs
     @Published var isShowingAlert = false
 
     

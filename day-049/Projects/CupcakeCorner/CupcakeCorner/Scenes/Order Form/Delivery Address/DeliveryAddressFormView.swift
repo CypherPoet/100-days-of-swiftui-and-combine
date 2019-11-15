@@ -23,11 +23,51 @@ extension DeliveryAddressFormView {
         Form {
             
             Section {
-                TextField("Name", text: $viewModel.name)
-                TextField("Street Address", text: $viewModel.streetAddress)
-                TextField("City", text: $viewModel.city)
-                TextField("Zip Code", text: $viewModel.zipCode)
+                VStack(alignment: .leading, spacing: 4) {
+                    TextField("Name", text: $viewModel.nameText)
+                    
+                    if viewModel.nameErrorMessage != nil {
+                        Text(viewModel.nameErrorMessage!)
+                            .font(.caption)
+                            .foregroundColor(.red)
+                    }
+                }
+                
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    TextField("Street Address", text: $viewModel.streetAddressText)
+                    
+                    if viewModel.streetAddressErrorMessage != nil {
+                        Text(viewModel.streetAddressErrorMessage!)
+                            .font(.caption)
+                            .foregroundColor(.red)
+                    }
+                }
+                
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    TextField("City", text: $viewModel.cityText)
+                    
+                    if viewModel.cityErrorMessage != nil {
+                        Text(viewModel.cityErrorMessage!)
+                            .font(.caption)
+                            .foregroundColor(.red)
+                    }
+                }
+                
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    TextField("Zip Code", text: $viewModel.zipCodeText)
+                    
+                    if viewModel.zipCodeErrorMessage != nil {
+                        Text(viewModel.zipCodeErrorMessage!)
+                            .font(.caption)
+                            .foregroundColor(.red)
+                    }
+                }
             }
+            .transition(.move(edge: .bottom))
+            
             
             Section {
                 NavigationLink(destination: buildDestination()) {

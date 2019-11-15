@@ -87,10 +87,10 @@ extension OrderFormContainerView {
     
     var deliveryAddressFromFormData: Address {
         Address(
-            name: deliveryAddressViewModel.name,
-            streetAddress: deliveryAddressViewModel.streetAddress,
-            city: deliveryAddressViewModel.city,
-            zipCode: deliveryAddressViewModel.zipCode
+            name: deliveryAddressViewModel.nameText,
+            streetAddress: deliveryAddressViewModel.streetAddressText,
+            city: deliveryAddressViewModel.cityText,
+            zipCode: deliveryAddressViewModel.zipCodeText
         )
     }
     
