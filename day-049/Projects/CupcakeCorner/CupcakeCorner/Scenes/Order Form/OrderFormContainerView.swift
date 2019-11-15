@@ -14,6 +14,9 @@ struct OrderFormContainerView: View {
 
     @ObservedObject var viewModel: OrderFormContainerViewModel
     
+    // 📝 Note: AFAIK, it's important to hold these as references here on the container
+    // view, as opposed to initializing them in the `body`. That way, they won't be destroyed and
+    // re-initialized every time this container view is updated by SwiftUI. (See also: https://medium.com/better-programming/understanding-swiftui-data-flow-79429a49ae35#1af0)
     private var orderFormViewModel: OrderFormViewModel
     private var deliveryAddressViewModel: DeliveryAddressFormViewModel
 
@@ -52,8 +55,7 @@ extension OrderFormContainerView {
                 }
             )
             .navigationBarTitle("🧁 Cupcake Corner")
-            .alert(isPresented: $viewModel.isShowingSaveConfirmationAlert, content: { self.saveConfirmationAlert })
-            .alert(isPresented: $viewModel.isShowingSaveErrorAlert, content: { self.saveErrorAlert })
+            .alert(isPresented: $viewModel.isShowingAlert, content: { self.currentAlert })
         }
     }
 }
@@ -93,19 +95,13 @@ extension OrderFormContainerView {
     }
     
     
-    var saveConfirmationAlert: Alert {
+    var currentAlert: Alert {
         .init(
-            title: Text("Order Confirmed"),
-            message: Text(viewModel.saveConfirmationMessage),
+            title: Text(viewModel.currentAlertTitle),
+            message: Text(viewModel.currentAlertMessage),
             dismissButton: .default(Text("OK")))
     }
     
-    var saveErrorAlert: Alert {
-        .init(
-            title: Text("An error occurred while processing your order"),
-            message: Text(viewModel.saveConfirmationMessage),
-            dismissButton: .default(Text("OK")))
-    }
 }
 
 

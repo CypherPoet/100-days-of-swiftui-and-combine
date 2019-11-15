@@ -20,15 +20,45 @@ final class OrderFormContainerViewModel: ObservableObject {
     // MARK: - Published Properties
     @Published var isShowingSaveConfirmationAlert = false
     @Published var isShowingSaveErrorAlert = false
-    @Published var saveConfirmationMessage: String = ""
-    @Published var saveErrorMessage: String = ""
+    @Published var isShowingAlert = false
 
+    
     // MARK: - Init
     init(store: AppStore) {
         self.store = store
         
         setupSubscribers()
     }
+}
+
+
+
+// MARK: - Computeds
+extension OrderFormContainerViewModel {
+    private var ordersState: OrdersState { store.state.ordersState }
+    
+    private var currentAlertContent: (title: String, message: String) {
+        switch (ordersState.currentOrder, ordersState.saveError) {
+        case (let order?, .none):
+            let cupcakesString = order.quantity == 1 ? "cupcake" : "cupcakes"
+            
+            return (
+                title: "Order Confirmed!",
+                message: "Your order of \(order.quantity) \(cupcakesString) is on its way!"
+            )
+        case (.none, .some):
+            return (
+                title: "An error occurred while processing your order.",
+                message: "Please try again."
+            )
+        default:
+            return ("", "")
+        }
+    }
+    
+    
+    var currentAlertTitle: String { currentAlertContent.title }
+    var currentAlertMessage: String { currentAlertContent.message }
 }
 
 
@@ -43,50 +73,77 @@ extension OrderFormContainerViewModel {
     }
     
     
-    private var lastSavedOrderPubilsher: AnyPublisher<Order?, Never> {
+    private var isShowingAlertPublisher: AnyPublisher<Bool, Never> {
         ordersStatePublisher
-            .map(\.lastSavedOrder)
-            .eraseToAnyPublisher()
+            .map { ordersState in
+                ordersState.saveError != nil || ordersState.successfullySavedOrder != nil
+            }
+//        .drop(untilOutputFrom: alertContentPublisher)
+        .eraseToAnyPublisher()
     }
     
     
+    
+    private var alertContentPublisher:
+        AnyPublisher<(title: String, message: String), Never>
+    {
+        ordersStatePublisher
+            .flatMap { ordersState -> AnyPublisher<(title: String, message: String), Never> in
+                if ordersState.saveError != nil {
+                    return self.saveErrorAlertPublisher.eraseToAnyPublisher()
+                } else if ordersState.successfullySavedOrder != nil {
+                    return self.saveConfirmationAlertPublisher.eraseToAnyPublisher()
+                }
+                
+                return Just((title: "", message: "")).eraseToAnyPublisher()
+            }
+        .eraseToAnyPublisher()
+    }
+    
+    
+    private var savedOrderPubilsher: AnyPublisher<Order?, Never> {
+        ordersStatePublisher
+            .map(\.successfullySavedOrder)
+            .print("savedOrderPubilsher")
+            .eraseToAnyPublisher()
+    }
+//
     private var saveErrorPubilsher: AnyPublisher<CupcakeAPIService.Error?, Never> {
         ordersStatePublisher
             .map(\.saveError)
+            .print("saveErrorPubilsher")
             .eraseToAnyPublisher()
     }
+//
     
-    
-    private var isShowingSaveConfirmationAlertPublisher: AnyPublisher<Bool, Never> {
-        lastSavedOrderPubilsher
-            .map( { $0 == nil ? false : true })
-            .eraseToAnyPublisher()
-    }
-    
-    
-    private var isShowingSaveErrorAlertPublisher: AnyPublisher<Bool, Never> {
-        saveErrorPubilsher
-            .map( { $0 == nil ? false : true })
-            .eraseToAnyPublisher()
-    }
-    
-    
-    private var saveConfirmationMessagePublisher: AnyPublisher<String, Never> {
-        lastSavedOrderPubilsher
+    private var saveConfirmationAlertPublisher:
+        AnyPublisher<(title: String, message: String), Never>
+    {
+        savedOrderPubilsher
             .compactMap { $0 }
             .map { order in
                 let cupcakesString = order.quantity == 1 ? "cupcake" : "cupcakes"
-                
-                return "Your order of \(order.quantity) \(cupcakesString) is on its way!"
+
+                return (
+                    title: "Order Confirmed!",
+                    message: "Your order of \(order.quantity) \(cupcakesString) is on its way."
+                )
             }
             .eraseToAnyPublisher()
     }
-    
-    
-    private var saveErrorMessagePublisher: AnyPublisher<String, Never> {
+//
+//
+    private var saveErrorAlertPublisher:
+        AnyPublisher<(title: String, message: String), Never>
+    {
         saveErrorPubilsher
             .compactMap { $0 }
-            .map { "Please try again" } // This could obviously be improved, lol
+            .map {
+                (
+                    title: "An error occurred while attempting to place your order.",
+                    message: "Please try again."
+                )
+            }
             .eraseToAnyPublisher()
     }
 }
@@ -96,27 +153,9 @@ extension OrderFormContainerViewModel {
 private extension OrderFormContainerViewModel {
 
     func setupSubscribers() {
-        isShowingSaveConfirmationAlertPublisher
+        isShowingAlertPublisher
             .receive(on: DispatchQueue.main)
-            .assign(to: \.isShowingSaveConfirmationAlert, on: self)
-            .store(in: &subscriptions)
-
-        
-        saveConfirmationMessagePublisher
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.saveConfirmationMessage, on: self)
-            .store(in: &subscriptions)
-        
-        
-        isShowingSaveErrorAlertPublisher
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.isShowingSaveErrorAlert, on: self)
-            .store(in: &subscriptions)
-
-        
-        saveErrorMessagePublisher
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.saveErrorMessage, on: self)
+            .assign(to: \.isShowingAlert, on: self)
             .store(in: &subscriptions)
     }
 }

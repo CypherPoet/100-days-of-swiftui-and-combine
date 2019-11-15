@@ -12,7 +12,7 @@ import CypherPoetSwiftUIKit
 
 struct OrdersState {
     var currentOrder: Order? = nil
-    var lastSavedOrder: Order? = nil
+    var successfullySavedOrder: Order? = nil
     var saveError: CupcakeAPIService.Error? = nil
 }
 
@@ -50,8 +50,9 @@ let ordersReducer = Reducer<OrdersState, OrdersAction> { state, action in
     case .saved(let order):
         state.currentOrder = nil
         state.saveError = nil
-        state.lastSavedOrder = order
+        state.successfullySavedOrder = order
     case .saveFailed(let error):
+        state.successfullySavedOrder = nil
         state.saveError = error
     }
 }
