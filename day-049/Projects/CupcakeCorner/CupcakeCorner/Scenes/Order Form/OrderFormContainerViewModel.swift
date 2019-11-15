@@ -18,8 +18,6 @@ final class OrderFormContainerViewModel: ObservableObject {
     
     
     // MARK: - Published Properties
-    @Published var isShowingSaveConfirmationAlert = false
-    @Published var isShowingSaveErrorAlert = false
     @Published var isShowingAlert = false
 
     
@@ -38,7 +36,7 @@ extension OrderFormContainerViewModel {
     private var ordersState: OrdersState { store.state.ordersState }
     
     private var currentAlertContent: (title: String, message: String) {
-        switch (ordersState.currentOrder, ordersState.saveError) {
+        switch (ordersState.successfullySavedOrder, ordersState.saveError) {
         case (let order?, .none):
             let cupcakesString = order.quantity == 1 ? "cupcake" : "cupcakes"
             

@@ -53,10 +53,11 @@ Cheers! ✌️
 - **Day 47:** [Milestone for Projects 7-9](./day-047/)
 - **Day 48:** [What Star Wars can Teach Us About Swift](./day-048/)
 - **Day 49:** [_Project 10: CupcakeCorner_ (Part One)](./day-049/)
+- **Day 50:** [_Project 10: CupcakeCorner_ (Part Two)](./day-050/)
 
 </details>
 
-- **Day 50:** [_Project 10: CupcakeCorner_ (Part Two)](./day-050/)
+- **Day 51:** [_Project 10: CupcakeCorner_ (Part Three)](./day-051/)
 
 
 
