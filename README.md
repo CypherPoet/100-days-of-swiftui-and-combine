@@ -55,10 +55,11 @@ Cheers! ✌️
 - **Day 49:** [_Project 10: CupcakeCorner_ (Part One)](./day-049/)
 - **Day 50:** [_Project 10: CupcakeCorner_ (Part Two)](./day-050/)
 - **Day 51:** [_Project 10: CupcakeCorner_ (Part Three)](./day-051/)
+- **Day 52:** [_Project 10: CupcakeCorner_ (Part Four)](./day-052/)
 
 </details>
 
-- **Day 52:** [_Project 10: CupcakeCorner_ (Part Four)](./day-052/)
+- **Day 53:** [_Project 11: Bookworm_ (Part One)](./day-053/)
 
 
 
@@ -124,21 +125,21 @@ Cheers! ✌️
 </div>
 
 
-- [Project 8: Moonshot)](./day-39/Projects/Moonshot)
+- [Project 8: Moonshot](./day-39/Projects/Moonshot)
 
 <div style="text-align: center;">
   <img src="./day-039/Projects/Moonshot/Screenshots/day-42-recording-1.gif" width="300px"/>
 </div>
 
 
-- [Project 9: Drawing)](./day-43/Projects/DrawingSandbox)
+- [Project 9: Drawing](./day-43/Projects/DrawingSandbox)
 
 <div style="text-align: center;">
   <img src="./day-043/Projects/DrawingSandbox/Screenshots/day-45-spirograph.gif" width="300px"/>
 </div>
 
 
-- [Project 10: CupcakeCorner)](./day-43/Projects/CupcakeCorner)
+- [Project 10: CupcakeCorner](./day-49/Projects/CupcakeCorner)
 
 <div style="text-align: center;">
   <img src="./day-049/Projects/CupcakeCorner/Screenshots/day-52-recording-1.gif" width="300px"/>
