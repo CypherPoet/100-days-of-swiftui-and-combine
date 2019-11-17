@@ -3,19 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F338EEED238101DA00D6C5C9 /* AddBookFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338EEEC238101DA00D6C5C9 /* AddBookFormViewModel.swift */; };
+		F338EEF02381EB6000D6C5C9 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338EEEF2381EB6000D6C5C9 /* StarRatingView.swift */; };
+		F338EEF223820C8800D6C5C9 /* Book+ComputedProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338EEF123820C8800D6C5C9 /* Book+ComputedProperties.swift */; };
+		F338EEF423820EAF00D6C5C9 /* BooksListRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338EEF323820EAF00D6C5C9 /* BooksListRowItem.swift */; };
 		F3628BF32380929D00770348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3628BF22380929D00770348 /* AppDelegate.swift */; };
 		F3628BF52380929D00770348 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3628BF42380929D00770348 /* SceneDelegate.swift */; };
 		F3628BF82380929D00770348 /* Bookworm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3628BF62380929D00770348 /* Bookworm.xcdatamodeld */; };
 		F3628BFC238092A000770348 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3628BFB238092A000770348 /* Assets.xcassets */; };
 		F3628BFF238092A000770348 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3628BFE238092A000770348 /* Preview Assets.xcassets */; };
 		F3628C02238092A000770348 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3628C00238092A000770348 /* LaunchScreen.storyboard */; };
+		F3628C132380A3B400770348 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3628C102380A3B400770348 /* AppState.swift */; };
+		F3628C172380C7F500770348 /* CypherPoetSwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3628C162380C7F500770348 /* CypherPoetSwiftUIKit */; };
+		F3628C1B2380D2EB00770348 /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3628C192380D2EB00770348 /* Book+CoreDataClass.swift */; };
+		F3628C1C2380D2EB00770348 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3628C1A2380D2EB00770348 /* Book+CoreDataProperties.swift */; };
+		F3628C1E2380D40500770348 /* Book+Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3628C1D2380D40500770348 /* Book+Genre.swift */; };
+		F3628C212380DBB000770348 /* BooksListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3628C202380DBB000770348 /* BooksListContainerView.swift */; };
+		F3628C232380DBCD00770348 /* BooksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3628C222380DBCD00770348 /* BooksListView.swift */; };
+		F3628C252380DBF800770348 /* AddBookFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3628C242380DBF800770348 /* AddBookFormView.swift */; };
+		F3628C272380DD8900770348 /* BooksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3628C262380DD8800770348 /* BooksListViewModel.swift */; };
+		F3628C2A2380EA4600770348 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3628C292380EA4600770348 /* SampleData.swift */; };
+		F3628C2C2380EE9200770348 /* BooksState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3628C2B2380EE9200770348 /* BooksState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F338EEEC238101DA00D6C5C9 /* AddBookFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookFormViewModel.swift; sourceTree = "<group>"; };
+		F338EEEF2381EB6000D6C5C9 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		F338EEF123820C8800D6C5C9 /* Book+ComputedProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+ComputedProperties.swift"; sourceTree = "<group>"; };
+		F338EEF323820EAF00D6C5C9 /* BooksListRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListRowItem.swift; sourceTree = "<group>"; };
 		F3628BEF2380929D00770348 /* Bookworm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookworm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3628BF22380929D00770348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3628BF42380929D00770348 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +43,16 @@
 		F3628BFE238092A000770348 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3628C01238092A000770348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3628C03238092A000770348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3628C102380A3B400770348 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F3628C192380D2EB00770348 /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F3628C1A2380D2EB00770348 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F3628C1D2380D40500770348 /* Book+Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+Genre.swift"; sourceTree = "<group>"; };
+		F3628C202380DBB000770348 /* BooksListContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListContainerView.swift; sourceTree = "<group>"; };
+		F3628C222380DBCD00770348 /* BooksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListView.swift; sourceTree = "<group>"; };
+		F3628C242380DBF800770348 /* AddBookFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookFormView.swift; sourceTree = "<group>"; };
+		F3628C262380DD8800770348 /* BooksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListViewModel.swift; sourceTree = "<group>"; };
+		F3628C292380EA4600770348 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		F3628C2B2380EE9200770348 /* BooksState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +60,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3628C172380C7F500770348 /* CypherPoetSwiftUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F338EEEB238101B800D6C5C9 /* Add Book */ = {
+			isa = PBXGroup;
+			children = (
+				F3628C242380DBF800770348 /* AddBookFormView.swift */,
+				F338EEEC238101DA00D6C5C9 /* AddBookFormViewModel.swift */,
+			);
+			path = "Add Book";
+			sourceTree = "<group>";
+		};
+		F338EEEE2381EB4C00D6C5C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F338EEEF2381EB6000D6C5C9 /* StarRatingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F3628BE62380929D00770348 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +103,15 @@
 		F3628BF12380929D00770348 /* Bookworm */ = {
 			isa = PBXGroup;
 			children = (
+				F3628C03238092A000770348 /* Info.plist */,
 				F3628BF22380929D00770348 /* AppDelegate.swift */,
 				F3628BF42380929D00770348 /* SceneDelegate.swift */,
 				F3628C092380994A00770348 /* Data */,
-				F3628BFB238092A000770348 /* Assets.xcassets */,
 				F3628C00238092A000770348 /* LaunchScreen.storyboard */,
-				F3628C03238092A000770348 /* Info.plist */,
 				F3628BFD238092A000770348 /* Preview Content */,
+				F3628C0C2380A31A00770348 /* Resources */,
+				F3628C0E2380A33900770348 /* Reusables */,
+				F3628C0D2380A33200770348 /* Scenes */,
 			);
 			path = Bookworm;
 			sourceTree = "<group>";
@@ -70,6 +119,7 @@
 		F3628BFD238092A000770348 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				F3628C282380EA3400770348 /* SampleData */,
 				F3628BFE238092A000770348 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -88,6 +138,8 @@
 		F3628C0A2380995100770348 /* State */ = {
 			isa = PBXGroup;
 			children = (
+				F3628C102380A3B400770348 /* AppState.swift */,
+				F3628C2B2380EE9200770348 /* BooksState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -95,8 +147,64 @@
 		F3628C0B2380995400770348 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F3628C182380D2C300770348 /* Book */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F3628C0C2380A31A00770348 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F3628BFB238092A000770348 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F3628C0D2380A33200770348 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F3628C1F2380DB2900770348 /* Books */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F3628C0E2380A33900770348 /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				F338EEEE2381EB4C00D6C5C9 /* Views */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		F3628C182380D2C300770348 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				F3628C192380D2EB00770348 /* Book+CoreDataClass.swift */,
+				F3628C1A2380D2EB00770348 /* Book+CoreDataProperties.swift */,
+				F338EEF123820C8800D6C5C9 /* Book+ComputedProperties.swift */,
+				F3628C1D2380D40500770348 /* Book+Genre.swift */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
+		F3628C1F2380DB2900770348 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				F338EEEB238101B800D6C5C9 /* Add Book */,
+				F3628C202380DBB000770348 /* BooksListContainerView.swift */,
+				F3628C222380DBCD00770348 /* BooksListView.swift */,
+				F338EEF323820EAF00D6C5C9 /* BooksListRowItem.swift */,
+				F3628C262380DD8800770348 /* BooksListViewModel.swift */,
+			);
+			path = Books;
+			sourceTree = "<group>";
+		};
+		F3628C282380EA3400770348 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				F3628C292380EA4600770348 /* SampleData.swift */,
+			);
+			path = SampleData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,6 +223,9 @@
 			dependencies = (
 			);
 			name = Bookworm;
+			packageProductDependencies = (
+				F3628C162380C7F500770348 /* CypherPoetSwiftUIKit */,
+			);
 			productName = Bookworm;
 			productReference = F3628BEF2380929D00770348 /* Bookworm.app */;
 			productType = "com.apple.product-type.application";
@@ -143,6 +254,9 @@
 				Base,
 			);
 			mainGroup = F3628BE62380929D00770348;
+			packageReferences = (
+				F3628C152380C7F500770348 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
+			);
 			productRefGroup = F3628BF02380929D00770348 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -170,9 +284,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3628C212380DBB000770348 /* BooksListContainerView.swift in Sources */,
+				F3628C2C2380EE9200770348 /* BooksState.swift in Sources */,
+				F3628C132380A3B400770348 /* AppState.swift in Sources */,
+				F338EEF423820EAF00D6C5C9 /* BooksListRowItem.swift in Sources */,
+				F3628C252380DBF800770348 /* AddBookFormView.swift in Sources */,
+				F3628C1E2380D40500770348 /* Book+Genre.swift in Sources */,
 				F3628BF32380929D00770348 /* AppDelegate.swift in Sources */,
 				F3628BF82380929D00770348 /* Bookworm.xcdatamodeld in Sources */,
+				F338EEED238101DA00D6C5C9 /* AddBookFormViewModel.swift in Sources */,
+				F338EEF02381EB6000D6C5C9 /* StarRatingView.swift in Sources */,
+				F3628C2A2380EA4600770348 /* SampleData.swift in Sources */,
+				F3628C1B2380D2EB00770348 /* Book+CoreDataClass.swift in Sources */,
+				F3628C1C2380D2EB00770348 /* Book+CoreDataProperties.swift in Sources */,
+				F338EEF223820C8800D6C5C9 /* Book+ComputedProperties.swift in Sources */,
+				F3628C272380DD8900770348 /* BooksListViewModel.swift in Sources */,
 				F3628BF52380929D00770348 /* SceneDelegate.swift in Sources */,
+				F3628C232380DBCD00770348 /* BooksListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +494,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3628C152380C7F500770348 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.22;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3628C162380C7F500770348 /* CypherPoetSwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3628C152380C7F500770348 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */;
+			productName = CypherPoetSwiftUIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F3628BF62380929D00770348 /* Bookworm.xcdatamodeld */ = {

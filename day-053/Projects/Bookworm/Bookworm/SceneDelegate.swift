@@ -22,14 +22,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
 
         let window = UIWindow(windowScene: windowScene)
+        let store = AppStore(initialState: AppState(), appReducer: appReducer)
         
         // Get the managed object context from the shared persistent container.
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
-        let entryView = EmptyView()
+        let entryView = BooksListContainerView()
             .environment(\.managedObjectContext, context)
+            .environmentObject(store)
             .accentColor(.pink)
         
         // Use a UIHostingController as window root view controller.
