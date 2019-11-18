@@ -21,8 +21,8 @@ enum SampleBooks {
     static let book1: Book = {
         var book = Book(context: SampleMOC.default)
 
-        book.author = "Henry Hazlitt"
         book.title = "Economics in One Lesson"
+        book.author = "Henry Hazlitt"
         book.id = .init()
         book.genre = .economics
         book.rating = 5
@@ -35,8 +35,8 @@ enum SampleBooks {
     static let book2: Book = {
         var book = Book(context: SampleMOC.default)
         
-        book.author = "J. R. R. Tolkien"
         book.title = "The Silmarillion"
+        book.author = "J. R. R. Tolkien"
         book.id = .init()
         book.genre = .fantasy
         book.rating = 5
@@ -45,10 +45,24 @@ enum SampleBooks {
         return book
     }()
     
+    static let book3: Book = {
+        var book = Book(context: SampleMOC.default)
+        
+        book.title = "The Character of Physical Law"
+        book.author = "Richard Feynman"
+        book.id = .init()
+        book.genre = .science
+        book.rating = 5
+        book.reviewText = "The Best Book Ever."
+        
+        return book
+    }()
+    
     
     static let `default`: [Book] = [
         book1,
-        book2
+        book2,
+        book3,
     ]
 }
 
