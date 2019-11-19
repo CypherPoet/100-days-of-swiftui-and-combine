@@ -61,6 +61,20 @@ enum SampleBooks {
     }()
     
     
+    static let oneStar: Book = {
+        var book = Book(context: SampleMOC.default)
+        
+        book.title = "Learn to Code in 5 Minutes"
+        book.author = "Foo Bar"
+        book.id = .init()
+        book.genre = .softwareEngineering
+        book.rating = 1
+        book.reviewText = "Ended on an abrupt cliffhanger after printing \"Hello world\"."
+        
+        return book
+    }()
+    
+    
     static let `default`: [Book] = [
         book1,
         book2,

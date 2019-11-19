@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CypherPoetSwiftUIKit
 
 
 struct BooksListRowItem: View {
@@ -22,9 +23,9 @@ extension BooksListRowItem {
             Text(book.emojiForRating)
                 .font(.title)
             
+            
             VStack(alignment: .leading) {
-                Text(book.title ?? "Unknown Title")
-                    .font(.headline)
+                bookTitle
                 
                 Text(book.author ?? "Unknown Author")
                     .font(.subheadline)
@@ -42,6 +43,19 @@ extension BooksListRowItem {
 
 // MARK: - View Variables
 extension BooksListRowItem {
+    
+    private var bookTitle: some View {
+        let text = Text(book.title ?? "Unknown Title")
+            .font(.headline)
+        
+        return Group {
+            if book.rating < 2 {
+                text.foregroundColor(.red)
+            } else {
+                text
+            }
+        }
+    }
 }
 
 
@@ -50,6 +64,9 @@ extension BooksListRowItem {
 struct BooksListRowItem_Previews: PreviewProvider {
 
     static var previews: some View {
-        BooksListRowItem(book: SampleBooks.book1)
+        Group {
+            BooksListRowItem(book: SampleBooks.book1)
+            BooksListRowItem(book: SampleBooks.oneStar)
+        }
     }
 }

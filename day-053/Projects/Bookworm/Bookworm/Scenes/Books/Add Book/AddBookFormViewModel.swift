@@ -34,11 +34,6 @@ final class AddBookFormViewModel: ObservableObject {
 
 // MARK: - Publishers
 extension AddBookFormViewModel {
-
-    private var someValuePublisher: AnyPublisher<String, Never> {
-        Just("")
-            .eraseToAnyPublisher()
-    }
 }
 
 
