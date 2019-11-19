@@ -149,7 +149,7 @@ Cheers! ✌️
 </div>
 
 
-- [Project 11: CupcakeCorner](./day-/Projects/Bookworm)
+- [Project 11: Bookworm](./day-053/Projects/Bookworm)
 
 <div style="text-align: center;">
   <img src="./day-053/Projects/Bookworm/Screenshots/day-56-recording-1.gif" width="300px"/>
