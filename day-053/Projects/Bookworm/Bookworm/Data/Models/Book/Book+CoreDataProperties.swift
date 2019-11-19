@@ -22,7 +22,7 @@ extension Book {
     @NSManaged public var rating: Int16
     @NSManaged public var author: String?
     @NSManaged public var reviewText: String?
-
+    @NSManaged public var reviewDate: Date?
 
     @NSManaged private var genreValue: Int16
     

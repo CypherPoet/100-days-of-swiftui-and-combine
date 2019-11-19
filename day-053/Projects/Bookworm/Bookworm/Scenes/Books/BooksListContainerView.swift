@@ -25,7 +25,7 @@ extension BooksListContainerView {
     var body: some View {
         NavigationView {
             BooksListView(
-                books: Array(books),
+                books: Array(books), // Converting the `FetchedResults` into an `Array` here seems to work... but breaks the preview 🤔.
                 onBooksDeleted: deleteBooks(at:),
                 buildDestination: {
                     BookDetailsView(book: $0, onDelete: self.delete(book:))

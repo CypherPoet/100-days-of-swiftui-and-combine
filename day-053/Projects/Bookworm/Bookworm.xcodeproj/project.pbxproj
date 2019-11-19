@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F316C3CE2383973200741AEC /* Book+FetchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F316C3CD2383973200741AEC /* Book+FetchHelpers.swift */; };
 		F316C3D02383AB9900741AEC /* GenreBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F316C3CF2383AB9900741AEC /* GenreBanner.swift */; };
+		F316C3D72383D92300741AEC /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F316C3D62383D92300741AEC /* DateFormatters.swift */; };
 		F338EEED238101DA00D6C5C9 /* AddBookFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338EEEC238101DA00D6C5C9 /* AddBookFormViewModel.swift */; };
 		F338EEF02381EB6000D6C5C9 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338EEEF2381EB6000D6C5C9 /* StarRatingView.swift */; };
 		F338EEF223820C8800D6C5C9 /* Book+ComputedProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338EEF123820C8800D6C5C9 /* Book+ComputedProperties.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		F316C3CD2383973200741AEC /* Book+FetchHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+FetchHelpers.swift"; sourceTree = "<group>"; };
 		F316C3CF2383AB9900741AEC /* GenreBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreBanner.swift; sourceTree = "<group>"; };
+		F316C3D62383D92300741AEC /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		F338EEEC238101DA00D6C5C9 /* AddBookFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookFormViewModel.swift; sourceTree = "<group>"; };
 		F338EEEF2381EB6000D6C5C9 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		F338EEF123820C8800D6C5C9 /* Book+ComputedProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+ComputedProperties.swift"; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F316C3D52383D90700741AEC /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				F316C3D62383D92300741AEC /* DateFormatters.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
 		F338EEEB238101B800D6C5C9 /* Add Book */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +199,7 @@
 		F3628C0E2380A33900770348 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F316C3D52383D90700741AEC /* Formatters */,
 				F338EEEE2381EB4C00D6C5C9 /* Views */,
 			);
 			path = Reusables;
@@ -308,6 +319,7 @@
 				F3628C132380A3B400770348 /* AppState.swift in Sources */,
 				F338EEF9238249F500D6C5C9 /* BookDetailsView.swift in Sources */,
 				F338EEF423820EAF00D6C5C9 /* BooksListRowItem.swift in Sources */,
+				F316C3D72383D92300741AEC /* DateFormatters.swift in Sources */,
 				F338EEF6238244C400D6C5C9 /* CoreDataState.swift in Sources */,
 				F3628C252380DBF800770348 /* AddBookFormView.swift in Sources */,
 				F3628C1E2380D40500770348 /* Book+Genre.swift in Sources */,

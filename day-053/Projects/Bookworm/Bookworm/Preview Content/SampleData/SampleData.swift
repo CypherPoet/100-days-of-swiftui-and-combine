@@ -43,6 +43,7 @@ enum SampleBooks {
         book.genre = .fantasy
         book.rating = 5
         book.reviewText = "Amazing."
+        book.reviewDate = Date()
         
         return book
     }()
@@ -56,6 +57,7 @@ enum SampleBooks {
         book.genre = .science
         book.rating = 5
         book.reviewText = "The Best Book Ever."
+        book.reviewDate = Date()
         
         return book
     }()
@@ -70,6 +72,7 @@ enum SampleBooks {
         book.genre = .softwareEngineering
         book.rating = 1
         book.reviewText = "Ended on an abrupt cliffhanger after printing \"Hello world\"."
+        book.reviewDate = Date()
         
         return book
     }()

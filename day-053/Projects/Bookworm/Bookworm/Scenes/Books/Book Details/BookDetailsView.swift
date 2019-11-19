@@ -10,7 +10,6 @@ import SwiftUI
 
 
 struct BookDetailsView: View {
-    @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
 
     let onDelete: ((Book) -> Void)
@@ -34,20 +33,13 @@ extension BookDetailsView {
             VStack {
                 GenreBanner(genre: self.viewModel.book.genre, container: geometry)
                 
-                HStack {
-                    Image(systemName: "person.fill")
-                    Text(self.viewModel.bookAuthorText)
-                        .font(.title)
-                        .foregroundColor(.secondary)
+                VStack(spacing: 28.0) {
+                    self.authorSection
+                    self.reviewHeaderSection
+                    self.reviewBodySection
+                        .padding(.horizontal)
                 }
                 
-                                
-                Text(self.viewModel.reviewText)
-                    .padding()
-                                
-                StarRatingView(rating: .constant(Int(self.viewModel.book.rating)))
-                    .font(.largeTitle)
-                                
                 Spacer()
             }
         }
@@ -88,6 +80,38 @@ extension BookDetailsView {
                 .imageScale(.large)
         }
     }
+    
+    
+    private var authorSection: some View {
+        HStack {
+            
+            Image(systemName: "person.fill")
+            
+            Text(viewModel.bookAuthorText)
+                .fontWeight(.light)
+        }
+        .font(.title)
+    }
+    
+    
+    private var reviewHeaderSection: some View {
+        VStack(spacing: 8) {
+            StarRatingView(rating: .constant(Int(viewModel.book.rating)))
+                .font(.title)
+
+        Text(viewModel.reivewDateText)
+            .font(.callout)
+            .foregroundColor(.secondary)
+        }
+    }
+    
+    
+    private var reviewBodySection: some View {
+        HStack {
+            Text(viewModel.reviewText)
+            Spacer()
+        }
+    }
 }
 
 
@@ -101,7 +125,6 @@ struct BookDetailsView_Previews: PreviewProvider {
                 book: SampleBooks.book1,
                 onDelete: { _ in }
             )
-            .environment(\.managedObjectContext, SampleMOC.default)
         }
     }
 }

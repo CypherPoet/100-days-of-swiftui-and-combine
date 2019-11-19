@@ -5,10 +5,11 @@
         <attribute name="genreValue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="reviewDate" optional="YES" attributeType="Date" defaultDateTimeInterval="595836720" usesScalarValueType="NO"/>
         <attribute name="reviewText" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Book" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="Book" positionX="-63" positionY="-18" width="128" height="148"/>
     </elements>
 </model>

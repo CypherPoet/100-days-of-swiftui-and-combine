@@ -21,6 +21,13 @@ extension BookDetailsViewModel {
     var navTitle: String { book.title ?? "Untitled" }
     var bookAuthorText: String { book.author ?? "Unknown Author" }
     var reviewText: String { book.reviewText ?? "" }
+    
+    var reivewDateText: String {
+        guard let reviewDate = book.reviewDate else { return "" }
+        let dateString = DateFormatters.bookDetailsReviewDate.string(from: reviewDate)
+        
+        return "Reviewed on \(dateString)."
+    }
 }
 
 

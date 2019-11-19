@@ -14,9 +14,6 @@ struct AddBookFormView: View {
     @Environment(\.managedObjectContext) var moc
 
     var onSubmit: ((Book) -> Void)
-    
-    
-    
 }
 
 
@@ -69,6 +66,7 @@ extension AddBookFormView {
         book.genre = viewModel.genre
         book.reviewText = viewModel.reviewText
         book.rating = Int16(viewModel.rating)
+        book.reviewDate = Date()
         
         return book
     }
