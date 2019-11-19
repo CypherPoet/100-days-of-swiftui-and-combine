@@ -10,10 +10,10 @@ import SwiftUI
 
 
 struct BooksListContainerView: View {
-    @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Book.entity(), sortDescriptors: []) var books: FetchedResults<Book>
-
     @EnvironmentObject var store: AppStore
+    @Environment(\.managedObjectContext) var moc
+
+    @FetchRequest(entity: Book.entity(), sortDescriptors: Book.SortDescriptors.default) var books: FetchedResults<Book>
     
     @State private var isShowingAddScreen = false
 }
@@ -25,18 +25,17 @@ extension BooksListContainerView {
     var body: some View {
         NavigationView {
             BooksListView(
-                viewModel: BooksListViewModel(books: Array(books)),
-                buildDestination: { book in
-                    // TODO: Create a book detail view
-                    EmptyView()
+                books: Array(books),
+                onBooksDeleted: deleteBooks(at:),
+                buildDestination: {
+                    BookDetailsView(book: $0, onDelete: self.delete(book:))
                 }
             )
             .navigationBarTitle("Bookworm")
             .navigationBarItems(trailing: addBookButton)
             .sheet(isPresented: $isShowingAddScreen) {
                 AddBookFormView(
-                    viewModel: AddBookFormViewModel(),
-                    onSubmit: self.newBookSubmitted(_:)
+                    onSubmit: self.submitNew(book:)
                 )
                 .environment(\.managedObjectContext, self.moc)
             }
@@ -67,11 +66,30 @@ extension BooksListContainerView {
 // MARK: - Private Helpers
 extension BooksListContainerView {
     
-    private func newBookSubmitted(_ book: Book) {
-        isShowingAddScreen = false
+    private func submitNew(book: Book) {
+        store.send(CoreDataSideEffect.save(managedObjectContext: moc))
 
-        try? moc.save()
-//        store.send(BookSideEffect.)
+        isShowingAddScreen = false
+    }
+    
+    
+    
+    private func delete(book: Book) {
+        moc.delete(book)
+
+        // Uncomment to delete foeva
+//        store.send(CoreDataSideEffect.save(managedObjectContext: moc))
+    }
+    
+    
+    private func deleteBooks(at offsets: IndexSet) {
+        for offset in offsets {
+            let book = books[offset]
+            
+            moc.delete(book)
+        }
+        
+        store.send(CoreDataSideEffect.save(managedObjectContext: moc))
     }
 }
 
@@ -82,7 +100,7 @@ struct BooksListContainerView_Previews: PreviewProvider {
 
     static var previews: some View {
         BooksListContainerView()
-            .environment(\.managedObjectContext, SampleMOC.default)
             .environmentObject(SampleStore.default)
+            .environment(\.managedObjectContext, SampleMOC.default)
     }
 }

@@ -11,12 +11,12 @@ import CypherPoetSwiftUIKit
 
 
 struct AppState {
-    var booksState = BooksState()
+    var coreDataState = CoreDataState()
 }
 
 
 enum AppAction {
-    case books(_ booksAction: BooksAction)
+    case coreData(_ coreDataAction: CoreDataAction)
 }
 
 
@@ -26,8 +26,8 @@ enum AppAction {
 // MARK: - Reducer
 let appReducer = Reducer<AppState, AppAction> { appState, action in
     switch action {
-    case let .books(action):
-        booksReducer.reduce(&appState.booksState, action)
+    case let .coreData(action):
+        coreDataReducer.reduce(&appState.coreDataState, action)
     }
 }
 

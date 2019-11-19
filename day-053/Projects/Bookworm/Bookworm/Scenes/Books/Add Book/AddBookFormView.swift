@@ -10,10 +10,13 @@ import SwiftUI
 
 
 struct AddBookFormView: View {
-    @ObservedObject private(set) var viewModel: AddBookFormViewModel
+    @ObservedObject private(set) var viewModel = AddBookFormViewModel()
     @Environment(\.managedObjectContext) var moc
 
     var onSubmit: ((Book) -> Void)
+    
+    
+    
 }
 
 
@@ -92,7 +95,6 @@ struct AddBookFormView_Previews: PreviewProvider {
     static var previews: some View {
         
         AddBookFormView(
-            viewModel: AddBookFormViewModel(),
             onSubmit: { _ in }
         )
         .environment(\.managedObjectContext, SampleMOC.default)

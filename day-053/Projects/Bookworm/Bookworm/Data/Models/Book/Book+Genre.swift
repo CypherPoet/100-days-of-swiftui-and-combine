@@ -68,4 +68,14 @@ extension Book.Genre {
             return "Miscellaneous"
         }
     }
+    
+
+    var imageName: String {
+        let nameString = self
+            .displayValue
+            .lowercased()
+            .replacingOccurrences(of: " ", with: "-")
+        
+        return "genre-\(nameString)"
+    }
 }

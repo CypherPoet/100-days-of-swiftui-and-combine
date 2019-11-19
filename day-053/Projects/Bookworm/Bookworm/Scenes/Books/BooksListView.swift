@@ -10,9 +10,21 @@ import SwiftUI
 
 
 struct BooksListView<Destination: View>: View {
+    let buildDestination: (Book) -> Destination
+    let onBooksDeleted: ((IndexSet) -> Void)
+    
     @ObservedObject private(set) var viewModel: BooksListViewModel
     
-    let buildDestination: (Book) -> Destination
+    
+    init(
+        books: [Book],
+        onBooksDeleted: @escaping ((IndexSet) -> Void),
+        buildDestination: @escaping (Book) -> Destination
+    ) {
+        self.buildDestination = buildDestination
+        self.onBooksDeleted = onBooksDeleted
+        self.viewModel = BooksListViewModel(books: Array(books))
+    }
 }
 
 
@@ -27,8 +39,10 @@ extension BooksListView {
                         BooksListRowItem(book: book)
                     }
                 }
+                .onDelete(perform: onBooksDeleted)
             }
         }
+        .navigationBarItems(leading: EditButton())
     }
 }
 
@@ -48,9 +62,12 @@ extension BooksListView {
 struct BooksListView_Previews: PreviewProvider {
 
     static var previews: some View {
-        BooksListView(
-            viewModel: BooksListViewModel(books: SampleBooks.default),
-            buildDestination: { _ in EmptyView() }
-        )
+        NavigationView {
+            BooksListView(
+                books: SampleBooks.default,
+                onBooksDeleted: { _ in },
+                buildDestination: { _ in EmptyView() }
+            )
+        }
     }
 }

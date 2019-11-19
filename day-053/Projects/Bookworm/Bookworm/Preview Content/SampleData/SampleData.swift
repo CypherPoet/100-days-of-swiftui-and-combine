@@ -10,10 +10,12 @@
 
 
 import SwiftUI
+import CoreData
 
 
 enum SampleMOC {
-    static let `default` = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    static let `default` = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    static let appDelegate = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 }
 
 
@@ -67,15 +69,9 @@ enum SampleBooks {
 }
 
 
-enum SampleBooksState {
-    static let `default` = BooksState(allBooks: SampleBooks.default)
-}
-
 
 enum SampleAppState {
-    static let `default` = AppState(
-        booksState: SampleBooksState.default
-    )
+    static let `default` = AppState()
 }
 
 
