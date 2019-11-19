@@ -57,10 +57,11 @@ Cheers! ✌️
 - **Day 51:** [_Project 10: CupcakeCorner_ (Part Three)](./day-051/)
 - **Day 52:** [_Project 10: CupcakeCorner_ (Part Four)](./day-052/)
 - **Day 53:** [_Project 11: Bookworm_ (Part One)](./day-053/)
+- **Day 54:** [_Project 11: Bookworm_ (Part Two)](./day-054/)
 
 </details>
 
-- **Day 54:** [_Project 11: Bookworm_ (Part Two)](./day-054/)
+- **Day 55:** [_Project 11: Bookworm_ (Part Three)](./day-055/)
 
 
 
