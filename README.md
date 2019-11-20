@@ -59,10 +59,11 @@ Cheers! ✌️
 - **Day 53:** [_Project 11: Bookworm_ (Part One)](./day-053/)
 - **Day 54:** [_Project 11: Bookworm_ (Part Two)](./day-054/)
 - **Day 55:** [_Project 11: Bookworm_ (Part Three)](./day-055/)
+- **Day 56:** [_Project 11: Bookworm_ (Part Four)](./day-056/)
 
 </details>
 
-- **Day 56:** [_Project 11: Bookworm_ (Part Four)](./day-056/)
+- **Day 57:** [_Project 12: ExploringCoreData_ (Part One)](./day-057/)
 
 
 
