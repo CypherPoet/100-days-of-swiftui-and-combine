@@ -3,12 +3,22 @@
     <entity name="Candy" representedClassName="Candy" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="candies" inverseEntity="Country"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Country" representedClassName="Country" syncable="YES">
         <attribute name="abbreviation" optional="YES" attributeType="String"/>
         <attribute name="flag" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="candies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Candy" inverseName="country" inverseEntity="Candy"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Ship" representedClassName="Ship" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -16,7 +26,7 @@
     </entity>
     <elements>
         <element name="Ship" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="Country" positionX="-63" positionY="0" width="128" height="103"/>
-        <element name="Candy" positionX="-54" positionY="27" width="128" height="73"/>
+        <element name="Country" positionX="-63" positionY="0" width="128" height="28"/>
+        <element name="Candy" positionX="-54" positionY="27" width="128" height="28"/>
     </elements>
 </model>
