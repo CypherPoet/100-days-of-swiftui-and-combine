@@ -10,7 +10,10 @@ If you're just getting started with SwiftUI, I'd recommend the [About SwiftUI](h
 
 For each day that proves conducive to some kind of code or content, I'll make a standalone folder and link to it below. I'll also make a section for any standalone projects that span multiple days so those can be found directly.
 
-Cheers! ✌️
+
+### Personal Note
+
+I'm currently seeking freelance, remote opportunities as an iOS developer! If you're looking for an experienced software engineer who's been diving deep into SwiftUI, Combine, and iOS 13 since WWDC (and who prefers being paid in Bitcoin 🙂), and you could use some help with any of those things, please feel free to [reach out](mailto:CypherPoet@gmail.com) ✌️.
 
 
 ## Days
@@ -60,10 +63,11 @@ Cheers! ✌️
 - **Day 54:** [_Project 11: Bookworm_ (Part Two)](./day-054/)
 - **Day 55:** [_Project 11: Bookworm_ (Part Three)](./day-055/)
 - **Day 56:** [_Project 11: Bookworm_ (Part Four)](./day-056/)
+- **Day 57:** [_Project 12: Core Data_ (Part One)](./day-057/)
 
 </details>
 
-- **Day 57:** [_Project 12: ExploringCoreData_ (Part One)](./day-057/)
+- **Day 58:** [_Project 12: Core Data_ (Part Two)](./day-058/)
 
 
 
