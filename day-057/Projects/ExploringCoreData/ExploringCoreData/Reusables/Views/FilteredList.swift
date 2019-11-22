@@ -11,10 +11,13 @@ import CoreData
 
 
 struct FilteredList<ManagedObject: NSManagedObject, Content: View>: View {
-//    var entity: NSEntityDescription
-//    var predicate: NSPredicate
     private var filterKey: String
     private var filterValue: String
+    
+    /// The name of the [string comparison](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Predicates/Articles/pSyntax.html)
+    /// to be used between the `filterKey` and `filterValue`
+    private var filterComparison: String
+    
     private var sortDescriptors: [NSSortDescriptor]
     
     var fetchRequest: FetchRequest<ManagedObject>
@@ -24,11 +27,13 @@ struct FilteredList<ManagedObject: NSManagedObject, Content: View>: View {
     init(
         filterKey: String,
         filterValue: String,
+        filterComparison: String = "BEGINSWITH",
         sortDescriptors: [NSSortDescriptor] = [],
         @ViewBuilder buildListItem: @escaping (ManagedObject) -> Content
     ) {
         self.filterKey = filterKey
         self.filterValue = filterValue
+        self.filterComparison = filterComparison
         self.sortDescriptors = sortDescriptors
         self.buildListItem = buildListItem
         
@@ -36,7 +41,7 @@ struct FilteredList<ManagedObject: NSManagedObject, Content: View>: View {
         self.fetchRequest = .init(
             entity: ManagedObject.entity(),
             sortDescriptors: sortDescriptors,
-            predicate: NSPredicate(format: "%K BEGINSWITH %@", filterKey, filterValue),
+            predicate: NSPredicate(format: "%K \(filterComparison) %@", filterKey, filterValue),
             animation: nil
         )
     }
