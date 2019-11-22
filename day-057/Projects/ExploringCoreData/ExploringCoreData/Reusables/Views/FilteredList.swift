@@ -15,6 +15,7 @@ struct FilteredList<ManagedObject: NSManagedObject, Content: View>: View {
 //    var predicate: NSPredicate
     private var filterKey: String
     private var filterValue: String
+    private var sortDescriptors: [NSSortDescriptor]
     
     var fetchRequest: FetchRequest<ManagedObject>
     var buildListItem: (ManagedObject) -> Content
@@ -23,16 +24,18 @@ struct FilteredList<ManagedObject: NSManagedObject, Content: View>: View {
     init(
         filterKey: String,
         filterValue: String,
+        sortDescriptors: [NSSortDescriptor] = [],
         @ViewBuilder buildListItem: @escaping (ManagedObject) -> Content
     ) {
         self.filterKey = filterKey
         self.filterValue = filterValue
+        self.sortDescriptors = sortDescriptors
         self.buildListItem = buildListItem
         
         // 🤔 Lots of potential to make this even moar configurable, IMO
         self.fetchRequest = .init(
             entity: ManagedObject.entity(),
-            sortDescriptors: [],
+            sortDescriptors: sortDescriptors,
             predicate: NSPredicate(format: "%K BEGINSWITH %@", filterKey, filterValue),
             animation: nil
         )
@@ -44,8 +47,10 @@ struct FilteredList<ManagedObject: NSManagedObject, Content: View>: View {
 extension FilteredList {
 
     var body: some View {
-        List(fetchRequest.wrappedValue, id: \.self) { object in
-            self.buildListItem(object)
+        List {
+            ForEach(fetchRequest.wrappedValue, id: \.self) { object in
+                self.buildListItem(object)
+            }
         }
     }
 }

@@ -9,8 +9,6 @@
 import Foundation
 
 
-
-
 extension Country {
 
     var wrappedName: String { name ?? "Unknown Name" }

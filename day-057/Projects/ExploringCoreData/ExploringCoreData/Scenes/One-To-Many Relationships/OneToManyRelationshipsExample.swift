@@ -24,6 +24,7 @@ extension OneToManyRelationshipsExample {
             candyList
             addDataButton
         }
+        .navigationBarTitle("One-to-many Relationships")
     }
 }
 
@@ -37,12 +38,16 @@ extension OneToManyRelationshipsExample {
 extension OneToManyRelationshipsExample {
     
     private var candyList: some View {
-        List {
-            ForEach(countries, id: \.self) { country in
+        FilteredList(
+            filterKey: "name",
+            filterValue: "U",
+            sortDescriptors: [
+                Country.SortDescriptor.byAbbreviation,
+            ],
+            buildListItem: { (country: Country) in
                 CandyListSection(country: country)
             }
-        }
-        .navigationBarTitle("One-to-many Relationships")
+        )
     }
     
     
@@ -57,6 +62,12 @@ extension OneToManyRelationshipsExample {
             switzerland.name = "Switzerland"
             switzerland.abbreviation = "CH"
             switzerland.flag = "🇨🇭"
+            
+            let usa = Country(context: self.moc)
+            usa.name = "United States of America"
+            usa.abbreviation = "USA"
+            usa.flag = "🇺🇸"
+            
 
             let candy1 = Candy(context: self.moc)
             candy1.name = "Mars"
@@ -74,6 +85,15 @@ extension OneToManyRelationshipsExample {
             candy4.name = "Toblerone"
             candy4.country = switzerland
 
+            let candy5 = Candy(context: self.moc)
+            candy5.name = "Reese's Cups"
+            candy5.country = usa
+            
+            let candy6 = Candy(context: self.moc)
+            candy6.name = "Hershey's Gold"
+            candy6.country = usa
+            
+            
             do {
                 try self.moc.save()
             } catch {
