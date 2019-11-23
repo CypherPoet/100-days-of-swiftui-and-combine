@@ -18,22 +18,39 @@ struct MissionsListContainerView: View {
 extension MissionsListContainerView {
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            missionsList
+        }
+        .onAppear(perform: fetchMissions)
     }
 }
 
 
 // MARK: - Computeds
 extension MissionsListContainerView {
-
-
 }
 
 
 // MARK: - View Variables
 extension MissionsListContainerView {
 
+    private var missionsList: some View {
+        MissionsListView(
+            missions: store.state.missionsState.missions,
+            buildDestination: { mission in
+                MissionDetailsView(mission: mission)
+            }
+        )
+    }
+}
 
+
+// MARK: - Private Helpers
+private extension MissionsListContainerView {
+    
+    func fetchMissions() {
+        store.send(MissionsSideEffect.fetch)
+    }
 }
 
 

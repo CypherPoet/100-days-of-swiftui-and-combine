@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CypherPoetNetStack",
+        "repositoryURL": "https://github.com/CypherPoet/CypherPoetNetStack.git",
+        "state": {
+          "branch": null,
+          "revision": "5c5a1b4bd2e8ace3cada1a4d0358a998e66138a4",
+          "version": "0.0.20"
+        }
+      },
+      {
+        "package": "CypherPoetSwiftUIKit",
+        "repositoryURL": "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git",
+        "state": {
+          "branch": null,
+          "revision": "1a2b0e98984a36f5a480cafd815c386e2f777b1f",
+          "version": "0.0.22"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

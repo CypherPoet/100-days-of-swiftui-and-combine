@@ -13,10 +13,10 @@ struct Mission {
     var missionID: String
     var name: String
     var manufacturers: [String]
-    var payloadIds: [String]
-    var wikipediaURL: URL
-    var websiteURL: URL
-    var twitterURL: URL
+    var payloadIDs: [String]
+    var wikipediaURL: URL?
+    var websiteURL: URL?
+    var twitterURL: URL?
     var description: String
 }
 
@@ -32,7 +32,7 @@ extension Mission: Codable {
         case missionID = "mission_id"
         case name = "mission_name"
         case manufacturers
-        case payloadIds = "payload_ids"
+        case payloadIDs = "payload_ids"
         case wikipediaURL = "wikipedia"
         case websiteURL = "website"
         case twitterURL = "twitter"
