@@ -33,6 +33,7 @@
 		F36B22BE2387EFE6000C9E74 /* DynamicFilteringExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36B22BD2387EFE6000C9E74 /* DynamicFilteringExample.swift */; };
 		F36B22C22387F02D000C9E74 /* GenericFilteredListExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36B22C12387F02D000C9E74 /* GenericFilteredListExample.swift */; };
 		F36B22C42388010F000C9E74 /* Country+FetchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36B22C32388010F000C9E74 /* Country+FetchHelpers.swift */; };
+		F36B22C723880CC0000C9E74 /* NSComparisonPredicate+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36B22C623880CC0000C9E74 /* NSComparisonPredicate+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		F36B22BD2387EFE6000C9E74 /* DynamicFilteringExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicFilteringExample.swift; sourceTree = "<group>"; };
 		F36B22C12387F02D000C9E74 /* GenericFilteredListExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericFilteredListExample.swift; sourceTree = "<group>"; };
 		F36B22C32388010F000C9E74 /* Country+FetchHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+FetchHelpers.swift"; sourceTree = "<group>"; };
+		F36B22C623880CC0000C9E74 /* NSComparisonPredicate+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSComparisonPredicate+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 		F36B22A2238783F5000C9E74 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F36B22C523880C7A000C9E74 /* Predicate Utils */,
 				F36B22A3238783FB000C9E74 /* Views */,
 			);
 			path = Reusables;
@@ -245,6 +248,14 @@
 				F36B22B92387ED7E000C9E74 /* Candy+Comparable.swift */,
 			);
 			path = Candy;
+			sourceTree = "<group>";
+		};
+		F36B22C523880C7A000C9E74 /* Predicate Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F36B22C623880CC0000C9E74 /* NSComparisonPredicate+Utils.swift */,
+			);
+			path = "Predicate Utils";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +345,7 @@
 				F36B229223869A44000C9E74 /* DynamicFilteringExampleListView.swift in Sources */,
 				F36B22B42387E301000C9E74 /* Candy+CoreDataProperties.swift in Sources */,
 				F36B22AA2387DE7D000C9E74 /* CandyListSection.swift in Sources */,
+				F36B22C723880CC0000C9E74 /* NSComparisonPredicate+Utils.swift in Sources */,
 				F316C3E72384994E00741AEC /* SceneDelegate.swift in Sources */,
 				F316C3EA2384994E00741AEC /* ExploringCoreData.xcdatamodeld in Sources */,
 				F36B22BE2387EFE6000C9E74 /* DynamicFilteringExample.swift in Sources */,

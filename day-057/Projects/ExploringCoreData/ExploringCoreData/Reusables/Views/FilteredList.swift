@@ -16,7 +16,7 @@ struct FilteredList<ManagedObject: NSManagedObject, Content: View>: View {
     
     /// The name of the [string comparison](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Predicates/Articles/pSyntax.html)
     /// to be used between the `filterKey` and `filterValue`
-    private var filterComparison: String
+    private var comparisonOperator: NSComparisonPredicate.Operator
     
     private var sortDescriptors: [NSSortDescriptor]
     
@@ -27,21 +27,22 @@ struct FilteredList<ManagedObject: NSManagedObject, Content: View>: View {
     init(
         filterKey: String,
         filterValue: String,
-        filterComparison: String = "BEGINSWITH",
+        filterComparison comparisonOperator: NSComparisonPredicate.Operator = .beginsWith,
         sortDescriptors: [NSSortDescriptor] = [],
         @ViewBuilder buildListItem: @escaping (ManagedObject) -> Content
     ) {
         self.filterKey = filterKey
         self.filterValue = filterValue
-        self.filterComparison = filterComparison
+        self.comparisonOperator = comparisonOperator
         self.sortDescriptors = sortDescriptors
         self.buildListItem = buildListItem
         
-        // 🤔 Lots of potential to make this even moar configurable, IMO
+        let comparisonString = NSComparisonPredicate.stringValue(for: comparisonOperator)
+        
         self.fetchRequest = .init(
             entity: ManagedObject.entity(),
             sortDescriptors: sortDescriptors,
-            predicate: NSPredicate(format: "%K \(filterComparison) %@", filterKey, filterValue),
+            predicate: NSPredicate(format: "%K \(comparisonString) %@", filterKey, filterValue),
             animation: nil
         )
     }
@@ -60,19 +61,6 @@ extension FilteredList {
     }
 }
 
-
-// MARK: - Computeds
-extension FilteredList {
-
-
-}
-
-
-// MARK: - View Variables
-extension FilteredList {
-
-
-}
 
 
 

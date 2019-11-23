@@ -29,10 +29,6 @@ extension OneToManyRelationshipsExample {
 }
 
 
-// MARK: - Computeds
-extension OneToManyRelationshipsExample {
-}
-
 
 // MARK: - View Variables
 extension OneToManyRelationshipsExample {
@@ -41,6 +37,7 @@ extension OneToManyRelationshipsExample {
         FilteredList(
             filterKey: "name",
             filterValue: "U",
+            filterComparison: .beginsWith,
             sortDescriptors: [
                 Country.SortDescriptor.byAbbreviation,
             ],
