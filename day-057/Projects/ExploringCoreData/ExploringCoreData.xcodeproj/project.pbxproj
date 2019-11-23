@@ -98,15 +98,15 @@
 		F316C3E32384994E00741AEC /* ExploringCoreData */ = {
 			isa = PBXGroup;
 			children = (
-				F36B22A2238783F5000C9E74 /* Reusables */,
-				F316C3FE238661E500741AEC /* Data */,
-				F316C3E42384994E00741AEC /* AppDelegate.swift */,
-				F316C4032386896800741AEC /* Resources */,
-				F316C3E62384994E00741AEC /* SceneDelegate.swift */,
-				F316C3FB23865F0700741AEC /* Scenes */,
-				F316C3F22384995000741AEC /* LaunchScreen.storyboard */,
 				F316C3F52384995000741AEC /* Info.plist */,
+				F316C3E42384994E00741AEC /* AppDelegate.swift */,
+				F316C3E62384994E00741AEC /* SceneDelegate.swift */,
+				F316C3FE238661E500741AEC /* Data */,
+				F316C3F22384995000741AEC /* LaunchScreen.storyboard */,
 				F316C3EF2384995000741AEC /* Preview Content */,
+				F316C4032386896800741AEC /* Resources */,
+				F36B22A2238783F5000C9E74 /* Reusables */,
+				F316C3FB23865F0700741AEC /* Scenes */,
 			);
 			path = ExploringCoreData;
 			sourceTree = "<group>";
@@ -124,10 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				F316C3FC23865F1700741AEC /* MainView.swift */,
-				F36B22A62387DD3C000C9E74 /* One-To-Many Relationships */,
-				F36B229F23877EA9000C9E74 /* Generic Filtered Lists */,
 				F36B228E2386999D000C9E74 /* Dynamically Filtering FetchRequests */,
 				F316C3FF238684E500741AEC /* Filtering with NSPredicate */,
+				F36B229F23877EA9000C9E74 /* Generic Filtered Lists */,
+				F36B22A62387DD3C000C9E74 /* One-To-Many Relationships */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
