@@ -37,9 +37,7 @@ extension MissionsListContainerView {
     private var missionsList: some View {
         MissionsListView(
             missions: store.state.missionsState.missions,
-            buildDestination: { mission in
-                MissionDetailsView(mission: mission)
-            }
+            buildDestination: buildDestination(forMission:)
         )
     }
 }
@@ -51,7 +49,24 @@ private extension MissionsListContainerView {
     func fetchMissions() {
         store.send(MissionsSideEffect.fetch)
     }
+    
+    
+    func buildDestination(forMission mission: Mission) -> some View {
+        MissionDetailsView(
+            mission: mission,
+            buildDestination: buildDestination(forPayloadID:)
+        )
+    }
+    
+    
+    func buildDestination(forPayloadID payloadID: Payload.ID) -> some View {
+        PayloadDetailsView(
+            payloadID: payloadID,
+            store: store
+        )
+    }
 }
+
 
 
 

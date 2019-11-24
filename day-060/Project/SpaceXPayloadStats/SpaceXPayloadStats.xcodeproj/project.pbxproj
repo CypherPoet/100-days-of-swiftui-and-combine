@@ -27,6 +27,8 @@
 		F3F9F3E223897B7000864243 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3E123897B7000864243 /* Dependencies.swift */; };
 		F3F9F3E423897CA800864243 /* SpaceXAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3E323897CA800864243 /* SpaceXAPIService.swift */; };
 		F3F9F3E62389828D00864243 /* Endpoint+SpaceXAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3E52389828D00864243 /* Endpoint+SpaceXAPI.swift */; };
+		F3F9F3EB23899C0B00864243 /* PayloadDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3EA23899C0B00864243 /* PayloadDetailsView.swift */; };
+		F3F9F3ED238A6F7800864243 /* PayloadDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3EC238A6F7800864243 /* PayloadDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		F3F9F3E123897B7000864243 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		F3F9F3E323897CA800864243 /* SpaceXAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXAPIService.swift; sourceTree = "<group>"; };
 		F3F9F3E52389828D00864243 /* Endpoint+SpaceXAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+SpaceXAPI.swift"; sourceTree = "<group>"; };
+		F3F9F3EA23899C0B00864243 /* PayloadDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadDetailsView.swift; sourceTree = "<group>"; };
+		F3F9F3EC238A6F7800864243 /* PayloadDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 		F3F9F3BC23894FFA00864243 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F3F9F3E723899B4900864243 /* Payload Details */,
 				F3F9F3D8238966C400864243 /* Missions */,
 			);
 			path = Scenes;
@@ -217,6 +222,15 @@
 				F3F9F3E323897CA800864243 /* SpaceXAPIService.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		F3F9F3E723899B4900864243 /* Payload Details */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3EA23899C0B00864243 /* PayloadDetailsView.swift */,
+				F3F9F3EC238A6F7800864243 /* PayloadDetailsViewModel.swift */,
+			);
+			path = "Payload Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,9 +316,11 @@
 				F3F9F3D72389611800864243 /* Payload+OrbitParams.swift in Sources */,
 				F3F9F3CD2389556700864243 /* MissionsState.swift in Sources */,
 				F3F9F3E223897B7000864243 /* Dependencies.swift in Sources */,
+				F3F9F3ED238A6F7800864243 /* PayloadDetailsViewModel.swift in Sources */,
 				F3F9F3E62389828D00864243 /* Endpoint+SpaceXAPI.swift in Sources */,
 				F3F9F3E423897CA800864243 /* SpaceXAPIService.swift in Sources */,
 				F3F9F3D52389567D00864243 /* Payload.swift in Sources */,
+				F3F9F3EB23899C0B00864243 /* PayloadDetailsView.swift in Sources */,
 				F3F9F3C7238953B600864243 /* SampleData.swift in Sources */,
 				F3F9F3DA238966E000864243 /* MissionsListContainerView.swift in Sources */,
 				F3F9F3A723892C0300864243 /* SceneDelegate.swift in Sources */,
