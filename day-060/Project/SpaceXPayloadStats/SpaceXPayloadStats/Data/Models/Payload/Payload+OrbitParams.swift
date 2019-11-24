@@ -42,8 +42,8 @@ extension Payload.OrbitParams: Codable {
         case referenceSystem = "reference_system"
         case regime
         case longitude
-        case periapsis
-        case apoapsis
+        case periapsis = "periapsis_km"
+        case apoapsis = "apoapsis_km"
         case epoch
         case meanAnomaly = "mean_anomaly"
         case lifeSpanYears = "lifespan_years"

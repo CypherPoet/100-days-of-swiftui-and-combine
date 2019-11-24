@@ -29,6 +29,7 @@
 		F3F9F3E62389828D00864243 /* Endpoint+SpaceXAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3E52389828D00864243 /* Endpoint+SpaceXAPI.swift */; };
 		F3F9F3EB23899C0B00864243 /* PayloadDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3EA23899C0B00864243 /* PayloadDetailsView.swift */; };
 		F3F9F3ED238A6F7800864243 /* PayloadDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3EC238A6F7800864243 /* PayloadDetailsViewModel.swift */; };
+		F3F9F3F0238AB02B00864243 /* DateFormatter+iso8601Full.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3EF238AB02B00864243 /* DateFormatter+iso8601Full.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		F3F9F3E52389828D00864243 /* Endpoint+SpaceXAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+SpaceXAPI.swift"; sourceTree = "<group>"; };
 		F3F9F3EA23899C0B00864243 /* PayloadDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadDetailsView.swift; sourceTree = "<group>"; };
 		F3F9F3EC238A6F7800864243 /* PayloadDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadDetailsViewModel.swift; sourceTree = "<group>"; };
+		F3F9F3EF238AB02B00864243 /* DateFormatter+iso8601Full.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+iso8601Full.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		F3F9F3B923894FE700864243 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F3F9F3EE238AB00900864243 /* Formatters */,
 				F3F9F3BA23894FEB00864243 /* Views */,
 			);
 			path = Reusables;
@@ -233,6 +236,14 @@
 			path = "Payload Details";
 			sourceTree = "<group>";
 		};
+		F3F9F3EE238AB00900864243 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3EF238AB02B00864243 /* DateFormatter+iso8601Full.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F9F3F0238AB02B00864243 /* DateFormatter+iso8601Full.swift in Sources */,
 				F3F9F3A523892C0300864243 /* AppDelegate.swift in Sources */,
 				F3F9F3D72389611800864243 /* Payload+OrbitParams.swift in Sources */,
 				F3F9F3CD2389556700864243 /* MissionsState.swift in Sources */,

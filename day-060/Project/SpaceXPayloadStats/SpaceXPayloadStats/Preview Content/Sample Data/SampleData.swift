@@ -41,7 +41,7 @@ enum SamplePayloads {
         ],
         nationality: "Canada",
         mass: 7060,
-        oribit: "GTO",
+        orbit: "GTO",
         orbitParams: Payload.OrbitParams(
             referenceSystem: "geocentric",
             regime: "geostationary",
@@ -65,7 +65,7 @@ enum SamplePayloads {
         ],
         nationality: "Canada",
         mass: 7076,
-        oribit: "GTO",
+        orbit: "GTO",
         orbitParams: Payload.OrbitParams(
             referenceSystem: "geocentric",
             regime: "geostationary",
@@ -89,7 +89,11 @@ enum SampleAppState {
     static let withModels = AppState(
         missionsState: MissionsState(missions: [SampleMissions.telstar]),
         payloadsState: PayloadsState(
-            payloads: [
+            payloadsByID: [
+                SamplePayloads.telstar18V.id: SamplePayloads.telstar18V,
+                SamplePayloads.telstar19V.id: SamplePayloads.telstar19V,
+            ],
+            payloadsByMissionID: [
                 SampleMissions.telstar.id: [
                     SamplePayloads.telstar18V,
                     SamplePayloads.telstar19V
