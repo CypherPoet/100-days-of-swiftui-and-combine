@@ -33,15 +33,11 @@ extension MissionsListView {
 
 // MARK: - Computeds
 extension MissionsListView {
-
-
 }
 
 
 // MARK: - View Variables
 extension MissionsListView {
-
-
 }
 
 

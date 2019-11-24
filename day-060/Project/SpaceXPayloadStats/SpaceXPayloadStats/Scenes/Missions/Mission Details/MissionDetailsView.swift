@@ -19,26 +19,34 @@ struct MissionDetailsView<Destination: View>: View {
 extension MissionDetailsView {
     
     var body: some View {
-        ScrollView(.vertical) {
+//        ScrollView(.vertical) {
+        List {
             
             Text(mission.description)
                 .padding()
+                .layoutPriority(1)
             
             
             if !mission.payloadIDs.isEmpty {
-                HStack {
-                    Spacer()
-                    Text("Payload History")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .padding(.top)
-                    Spacer()
-                }
-                
-                List {
-                    ForEach(mission.payloadIDs, id: \.self) { payloadID in
-                        NavigationLink(destination: self.buildDestination(payloadID)) {
-                            Text(payloadID)
+                Section(
+                    header:
+                        HStack {
+                            Spacer()
+                            Text("Payload History")
+                                .font(.title)
+                                .fontWeight(.light)
+                            Spacer()
+                        }
+                        .padding(.vertical)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                ) {
+                    List {
+                        ForEach(mission.payloadIDs, id: \.self) { payloadID in
+                            NavigationLink(destination: self.buildDestination(payloadID)) {
+                                Text(payloadID)
+                            }
                         }
                     }
                 }
@@ -68,11 +76,20 @@ extension MissionDetailsView {
 struct MissionDetailsView_Previews: PreviewProvider {
     
     static var previews: some View {
-        NavigationView {
-            MissionDetailsView(
-                mission: SampleMissions.telstar,
-                buildDestination: { _ in EmptyView() }
-            )
+        Group {
+            NavigationView {
+                MissionDetailsView(
+                    mission: SampleMissions.telstar,
+                    buildDestination: { _ in EmptyView() }
+                )
+            }
+            
+            NavigationView {
+                MissionDetailsView(
+                    mission: SampleMissions.idridiumNext,
+                    buildDestination: { _ in EmptyView() }
+                )
+            }
         }
     }
 }

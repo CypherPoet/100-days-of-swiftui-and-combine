@@ -33,7 +33,77 @@ final class PayloadDetailsViewModel: ObservableObject {
 
 // MARK: - Computeds
 extension PayloadDetailsViewModel {
-    var payloadNameText: String { payload?.id ?? "" }
+    var payloadManufacturerText: String { payload?.manufacturer ?? "" }
+    var payloadNationalityText: String { payload?.nationality ?? "" }
+    var payloadOrbitText: String { payload?.orbit ?? "" }
+
+    
+    var payloadNameText: String {
+        guard let id = payload?.id else { return "" }
+        return "🛰 \(id)"
+    }
+    
+    var payloadTypeText: String {
+        guard let type = payload?.payloadType else { return "" }
+        
+        let emoji = payload?.payloadTypeEmoji ?? ""
+        
+        return [emoji, type].joined(separator: " ")
+    }
+    
+
+    
+    var periapsisText: String {
+        guard
+            let periapsis = payload?.orbitParams.periapsis,
+            let formattedValue = NumberFormatters.apsisLength.string(for: periapsis)
+        else { return "" }
+        
+        return "\(formattedValue) km"
+    }
+    
+    
+    var apoapsisText: String {
+        guard
+            let apoapsis = payload?.orbitParams.apoapsis,
+            let formattedValue = NumberFormatters.apsisLength.string(for: apoapsis)
+        else { return "" }
+        
+        return "\(formattedValue) km"
+    }
+    
+    
+    var orbitalDiameter: Payload.OrbitParams.Kilometers? {
+        guard
+            let apoapsis = payload?.orbitParams.apoapsis,
+            let periapsis = payload?.orbitParams.periapsis
+        else { return nil }
+        
+        return apoapsis + periapsis
+    }
+    
+    
+    var isShowingApsisLine: Bool { orbitalDiameter != nil }
+    
+    
+    var apoapsisPct: CGFloat {
+        guard
+            let apoapsis = payload?.orbitParams.apoapsis,
+            let orbitalDiameter = orbitalDiameter
+        else { return 0 }
+        
+        return CGFloat(apoapsis / orbitalDiameter)
+    }
+    
+    
+    var periapsisPct: CGFloat {
+        guard
+            let periapsis = payload?.orbitParams.periapsis,
+            let orbitalDiameter = orbitalDiameter
+        else { return 0 }
+        
+        return CGFloat(periapsis / orbitalDiameter)
+    }
 }
 
 

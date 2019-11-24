@@ -65,10 +65,11 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 56:** [_Project 11: Bookworm_ (Part Four)](./day-056/)
 - **Day 57:** [_Project 12: Core Data_ (Part One)](./day-057/)
 - **Day 58:** [_Project 12: Core Data_ (Part Two)](./day-058/)
+- **Day 59:** [_Project 12: Core Data_ (Part Three)](./day-059/)
 
 </details>
 
-- **Day 59:** [_Project 12: Core Data_ (Part Three)](./day-059/)
+- **Day 60:** [Milestone for Projects 10-12)](./day-060/)
 
 
 

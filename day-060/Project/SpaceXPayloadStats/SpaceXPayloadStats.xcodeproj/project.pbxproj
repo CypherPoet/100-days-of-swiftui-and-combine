@@ -30,6 +30,11 @@
 		F3F9F3EB23899C0B00864243 /* PayloadDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3EA23899C0B00864243 /* PayloadDetailsView.swift */; };
 		F3F9F3ED238A6F7800864243 /* PayloadDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3EC238A6F7800864243 /* PayloadDetailsViewModel.swift */; };
 		F3F9F3F0238AB02B00864243 /* DateFormatter+iso8601Full.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3EF238AB02B00864243 /* DateFormatter+iso8601Full.swift */; };
+		F3F9F3F2238AF96600864243 /* NumberFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3F1238AF96500864243 /* NumberFormatters.swift */; };
+		F3F9F3F7238B001600864243 /* InfoHeaderTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3F5238B001600864243 /* InfoHeaderTextStyle.swift */; };
+		F3F9F3F8238B001600864243 /* Text+InfoHeaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3F6238B001600864243 /* Text+InfoHeaderStyle.swift */; };
+		F3F9F3FA238B036F00864243 /* Payload+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3F9238B036E00864243 /* Payload+Computeds.swift */; };
+		F3F9F3FC238B115A00864243 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F9F3FB238B115A00864243 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +61,11 @@
 		F3F9F3EA23899C0B00864243 /* PayloadDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadDetailsView.swift; sourceTree = "<group>"; };
 		F3F9F3EC238A6F7800864243 /* PayloadDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadDetailsViewModel.swift; sourceTree = "<group>"; };
 		F3F9F3EF238AB02B00864243 /* DateFormatter+iso8601Full.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+iso8601Full.swift"; sourceTree = "<group>"; };
+		F3F9F3F1238AF96500864243 /* NumberFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatters.swift; sourceTree = "<group>"; };
+		F3F9F3F5238B001600864243 /* InfoHeaderTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHeaderTextStyle.swift; sourceTree = "<group>"; };
+		F3F9F3F6238B001600864243 /* Text+InfoHeaderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+InfoHeaderStyle.swift"; sourceTree = "<group>"; };
+		F3F9F3F9238B036E00864243 /* Payload+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payload+Computeds.swift"; sourceTree = "<group>"; };
+		F3F9F3FB238B115A00864243 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +104,6 @@
 				F3F9F3A423892C0300864243 /* AppDelegate.swift */,
 				F3F9F3A623892C0300864243 /* SceneDelegate.swift */,
 				F3F9F3E023897B6200864243 /* Networking */,
-				F3F9F3AA23892C0800864243 /* Assets.xcassets */,
 				F3F9F3B823894FE100864243 /* Data */,
 				F3F9F3AF23892C0800864243 /* LaunchScreen.storyboard */,
 				F3F9F3AC23892C0800864243 /* Preview Content */,
@@ -126,6 +135,7 @@
 		F3F9F3B923894FE700864243 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F3F9F3F3238AFFEB00864243 /* Styles */,
 				F3F9F3EE238AB00900864243 /* Formatters */,
 				F3F9F3BA23894FEB00864243 /* Views */,
 			);
@@ -142,6 +152,8 @@
 		F3F9F3BB23894FF200864243 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F3F9F3AA23892C0800864243 /* Assets.xcassets */,
+				F3F9F3FB238B115A00864243 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -194,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				F3F9F3D42389567D00864243 /* Payload.swift */,
+				F3F9F3F9238B036E00864243 /* Payload+Computeds.swift */,
 				F3F9F3D62389611800864243 /* Payload+OrbitParams.swift */,
 			);
 			path = Payload;
@@ -240,8 +253,26 @@
 			isa = PBXGroup;
 			children = (
 				F3F9F3EF238AB02B00864243 /* DateFormatter+iso8601Full.swift */,
+				F3F9F3F1238AF96500864243 /* NumberFormatters.swift */,
 			);
 			path = Formatters;
+			sourceTree = "<group>";
+		};
+		F3F9F3F3238AFFEB00864243 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3F4238AFFF300864243 /* Text */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		F3F9F3F4238AFFF300864243 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3F5238B001600864243 /* InfoHeaderTextStyle.swift */,
+				F3F9F3F6238B001600864243 /* Text+InfoHeaderStyle.swift */,
+			);
+			path = Text;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3F9F3B123892C0800864243 /* LaunchScreen.storyboard in Resources */,
+				F3F9F3FC238B115A00864243 /* Colors.xcassets in Resources */,
 				F3F9F3AE23892C0800864243 /* Preview Assets.xcassets in Resources */,
 				F3F9F3AB23892C0800864243 /* Assets.xcassets in Resources */,
 			);
@@ -323,12 +355,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F9F3F2238AF96600864243 /* NumberFormatters.swift in Sources */,
 				F3F9F3F0238AB02B00864243 /* DateFormatter+iso8601Full.swift in Sources */,
 				F3F9F3A523892C0300864243 /* AppDelegate.swift in Sources */,
 				F3F9F3D72389611800864243 /* Payload+OrbitParams.swift in Sources */,
 				F3F9F3CD2389556700864243 /* MissionsState.swift in Sources */,
 				F3F9F3E223897B7000864243 /* Dependencies.swift in Sources */,
 				F3F9F3ED238A6F7800864243 /* PayloadDetailsViewModel.swift in Sources */,
+				F3F9F3FA238B036F00864243 /* Payload+Computeds.swift in Sources */,
 				F3F9F3E62389828D00864243 /* Endpoint+SpaceXAPI.swift in Sources */,
 				F3F9F3E423897CA800864243 /* SpaceXAPIService.swift in Sources */,
 				F3F9F3D52389567D00864243 /* Payload.swift in Sources */,
@@ -336,6 +370,8 @@
 				F3F9F3C7238953B600864243 /* SampleData.swift in Sources */,
 				F3F9F3DA238966E000864243 /* MissionsListContainerView.swift in Sources */,
 				F3F9F3A723892C0300864243 /* SceneDelegate.swift in Sources */,
+				F3F9F3F7238B001600864243 /* InfoHeaderTextStyle.swift in Sources */,
+				F3F9F3F8238B001600864243 /* Text+InfoHeaderStyle.swift in Sources */,
 				F3F9F3CF2389558000864243 /* PayloadsState.swift in Sources */,
 				F3F9F3D12389565000864243 /* Mission.swift in Sources */,
 				F3F9F3DC2389743600864243 /* MissionsListView.swift in Sources */,

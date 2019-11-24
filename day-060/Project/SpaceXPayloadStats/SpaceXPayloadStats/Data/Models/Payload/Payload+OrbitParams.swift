@@ -15,23 +15,23 @@ extension Payload {
     struct OrbitParams {
         typealias Kilometers = Double
         
-        var referenceSystem: String
-        var regime: String
-        var longitude: Int
+        var referenceSystem: String?
+        var regime: String?
+        var longitude: Int?
         
-        var periapsis: Kilometers
-        var apoapsis: Kilometers
+        var periapsis: Kilometers?
+        var apoapsis: Kilometers?
         
         /// https://en.wikipedia.org/wiki/Epoch_(astronomy)
-        var epoch: Date
+        var epoch: Date?
         
         /// https://en.wikipedia.org/wiki/Mean_anomaly
-        var meanAnomaly: Double
+        var meanAnomaly: Double?
         
-        var lifeSpanYears: Int
+        var lifeSpanYears: Int?
         
         /// https://en.wikipedia.org/wiki/Geosynchronous_orbit#Properties
-        var periodMinutes: Double
+        var periodMinutes: Double?
     }
 }
 
