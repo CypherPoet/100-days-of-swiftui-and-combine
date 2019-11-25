@@ -28,9 +28,9 @@ extension MissionDetailsViewModel {
     
     var webLinks: [(linkName: String, url: URL)] {
         [
-            ("Website", wikipediaURL),
+            ("Website", websiteURL),
             ("Wikipedia", wikipediaURL),
-            ("Twitter", wikipediaURL),
+            ("Twitter", twitterURL),
         ].compactMap { labelAndURLPair in
             guard let url = labelAndURLPair.1 else { return nil }
 
