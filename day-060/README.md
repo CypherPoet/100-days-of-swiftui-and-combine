@@ -30,6 +30,19 @@ And regarding the data source:
 > For a medium-sized challenge, show a little information about their friends right on the detail screen. For a bigger challenge, make each of those friends tappable to show their own detail view.
 
 
-Honestly, though, I'm not that into listing random people's data -- so I hit up the [SpaceX API](https://github.com/r-spacex/SpaceX-API) to see if there was an opportunity to do some similar stuff with rockets 🚀.
+Honestly, though, I'm not that into listing random people's data -- so I hit up the [SpaceX API](https://github.com/r-spacex/SpaceX-API) to see if there was an opportunity to do some more-interesting-but-concordant stuff with rockets 🚀.
 
-As it turns out, `missions` and the lists of `payloads` delivered during a mission's many launches fits the mold of what we're going for here perfectly.
+As it turns out, SpaceX `missions` and the lists of `payloads` delivered during a mission's many launches fits the mold of what we're going for here perfectly.
+
+Alas, all project files can be found in [this day's `Project` folder](./Project/).
+
+
+</br>
+
+
+# 📸 Screenshots
+
+
+<div style="text-align: center;">
+  <img src="./Project/SpaceXPayloadStats/Screenshots/day-60-recording-1.gif" width="400px"/>
+</div>
