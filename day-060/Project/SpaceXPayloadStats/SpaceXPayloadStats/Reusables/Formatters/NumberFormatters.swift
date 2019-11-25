@@ -14,7 +14,7 @@ enum NumberFormatters {
         let formatter = NumberFormatter()
         
         formatter.numberStyle = .decimal
-        formatter.maximumFractionDigits = 4
+        formatter.maximumFractionDigits = 3
         
         return formatter
     }()

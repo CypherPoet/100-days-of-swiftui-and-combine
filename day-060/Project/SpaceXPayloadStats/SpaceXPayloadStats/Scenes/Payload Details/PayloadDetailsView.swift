@@ -17,6 +17,11 @@ struct PayloadDetailsView: View {
             payloadID: payloadID,
             store: store
         )
+        
+//        UINavigationBar.appearance().backgroundColor = .clear
+//        UINavigationBar.appearance().largeTitleTextAttributes = [
+//            .foregroundColor: UIColor(named: "LightGray1") ?? .systemGray
+//        ]
     }
 }
 
@@ -32,6 +37,8 @@ extension PayloadDetailsView {
             VStack {
                 Text(viewModel.payloadNameText)
                     .font(.title)
+                    .padding(.bottom, 20)
+                    .padding(.top, -20)
                 
                 HStack {
                     satStats
@@ -39,17 +46,19 @@ extension PayloadDetailsView {
                     
                     Spacer()
                         .layoutPriority(1)
-                    
-                    apsisTrackView
-                        .layoutPriority(1)
+                   
+                    if viewModel.isShowingApsisLine {
+                        apsisTrackView
+                            .layoutPriority(1)
+                    }
                 }
-                .padding()
-                
+                .padding(.horizontal)
                 
                 Spacer()
             }
             .foregroundColor(.white)
-            .padding()
+            .padding(.horizontal)
+            .padding(.bottom, 20)
             .onAppear(perform: viewModel.loadPayload)
         }
     }
@@ -85,38 +94,25 @@ extension PayloadDetailsView {
 
     private var satStats: some View {
         VStack(alignment: .leading, spacing: 28.0) {
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Payload Type")
-                    .fontWeight(.bold)
-                    .textStyle(InfoHeaderTextStyle(color: Color("LightGray1")))
-                
-                Text(viewModel.payloadTypeText)
+
+            if !viewModel.payloadTypeText.isEmpty {
+                InfoItem(headerText: "Payload Type", itemText: viewModel.payloadTypeText)
             }
             
-            
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Manufacturer")
-                    .fontWeight(.bold)
-                    .textStyle(InfoHeaderTextStyle(color: Color("LightGray1")))
-                
-                Text(viewModel.payloadManufacturerText)
+            if !viewModel.payloadMassText.isEmpty {
+                InfoItem(headerText: "Payload Mass", itemText: viewModel.payloadMassText)
             }
             
-           
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Nationality")
-                    .fontWeight(.bold)
-                    .textStyle(InfoHeaderTextStyle(color: Color("LightGray1")))
-                
-                Text(viewModel.payloadNationalityText)
+            if !viewModel.payloadManufacturerText.isEmpty {
+                InfoItem(headerText: "Manufacturer", itemText: viewModel.payloadManufacturerText)
             }
-            
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Orbit")
-                    .fontWeight(.bold)
-                    .textStyle(InfoHeaderTextStyle(color: Color("LightGray1")))
-                
-                Text(viewModel.payloadOrbitText)
+
+            if !viewModel.payloadNationalityText.isEmpty {
+                InfoItem(headerText: "Nationality", itemText: viewModel.payloadNationalityText)
+            }
+
+            if !viewModel.payloadOrbitText.isEmpty {
+                InfoItem(headerText: "Orbit", itemText: viewModel.payloadOrbitText)
             }
             
             Spacer()
@@ -181,9 +177,28 @@ private extension PayloadDetailsView {
 struct PayloadDetailsView_Previews: PreviewProvider {
 
     static var previews: some View {
-        PayloadDetailsView(
-            payloadID: SamplePayloads.telstar18V.id,
-            store: SampleStore.withModels
-        )
+        NavigationView {
+            PayloadDetailsView(
+                payloadID: SamplePayloads.telstar18V.id,
+                store: SampleStore.withModels
+            )
+        }
+    }
+}
+
+
+private struct InfoItem: View {
+    let headerText: String
+    let itemText: String
+    
+    var body: some View {
+        
+        VStack(alignment: .leading, spacing: 8) {
+            Text(headerText)
+                .fontWeight(.bold)
+                .textStyle(InfoHeaderTextStyle(color: Color("LightGray1")))
+            
+            Text(itemText)
+        }
     }
 }

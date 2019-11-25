@@ -16,10 +16,10 @@ struct Payload {
     var payloadID: String
     var payloadType: String
     var isReused: Bool
-    var manufacturer: String
+    var manufacturer: String?
     var customers: [String]
-    var nationality: String
-    var mass: Kilograms
+    var nationality: String?
+    var mass: Kilograms?
     var orbit: String
     var orbitParams: OrbitParams
 }

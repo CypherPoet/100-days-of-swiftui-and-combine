@@ -17,7 +17,7 @@ extension Payload {
         
         var referenceSystem: String?
         var regime: String?
-        var longitude: Int?
+        var longitude: Double?
         
         var periapsis: Kilometers?
         var apoapsis: Kilometers?
@@ -28,7 +28,7 @@ extension Payload {
         /// https://en.wikipedia.org/wiki/Mean_anomaly
         var meanAnomaly: Double?
         
-        var lifeSpanYears: Int?
+        var lifeSpanYears: Double?
         
         /// https://en.wikipedia.org/wiki/Geosynchronous_orbit#Properties
         var periodMinutes: Double?

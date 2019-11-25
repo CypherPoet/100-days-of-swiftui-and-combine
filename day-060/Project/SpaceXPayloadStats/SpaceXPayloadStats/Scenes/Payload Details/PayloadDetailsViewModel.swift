@@ -52,6 +52,15 @@ extension PayloadDetailsViewModel {
     }
     
 
+    var payloadMassText: String {
+        guard let mass = payload?.mass else { return "" }
+        
+        return "\(mass) kg"
+    }
+    
+    
+    
+    
     
     var periapsisText: String {
         guard

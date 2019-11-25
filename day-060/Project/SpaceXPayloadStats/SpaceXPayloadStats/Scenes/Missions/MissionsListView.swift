@@ -26,7 +26,7 @@ extension MissionsListView {
                 }
             }
         }
-        .navigationBarTitle("SpaceX Missions")
+        .navigationBarTitle("SpaceX Missions", displayMode: .automatic)
     }
 }
 

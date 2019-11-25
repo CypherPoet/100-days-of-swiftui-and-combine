@@ -35,6 +35,7 @@
 		F3F9F3F8238B001600864243 /* Text+InfoHeaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3F6238B001600864243 /* Text+InfoHeaderStyle.swift */; };
 		F3F9F3FA238B036F00864243 /* Payload+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3F9238B036E00864243 /* Payload+Computeds.swift */; };
 		F3F9F3FC238B115A00864243 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F9F3FB238B115A00864243 /* Colors.xcassets */; };
+		F3F9F3FE238BF79A00864243 /* MissionDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3FD238BF79900864243 /* MissionDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		F3F9F3F6238B001600864243 /* Text+InfoHeaderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+InfoHeaderStyle.swift"; sourceTree = "<group>"; };
 		F3F9F3F9238B036E00864243 /* Payload+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payload+Computeds.swift"; sourceTree = "<group>"; };
 		F3F9F3FB238B115A00864243 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		F3F9F3FD238BF79900864243 /* MissionDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				F3F9F3DE238976E200864243 /* MissionDetailsView.swift */,
+				F3F9F3FD238BF79900864243 /* MissionDetailsViewModel.swift */,
 			);
 			path = "Mission Details";
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				F3F9F3A723892C0300864243 /* SceneDelegate.swift in Sources */,
 				F3F9F3F7238B001600864243 /* InfoHeaderTextStyle.swift in Sources */,
 				F3F9F3F8238B001600864243 /* Text+InfoHeaderStyle.swift in Sources */,
+				F3F9F3FE238BF79A00864243 /* MissionDetailsViewModel.swift in Sources */,
 				F3F9F3CF2389558000864243 /* PayloadsState.swift in Sources */,
 				F3F9F3D12389565000864243 /* Mission.swift in Sources */,
 				F3F9F3DC2389743600864243 /* MissionsListView.swift in Sources */,
