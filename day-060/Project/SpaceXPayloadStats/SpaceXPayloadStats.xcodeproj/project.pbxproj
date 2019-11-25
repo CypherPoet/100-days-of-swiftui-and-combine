@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F3F9F3A523892C0300864243 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3A423892C0300864243 /* AppDelegate.swift */; };
+		F3F9F3A723892C0300864243 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3A623892C0300864243 /* SceneDelegate.swift */; };
+		F3F9F3AB23892C0800864243 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F9F3AA23892C0800864243 /* Assets.xcassets */; };
+		F3F9F3AE23892C0800864243 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F9F3AD23892C0800864243 /* Preview Assets.xcassets */; };
+		F3F9F3B123892C0800864243 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F9F3AF23892C0800864243 /* LaunchScreen.storyboard */; };
+		F3F9F3BF238952C500864243 /* CypherPoetSwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3F9F3BE238952C500864243 /* CypherPoetSwiftUIKit */; };
+		F3F9F3C2238952F200864243 /* CypherPoetNetStack in Frameworks */ = {isa = PBXBuildFile; productRef = F3F9F3C1238952F200864243 /* CypherPoetNetStack */; };
+		F3F9F3C7238953B600864243 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3C6238953B600864243 /* SampleData.swift */; };
+		F3F9F3CA238953C200864243 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3C8238953C200864243 /* AppState.swift */; };
+		F3F9F3CD2389556700864243 /* MissionsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3CC2389556700864243 /* MissionsState.swift */; };
+		F3F9F3CF2389558000864243 /* PayloadsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3CE2389558000864243 /* PayloadsState.swift */; };
+		F3F9F3D12389565000864243 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3D02389565000864243 /* Mission.swift */; };
+		F3F9F3D52389567D00864243 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3D42389567D00864243 /* Payload.swift */; };
+		F3F9F3D72389611800864243 /* Payload+OrbitParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3D62389611800864243 /* Payload+OrbitParams.swift */; };
+		F3F9F3DA238966E000864243 /* MissionsListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3D9238966E000864243 /* MissionsListContainerView.swift */; };
+		F3F9F3DC2389743600864243 /* MissionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3DB2389743600864243 /* MissionsListView.swift */; };
+		F3F9F3DF238976E200864243 /* MissionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3DE238976E200864243 /* MissionDetailsView.swift */; };
+		F3F9F3E223897B7000864243 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3E123897B7000864243 /* Dependencies.swift */; };
+		F3F9F3E423897CA800864243 /* SpaceXAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3E323897CA800864243 /* SpaceXAPIService.swift */; };
+		F3F9F3E62389828D00864243 /* Endpoint+SpaceXAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3E52389828D00864243 /* Endpoint+SpaceXAPI.swift */; };
+		F3F9F3EB23899C0B00864243 /* PayloadDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3EA23899C0B00864243 /* PayloadDetailsView.swift */; };
+		F3F9F3ED238A6F7800864243 /* PayloadDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3EC238A6F7800864243 /* PayloadDetailsViewModel.swift */; };
+		F3F9F3F0238AB02B00864243 /* DateFormatter+iso8601Full.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3EF238AB02B00864243 /* DateFormatter+iso8601Full.swift */; };
+		F3F9F3F2238AF96600864243 /* NumberFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3F1238AF96500864243 /* NumberFormatters.swift */; };
+		F3F9F3F7238B001600864243 /* InfoHeaderTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3F5238B001600864243 /* InfoHeaderTextStyle.swift */; };
+		F3F9F3F8238B001600864243 /* Text+InfoHeaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3F6238B001600864243 /* Text+InfoHeaderStyle.swift */; };
+		F3F9F3FA238B036F00864243 /* Payload+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3F9238B036E00864243 /* Payload+Computeds.swift */; };
+		F3F9F3FC238B115A00864243 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F9F3FB238B115A00864243 /* Colors.xcassets */; };
+		F3F9F3FE238BF79A00864243 /* MissionDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3FD238BF79900864243 /* MissionDetailsViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F3F9F3A123892C0300864243 /* SpaceXPayloadStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceXPayloadStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3F9F3A423892C0300864243 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F3F9F3A623892C0300864243 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F3F9F3AA23892C0800864243 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F3F9F3AD23892C0800864243 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F3F9F3B023892C0800864243 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F3F9F3B223892C0800864243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3F9F3C6238953B600864243 /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		F3F9F3C8238953C200864243 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F3F9F3CC2389556700864243 /* MissionsState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionsState.swift; sourceTree = "<group>"; };
+		F3F9F3CE2389558000864243 /* PayloadsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadsState.swift; sourceTree = "<group>"; };
+		F3F9F3D02389565000864243 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		F3F9F3D42389567D00864243 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
+		F3F9F3D62389611800864243 /* Payload+OrbitParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payload+OrbitParams.swift"; sourceTree = "<group>"; };
+		F3F9F3D9238966E000864243 /* MissionsListContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsListContainerView.swift; sourceTree = "<group>"; };
+		F3F9F3DB2389743600864243 /* MissionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsListView.swift; sourceTree = "<group>"; };
+		F3F9F3DE238976E200864243 /* MissionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsView.swift; sourceTree = "<group>"; };
+		F3F9F3E123897B7000864243 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		F3F9F3E323897CA800864243 /* SpaceXAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXAPIService.swift; sourceTree = "<group>"; };
+		F3F9F3E52389828D00864243 /* Endpoint+SpaceXAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+SpaceXAPI.swift"; sourceTree = "<group>"; };
+		F3F9F3EA23899C0B00864243 /* PayloadDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadDetailsView.swift; sourceTree = "<group>"; };
+		F3F9F3EC238A6F7800864243 /* PayloadDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadDetailsViewModel.swift; sourceTree = "<group>"; };
+		F3F9F3EF238AB02B00864243 /* DateFormatter+iso8601Full.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+iso8601Full.swift"; sourceTree = "<group>"; };
+		F3F9F3F1238AF96500864243 /* NumberFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatters.swift; sourceTree = "<group>"; };
+		F3F9F3F5238B001600864243 /* InfoHeaderTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHeaderTextStyle.swift; sourceTree = "<group>"; };
+		F3F9F3F6238B001600864243 /* Text+InfoHeaderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+InfoHeaderStyle.swift"; sourceTree = "<group>"; };
+		F3F9F3F9238B036E00864243 /* Payload+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payload+Computeds.swift"; sourceTree = "<group>"; };
+		F3F9F3FB238B115A00864243 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		F3F9F3FD238BF79900864243 /* MissionDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3F9F39E23892C0300864243 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3F9F3C2238952F200864243 /* CypherPoetNetStack in Frameworks */,
+				F3F9F3BF238952C500864243 /* CypherPoetSwiftUIKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F3F9F39823892C0300864243 = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3A323892C0300864243 /* SpaceXPayloadStats */,
+				F3F9F3A223892C0300864243 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F3F9F3A223892C0300864243 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3A123892C0300864243 /* SpaceXPayloadStats.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3F9F3A323892C0300864243 /* SpaceXPayloadStats */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3B223892C0800864243 /* Info.plist */,
+				F3F9F3A423892C0300864243 /* AppDelegate.swift */,
+				F3F9F3A623892C0300864243 /* SceneDelegate.swift */,
+				F3F9F3E023897B6200864243 /* Networking */,
+				F3F9F3B823894FE100864243 /* Data */,
+				F3F9F3AF23892C0800864243 /* LaunchScreen.storyboard */,
+				F3F9F3AC23892C0800864243 /* Preview Content */,
+				F3F9F3BB23894FF200864243 /* Resources */,
+				F3F9F3B923894FE700864243 /* Reusables */,
+				F3F9F3BC23894FFA00864243 /* Scenes */,
+			);
+			path = SpaceXPayloadStats;
+			sourceTree = "<group>";
+		};
+		F3F9F3AC23892C0800864243 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3C5238953A000864243 /* Sample Data */,
+				F3F9F3AD23892C0800864243 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F3F9F3B823894FE100864243 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3C42389531800864243 /* Models */,
+				F3F9F3C32389531400864243 /* State */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F3F9F3B923894FE700864243 /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3F3238AFFEB00864243 /* Styles */,
+				F3F9F3EE238AB00900864243 /* Formatters */,
+				F3F9F3BA23894FEB00864243 /* Views */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		F3F9F3BA23894FEB00864243 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F3F9F3BB23894FF200864243 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3AA23892C0800864243 /* Assets.xcassets */,
+				F3F9F3FB238B115A00864243 /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F3F9F3BC23894FFA00864243 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3E723899B4900864243 /* Payload Details */,
+				F3F9F3D8238966C400864243 /* Missions */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F3F9F3C32389531400864243 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3CC2389556700864243 /* MissionsState.swift */,
+				F3F9F3CE2389558000864243 /* PayloadsState.swift */,
+				F3F9F3C8238953C200864243 /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		F3F9F3C42389531800864243 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3D22389565900864243 /* Mission */,
+				F3F9F3D32389565D00864243 /* Payload */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F3F9F3C5238953A000864243 /* Sample Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3C6238953B600864243 /* SampleData.swift */,
+			);
+			path = "Sample Data";
+			sourceTree = "<group>";
+		};
+		F3F9F3D22389565900864243 /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3D02389565000864243 /* Mission.swift */,
+			);
+			path = Mission;
+			sourceTree = "<group>";
+		};
+		F3F9F3D32389565D00864243 /* Payload */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3D42389567D00864243 /* Payload.swift */,
+				F3F9F3F9238B036E00864243 /* Payload+Computeds.swift */,
+				F3F9F3D62389611800864243 /* Payload+OrbitParams.swift */,
+			);
+			path = Payload;
+			sourceTree = "<group>";
+		};
+		F3F9F3D8238966C400864243 /* Missions */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3D9238966E000864243 /* MissionsListContainerView.swift */,
+				F3F9F3DB2389743600864243 /* MissionsListView.swift */,
+				F3F9F3DD238976D400864243 /* Mission Details */,
+			);
+			path = Missions;
+			sourceTree = "<group>";
+		};
+		F3F9F3DD238976D400864243 /* Mission Details */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3DE238976E200864243 /* MissionDetailsView.swift */,
+				F3F9F3FD238BF79900864243 /* MissionDetailsViewModel.swift */,
+			);
+			path = "Mission Details";
+			sourceTree = "<group>";
+		};
+		F3F9F3E023897B6200864243 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3E123897B7000864243 /* Dependencies.swift */,
+				F3F9F3E52389828D00864243 /* Endpoint+SpaceXAPI.swift */,
+				F3F9F3E323897CA800864243 /* SpaceXAPIService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F3F9F3E723899B4900864243 /* Payload Details */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3EA23899C0B00864243 /* PayloadDetailsView.swift */,
+				F3F9F3EC238A6F7800864243 /* PayloadDetailsViewModel.swift */,
+			);
+			path = "Payload Details";
+			sourceTree = "<group>";
+		};
+		F3F9F3EE238AB00900864243 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3EF238AB02B00864243 /* DateFormatter+iso8601Full.swift */,
+				F3F9F3F1238AF96500864243 /* NumberFormatters.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		F3F9F3F3238AFFEB00864243 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3F4238AFFF300864243 /* Text */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		F3F9F3F4238AFFF300864243 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9F3F5238B001600864243 /* InfoHeaderTextStyle.swift */,
+				F3F9F3F6238B001600864243 /* Text+InfoHeaderStyle.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3F9F3A023892C0300864243 /* SpaceXPayloadStats */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3F9F3B523892C0800864243 /* Build configuration list for PBXNativeTarget "SpaceXPayloadStats" */;
+			buildPhases = (
+				F3F9F39D23892C0300864243 /* Sources */,
+				F3F9F39E23892C0300864243 /* Frameworks */,
+				F3F9F39F23892C0300864243 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpaceXPayloadStats;
+			packageProductDependencies = (
+				F3F9F3BE238952C500864243 /* CypherPoetSwiftUIKit */,
+				F3F9F3C1238952F200864243 /* CypherPoetNetStack */,
+			);
+			productName = SpaceXPayloadStats;
+			productReference = F3F9F3A123892C0300864243 /* SpaceXPayloadStats.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3F9F39923892C0300864243 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = CypherPoet;
+				TargetAttributes = {
+					F3F9F3A023892C0300864243 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = F3F9F39C23892C0300864243 /* Build configuration list for PBXProject "SpaceXPayloadStats" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3F9F39823892C0300864243;
+			packageReferences = (
+				F3F9F3BD238952C500864243 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
+				F3F9F3C0238952F200864243 /* XCRemoteSwiftPackageReference "CypherPoetNetStack" */,
+			);
+			productRefGroup = F3F9F3A223892C0300864243 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3F9F3A023892C0300864243 /* SpaceXPayloadStats */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3F9F39F23892C0300864243 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3F9F3B123892C0800864243 /* LaunchScreen.storyboard in Resources */,
+				F3F9F3FC238B115A00864243 /* Colors.xcassets in Resources */,
+				F3F9F3AE23892C0800864243 /* Preview Assets.xcassets in Resources */,
+				F3F9F3AB23892C0800864243 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3F9F39D23892C0300864243 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3F9F3F2238AF96600864243 /* NumberFormatters.swift in Sources */,
+				F3F9F3F0238AB02B00864243 /* DateFormatter+iso8601Full.swift in Sources */,
+				F3F9F3A523892C0300864243 /* AppDelegate.swift in Sources */,
+				F3F9F3D72389611800864243 /* Payload+OrbitParams.swift in Sources */,
+				F3F9F3CD2389556700864243 /* MissionsState.swift in Sources */,
+				F3F9F3E223897B7000864243 /* Dependencies.swift in Sources */,
+				F3F9F3ED238A6F7800864243 /* PayloadDetailsViewModel.swift in Sources */,
+				F3F9F3FA238B036F00864243 /* Payload+Computeds.swift in Sources */,
+				F3F9F3E62389828D00864243 /* Endpoint+SpaceXAPI.swift in Sources */,
+				F3F9F3E423897CA800864243 /* SpaceXAPIService.swift in Sources */,
+				F3F9F3D52389567D00864243 /* Payload.swift in Sources */,
+				F3F9F3EB23899C0B00864243 /* PayloadDetailsView.swift in Sources */,
+				F3F9F3C7238953B600864243 /* SampleData.swift in Sources */,
+				F3F9F3DA238966E000864243 /* MissionsListContainerView.swift in Sources */,
+				F3F9F3A723892C0300864243 /* SceneDelegate.swift in Sources */,
+				F3F9F3F7238B001600864243 /* InfoHeaderTextStyle.swift in Sources */,
+				F3F9F3F8238B001600864243 /* Text+InfoHeaderStyle.swift in Sources */,
+				F3F9F3FE238BF79A00864243 /* MissionDetailsViewModel.swift in Sources */,
+				F3F9F3CF2389558000864243 /* PayloadsState.swift in Sources */,
+				F3F9F3D12389565000864243 /* Mission.swift in Sources */,
+				F3F9F3DC2389743600864243 /* MissionsListView.swift in Sources */,
+				F3F9F3DF238976E200864243 /* MissionDetailsView.swift in Sources */,
+				F3F9F3CA238953C200864243 /* AppState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F3F9F3AF23892C0800864243 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3F9F3B023892C0800864243 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F3F9F3B323892C0800864243 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F3F9F3B423892C0800864243 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F3F9F3B623892C0800864243 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SpaceXPayloadStats/Preview Content\"";
+				DEVELOPMENT_TEAM = QRXXH2RKAG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SpaceXPayloadStats/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.cypherpoet.SpaceXPayloadStats;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F3F9F3B723892C0800864243 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SpaceXPayloadStats/Preview Content\"";
+				DEVELOPMENT_TEAM = QRXXH2RKAG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SpaceXPayloadStats/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.cypherpoet.SpaceXPayloadStats;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3F9F39C23892C0300864243 /* Build configuration list for PBXProject "SpaceXPayloadStats" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3F9F3B323892C0800864243 /* Debug */,
+				F3F9F3B423892C0800864243 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3F9F3B523892C0800864243 /* Build configuration list for PBXNativeTarget "SpaceXPayloadStats" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3F9F3B623892C0800864243 /* Debug */,
+				F3F9F3B723892C0800864243 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3F9F3BD238952C500864243 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.22;
+			};
+		};
+		F3F9F3C0238952F200864243 /* XCRemoteSwiftPackageReference "CypherPoetNetStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetNetStack.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.20;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3F9F3BE238952C500864243 /* CypherPoetSwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3F9F3BD238952C500864243 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */;
+			productName = CypherPoetSwiftUIKit;
+		};
+		F3F9F3C1238952F200864243 /* CypherPoetNetStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3F9F3C0238952F200864243 /* XCRemoteSwiftPackageReference "CypherPoetNetStack" */;
+			productName = CypherPoetNetStack;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F3F9F39923892C0300864243 /* Project object */;
+}
