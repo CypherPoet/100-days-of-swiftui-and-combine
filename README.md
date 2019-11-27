@@ -168,3 +168,9 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 
 
 - [Milestone Project 4: SpaceX Payload Stats](./day-060/Project/SpaceXPayloadStats/)
+
+
+
+<div style="text-align: center;">
+  <img src="./day-060/Project/SpaceXPayloadStats/Screenshots/day-60-recording-1.gif" width="300px"/>
+</div>
