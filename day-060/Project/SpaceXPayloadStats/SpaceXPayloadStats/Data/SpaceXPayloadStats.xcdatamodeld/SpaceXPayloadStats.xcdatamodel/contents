@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Mission" representedClassName="Mission" syncable="YES">
+        <attribute name="manufacturers" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="missionDescription" optional="YES" attributeType="String"/>
+        <attribute name="missionID" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="payloadIDs" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="twitterURLString" optional="YES" attributeType="String"/>
+        <attribute name="websiteURLString" optional="YES" attributeType="String"/>
+        <attribute name="wikipediaURLString" optional="YES" attributeType="String"/>
+        <relationship name="payloads" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Payload" inverseName="mission" inverseEntity="Payload"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="missionID"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="OrbitParams" representedClassName="OrbitParams" syncable="YES">
+        <attribute name="apoapsis" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="epoch" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lifespanYears" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="meanAnomaly" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="periapsis" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="periodMinutes" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="referenceSystem" optional="YES" attributeType="String"/>
+        <attribute name="regime" optional="YES" attributeType="String"/>
+        <relationship name="payload" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Payload" inverseName="orbitParams" inverseEntity="Payload"/>
+    </entity>
+    <entity name="Payload" representedClassName="Payload" syncable="YES">
+        <attribute name="customers" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="isReused" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="manufacturer" optional="YES" attributeType="String"/>
+        <attribute name="mass" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nationality" optional="YES" attributeType="String"/>
+        <attribute name="orbit" optional="YES" attributeType="String"/>
+        <attribute name="payloadID" optional="YES" attributeType="String"/>
+        <attribute name="payloadType" optional="YES" attributeType="String"/>
+        <relationship name="mission" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mission" inverseName="payloads" inverseEntity="Mission"/>
+        <relationship name="orbitParams" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OrbitParams" inverseName="payload" inverseEntity="OrbitParams"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="payloadID"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="Mission" positionX="-63" positionY="-18" width="128" height="178"/>
+        <element name="OrbitParams" positionX="-54" positionY="-9" width="128" height="193"/>
+        <element name="Payload" positionX="-54" positionY="-9" width="128" height="193"/>
+    </elements>
+</model>

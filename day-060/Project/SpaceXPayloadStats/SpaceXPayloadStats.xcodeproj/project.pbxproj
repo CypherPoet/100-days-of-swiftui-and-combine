@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F30B3646238D88480041AC59 /* CodingUserInfoKey+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30B3645238D88480041AC59 /* CodingUserInfoKey+Extensions.swift */; };
+		F352423B238EE7B2009DF1F9 /* Mission+FetchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F352423A238EE7B2009DF1F9 /* Mission+FetchHelpers.swift */; };
+		F352423D238EE80C009DF1F9 /* Payload+FetchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F352423C238EE80C009DF1F9 /* Payload+FetchHelpers.swift */; };
+		F3524240238EE983009DF1F9 /* CypherPoetCoreDataKit in Frameworks */ = {isa = PBXBuildFile; productRef = F352423F238EE983009DF1F9 /* CypherPoetCoreDataKit */; };
+		F3A61A7C238C98EE00279192 /* Mission+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A61A7A238C98EE00279192 /* Mission+CoreDataClass.swift */; };
+		F3A61A7D238C98EE00279192 /* Mission+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A61A7B238C98EE00279192 /* Mission+CoreDataProperties.swift */; };
+		F3A61A80238C994900279192 /* Payload+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A61A7E238C994900279192 /* Payload+CoreDataClass.swift */; };
+		F3A61A81238C994900279192 /* Payload+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A61A7F238C994900279192 /* Payload+CoreDataProperties.swift */; };
+		F3A61A85238C996C00279192 /* OrbitParams+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A61A83238C996C00279192 /* OrbitParams+CoreDataClass.swift */; };
+		F3A61A86238C996C00279192 /* OrbitParams+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A61A84238C996C00279192 /* OrbitParams+CoreDataProperties.swift */; };
+		F3A61A88238C9D8A00279192 /* Mission+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A61A87238C9D8A00279192 /* Mission+Computeds.swift */; };
+		F3A61A8A238C9E1100279192 /* Payload+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A61A89238C9E1100279192 /* Payload+Comparable.swift */; };
+		F3A61A8C238D67DF00279192 /* Payload+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A61A8B238D67DF00279192 /* Payload+Computeds.swift */; };
 		F3F9F3A523892C0300864243 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3A423892C0300864243 /* AppDelegate.swift */; };
 		F3F9F3A723892C0300864243 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3A623892C0300864243 /* SceneDelegate.swift */; };
 		F3F9F3AB23892C0800864243 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F9F3AA23892C0800864243 /* Assets.xcassets */; };
@@ -18,9 +31,6 @@
 		F3F9F3CA238953C200864243 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3C8238953C200864243 /* AppState.swift */; };
 		F3F9F3CD2389556700864243 /* MissionsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3CC2389556700864243 /* MissionsState.swift */; };
 		F3F9F3CF2389558000864243 /* PayloadsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3CE2389558000864243 /* PayloadsState.swift */; };
-		F3F9F3D12389565000864243 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3D02389565000864243 /* Mission.swift */; };
-		F3F9F3D52389567D00864243 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3D42389567D00864243 /* Payload.swift */; };
-		F3F9F3D72389611800864243 /* Payload+OrbitParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3D62389611800864243 /* Payload+OrbitParams.swift */; };
 		F3F9F3DA238966E000864243 /* MissionsListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3D9238966E000864243 /* MissionsListContainerView.swift */; };
 		F3F9F3DC2389743600864243 /* MissionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3DB2389743600864243 /* MissionsListView.swift */; };
 		F3F9F3DF238976E200864243 /* MissionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3DE238976E200864243 /* MissionDetailsView.swift */; };
@@ -33,12 +43,25 @@
 		F3F9F3F2238AF96600864243 /* NumberFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3F1238AF96500864243 /* NumberFormatters.swift */; };
 		F3F9F3F7238B001600864243 /* InfoHeaderTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3F5238B001600864243 /* InfoHeaderTextStyle.swift */; };
 		F3F9F3F8238B001600864243 /* Text+InfoHeaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3F6238B001600864243 /* Text+InfoHeaderStyle.swift */; };
-		F3F9F3FA238B036F00864243 /* Payload+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3F9238B036E00864243 /* Payload+Computeds.swift */; };
 		F3F9F3FC238B115A00864243 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F9F3FB238B115A00864243 /* Colors.xcassets */; };
 		F3F9F3FE238BF79A00864243 /* MissionDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3FD238BF79900864243 /* MissionDetailsViewModel.swift */; };
+		F3F9F400238C357E00864243 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F3FF238C357E00864243 /* CoreDataManager.swift */; };
+		F3F9F403238C78F600864243 /* SpaceXPayloadStats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F401238C78F500864243 /* SpaceXPayloadStats.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F30B3645238D88480041AC59 /* CodingUserInfoKey+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+Extensions.swift"; sourceTree = "<group>"; };
+		F352423A238EE7B2009DF1F9 /* Mission+FetchHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mission+FetchHelpers.swift"; sourceTree = "<group>"; };
+		F352423C238EE80C009DF1F9 /* Payload+FetchHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payload+FetchHelpers.swift"; sourceTree = "<group>"; };
+		F3A61A7A238C98EE00279192 /* Mission+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mission+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F3A61A7B238C98EE00279192 /* Mission+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mission+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F3A61A7E238C994900279192 /* Payload+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payload+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F3A61A7F238C994900279192 /* Payload+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payload+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F3A61A83238C996C00279192 /* OrbitParams+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrbitParams+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F3A61A84238C996C00279192 /* OrbitParams+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrbitParams+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F3A61A87238C9D8A00279192 /* Mission+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mission+Computeds.swift"; sourceTree = "<group>"; };
+		F3A61A89238C9E1100279192 /* Payload+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payload+Comparable.swift"; sourceTree = "<group>"; };
+		F3A61A8B238D67DF00279192 /* Payload+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payload+Computeds.swift"; sourceTree = "<group>"; };
 		F3F9F3A123892C0300864243 /* SpaceXPayloadStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceXPayloadStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F9F3A423892C0300864243 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3F9F3A623892C0300864243 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,9 +73,6 @@
 		F3F9F3C8238953C200864243 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F3F9F3CC2389556700864243 /* MissionsState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionsState.swift; sourceTree = "<group>"; };
 		F3F9F3CE2389558000864243 /* PayloadsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadsState.swift; sourceTree = "<group>"; };
-		F3F9F3D02389565000864243 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
-		F3F9F3D42389567D00864243 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
-		F3F9F3D62389611800864243 /* Payload+OrbitParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payload+OrbitParams.swift"; sourceTree = "<group>"; };
 		F3F9F3D9238966E000864243 /* MissionsListContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsListContainerView.swift; sourceTree = "<group>"; };
 		F3F9F3DB2389743600864243 /* MissionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsListView.swift; sourceTree = "<group>"; };
 		F3F9F3DE238976E200864243 /* MissionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsView.swift; sourceTree = "<group>"; };
@@ -65,9 +85,10 @@
 		F3F9F3F1238AF96500864243 /* NumberFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatters.swift; sourceTree = "<group>"; };
 		F3F9F3F5238B001600864243 /* InfoHeaderTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHeaderTextStyle.swift; sourceTree = "<group>"; };
 		F3F9F3F6238B001600864243 /* Text+InfoHeaderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+InfoHeaderStyle.swift"; sourceTree = "<group>"; };
-		F3F9F3F9238B036E00864243 /* Payload+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payload+Computeds.swift"; sourceTree = "<group>"; };
 		F3F9F3FB238B115A00864243 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		F3F9F3FD238BF79900864243 /* MissionDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsViewModel.swift; sourceTree = "<group>"; };
+		F3F9F3FF238C357E00864243 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		F3F9F402238C78F600864243 /* SpaceXPayloadStats.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpaceXPayloadStats.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3F9F3C2238952F200864243 /* CypherPoetNetStack in Frameworks */,
+				F3524240238EE983009DF1F9 /* CypherPoetCoreDataKit in Frameworks */,
 				F3F9F3BF238952C500864243 /* CypherPoetSwiftUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +105,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F30B3644238D88340041AC59 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F30B3645238D88480041AC59 /* CodingUserInfoKey+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F3A61A82238C994E00279192 /* Orbit Params */ = {
+			isa = PBXGroup;
+			children = (
+				F3A61A83238C996C00279192 /* OrbitParams+CoreDataClass.swift */,
+				F3A61A84238C996C00279192 /* OrbitParams+CoreDataProperties.swift */,
+			);
+			path = "Orbit Params";
+			sourceTree = "<group>";
+		};
 		F3F9F39823892C0300864243 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +169,8 @@
 			children = (
 				F3F9F3C42389531800864243 /* Models */,
 				F3F9F3C32389531400864243 /* State */,
+				F3F9F3FF238C357E00864243 /* CoreDataManager.swift */,
+				F3F9F401238C78F500864243 /* SpaceXPayloadStats.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -137,6 +178,7 @@
 		F3F9F3B923894FE700864243 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F30B3644238D88340041AC59 /* Extensions */,
 				F3F9F3F3238AFFEB00864243 /* Styles */,
 				F3F9F3EE238AB00900864243 /* Formatters */,
 				F3F9F3BA23894FEB00864243 /* Views */,
@@ -182,6 +224,7 @@
 		F3F9F3C42389531800864243 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F3A61A82238C994E00279192 /* Orbit Params */,
 				F3F9F3D22389565900864243 /* Mission */,
 				F3F9F3D32389565D00864243 /* Payload */,
 			);
@@ -199,7 +242,10 @@
 		F3F9F3D22389565900864243 /* Mission */ = {
 			isa = PBXGroup;
 			children = (
-				F3F9F3D02389565000864243 /* Mission.swift */,
+				F3A61A7A238C98EE00279192 /* Mission+CoreDataClass.swift */,
+				F3A61A7B238C98EE00279192 /* Mission+CoreDataProperties.swift */,
+				F352423A238EE7B2009DF1F9 /* Mission+FetchHelpers.swift */,
+				F3A61A87238C9D8A00279192 /* Mission+Computeds.swift */,
 			);
 			path = Mission;
 			sourceTree = "<group>";
@@ -207,9 +253,11 @@
 		F3F9F3D32389565D00864243 /* Payload */ = {
 			isa = PBXGroup;
 			children = (
-				F3F9F3D42389567D00864243 /* Payload.swift */,
-				F3F9F3F9238B036E00864243 /* Payload+Computeds.swift */,
-				F3F9F3D62389611800864243 /* Payload+OrbitParams.swift */,
+				F3A61A7E238C994900279192 /* Payload+CoreDataClass.swift */,
+				F3A61A7F238C994900279192 /* Payload+CoreDataProperties.swift */,
+				F352423C238EE80C009DF1F9 /* Payload+FetchHelpers.swift */,
+				F3A61A89238C9E1100279192 /* Payload+Comparable.swift */,
+				F3A61A8B238D67DF00279192 /* Payload+Computeds.swift */,
 			);
 			path = Payload;
 			sourceTree = "<group>";
@@ -297,6 +345,7 @@
 			packageProductDependencies = (
 				F3F9F3BE238952C500864243 /* CypherPoetSwiftUIKit */,
 				F3F9F3C1238952F200864243 /* CypherPoetNetStack */,
+				F352423F238EE983009DF1F9 /* CypherPoetCoreDataKit */,
 			);
 			productName = SpaceXPayloadStats;
 			productReference = F3F9F3A123892C0300864243 /* SpaceXPayloadStats.app */;
@@ -329,6 +378,7 @@
 			packageReferences = (
 				F3F9F3BD238952C500864243 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
 				F3F9F3C0238952F200864243 /* XCRemoteSwiftPackageReference "CypherPoetNetStack" */,
+				F352423E238EE983009DF1F9 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */,
 			);
 			productRefGroup = F3F9F3A223892C0300864243 /* Products */;
 			projectDirPath = "";
@@ -361,25 +411,35 @@
 				F3F9F3F2238AF96600864243 /* NumberFormatters.swift in Sources */,
 				F3F9F3F0238AB02B00864243 /* DateFormatter+iso8601Full.swift in Sources */,
 				F3F9F3A523892C0300864243 /* AppDelegate.swift in Sources */,
-				F3F9F3D72389611800864243 /* Payload+OrbitParams.swift in Sources */,
 				F3F9F3CD2389556700864243 /* MissionsState.swift in Sources */,
 				F3F9F3E223897B7000864243 /* Dependencies.swift in Sources */,
+				F3F9F400238C357E00864243 /* CoreDataManager.swift in Sources */,
+				F352423B238EE7B2009DF1F9 /* Mission+FetchHelpers.swift in Sources */,
+				F3A61A86238C996C00279192 /* OrbitParams+CoreDataProperties.swift in Sources */,
 				F3F9F3ED238A6F7800864243 /* PayloadDetailsViewModel.swift in Sources */,
-				F3F9F3FA238B036F00864243 /* Payload+Computeds.swift in Sources */,
 				F3F9F3E62389828D00864243 /* Endpoint+SpaceXAPI.swift in Sources */,
 				F3F9F3E423897CA800864243 /* SpaceXAPIService.swift in Sources */,
-				F3F9F3D52389567D00864243 /* Payload.swift in Sources */,
+				F3A61A8C238D67DF00279192 /* Payload+Computeds.swift in Sources */,
+				F3F9F403238C78F600864243 /* SpaceXPayloadStats.xcdatamodeld in Sources */,
 				F3F9F3EB23899C0B00864243 /* PayloadDetailsView.swift in Sources */,
+				F3A61A8A238C9E1100279192 /* Payload+Comparable.swift in Sources */,
+				F3A61A7C238C98EE00279192 /* Mission+CoreDataClass.swift in Sources */,
 				F3F9F3C7238953B600864243 /* SampleData.swift in Sources */,
+				F3A61A80238C994900279192 /* Payload+CoreDataClass.swift in Sources */,
 				F3F9F3DA238966E000864243 /* MissionsListContainerView.swift in Sources */,
+				F30B3646238D88480041AC59 /* CodingUserInfoKey+Extensions.swift in Sources */,
+				F3A61A88238C9D8A00279192 /* Mission+Computeds.swift in Sources */,
 				F3F9F3A723892C0300864243 /* SceneDelegate.swift in Sources */,
 				F3F9F3F7238B001600864243 /* InfoHeaderTextStyle.swift in Sources */,
 				F3F9F3F8238B001600864243 /* Text+InfoHeaderStyle.swift in Sources */,
 				F3F9F3FE238BF79A00864243 /* MissionDetailsViewModel.swift in Sources */,
 				F3F9F3CF2389558000864243 /* PayloadsState.swift in Sources */,
-				F3F9F3D12389565000864243 /* Mission.swift in Sources */,
+				F3A61A7D238C98EE00279192 /* Mission+CoreDataProperties.swift in Sources */,
 				F3F9F3DC2389743600864243 /* MissionsListView.swift in Sources */,
 				F3F9F3DF238976E200864243 /* MissionDetailsView.swift in Sources */,
+				F3A61A81238C994900279192 /* Payload+CoreDataProperties.swift in Sources */,
+				F352423D238EE80C009DF1F9 /* Payload+FetchHelpers.swift in Sources */,
+				F3A61A85238C996C00279192 /* OrbitParams+CoreDataClass.swift in Sources */,
 				F3F9F3CA238953C200864243 /* AppState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,6 +636,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F352423E238EE983009DF1F9 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetCoreDataKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
 		F3F9F3BD238952C500864243 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git";
@@ -595,6 +663,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F352423F238EE983009DF1F9 /* CypherPoetCoreDataKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F352423E238EE983009DF1F9 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */;
+			productName = CypherPoetCoreDataKit;
+		};
 		F3F9F3BE238952C500864243 /* CypherPoetSwiftUIKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F3F9F3BD238952C500864243 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */;
@@ -606,6 +679,19 @@
 			productName = CypherPoetNetStack;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		F3F9F401238C78F500864243 /* SpaceXPayloadStats.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F3F9F402238C78F600864243 /* SpaceXPayloadStats.xcdatamodel */,
+			);
+			currentVersion = F3F9F402238C78F600864243 /* SpaceXPayloadStats.xcdatamodel */;
+			path = SpaceXPayloadStats.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F3F9F39923892C0300864243 /* Project object */;
 }

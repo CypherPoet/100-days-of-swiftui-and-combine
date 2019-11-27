@@ -10,61 +10,38 @@ import SwiftUI
 import Combine
 
 
-final class PayloadDetailsViewModel: ObservableObject {
-    private var subscriptions = Set<AnyCancellable>()
-    private let store: AppStore
-    private let payloadID: Payload.ID
-    
-    
-    @Published var payload: Payload?
-    
-    
-    init(
-        payloadID: Payload.ID,
-        store: AppStore
-    ) {
-        self.payloadID = payloadID
-        self.store = store
-        
-        setupSubscribers()
-    }
+struct PayloadDetailsViewModel {
+    private(set) var payload: Payload
 }
 
 
 // MARK: - Computeds
 extension PayloadDetailsViewModel {
-    var payloadManufacturerText: String { payload?.manufacturer ?? "" }
-    var payloadNationalityText: String { payload?.nationality ?? "" }
-    var payloadOrbitText: String { payload?.orbit ?? "" }
+    var payloadManufacturerText: String { payload.manufacturer ?? "" }
+    var payloadNationalityText: String { payload.nationality ?? "" }
+    var payloadOrbitText: String { payload.orbit ?? "" }
 
     
     var payloadNameText: String {
-        guard let id = payload?.id else { return "" }
+        guard let id = payload.payloadID else { return "" }
         return "🛰 \(id)"
     }
     
     var payloadTypeText: String {
-        guard let type = payload?.payloadType else { return "" }
+        guard let type = payload.payloadType else { return "" }
         
-        let emoji = payload?.payloadTypeEmoji ?? ""
+        let emoji = payload.payloadTypeEmoji ?? ""
         
         return [emoji, type].joined(separator: " ")
     }
     
 
-    var payloadMassText: String {
-        guard let mass = payload?.mass else { return "" }
-        
-        return "\(mass) kg"
-    }
-    
-    
-    
+    var payloadMassText: String { "\(payload.mass) kg" }
     
     
     var periapsisText: String {
         guard
-            let periapsis = payload?.orbitParams.periapsis,
+            let periapsis = payload.orbitParams?.periapsis,
             let formattedValue = NumberFormatters.apsisLength.string(for: periapsis)
         else { return "" }
         
@@ -74,7 +51,7 @@ extension PayloadDetailsViewModel {
     
     var apoapsisText: String {
         guard
-            let apoapsis = payload?.orbitParams.apoapsis,
+            let apoapsis = payload.orbitParams?.apoapsis,
             let formattedValue = NumberFormatters.apsisLength.string(for: apoapsis)
         else { return "" }
         
@@ -82,10 +59,10 @@ extension PayloadDetailsViewModel {
     }
     
     
-    var orbitalDiameter: Payload.OrbitParams.Kilometers? {
+    var orbitalDiameter: OrbitParams.Kilometers? {
         guard
-            let apoapsis = payload?.orbitParams.apoapsis,
-            let periapsis = payload?.orbitParams.periapsis
+            let apoapsis = payload.orbitParams?.apoapsis,
+            let periapsis = payload.orbitParams?.periapsis
         else { return nil }
         
         return apoapsis + periapsis
@@ -97,7 +74,7 @@ extension PayloadDetailsViewModel {
     
     var apoapsisPct: CGFloat {
         guard
-            let apoapsis = payload?.orbitParams.apoapsis,
+            let apoapsis = payload.orbitParams?.apoapsis,
             let orbitalDiameter = orbitalDiameter
         else { return 0 }
         
@@ -107,7 +84,7 @@ extension PayloadDetailsViewModel {
     
     var periapsisPct: CGFloat {
         guard
-            let periapsis = payload?.orbitParams.periapsis,
+            let periapsis = payload.orbitParams?.periapsis,
             let orbitalDiameter = orbitalDiameter
         else { return 0 }
         
@@ -118,36 +95,14 @@ extension PayloadDetailsViewModel {
 
 // MARK: - Public Methods
 extension PayloadDetailsViewModel {
-    
-    func loadPayload() {
-        if let payload = store.state.payloadsState.payloadsByID[payloadID] {
-            self.payload = payload
-        } else {
-            store.send(PayloadsSideEffect.fetchPayload(withID: payloadID))
-        }
-    }
 }
 
 
 // MARK: - Publishers
 extension PayloadDetailsViewModel {
-        
-    private var payloadPublisher: AnyPublisher<Payload?, Never> {
-        store.$state
-            .map(\.payloadsState.payloadsByID)
-            .map { payloadsByID in payloadsByID[self.payloadID] }
-            .eraseToAnyPublisher()
-    }
 }
 
 
 // MARK: - Private Helpers
 private extension PayloadDetailsViewModel {
-    
-    func setupSubscribers() {
-        payloadPublisher
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.payload, on: self)
-            .store(in: &subscriptions)
-    }
 }

@@ -10,8 +10,9 @@ import SwiftUI
 
 
 struct MissionsListView<Destination: View>: View {
-    let missions: [Mission]
     let buildDestination: ((Mission) -> Destination)
+    
+    @FetchRequest(fetchRequest: Mission.FetchRequest.all, animation: nil) var missions: FetchedResults<Mission>
 }
 
 
@@ -20,13 +21,13 @@ extension MissionsListView {
 
     var body: some View {
         List {
-            ForEach(missions) { mission in
+            ForEach(missions, id: \.self) { mission in
                 NavigationLink(destination: self.buildDestination(mission)) {
-                    Text(mission.name)
+                    Text(mission.name ?? "")
                 }
             }
         }
-        .navigationBarTitle("SpaceX Missions", displayMode: .automatic)
+        .navigationBarTitle("SpaceX Missions")
     }
 }
 
@@ -47,10 +48,8 @@ struct MissionsListView_Previews: PreviewProvider {
 
     static var previews: some View {
         MissionsListView(
-            missions: [
-                SampleMissions.telstar,
-            ],
             buildDestination: { _ in EmptyView() }
         )
+        .environment(\.managedObjectContext, SampleMOC.mainContext)
     }
 }

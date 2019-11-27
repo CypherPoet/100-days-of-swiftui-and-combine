@@ -14,22 +14,27 @@ import CypherPoetSwiftUIKit
 
 struct PayloadsState: Codable {
     var payloadFetchErrorMessage: String?
-    var payloadsByID: [Payload.ID: Payload] = [:]
-    var payloadsByMissionID: [Mission.ID: [Payload]] = [:]
 }
 
 
 enum PayloadsSideEffect: SideEffect {
-    case fetchPayload(withID: Payload.ID)
+    case fetchPayloads(for: Mission)
+//    case fetchPayload(withID: String)
+
     
     func mapToAction() -> AnyPublisher<AppAction, Never> {
+        let context = CoreDataManager.shared.backgroundContext
+        
         switch self {
-        case let .fetchPayload(payloadID):
+        case let .fetchPayloads(mission):
             return Dependencies.spaceXAPIService
-                .fetchPayload(for: payloadID)
-                .map { AppAction.payloads(.setPayload($0)) }
-                .catch {
-                    Just(AppAction.payloads(.setFetchError(message: $0.localizedDescription)))
+                .fetchPayloads(with: mission.payloadIDs ?? [], using: context)
+                .map { _ in
+                    CoreDataManager.shared.save(context)
+                    return AppAction.payloads(.set(fetchErrorMessage: nil))
+                }
+                .catch { error in
+                    Just(AppAction.payloads(.set(fetchErrorMessage: error.errorDescription)))
                 }
                 .eraseToAnyPublisher()
         }
@@ -38,9 +43,7 @@ enum PayloadsSideEffect: SideEffect {
 
 
 enum PayloadsAction {
-    case setPayload(Payload)
-    case setPayloadsForMission([Payload], missionID: Mission.ID)
-    case setFetchError(message: String)
+    case set(fetchErrorMessage: String?)
 }
 
 
@@ -48,11 +51,7 @@ enum PayloadsAction {
 // MARK: - Reducer
 let payloadsReducer = Reducer<PayloadsState, PayloadsAction> { state, action in
     switch action {
-    case .setPayload(let payload):
-        state.payloadsByID[payload.id] = payload
-    case .setPayloadsForMission(let payloads, let missionID):
-        state.payloadsByMissionID[missionID] = payloads
-    case .setFetchError(let message):
-        state.payloadFetchErrorMessage = message
+    case .set(let fetchErrorMessage):
+        state.payloadFetchErrorMessage = fetchErrorMessage
     }
 }

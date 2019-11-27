@@ -7,21 +7,15 @@
 //
 
 import SwiftUI
+import Combine
 
 
 struct PayloadDetailsView: View {
-    @ObservedObject private var viewModel: PayloadDetailsViewModel
+    private let viewModel: PayloadDetailsViewModel
 
-    init(payloadID: Payload.ID, store: AppStore) {
-        self.viewModel = PayloadDetailsViewModel(
-            payloadID: payloadID,
-            store: store
-        )
-        
-//        UINavigationBar.appearance().backgroundColor = .clear
-//        UINavigationBar.appearance().largeTitleTextAttributes = [
-//            .foregroundColor: UIColor(named: "LightGray1") ?? .systemGray
-//        ]
+    
+    init(payload: Payload) {
+        self.viewModel = PayloadDetailsViewModel(payload: payload)
     }
 }
 
@@ -59,7 +53,6 @@ extension PayloadDetailsView {
             .foregroundColor(.white)
             .padding(.horizontal)
             .padding(.bottom, 20)
-            .onAppear(perform: viewModel.loadPayload)
         }
     }
 }
@@ -167,21 +160,13 @@ extension PayloadDetailsView {
 }
 
 
-// MARK: - Private Helpers
-private extension PayloadDetailsView {
-}
-
-
-
 // MARK: - Preview
 struct PayloadDetailsView_Previews: PreviewProvider {
 
     static var previews: some View {
         NavigationView {
-            PayloadDetailsView(
-                payloadID: SamplePayloads.telstar18V.id,
-                store: SampleStore.withModels
-            )
+            PayloadDetailsView(payload: SamplePayloads.telstar18V)
+                .environment(\.managedObjectContext, SampleMOC.mainContext)
         }
     }
 }

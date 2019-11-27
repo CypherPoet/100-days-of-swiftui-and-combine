@@ -1,4 +1,4 @@
-# Day 60: Milestone for Projects 10-12
+# Day 60: Milestone for Projects 10-12 (Part One)
 
 _Follow along at https://www.hackingwithswift.com/100/swiftui/60_.
 

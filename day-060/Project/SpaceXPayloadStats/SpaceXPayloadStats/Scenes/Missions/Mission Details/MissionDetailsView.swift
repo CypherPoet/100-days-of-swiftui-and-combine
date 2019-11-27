@@ -10,14 +10,19 @@ import SwiftUI
 
 
 struct MissionDetailsView<Destination: View>: View {
-    let buildDestination: ((Payload.ID) -> Destination)
-    private let viewModel: MissionDetailsViewModel
-    
+    @EnvironmentObject var store: AppStore
 
+    let mission: Mission
+    let buildDestination: ((Payload) -> Destination)
+
+    @ObservedObject private var viewModel: MissionDetailsViewModel
+
+    
     init(
         mission: Mission,
-        buildDestination: @escaping ((Payload.ID) -> Destination)
+        buildDestination: @escaping ((Payload) -> Destination)
     ) {
+        self.mission = mission
         self.buildDestination = buildDestination
         self.viewModel = MissionDetailsViewModel(mission: mission)
     }
@@ -44,7 +49,10 @@ extension MissionDetailsView {
                 payloadsSection
             }
         }
-        .navigationBarTitle(Text(viewModel.missionName), displayMode: .automatic)
+        .navigationBarTitle(Text(viewModel.missionName))
+        .onAppear {
+            self.store.send(PayloadsSideEffect.fetchPayloads(for: self.mission))
+        }
     }
 }
 
@@ -67,9 +75,9 @@ extension MissionDetailsView {
     
     private var payloadsSection: some View {
         Section(header: SectionHeader(title: "🛰  Payload History")) {
-            ForEach(viewModel.payloadIDs, id: \.self) { payloadID in
-                NavigationLink(destination: self.buildDestination(payloadID)) {
-                    Text(payloadID)
+            ForEach(viewModel.payloads, id: \.self) { payload in
+                NavigationLink(destination: self.buildDestination(payload)) {
+                    Text(payload.payloadID ?? "")
                 }
             }
         }
@@ -97,6 +105,8 @@ struct MissionDetailsView_Previews: PreviewProvider {
                     mission: SampleMissions.telstar,
                     buildDestination: { _ in EmptyView() }
                 )
+                .environmentObject(SampleStore.default)
+                .environment(\.managedObjectContext, SampleMOC.mainContext)
             }
             
             NavigationView {
@@ -104,6 +114,8 @@ struct MissionDetailsView_Previews: PreviewProvider {
                     mission: SampleMissions.idridiumNext,
                     buildDestination: { _ in EmptyView() }
                 )
+                .environmentObject(SampleStore.default)
+                .environment(\.managedObjectContext, SampleMOC.mainContext)
             }
         }
     }

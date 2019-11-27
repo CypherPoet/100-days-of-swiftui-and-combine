@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import CoreData
 import CypherPoetNetStack
 
 
@@ -29,39 +30,67 @@ public final class SpaceXAPIService: ModelTransportRequestPublishing {
 // MARK: - Core Methods
 extension SpaceXAPIService {
     
-    func fetchMissions() -> AnyPublisher<[Mission], SpaceXAPIService.Error> {
-        let endpoint = Endpoint.SpaceXAPI.missions
-        
-        guard let url = endpoint.url else {
+    func fetchMissions(using context: NSManagedObjectContext) -> AnyPublisher<[Mission], SpaceXAPIService.Error> {
+        guard let url = Endpoint.SpaceXAPI.missions.url else {
             preconditionFailure("Unable to make url for endpoint")
         }
         
+        let decoder = Mission.decoder
+        decoder.userInfo[.managedObjectContext] = context
+        
+        print("Fetching missions at URL path: \(url.absoluteString)")
+
         return perform(
             URLRequest(url: url),
             parsingResponseOn: apiQueue,
-            with: JSONDecoder()
+            with: decoder
         )
         .mapError { .network(error: $0) }
         .eraseToAnyPublisher()
     }
     
     
-    func fetchPayload(for payloadID: Payload.ID) -> AnyPublisher<Payload, SpaceXAPIService.Error> {
-        let endpoint = Endpoint.SpaceXAPI.payload(for: payloadID)
-        
-        guard let url = endpoint.url else {
+    func fetchPayload(
+        for payloadID: String,
+        using context: NSManagedObjectContext
+    ) -> AnyPublisher<Payload, SpaceXAPIService.Error> {
+        guard let url = Endpoint.SpaceXAPI.payload(for: payloadID).url else {
             preconditionFailure("Unable to make url for endpoint")
         }
+        
+        let decoder = Payload.decoder
+        decoder.userInfo[.managedObjectContext] = context
         
         print("Fetching payload at URL path: \(url.absoluteString)")
         
         return perform(
             URLRequest(url: url),
             parsingResponseOn: apiQueue,
-            with: Payload.decoder
+            with: decoder
         )
         .mapError { .network(error: $0) }
         .eraseToAnyPublisher()
+    }
+    
+
+    func mergedPayloads(
+        for payloadIDs: [String],
+        using context: NSManagedObjectContext
+    ) -> AnyPublisher<Payload, SpaceXAPIService.Error> {
+        Publishers.MergeMany(payloadIDs.map { fetchPayload(for: $0, using: context) })
+            .eraseToAnyPublisher()
+    }
+        
+    
+    func fetchPayloads(
+        with payloadIDs: [String],
+        using context: NSManagedObjectContext
+    ) -> AnyPublisher<[Payload], SpaceXAPIService.Error> {
+        mergedPayloads(for: payloadIDs, using: context)
+            .scan([], { (accumulated, payload) -> [Payload] in
+                accumulated + [payload]
+            })
+            .eraseToAnyPublisher()
     }
 }
 

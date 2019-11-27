@@ -66,10 +66,11 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 57:** [_Project 12: Core Data_ (Part One)](./day-057/)
 - **Day 58:** [_Project 12: Core Data_ (Part Two)](./day-058/)
 - **Day 59:** [_Project 12: Core Data_ (Part Three)](./day-059/)
+- **Day 60:** [Milestone for Projects 10-12 (Part One)](./day-060/)
 
 </details>
 
-- **Day 60:** [Milestone for Projects 10-12)](./day-060/)
+- **Day 61:** [Milestone for Projects 10-12 (Part Two)](./day-061/)
 
 
 
@@ -96,7 +97,7 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 </div>
 
 
-- [Milestone 1: RockPaperQuizzers](./day-025/RockPaperQuizzers/)
+- [Milestone Project 1: RockPaperQuizzers](./day-025/RockPaperQuizzers/)
 
 <div style="text-align: center;">
   <img src="./day-025/RockPaperQuizzers/Screenshots/recording-1.gif" width="300px"/>
@@ -161,3 +162,9 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 <div style="text-align: center;">
   <img src="./day-053/Projects/Bookworm/Screenshots/day-56-recording-1.gif" width="300px"/>
 </div>
+
+
+- [Project 12: Exploring Core Data](./day-057/Projects/ExploringCoreData)
+
+
+- [Milestone Project 4: SpaceX Payload Stats](./day-060/Project/SpaceXPayloadStats/)

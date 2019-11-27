@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "CypherPoetCoreDataKit",
+        "repositoryURL": "https://github.com/CypherPoet/CypherPoetCoreDataKit.git",
+        "state": {
+          "branch": null,
+          "revision": "4a628bc53793aa8868e1fa9bb12850c0b9331f38",
+          "version": "0.0.1"
+        }
+      },
+      {
         "package": "CypherPoetNetStack",
         "repositoryURL": "https://github.com/CypherPoet/CypherPoetNetStack.git",
         "state": {

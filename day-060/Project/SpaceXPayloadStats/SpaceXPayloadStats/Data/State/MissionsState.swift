@@ -10,7 +10,7 @@ import CypherPoetSwiftUIKit
 
 
 struct MissionsState: Codable {
-    var missions: [Mission] = []
+    var missionsFetchErrorMessage: String?
 }
 
 
@@ -20,11 +20,17 @@ enum MissionsSideEffect: SideEffect {
     func mapToAction() -> AnyPublisher<AppAction, Never> {
         switch self {
         case .fetch:
+            let context = CoreDataManager.shared.backgroundContext
+            
             return Dependencies.spaceXAPIService
-                .fetchMissions()
-                .breakpointOnError()
-                .replaceError(with: [])
-                .map { AppAction.missions(.set(missions: $0)) }
+                .fetchMissions(using: context)
+                .map { _ in
+                    CoreDataManager.shared.save(context)
+                    return AppAction.missions(.set(fetchErrorMessage: nil))
+                }
+                .catch { error in
+                    Just(AppAction.missions(.set(fetchErrorMessage: error.errorDescription)))
+                }
                 .eraseToAnyPublisher()
         }
     }
@@ -33,7 +39,7 @@ enum MissionsSideEffect: SideEffect {
 
 
 enum MissionsAction {
-    case set(missions: [Mission])
+    case set(fetchErrorMessage: String?)
 }
 
 
@@ -41,7 +47,7 @@ enum MissionsAction {
 // MARK: - Reducer
 let missionsReducer = Reducer<MissionsState, MissionsAction> { state, action in
     switch action {
-    case let .set(missions):
-        state.missions = missions
+    case .set(let fetchErrorMessage):
+        state.missionsFetchErrorMessage = fetchErrorMessage
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import SwiftUI
 
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -24,10 +25,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         let store = AppStore(initialState: AppState(), appReducer: appReducer)
         
+        // Get the managed object context from the shared persistent container.
+        let managedObjectContext = CoreDataManager.shared.mainContext
+        
         // Create the SwiftUI view that provides the window contents.
         let entryView = MissionsListContainerView()
             .accentColor(.purple)
             .environmentObject(store)
+            .environment(\.managedObjectContext, managedObjectContext)
 
         // Use a UIHostingController as window root view controller.
         window.rootViewController = UIHostingController(rootView: entryView)
@@ -62,8 +67,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        CoreDataManager.shared.saveContexts()
     }
-
-
 }
-

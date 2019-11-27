@@ -14,6 +14,7 @@ struct MissionsListContainerView: View {
 }
 
 
+
 // MARK: - Body
 extension MissionsListContainerView {
 
@@ -36,7 +37,6 @@ extension MissionsListContainerView {
 
     private var missionsList: some View {
         MissionsListView(
-            missions: store.state.missionsState.missions,
             buildDestination: buildDestination(forMission:)
         )
     }
@@ -54,16 +54,13 @@ private extension MissionsListContainerView {
     func buildDestination(forMission mission: Mission) -> some View {
         MissionDetailsView(
             mission: mission,
-            buildDestination: buildDestination(forPayloadID:)
+            buildDestination: buildDestination(forPayload:)
         )
     }
     
     
-    func buildDestination(forPayloadID payloadID: Payload.ID) -> some View {
-        PayloadDetailsView(
-            payloadID: payloadID,
-            store: store
-        )
+    func buildDestination(forPayload payload: Payload) -> some View {
+        PayloadDetailsView(payload: payload)
     }
 }
 
@@ -75,6 +72,7 @@ struct MissionsListContainerView_Previews: PreviewProvider {
 
     static var previews: some View {
         MissionsListContainerView()
-            .environmentObject(SampleStore.noModels)
+            .environment(\.managedObjectContext, SampleMOC.mainContext)
+            .environmentObject(SampleStore.default)
     }
 }

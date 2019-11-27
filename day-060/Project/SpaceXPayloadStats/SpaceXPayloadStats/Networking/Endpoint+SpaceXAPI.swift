@@ -20,7 +20,7 @@ extension Endpoint {
             path: "/v3/missions"
         )
         
-        public static func payload(for payloadID: Payload.ID) -> Endpoint {
+        public static func payload(for payloadID: String) -> Endpoint {
             Endpoint(
                 host: Self.host,
                 path: "/v3/payloads/\(payloadID)"
