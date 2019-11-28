@@ -67,10 +67,11 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 58:** [_Project 12: Core Data_ (Part Two)](./day-058/)
 - **Day 59:** [_Project 12: Core Data_ (Part Three)](./day-059/)
 - **Day 60:** [Milestone for Projects 10-12 (Part One)](./day-060/)
+- **Day 61:** [Milestone for Projects 10-12 (Part Two)](./day-061/)
 
 </details>
 
-- **Day 61:** [Milestone for Projects 10-12 (Part Two)](./day-061/)
+- **Day 62:** [_Project 13: Instafilter_ (Part One)](./day-062/)
 
 
 
@@ -168,7 +169,6 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 
 
 - [Milestone Project 4: SpaceX Payload Stats](./day-060/Project/SpaceXPayloadStats/)
-
 
 
 <div style="text-align: center;">
