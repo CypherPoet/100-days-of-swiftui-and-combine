@@ -38,8 +38,6 @@ extension ImageFilteringContainerView {
 
 // MARK: - Computeds
 extension ImageFilteringContainerView {
-
-
 }
 
 
@@ -56,6 +54,7 @@ extension ImageFilteringContainerView {
             }
         }
     }
+    
     
     private var imagePickerButton: some View {
         Button(action: {
@@ -77,10 +76,6 @@ extension ImageFilteringContainerView {
 
 // MARK: - Private Helpers
 private extension ImageFilteringContainerView {
-    
-    func selectImage() {
-        
-    }
 }
 
 
