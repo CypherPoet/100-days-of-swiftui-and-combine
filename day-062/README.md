@@ -81,8 +81,6 @@ struct ContentView: View {
 ```
 
 
-
-
 ## Showing multiple options with ActionSheet
 
 While visually distinct, `ActionSheet`s are alot like `Alert`s with respect to the way we declare them as a modifier on a SwiftUI View.

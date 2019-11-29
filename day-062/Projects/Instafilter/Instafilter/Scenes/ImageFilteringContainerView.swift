@@ -11,6 +11,7 @@ import SwiftUI
 
 struct ImageFilteringContainerView: View {
     @State private var currentInputImage: UIImage? = nil
+    @State private var isShowingImagePicker = false
 }
 
 
@@ -27,6 +28,9 @@ extension ImageFilteringContainerView {
             imagePickerButton
             
             Spacer()
+        }
+        .sheet(isPresented: $isShowingImagePicker) {
+            UIImagePickerWrapper()
         }
     }
 }
@@ -55,7 +59,7 @@ extension ImageFilteringContainerView {
     
     private var imagePickerButton: some View {
         Button(action: {
-            self.selectImage()
+            self.isShowingImagePicker = true
         }) {
             Image(systemName: "camera.fill")
                 .renderingMode(.original)
