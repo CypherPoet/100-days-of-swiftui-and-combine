@@ -3,18 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F329952E23908BD400D2D963 /* ImageFilteringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329952D23908BD400D2D963 /* ImageFilteringView.swift */; };
+		F329953023908CB500D2D963 /* ImageFilteringViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329952F23908CB500D2D963 /* ImageFilteringViewModel.swift */; };
+		F32995322390C29100D2D963 /* ImageFilteringContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32995312390C29100D2D963 /* ImageFilteringContainerView.swift */; };
 		F352424E238F3F18009DF1F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F352424D238F3F18009DF1F9 /* AppDelegate.swift */; };
 		F3524250238F3F18009DF1F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F352424F238F3F18009DF1F9 /* SceneDelegate.swift */; };
 		F3524254238F3F19009DF1F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3524253238F3F19009DF1F9 /* Assets.xcassets */; };
 		F3524257238F3F19009DF1F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3524256238F3F19009DF1F9 /* Preview Assets.xcassets */; };
 		F352425A238F3F19009DF1F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3524258238F3F19009DF1F9 /* LaunchScreen.storyboard */; };
+		F3F566AF238F6556009E1FB0 /* ImageFilteringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F566AE238F6556009E1FB0 /* ImageFilteringService.swift */; };
+		F3F566B2238F68E2009E1FB0 /* CypherPoetSwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3F566B1238F68E2009E1FB0 /* CypherPoetSwiftUIKit */; };
+		F3F566B6238F6A48009E1FB0 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F566B5238F6A48009E1FB0 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F329952D23908BD400D2D963 /* ImageFilteringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilteringView.swift; sourceTree = "<group>"; };
+		F329952F23908CB500D2D963 /* ImageFilteringViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilteringViewModel.swift; sourceTree = "<group>"; };
+		F32995312390C29100D2D963 /* ImageFilteringContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilteringContainerView.swift; sourceTree = "<group>"; };
 		F352424A238F3F18009DF1F9 /* Instafilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instafilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F352424D238F3F18009DF1F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F352424F238F3F18009DF1F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +31,8 @@
 		F3524256238F3F19009DF1F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3524259238F3F19009DF1F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F352425B238F3F19009DF1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3F566AE238F6556009E1FB0 /* ImageFilteringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilteringService.swift; sourceTree = "<group>"; };
+		F3F566B5238F6A48009E1FB0 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F566B2238F68E2009E1FB0 /* CypherPoetSwiftUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +66,7 @@
 		F352424C238F3F18009DF1F9 /* Instafilter */ = {
 			isa = PBXGroup;
 			children = (
+				F3F566B3238F6A39009E1FB0 /* Data */,
 				F352425B238F3F19009DF1F9 /* Info.plist */,
 				F352424D238F3F18009DF1F9 /* AppDelegate.swift */,
 				F352424F238F3F18009DF1F9 /* SceneDelegate.swift */,
@@ -77,6 +90,9 @@
 		F3524261238F45C9009DF1F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F329952D23908BD400D2D963 /* ImageFilteringView.swift */,
+				F32995312390C29100D2D963 /* ImageFilteringContainerView.swift */,
+				F329952F23908CB500D2D963 /* ImageFilteringViewModel.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -84,6 +100,7 @@
 		F3524262238F45CD009DF1F9 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F3F566AE238F6556009E1FB0 /* ImageFilteringService.swift */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -94,6 +111,22 @@
 				F3524253238F3F19009DF1F9 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F3F566B3238F6A39009E1FB0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3F566B4238F6A3E009E1FB0 /* State */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F3F566B4238F6A3E009E1FB0 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				F3F566B5238F6A48009E1FB0 /* AppState.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +145,9 @@
 			dependencies = (
 			);
 			name = Instafilter;
+			packageProductDependencies = (
+				F3F566B1238F68E2009E1FB0 /* CypherPoetSwiftUIKit */,
+			);
 			productName = Instafilter;
 			productReference = F352424A238F3F18009DF1F9 /* Instafilter.app */;
 			productType = "com.apple.product-type.application";
@@ -140,6 +176,9 @@
 				Base,
 			);
 			mainGroup = F3524241238F3F18009DF1F9;
+			packageReferences = (
+				F3F566B0238F68E2009E1FB0 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
+			);
 			productRefGroup = F352424B238F3F18009DF1F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -167,8 +206,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F566AF238F6556009E1FB0 /* ImageFilteringService.swift in Sources */,
+				F329952E23908BD400D2D963 /* ImageFilteringView.swift in Sources */,
+				F32995322390C29100D2D963 /* ImageFilteringContainerView.swift in Sources */,
 				F352424E238F3F18009DF1F9 /* AppDelegate.swift in Sources */,
+				F329953023908CB500D2D963 /* ImageFilteringViewModel.swift in Sources */,
 				F3524250238F3F18009DF1F9 /* SceneDelegate.swift in Sources */,
+				F3F566B6238F6A48009E1FB0 /* AppState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +406,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3F566B0238F68E2009E1FB0 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.23;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3F566B1238F68E2009E1FB0 /* CypherPoetSwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3F566B0238F68E2009E1FB0 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */;
+			productName = CypherPoetSwiftUIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F3524242238F3F18009DF1F9 /* Project object */;
 }

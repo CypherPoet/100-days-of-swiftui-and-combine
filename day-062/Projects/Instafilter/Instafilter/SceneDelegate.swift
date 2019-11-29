@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
 
             // Create the SwiftUI view that provides the window contents.
-            let entryView = EmptyView()
+            let entryView = ImageFilteringContainerView()
                 .accentColor(.pink)
 
             window.rootViewController = UIHostingController(rootView: entryView)
