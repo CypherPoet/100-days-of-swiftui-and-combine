@@ -11,6 +11,7 @@
 		F329953023908CB500D2D963 /* ImageFilteringViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329952F23908CB500D2D963 /* ImageFilteringViewModel.swift */; };
 		F32995322390C29100D2D963 /* ImageFilteringContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32995312390C29100D2D963 /* ImageFilteringContainerView.swift */; };
 		F3299535239181A900D2D963 /* UIImagePickerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3299534239181A900D2D963 /* UIImagePickerWrapper.swift */; };
+		F329953723919B6700D2D963 /* UIImagePickerWrapper+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329953623919B6700D2D963 /* UIImagePickerWrapper+Coordinator.swift */; };
 		F352424E238F3F18009DF1F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F352424D238F3F18009DF1F9 /* AppDelegate.swift */; };
 		F3524250238F3F18009DF1F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F352424F238F3F18009DF1F9 /* SceneDelegate.swift */; };
 		F3524254238F3F19009DF1F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3524253238F3F19009DF1F9 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		F329952F23908CB500D2D963 /* ImageFilteringViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilteringViewModel.swift; sourceTree = "<group>"; };
 		F32995312390C29100D2D963 /* ImageFilteringContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilteringContainerView.swift; sourceTree = "<group>"; };
 		F3299534239181A900D2D963 /* UIImagePickerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerWrapper.swift; sourceTree = "<group>"; };
+		F329953623919B6700D2D963 /* UIImagePickerWrapper+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePickerWrapper+Coordinator.swift"; sourceTree = "<group>"; };
 		F352424A238F3F18009DF1F9 /* Instafilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instafilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F352424D238F3F18009DF1F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F352424F238F3F18009DF1F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,9 +54,18 @@
 		F32995332391817800D2D963 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F3299534239181A900D2D963 /* UIImagePickerWrapper.swift */,
+				F329953823919C0B00D2D963 /* UIImagePickerWrapper */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F329953823919C0B00D2D963 /* UIImagePickerWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				F3299534239181A900D2D963 /* UIImagePickerWrapper.swift */,
+				F329953623919B6700D2D963 /* UIImagePickerWrapper+Coordinator.swift */,
+			);
+			path = UIImagePickerWrapper;
 			sourceTree = "<group>";
 		};
 		F3524241238F3F18009DF1F9 = {
@@ -218,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3F566AF238F6556009E1FB0 /* ImageFilteringService.swift in Sources */,
+				F329953723919B6700D2D963 /* UIImagePickerWrapper+Coordinator.swift in Sources */,
 				F329952E23908BD400D2D963 /* ImageFilteringView.swift in Sources */,
 				F32995322390C29100D2D963 /* ImageFilteringContainerView.swift in Sources */,
 				F352424E238F3F18009DF1F9 /* AppDelegate.swift in Sources */,

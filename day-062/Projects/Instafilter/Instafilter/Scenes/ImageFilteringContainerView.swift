@@ -30,7 +30,7 @@ extension ImageFilteringContainerView {
             Spacer()
         }
         .sheet(isPresented: $isShowingImagePicker) {
-            UIImagePickerWrapper()
+            UIImagePickerWrapper(selectedImage: self.$currentInputImage)
         }
     }
 }
