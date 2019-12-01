@@ -103,9 +103,6 @@ extension ImageFilteringService {
             .flatMap { ciImage in
                 self.createCGImage(from: ciImage)
             }
-//            .map(createCGImage(from:))
-//            .switchToLatest()
-//            .map({ $0 })
             .eraseToAnyPublisher()
     }
 }

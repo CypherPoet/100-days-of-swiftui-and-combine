@@ -23,10 +23,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
+            let store = AppStore(initialState: AppState(), appReducer: appReducer)
 
             // Create the SwiftUI view that provides the window contents.
             let entryView = ImageFilteringContainerView()
                 .accentColor(.pink)
+                .environmentObject(store)
 
             window.rootViewController = UIHostingController(rootView: entryView)
 

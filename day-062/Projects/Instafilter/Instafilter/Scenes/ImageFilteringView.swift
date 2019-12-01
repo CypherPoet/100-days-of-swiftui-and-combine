@@ -12,10 +12,14 @@ import SwiftUI
 struct ImageFilteringView: View {
     @ObservedObject private(set) var viewModel: ImageFilteringViewModel
     
-//    @ObservedObject private(set) var viewModel = ImageFilteringViewModel()
-
-    init(inputImage: UIImage) {
-        self.viewModel = ImageFilteringViewModel(inputImage: inputImage)
+    init(
+        inputImage: UIImage,
+        store: AppStore
+    ) {
+        self.viewModel = ImageFilteringViewModel(
+            inputImage: inputImage,
+            store: store
+        )
     }
 }
 
@@ -25,17 +29,15 @@ extension ImageFilteringView {
 
     var body: some View {
         VStack {
+            // TODO: Use an alert here instead
             if viewModel.filteringErrorMessage != nil {
                 Text(viewModel.filteringErrorMessage!)
             }
 
-            viewModel.filteredImage?
+            (viewModel.filteredImage ?? Image(uiImage: viewModel.inputImage))
                 .resizable()
                 .scaledToFit()
         }
-//        .onAppear {
-//            self.viewModel.inputImage = UIImage(named: "earth-night")
-//        }
     }
 }
 
@@ -60,7 +62,8 @@ struct ImageFilteringView_Previews: PreviewProvider {
 
     static var previews: some View {
         ImageFilteringView(
-            inputImage: UIImage(named: "earth-night")!
+            inputImage: UIImage(named: "earth-night")!,
+            store: SampleStore.default
         )
     }
 }

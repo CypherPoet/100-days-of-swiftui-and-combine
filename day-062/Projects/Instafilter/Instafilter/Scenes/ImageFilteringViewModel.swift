@@ -14,7 +14,8 @@ import Combine
 final class ImageFilteringViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
 
-    private var filteringService = ImageFilteringService.shared
+    private let filteringService = ImageFilteringService.shared
+    private let store: AppStore
 
     @Published var inputImage: UIImage
     @Published var currentFilter: CIFilter
@@ -27,8 +28,12 @@ final class ImageFilteringViewModel: ObservableObject {
     
     
     // MARK: - Init
-    init(inputImage: UIImage) {
+    init(
+        inputImage: UIImage,
+        store: AppStore
+    ) {
         self.inputImage = inputImage
+        self.store = store
         self.currentFilter = .sepiaTone()
         
         setupSubscribers()
@@ -39,34 +44,28 @@ final class ImageFilteringViewModel: ObservableObject {
 // MARK: - Publishers
 extension ImageFilteringViewModel {
 
-    private var filteredImagePublisher: AnyPublisher<Image, ImageFilteringService.Error> {
-        $inputImage
-            .print("filteredImagePublisher")
-            .compactMap { $0 }
-            .setFailureType(to: ImageFilteringService.Error.self)
-            .map { inputImage in
-                self.filteringService.apply(self.currentFilter, to: inputImage)
-            }
-            .switchToLatest()
-            .map { cgImage in
-                print("filteredImagePublisher mapping cgImage")
-                return Image(uiImage: UIImage(cgImage: cgImage))
-            }
-//            .catch { error in
-//                switch error {
-//                case .cgImage(let message),
-//                     .ciImage(let message),
-//                     .filtering(let message):
-//                    self.filteringErrorMessage = message
-//                }
-//
-//                return Just(nil).eraseToAnyPublisher()
-//            }
+    private var filteredImagesStatePublisher: AnyPublisher<FilteredImagesState, Never> {
+        store.$state
+            .map(\.filteredImages)
             .eraseToAnyPublisher()
     }
+  
     
+    private var filteredCGImagePublisher: AnyPublisher<CGImage, Never> {
+        filteredImagesStatePublisher
+            .map(\.filteredOutputCGImage)
+            .compactMap { $0 }
+            .eraseToAnyPublisher()
+    }
+  
     
-    
+    private var filteredImagePublisher: AnyPublisher<Image?, Never> {
+        filteredCGImagePublisher
+            .map { cgImage in
+                Image(uiImage: UIImage(cgImage: cgImage))
+            }
+            .eraseToAnyPublisher()
+    }
 }
 
 
@@ -87,46 +86,29 @@ private extension ImageFilteringViewModel {
     func setupSubscribers() {
         filteredImagePublisher
             .receive(on: DispatchQueue.main)
-//            .handleEvents(receiveCompletion: { completion in
-//                switch completion {
-//                case .failure(let error):
-//                    print("filteredImagePublisher error")
-//                    switch error {
-//                    case .cgImage(let message),
-//                         .ciImage(let message),
-//                         .filtering(let message):
-//                        self.filteringErrorMessage = message
-//                    }
-//                case .finished:
-//                    print("filteredImagePublisher finished")
-//                }
-//            })
-            .sink(
-                receiveCompletion: { completion in
-                    switch completion {
-                    case .failure(let error):
-                        print("filteredImagePublisher error")
-                        switch error {
-                        case .cgImage(let message),
-                             .ciImage(let message),
-                             .filtering(let message):
-                            self.filteringErrorMessage = message
-                        }
-                    case .finished:
-                        print("filteredImagePublisher finished")
-                    }
-                },
-                receiveValue: { self.filteredImage = $0 }
-            )
+            .assign(to: \.filteredImage, on: self)
             .store(in: &subscriptions)
         
         
-        
 //        filteredImagePublisher
-//            .replaceError(with: nil)
-//            .compactMap( { $0 })
 //            .receive(on: DispatchQueue.main)
-//            .assign(to: \.filteredImage, on: self)
+//            .sink(
+//                receiveCompletion: { completion in
+//                    switch completion {
+//                    case .failure(let error):
+//                        print("filteredImagePublisher error")
+//                        switch error {
+//                        case .cgImage(let message),
+//                             .ciImage(let message),
+//                             .filtering(let message):
+//                            self.filteringErrorMessage = message
+//                        }
+//                    case .finished:
+//                        print("filteredImagePublisher finished")
+//                    }
+//                },
+//                receiveValue: { self.filteredImage = $0 }
+//            )
 //            .store(in: &subscriptions)
     }
 }

@@ -20,6 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This application would like to be able to save images to your Photos Album.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This application would like to be able to read and load images from your Photos Album. These can then be used to apply image filtering.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

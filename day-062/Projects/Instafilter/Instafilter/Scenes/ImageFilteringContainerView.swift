@@ -7,11 +7,17 @@
 //
 
 import SwiftUI
-
+import Combine
 
 struct ImageFilteringContainerView: View {
+    @EnvironmentObject var store: AppStore
+    
+    @ObservedObject private(set) var viewModel = ImageFilteringContainerViewModel()
+    
+    
     @State private var currentInputImage: UIImage? = nil
     @State private var isShowingImagePicker = false
+    @State private var isShowingWritingAuthError = false
 }
 
 
@@ -19,26 +25,36 @@ struct ImageFilteringContainerView: View {
 extension ImageFilteringContainerView {
 
     var body: some View {
-        VStack(spacing: 42.0) {
-            Spacer()
-            
-            imageContent
-                .layoutPriority(1)
-            
-            imagePickerButton
-            
-            Spacer()
+        NavigationView {
+            VStack(spacing: 42.0) {
+                Spacer()
+                
+                imageContent
+                    .layoutPriority(1)
+                
+                imagePickerButton
+                
+                Spacer()
+            }
+            .navigationBarTitle("📸 Instafilter")
+            .navigationBarItems(trailing: saveButton)
         }
+        .onAppear { self.viewModel.store = self.store }
         .sheet(isPresented: $isShowingImagePicker) {
             UIImagePickerWrapper(selectedImage: self.$currentInputImage)
         }
+        .alert(isPresented: $isShowingWritingAuthError) { self.imageWritingAuthErrorAlert }
+        .alert(isPresented: $viewModel.hasImageWritingError) { self.imageWritingErrorAlert }
     }
 }
 
 
 // MARK: - Computeds
 extension ImageFilteringContainerView {
+    var filteredImagesState: FilteredImagesState { store.state.filteredImages }
+    var filteredOutputCGImage: CGImage? { filteredImagesState.filteredOutputCGImage }
 }
+
 
 
 // MARK: - View Variables
@@ -47,7 +63,7 @@ extension ImageFilteringContainerView {
     private var imageContent: some View {
         Group {
             if currentInputImage != nil {
-                ImageFilteringView(inputImage: currentInputImage!)
+                ImageFilteringView(inputImage: currentInputImage!, store: store)
             } else {
                 Text("Select an Image to begin filtering.")
                     .font(.title)
@@ -55,7 +71,7 @@ extension ImageFilteringContainerView {
         }
     }
     
-    
+
     private var imagePickerButton: some View {
         Button(action: {
             self.isShowingImagePicker = true
@@ -71,11 +87,51 @@ extension ImageFilteringContainerView {
         .cornerRadius(12)
         .shadow(color: .gray, radius: 8, x: 0, y: 0)
     }
+    
+    
+    private var saveButton: some View {
+        Button(action: {
+            if self.viewModel.hasImageWritingAuth {
+                self.saveFilteredImage()
+            } else {
+                self.isShowingWritingAuthError = true
+            }
+        }) {
+            Text("Save")
+        }
+        .disabled(filteredOutputCGImage == nil)
+    }
+    
+    
+    private var imageWritingErrorAlert: Alert {
+        Alert(
+            title: Text("Failed to save image."),
+            message: Text(self.viewModel.imageWritingErrorMessage),
+            dismissButton: .default(Text("OK"))
+        )
+    }
+    
+    
+    private var imageWritingAuthErrorAlert: Alert {
+        Alert(
+            title: Text("Unable to save images."),
+            message: Text(self.viewModel.imageWritingAuthErrorMessage),
+            dismissButton: .default(Text("OK"))
+        )
+    }
 }
 
 
 // MARK: - Private Helpers
 private extension ImageFilteringContainerView {
+    
+    func saveFilteredImage() {
+        guard let filteredCGImage = filteredOutputCGImage else {
+            preconditionFailure("No output image available for saving")
+        }
+        
+        store.send(ImageWritingSideEffect.saveOutput(image: filteredCGImage))
+    }
 }
 
 
@@ -84,5 +140,6 @@ struct ImageFilteringContainerView_Previews: PreviewProvider {
 
     static var previews: some View {
         ImageFilteringContainerView()
+            .environmentObject(SampleStore.default)
     }
 }

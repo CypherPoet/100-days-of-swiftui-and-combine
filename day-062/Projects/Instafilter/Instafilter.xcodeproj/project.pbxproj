@@ -12,6 +12,11 @@
 		F32995322390C29100D2D963 /* ImageFilteringContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32995312390C29100D2D963 /* ImageFilteringContainerView.swift */; };
 		F3299535239181A900D2D963 /* UIImagePickerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3299534239181A900D2D963 /* UIImagePickerWrapper.swift */; };
 		F329953723919B6700D2D963 /* UIImagePickerWrapper+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329953623919B6700D2D963 /* UIImagePickerWrapper+Coordinator.swift */; };
+		F329953A2391EEE800D2D963 /* FilteredImagesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32995392391EEE800D2D963 /* FilteredImagesState.swift */; };
+		F329953D2391F1D000D2D963 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329953C2391F1D000D2D963 /* SampleData.swift */; };
+		F329953F23920AE800D2D963 /* ImageWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329953E23920AE800D2D963 /* ImageWriter.swift */; };
+		F32995412393025000D2D963 /* ImageWritingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32995402393025000D2D963 /* ImageWritingState.swift */; };
+		F32995432393199B00D2D963 /* ImageFilteringContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32995422393199B00D2D963 /* ImageFilteringContainerViewModel.swift */; };
 		F352424E238F3F18009DF1F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F352424D238F3F18009DF1F9 /* AppDelegate.swift */; };
 		F3524250238F3F18009DF1F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F352424F238F3F18009DF1F9 /* SceneDelegate.swift */; };
 		F3524254238F3F19009DF1F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3524253238F3F19009DF1F9 /* Assets.xcassets */; };
@@ -28,6 +33,11 @@
 		F32995312390C29100D2D963 /* ImageFilteringContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilteringContainerView.swift; sourceTree = "<group>"; };
 		F3299534239181A900D2D963 /* UIImagePickerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerWrapper.swift; sourceTree = "<group>"; };
 		F329953623919B6700D2D963 /* UIImagePickerWrapper+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePickerWrapper+Coordinator.swift"; sourceTree = "<group>"; };
+		F32995392391EEE800D2D963 /* FilteredImagesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredImagesState.swift; sourceTree = "<group>"; };
+		F329953C2391F1D000D2D963 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		F329953E23920AE800D2D963 /* ImageWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWriter.swift; sourceTree = "<group>"; };
+		F32995402393025000D2D963 /* ImageWritingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWritingState.swift; sourceTree = "<group>"; };
+		F32995422393199B00D2D963 /* ImageFilteringContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilteringContainerViewModel.swift; sourceTree = "<group>"; };
 		F352424A238F3F18009DF1F9 /* Instafilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instafilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F352424D238F3F18009DF1F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F352424F238F3F18009DF1F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +78,14 @@
 			path = UIImagePickerWrapper;
 			sourceTree = "<group>";
 		};
+		F329953B2391F1C300D2D963 /* Sample Data */ = {
+			isa = PBXGroup;
+			children = (
+				F329953C2391F1D000D2D963 /* SampleData.swift */,
+			);
+			path = "Sample Data";
+			sourceTree = "<group>";
+		};
 		F3524241238F3F18009DF1F9 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +121,7 @@
 		F3524255238F3F19009DF1F9 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				F329953B2391F1C300D2D963 /* Sample Data */,
 				F3524256238F3F19009DF1F9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -113,6 +132,7 @@
 			children = (
 				F329952D23908BD400D2D963 /* ImageFilteringView.swift */,
 				F32995312390C29100D2D963 /* ImageFilteringContainerView.swift */,
+				F32995422393199B00D2D963 /* ImageFilteringContainerViewModel.swift */,
 				F329952F23908CB500D2D963 /* ImageFilteringViewModel.swift */,
 			);
 			path = Scenes;
@@ -123,6 +143,7 @@
 			children = (
 				F32995332391817800D2D963 /* Views */,
 				F3F566AE238F6556009E1FB0 /* ImageFilteringService.swift */,
+				F329953E23920AE800D2D963 /* ImageWriter.swift */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -147,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				F3F566B5238F6A48009E1FB0 /* AppState.swift */,
+				F32995392391EEE800D2D963 /* FilteredImagesState.swift */,
+				F32995402393025000D2D963 /* ImageWritingState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -228,13 +251,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F329953A2391EEE800D2D963 /* FilteredImagesState.swift in Sources */,
 				F3F566AF238F6556009E1FB0 /* ImageFilteringService.swift in Sources */,
 				F329953723919B6700D2D963 /* UIImagePickerWrapper+Coordinator.swift in Sources */,
 				F329952E23908BD400D2D963 /* ImageFilteringView.swift in Sources */,
+				F32995412393025000D2D963 /* ImageWritingState.swift in Sources */,
+				F329953F23920AE800D2D963 /* ImageWriter.swift in Sources */,
 				F32995322390C29100D2D963 /* ImageFilteringContainerView.swift in Sources */,
+				F32995432393199B00D2D963 /* ImageFilteringContainerViewModel.swift in Sources */,
 				F352424E238F3F18009DF1F9 /* AppDelegate.swift in Sources */,
 				F329953023908CB500D2D963 /* ImageFilteringViewModel.swift in Sources */,
 				F3299535239181A900D2D963 /* UIImagePickerWrapper.swift in Sources */,
+				F329953D2391F1D000D2D963 /* SampleData.swift in Sources */,
 				F3524250238F3F18009DF1F9 /* SceneDelegate.swift in Sources */,
 				F3F566B6238F6A48009E1FB0 /* AppState.swift in Sources */,
 			);
