@@ -10,12 +10,18 @@ import SwiftUI
 
 
 struct ImageFilteringView: View {
+    @EnvironmentObject private var store: AppStore
     @ObservedObject private(set) var viewModel: ImageFilteringViewModel
+
+    private let inputImage: UIImage
+    
     
     init(
         inputImage: UIImage,
         store: AppStore
     ) {
+        self.inputImage = inputImage
+        
         self.viewModel = ImageFilteringViewModel(
             inputImage: inputImage,
             store: store
@@ -34,9 +40,15 @@ extension ImageFilteringView {
                 Text(viewModel.filteringErrorMessage!)
             }
 
-            (viewModel.filteredImage ?? Image(uiImage: viewModel.inputImage))
+            (outputImage ?? Image(uiImage: inputImage))
                 .resizable()
                 .scaledToFit()
+            
+            controls
+                .padding()
+                .padding(.top)
+            
+            Spacer()
         }
     }
 }
@@ -44,7 +56,14 @@ extension ImageFilteringView {
 
 // MARK: - Computeds
 extension ImageFilteringView {
-
+    
+    var outputImage: Image? {
+        guard let cgImage = store.state.filteredImages.filteredOutputCGImage else {
+            return nil
+        }
+        
+        return Image(uiImage: UIImage(cgImage: cgImage))
+    }
 
 }
 
@@ -52,7 +71,24 @@ extension ImageFilteringView {
 // MARK: - View Variables
 extension ImageFilteringView {
 
-
+    private var controls: some View {
+        VStack(spacing: 24) {
+            
+            VStack(spacing: 2.0) {
+                Text("Intensity")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                
+                Slider(
+                    value: $viewModel.filterIntensity,
+                    minimumValueLabel: Text("0"),
+                    maximumValueLabel: Text("1")
+                ) {
+                    Text("Intensity")
+                }
+            }
+        }
+    }
 }
 
 
@@ -61,9 +97,12 @@ extension ImageFilteringView {
 struct ImageFilteringView_Previews: PreviewProvider {
 
     static var previews: some View {
-        ImageFilteringView(
-            inputImage: UIImage(named: "earth-night")!,
-            store: SampleStore.default
-        )
+        NavigationView {
+            ImageFilteringView(
+                inputImage: UIImage(named: "earth-night")!,
+                store: SampleStore.default
+            )
+            .environmentObject(SampleStore.default)
+        }
     }
 }

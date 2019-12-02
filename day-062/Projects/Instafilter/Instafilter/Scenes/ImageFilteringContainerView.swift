@@ -27,14 +27,18 @@ extension ImageFilteringContainerView {
     var body: some View {
         NavigationView {
             VStack(spacing: 42.0) {
-                Spacer()
-                
-                imageContent
-                    .layoutPriority(1)
-                
-                imagePickerButton
-                
-                Spacer()
+                Group {
+                    if currentInputImage != nil {
+                        ImageFilteringView(inputImage: currentInputImage!, store: store)
+                    } else {
+                        Spacer()
+                        
+                        imageSelectionSection
+                            .padding()
+                        
+                        Spacer()
+                    }
+                }
             }
             .navigationBarTitle("📸 Instafilter")
             .navigationBarItems(trailing: saveButton)
@@ -60,14 +64,13 @@ extension ImageFilteringContainerView {
 // MARK: - View Variables
 extension ImageFilteringContainerView {
     
-    private var imageContent: some View {
-        Group {
-            if currentInputImage != nil {
-                ImageFilteringView(inputImage: currentInputImage!, store: store)
-            } else {
-                Text("Select an Image to begin filtering.")
-                    .font(.title)
-            }
+    private var imageSelectionSection: some View {
+        VStack(spacing: 36) {
+            Text("Select an Image to begin filtering.")
+                .font(.title)
+                .multilineTextAlignment(.center)
+            
+            imagePickerButton
         }
     }
     
