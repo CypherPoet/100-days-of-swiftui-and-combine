@@ -45,16 +45,6 @@ final class ImageFilteringViewModel: ObservableObject {
 // MARK: - Publishers
 extension ImageFilteringViewModel {
     
-    private var filteredCGImagePublisher: AnyPublisher<CGImage, ImageFilteringService.Error> {
-        ciFilterPublisher
-            .setFailureType(to: ImageFilteringService.Error.self)
-            .flatMap { filter in
-                ImageFilteringService.shared.apply(filter, to: self.inputImage)
-            }
-            .eraseToAnyPublisher()
-    }
-
-    
     private var filterIntensityPublisher: AnyPublisher<CGFloat, Never> {
         $filterIntensity
             .debounce(for: .milliseconds(200), scheduler: DispatchQueue.main)
@@ -73,6 +63,16 @@ extension ImageFilteringViewModel {
                 return self.currentFilter
             }
             .eraseToAnyPublisher()
+    }
+
+
+    private var filteredCGImagePublisher: AnyPublisher<CGImage, ImageFilteringService.Error> {
+        ciFilterPublisher
+            .setFailureType(to: ImageFilteringService.Error.self)
+            .flatMap { filter in
+                ImageFilteringService.shared.apply(filter, to: self.inputImage)
+        }
+        .eraseToAnyPublisher()
     }
 }
 
