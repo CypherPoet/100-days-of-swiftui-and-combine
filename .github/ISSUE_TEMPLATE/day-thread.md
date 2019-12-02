@@ -1,7 +1,7 @@
 ---
 name: Day Thread
 about: Introduce a discussion thread for a day
-title: "[THREAD] Day : Project : , (Part )"
+title: "[THREAD] Day : Project :  (Part )"
 labels: Discussion Thread
 assignees: ''
 
