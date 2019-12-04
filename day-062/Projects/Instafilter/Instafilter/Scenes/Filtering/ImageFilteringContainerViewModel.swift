@@ -13,6 +13,8 @@ import Combine
 
 final class ImageFilteringContainerViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
+
+    var filteringViewModel = ImageFilteringViewModel()
     
     var store: AppStore? {
         didSet {
@@ -22,9 +24,20 @@ final class ImageFilteringContainerViewModel: ObservableObject {
     }
 
     
-    // MARK: - Published Properties
-    @Published var hasImageWritingAuth = false
+    @Published var hasAuthError = false
     @Published var hasImageWritingError = false
+    
+    @Published var currentInputImage: UIImage? {
+        didSet {
+            filteringViewModel.inputImage = currentInputImage
+        }
+    }
+
+
+    // MARK: - Published Outputs
+    @Published var hasImageWritingAuth = false
+    @Published var isShowingErrorMessage = false
+    @Published var isShowingFilterView = false
 }
 
 
@@ -41,6 +54,21 @@ extension ImageFilteringContainerViewModel {
         imageWritingStatePublisher?
             .map { $0.writingError != nil }
             .eraseToAnyPublisher()
+    }
+    
+    private var isShowingFilteringViewPublisher: AnyPublisher<Bool, Never> {
+        $currentInputImage
+            .print("isShowingFilteringViewPublisher")
+            .map { $0 != nil }
+            .eraseToAnyPublisher()
+    }
+    
+    private var isShowingErrorMessagePublisher: AnyPublisher<Bool, Never> {
+        Publishers.Merge(
+            $hasAuthError,
+            $hasImageWritingError
+        )
+        .eraseToAnyPublisher()
     }
 }
 
@@ -66,12 +94,6 @@ extension ImageFilteringContainerViewModel {
 }
 
 
-// MARK: - Public Methods
-extension ImageFilteringContainerViewModel {
-}
-
-
-
 // MARK: - Private Helpers
 private extension ImageFilteringContainerViewModel {
 
@@ -85,6 +107,18 @@ private extension ImageFilteringContainerViewModel {
         hasImageWritingErrorPublisher?
             .receive(on: DispatchQueue.main)
             .assign(to: \.hasImageWritingError, on: self)
+            .store(in: &subscriptions)
+        
+        
+        isShowingFilteringViewPublisher
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.isShowingFilterView, on: self)
+            .store(in: &subscriptions)
+        
+        
+        isShowingErrorMessagePublisher
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.isShowingErrorMessage, on: self)
             .store(in: &subscriptions)
     }
 }

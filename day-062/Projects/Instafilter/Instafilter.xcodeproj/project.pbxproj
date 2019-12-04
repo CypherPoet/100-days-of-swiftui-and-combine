@@ -22,9 +22,11 @@
 		F3524254238F3F19009DF1F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3524253238F3F19009DF1F9 /* Assets.xcassets */; };
 		F3524257238F3F19009DF1F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3524256238F3F19009DF1F9 /* Preview Assets.xcassets */; };
 		F352425A238F3F19009DF1F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3524258238F3F19009DF1F9 /* LaunchScreen.storyboard */; };
+		F36D28E223962F8C00095B66 /* CoreImageFilterNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D28E123962F8B00095B66 /* CoreImageFilterNames.swift */; };
 		F3F566AF238F6556009E1FB0 /* ImageFilteringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F566AE238F6556009E1FB0 /* ImageFilteringService.swift */; };
 		F3F566B2238F68E2009E1FB0 /* CypherPoetSwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3F566B1238F68E2009E1FB0 /* CypherPoetSwiftUIKit */; };
 		F3F566B6238F6A48009E1FB0 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F566B5238F6A48009E1FB0 /* AppState.swift */; };
+		F3F656E82395CC44007AC32E /* FilterSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F656E72395CC44007AC32E /* FilterSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +47,10 @@
 		F3524256238F3F19009DF1F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3524259238F3F19009DF1F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F352425B238F3F19009DF1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F36D28E123962F8B00095B66 /* CoreImageFilterNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImageFilterNames.swift; sourceTree = "<group>"; };
 		F3F566AE238F6556009E1FB0 /* ImageFilteringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilteringService.swift; sourceTree = "<group>"; };
 		F3F566B5238F6A48009E1FB0 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F3F656E72395CC44007AC32E /* FilterSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,10 +134,7 @@
 		F3524261238F45C9009DF1F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F329952D23908BD400D2D963 /* ImageFilteringView.swift */,
-				F32995312390C29100D2D963 /* ImageFilteringContainerView.swift */,
-				F32995422393199B00D2D963 /* ImageFilteringContainerViewModel.swift */,
-				F329952F23908CB500D2D963 /* ImageFilteringViewModel.swift */,
+				F3F656E52395CBFF007AC32E /* Filtering */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -141,6 +142,7 @@
 		F3524262238F45CD009DF1F9 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F36D28E023962F7700095B66 /* Constants */,
 				F32995332391817800D2D963 /* Views */,
 				F3F566AE238F6556009E1FB0 /* ImageFilteringService.swift */,
 				F329953E23920AE800D2D963 /* ImageWriter.swift */,
@@ -154,6 +156,14 @@
 				F3524253238F3F19009DF1F9 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F36D28E023962F7700095B66 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F36D28E123962F8B00095B66 /* CoreImageFilterNames.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		F3F566B3238F6A39009E1FB0 /* Data */ = {
@@ -172,6 +182,18 @@
 				F32995402393025000D2D963 /* ImageWritingState.swift */,
 			);
 			path = State;
+			sourceTree = "<group>";
+		};
+		F3F656E52395CBFF007AC32E /* Filtering */ = {
+			isa = PBXGroup;
+			children = (
+				F329952D23908BD400D2D963 /* ImageFilteringView.swift */,
+				F3F656E72395CC44007AC32E /* FilterSelectionView.swift */,
+				F32995312390C29100D2D963 /* ImageFilteringContainerView.swift */,
+				F32995422393199B00D2D963 /* ImageFilteringContainerViewModel.swift */,
+				F329952F23908CB500D2D963 /* ImageFilteringViewModel.swift */,
+			);
+			path = Filtering;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +281,10 @@
 				F329953F23920AE800D2D963 /* ImageWriter.swift in Sources */,
 				F32995322390C29100D2D963 /* ImageFilteringContainerView.swift in Sources */,
 				F32995432393199B00D2D963 /* ImageFilteringContainerViewModel.swift in Sources */,
+				F3F656E82395CC44007AC32E /* FilterSelectionView.swift in Sources */,
 				F352424E238F3F18009DF1F9 /* AppDelegate.swift in Sources */,
 				F329953023908CB500D2D963 /* ImageFilteringViewModel.swift in Sources */,
+				F36D28E223962F8C00095B66 /* CoreImageFilterNames.swift in Sources */,
 				F3299535239181A900D2D963 /* UIImagePickerWrapper.swift in Sources */,
 				F329953D2391F1D000D2D963 /* SampleData.swift in Sources */,
 				F3524250238F3F18009DF1F9 /* SceneDelegate.swift in Sources */,

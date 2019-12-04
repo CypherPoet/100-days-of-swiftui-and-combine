@@ -11,11 +11,8 @@ import Combine
 
 struct ImageFilteringContainerView: View {
     @EnvironmentObject var store: AppStore
-    
     @ObservedObject private(set) var viewModel = ImageFilteringContainerViewModel()
-    
-    
-    @State private var currentInputImage: UIImage? = nil
+
     @State private var isShowingImagePicker = false
     @State private var isShowingWritingAuthError = false
 }
@@ -28,8 +25,11 @@ extension ImageFilteringContainerView {
         NavigationView {
             VStack(spacing: 42.0) {
                 Group {
-                    if currentInputImage != nil {
-                        ImageFilteringView(inputImage: currentInputImage!, store: store)
+                    if viewModel.isShowingFilterView {
+                        ImageFilteringView(
+                            viewModel: viewModel.filteringViewModel,
+                            onSave: save(filteredImage:)
+                        )
                     } else {
                         Spacer()
                         
@@ -40,17 +40,19 @@ extension ImageFilteringContainerView {
                     }
                 }
             }
-            .navigationBarTitle("📸 Instafilter")
-            .navigationBarItems(trailing: saveButton)
+            .navigationBarTitle(
+                viewModel.isShowingFilterView ? "" : "📸 Instafilter",
+                displayMode: viewModel.isShowingFilterView ? .inline : .large
+            )
         }
         .onAppear { self.viewModel.store = self.store }
         .sheet(isPresented: $isShowingImagePicker) {
-            UIImagePickerWrapper(selectedImage: self.$currentInputImage)
+            UIImagePickerWrapper(onSelect: self.inputImageSelected(_:))
         }
-        .alert(isPresented: $isShowingWritingAuthError) { self.imageWritingAuthErrorAlert }
-        .alert(isPresented: $viewModel.hasImageWritingError) { self.imageWritingErrorAlert }
+        .alert(isPresented: $viewModel.isShowingErrorMessage) { self.errorAlert }
     }
 }
+
 
 
 // MARK: - Computeds
@@ -58,7 +60,6 @@ extension ImageFilteringContainerView {
     var filteredImagesState: FilteredImagesState { store.state.filteredImages }
     var filteredOutputCGImage: CGImage? { filteredImagesState.filteredOutputCGImage }
 }
-
 
 
 // MARK: - View Variables
@@ -91,18 +92,13 @@ extension ImageFilteringContainerView {
         .shadow(color: .gray, radius: 8, x: 0, y: 0)
     }
     
-    
-    private var saveButton: some View {
-        Button(action: {
-            if self.viewModel.hasImageWritingAuth {
-                self.saveFilteredImage()
-            } else {
-                self.isShowingWritingAuthError = true
-            }
-        }) {
-            Text("Save")
+
+    private var errorAlert: Alert {
+        if viewModel.hasAuthError {
+            return imageWritingAuthErrorAlert
+        } else {
+            return imageWritingErrorAlert
         }
-        .disabled(filteredOutputCGImage == nil)
     }
     
     
@@ -128,12 +124,17 @@ extension ImageFilteringContainerView {
 // MARK: - Private Helpers
 private extension ImageFilteringContainerView {
     
-    func saveFilteredImage() {
-        guard let filteredCGImage = filteredOutputCGImage else {
-            preconditionFailure("No output image available for saving")
+    func save(filteredImage: CGImage) {
+        if viewModel.hasImageWritingAuth {
+            store.send(ImageWritingSideEffect.saveOutput(image: filteredImage))
+        } else {
+            viewModel.hasAuthError = true
         }
-        
-        store.send(ImageWritingSideEffect.saveOutput(image: filteredCGImage))
+    }
+    
+    
+    func inputImageSelected(_ image: UIImage) {
+        viewModel.currentInputImage = image
     }
 }
 

@@ -14,7 +14,7 @@ struct UIImagePickerWrapper {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @Binding var selectedImage: UIImage?
+    let onSelect: ((UIImage) -> Void)
 }
 
 
@@ -22,7 +22,7 @@ struct UIImagePickerWrapper {
 extension UIImagePickerWrapper: UIViewControllerRepresentable {
     
     func makeCoordinator() -> UIImagePickerWrapper.Coordinator {
-        Self.Coordinator(onSelect: imageSelected)
+        Self.Coordinator(onSelect: self.imageSelected(_:))
     }
     
     
@@ -48,8 +48,8 @@ extension UIImagePickerWrapper: UIViewControllerRepresentable {
 
 private extension UIImagePickerWrapper {
     
-    func imageSelected(_ image: UIImage?) {
-        selectedImage = image
+    func imageSelected(_ image: UIImage) {
+        onSelect(image)
         presentationMode.wrappedValue.dismiss()
     }
 }
