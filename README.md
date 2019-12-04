@@ -73,10 +73,11 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 64:** [_Project 13: Instafilter_ (Part Three)](./day-064/)
 - **Day 65:** [_Project 13: Instafilter_ (Part Four)](./day-065/)
 - **Day 66:** [_Project 13: Instafilter_ (Part Five)](./day-066/)
+- **Day 67:** [_Project 13: Instafilter_ (Part Six)](./day-067/)
 
 </details>
 
-- **Day 67:** [_Project 13: Instafilter_ (Part Six)](./day-067/)
+- **Day 68:** [_Project 14: PlaceCase_ (Part One)](./day-068/)
 
 
 
