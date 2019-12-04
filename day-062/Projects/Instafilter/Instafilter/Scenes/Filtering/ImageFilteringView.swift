@@ -59,7 +59,6 @@ extension ImageFilteringView {
                 onSelect: self.newFilterSelected(_:)
             )
         }
-        .navigationBarTitle(Text(""), displayMode: .inline)
         .navigationBarItems(leading: swapFilterButton, trailing: saveButton)
     }
 }
@@ -95,25 +94,21 @@ extension ImageFilteringView {
 extension ImageFilteringView {
 
     private var controls: some View {
-//        List {
-        VStack {
+        List {
             ForEach(viewModel.activeSliders, id: \.0) { slider in
-                VStack(spacing: 22.0) {
-                    VStack(spacing: 2.0) {
-                        Text(slider.displayName)
-                            .font(.headline)
-                            .fontWeight(.bold)
-                        
-                        // Inspired by this solution for dynamically rendering controls inside
-                        // of a `ForEach`: https://stackoverflow.com/a/56759097/8859365
-                        FilterSlider(
-                            viewModel: slider.viewModel,
-                            labelText: slider.displayName
-                        )
-                    }
+                VStack(spacing: 2.0) {
+                    Text(slider.displayName)
+                        .font(.headline)
+                        .fontWeight(.bold)
                     
-                    Divider()
+                    // Inspired by this solution for dynamically rendering controls inside
+                    // of a `ForEach`: https://stackoverflow.com/a/56759097/8859365
+                    FilterSlider(
+                        viewModel: slider.viewModel,
+                        labelText: slider.displayName
+                    )
                 }
+                .padding(.vertical)
             }
         }
     }
@@ -171,7 +166,7 @@ struct ImageFilteringView_Previews: PreviewProvider {
                 ),
                 onSave: { _ in }
             )
-                .environmentObject(SampleStore.default)
+            .environmentObject(SampleStore.default)
         }
     }
 }

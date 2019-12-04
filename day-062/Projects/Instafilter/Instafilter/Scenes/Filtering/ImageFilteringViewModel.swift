@@ -47,7 +47,7 @@ final class ImageFilteringViewModel: ObservableObject {
     // MARK: - Init
     init(inputImage: UIImage? = nil) {
         self.inputImage = inputImage
-        self.currentFilter = .sepiaTone()
+        self.currentFilter = CIFilter(name: CoreImageFilter.sepiaTone.ciFilterName)!
         
         setupSubscribers()
     }

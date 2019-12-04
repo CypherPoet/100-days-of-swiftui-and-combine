@@ -60,7 +60,6 @@ extension ImageFilteringContainerViewModel {
     
     private var isShowingFilteringViewPublisher: AnyPublisher<Bool, Never> {
         $currentInputImage
-            .print("isShowingFilteringViewPublisher")
             .map { $0 != nil }
             .eraseToAnyPublisher()
     }
