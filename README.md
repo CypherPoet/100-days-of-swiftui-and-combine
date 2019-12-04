@@ -89,12 +89,18 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
   <img src="./day-016/projects/WeSplit/Screenshots/recording-1.gif" width="300px"/>
 </div>
 
+<br/>
+<br/>
+
 
 - [Challenge 1: Unit Conversion App](./day-019/TheBestConverter/)
 
 <div style="text-align: center;">
   <img src="./day-019/TheBestConverter/Screenshots/recording-1.gif" width="300px"/>
 </div>
+
+<br/>
+<br/>
 
 
 - [Project 2: GuessTheFlag](./day-020/projects/GuessTheFlag)
@@ -103,12 +109,18 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
   <img src="./day-020/Projects/GuessTheFlag/Screenshots/recording-2.gif" width="300px"/>
 </div>
 
+<br/>
+<br/>
+
 
 - [Milestone Project 1: RockPaperQuizzers](./day-025/RockPaperQuizzers/)
 
 <div style="text-align: center;">
   <img src="./day-025/RockPaperQuizzers/Screenshots/recording-1.gif" width="300px"/>
 </div>
+
+<br/>
+<br/>
 
 
 - [Project 4: BetterRest](./day-026/projects/BetterRest)
@@ -117,6 +129,9 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
   <img src="./day-026/Projects/BetterRest/Screenshots/recording-1.gif" width="300px"/>
 </div>
 
+<br/>
+<br/>
+
 
 - [Project 5: WordScramble](./day-029/projects/WordScramble)
 
@@ -124,12 +139,18 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
   <img src="./day-029/Projects/WordScramble/Screenshots/recording-day-31.gif" width="300px"/>
 </div>
 
+<br/>
+<br/>
+
 
 - [Project 6: Animation](./day-32/Projects/AnimationSandbox)
 
 <div style="text-align: center;">
   <img src="./day-032/Projects/AnimationSandbox/Screenshots/day-33-recording.gif" width="300px"/>
 </div>
+
+<br/>
+<br/>
 
 
 <!-- - [Milestone 2: MultiplicationTables](./day-035/MultiplicationTables/) -->
@@ -142,12 +163,18 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
   <img src="./day-036/Projects/Spendy/Screenshots/day-38-recording.gif" width="300px"/>
 </div>
 
+<br/>
+<br/>
+
 
 - [Project 8: Moonshot](./day-39/Projects/Moonshot)
 
 <div style="text-align: center;">
   <img src="./day-039/Projects/Moonshot/Screenshots/day-42-recording-1.gif" width="300px"/>
 </div>
+
+<br/>
+<br/>
 
 
 - [Project 9: Drawing](./day-43/Projects/DrawingSandbox)
@@ -156,12 +183,18 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
   <img src="./day-043/Projects/DrawingSandbox/Screenshots/day-45-spirograph.gif" width="300px"/>
 </div>
 
+<br/>
+<br/>
+
 
 - [Project 10: CupcakeCorner](./day-49/Projects/CupcakeCorner)
 
 <div style="text-align: center;">
   <img src="./day-049/Projects/CupcakeCorner/Screenshots/day-52-recording-1.gif" width="300px"/>
 </div>
+
+<br/>
+<br/>
 
 
 - [Project 11: Bookworm](./day-053/Projects/Bookworm)
@@ -170,20 +203,31 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
   <img src="./day-053/Projects/Bookworm/Screenshots/day-56-recording-1.gif" width="300px"/>
 </div>
 
+<br/>
+<br/>
+
 
 - [Project 12: Exploring Core Data](./day-057/Projects/ExploringCoreData)
 
+<br/>
+<br/>
+
 
 - [Milestone Project 4: SpaceX Payload Stats](./day-060/Project/SpaceXPayloadStats/)
-
 
 <div style="text-align: center;">
   <img src="./day-060/Project/SpaceXPayloadStats/Screenshots/day-60-recording-1.gif" width="300px"/>
 </div>
 
+<br/>
+<br/>
+
 
 - [Project 13: Instafilter](./day-062/Projects/Instafilter/)
 
 <div style="text-align: center;">
-  <img src="./day-062/Projects/Instafilter/Screenshots/day-66-recording-1.gif" width="400px"/>
+  <img src="./day-062/Projects/Instafilter/Screenshots/day-66-recording-1.gif" width="300px"/>
 </div>
+
+<br/>
+<br/>
