@@ -14,6 +14,8 @@ import Combine
 final class ImageFilteringContainerViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
 
+    // 🔑 It's important to initialize this outisde of the view `body` so that it doesn't
+    // get cleaned up every time the aforementioned `body` gets re-rendered.
     var filteringViewModel = ImageFilteringViewModel()
     
     var store: AppStore? {
