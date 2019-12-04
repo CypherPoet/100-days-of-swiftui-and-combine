@@ -71,10 +71,12 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 62:** [_Project 13: Instafilter_ (Part One)](./day-062/)
 - **Day 63:** [_Project 13: Instafilter_ (Part Two)](./day-063/)
 - **Day 64:** [_Project 13: Instafilter_ (Part Three)](./day-064/)
+- **Day 65:** [_Project 13: Instafilter_ (Part Four)](./day-065/)
+- **Day 66:** [_Project 13: Instafilter_ (Part Five)](./day-066/)
 
 </details>
 
-- **Day 65:** [_Project 13: Instafilter_ (Part Four)](./day-065/)
+- **Day 67:** [_Project 13: Instafilter_ (Part Six)](./day-067/)
 
 
 
@@ -176,4 +178,11 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 
 <div style="text-align: center;">
   <img src="./day-060/Project/SpaceXPayloadStats/Screenshots/day-60-recording-1.gif" width="300px"/>
+</div>
+
+
+- [Project 13: Instafilter](./day-062/Projects/Instafilter/)
+
+<div style="text-align: center;">
+  <img src="./day-062/Projects/Instafilter/Screenshots/day-66-recording-1.gif" width="400px"/>
 </div>

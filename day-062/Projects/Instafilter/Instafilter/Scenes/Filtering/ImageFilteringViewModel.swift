@@ -61,7 +61,6 @@ extension ImageFilteringViewModel {
     private var intensitySliderPublisher: AnyPublisher<(filterKey: String, value: CGFloat), Never> {
         intensitySliderViewModel.$sliderValue
             .dropFirst()
-            .print("intensitySliderPublisher")
             .debounce(for: .milliseconds(200), scheduler: DispatchQueue.main)
             .map { (filterKey: kCIInputIntensityKey, value: $0 * SliderMultiplier.intensity) }
             .eraseToAnyPublisher()
@@ -135,7 +134,6 @@ private extension ImageFilteringViewModel {
                 receiveCompletion: { completion in
                     switch completion {
                     case .failure(let error):
-                        print("filteredImagePublisher error")
                         switch error {
                         case .cgImage(let message),
                              .ciImage(let message),
@@ -143,11 +141,11 @@ private extension ImageFilteringViewModel {
                             self.filteringErrorMessage = message
                         }
                     case .finished:
-                        print("filteredImagePublisher finished")
+                        break
                     }
                 },
                 receiveValue: {
-                    print("filteredImagePublisher, received value: \($0)")
+//                    print("filteredImagePublisher, received value: \($0)")
                     self.processedImage = $0
                 }
             )
