@@ -13,7 +13,7 @@ For each day that proves conducive to some kind of code or content, I'll make a 
 
 ### Personal Note
 
-I'm currently seeking freelance, remote opportunities as an iOS developer! If you're looking for an experienced software engineer who's been diving deep into SwiftUI, Combine, and iOS 13 since WWDC (and who prefers being paid in Bitcoin 🙂), and you could use some help with any of those things, please feel free to [reach out](mailto:CypherPoet@gmail.com) ✌️.
+I'm currently seeking freelance, remote opportunities as an iOS developer! If you're looking for an experienced software engineer who's been diving deep into SwiftUI, Combine, and iOS 13 since WWDC (and who relishes being paid in Bitcoin 🙂), and you could use some help with any of those things, please feel free to [reach out](mailto:CypherPoet@gmail.com) ✌️.
 
 
 ## Days
@@ -74,10 +74,11 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 65:** [_Project 13: Instafilter_ (Part Four)](./day-065/)
 - **Day 66:** [_Project 13: Instafilter_ (Part Five)](./day-066/)
 - **Day 67:** [_Project 13: Instafilter_ (Part Six)](./day-067/)
+- **Day 68:** [_Project 14: PlaceCase_ (Part One)](./day-068/)
 
 </details>
 
-- **Day 68:** [_Project 14: PlaceCase_ (Part One)](./day-068/)
+- **Day 69:** [_Project 14: PlaceCase_ (Part Two)](./day-069/)
 
 
 
