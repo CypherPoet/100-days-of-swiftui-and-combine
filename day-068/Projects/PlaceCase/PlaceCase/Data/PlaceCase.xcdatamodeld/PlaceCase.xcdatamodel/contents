@@ -11,6 +11,11 @@
     <entity name="LocationCollection" representedClassName="LocationCollection" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Location" inverseName="collection" inverseEntity="Location"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="title"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
         <element name="Location" positionX="-54" positionY="9" width="128" height="133"/>
