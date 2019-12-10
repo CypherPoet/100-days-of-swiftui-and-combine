@@ -23,19 +23,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
         
         let window = UIWindow(windowScene: windowScene)
+        let store = AppStore(initialState: AppState(), appReducer: appReducer)
         
         // Get the managed object context from the shared persistent container.
         let managedObjectContext = CoreDataManager.shared.mainContext
         
         // Create the SwiftUI view that provides the window contents.
-        let entryView = LocationCollectionView(
-            viewModel: LocationCollectionViewModel(
-//                authService: appState.authService   // TODO: Use an `AppState` object and store the authService there.
-                authService: AuthenticationService(laContextType: LAContext.self)
+        let entryView = LocationCollectionsContainerView(
+            viewModel: LocationCollectionsContainerViewModel(
+                authService: store.state.authenticationService
             )
         )
-            .accentColor(.pink)
-            .environment(\.managedObjectContext, managedObjectContext)
+        .accentColor(.pink)
+        .environmentObject(store)
+        .environment(\.managedObjectContext, managedObjectContext)
+        .onAppear { [weak self] in
+            guard let self = self else { return }
+            
+            if store.state.isFirstRun {
+                store.send(.setIsFirstRun(to: false))
+                store.send(LocationCollectionsSideEffect.createDefault)
+            }
+        }
 
         // Use a UIHostingController as window root view controller.
         window.rootViewController = UIHostingController(rootView: entryView)

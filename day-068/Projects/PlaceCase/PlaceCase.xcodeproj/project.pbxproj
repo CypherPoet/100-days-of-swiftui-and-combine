@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,16 +14,34 @@
 		F36D28FC23987DE900095B66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F36D28FB23987DE900095B66 /* Preview Assets.xcassets */; };
 		F36D28FF23987DE900095B66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F36D28FD23987DE900095B66 /* LaunchScreen.storyboard */; };
 		F36D295F239A071F00095B66 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D295E239A071F00095B66 /* CoreDataManager.swift */; };
-		F36D2965239A0ACA00095B66 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D2963239A0ACA00095B66 /* MapView.swift */; };
-		F36D2966239A0ACA00095B66 /* MapView+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D2964239A0ACA00095B66 /* MapView+Coordinator.swift */; };
+		F36D2965239A0ACA00095B66 /* LocationCollectionMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D2963239A0ACA00095B66 /* LocationCollectionMapView.swift */; };
+		F36D2966239A0ACA00095B66 /* LocationCollectionMapView+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D2964239A0ACA00095B66 /* LocationCollectionMapView+Coordinator.swift */; };
 		F374DC0A239A431E0016CC65 /* LocationCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374DC09239A431E0016CC65 /* LocationCollectionView.swift */; };
 		F374DC14239A4B2C0016CC65 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374DC12239A4B2B0016CC65 /* Location+CoreDataClass.swift */; };
 		F374DC15239A4B2C0016CC65 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374DC13239A4B2B0016CC65 /* Location+CoreDataProperties.swift */; };
 		F374DC18239A4B790016CC65 /* LocationCollection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374DC16239A4B790016CC65 /* LocationCollection+CoreDataClass.swift */; };
 		F374DC19239A4B790016CC65 /* LocationCollection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374DC17239A4B790016CC65 /* LocationCollection+CoreDataProperties.swift */; };
-		F374DC1C239A57620016CC65 /* Annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374DC1B239A57620016CC65 /* Annotations.swift */; };
+		F374DC1C239A57620016CC65 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374DC1B239A57620016CC65 /* Locations.swift */; };
 		F374DC36239B96780016CC65 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374DC35239B96770016CC65 /* AuthenticationService.swift */; };
+		F394D08E239D5E70002E8FFC /* LocationCollection+FetchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394D08D239D5E70002E8FFC /* LocationCollection+FetchHelpers.swift */; };
+		F394D098239E76E4002E8FFC /* CypherPoetSwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = F394D097239E76E4002E8FFC /* CypherPoetSwiftUIKit */; };
+		F394D09A239E7704002E8FFC /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394D099239E7704002E8FFC /* AppState.swift */; };
+		F394D09C239E77B0002E8FFC /* LocationCollectionsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394D09B239E77B0002E8FFC /* LocationCollectionsState.swift */; };
+		F394D09F239E7EC6002E8FFC /* Burritos in Frameworks */ = {isa = PBXBuildFile; productRef = F394D09E239E7EC6002E8FFC /* Burritos */; };
+		F394D0A1239EC7C2002E8FFC /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394D0A0239EC7C2002E8FFC /* AppStore.swift */; };
+		F394D0A8239FC6E2002E8FFC /* LocationCollectionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394D0A7239FC6E2002E8FFC /* LocationCollectionsListView.swift */; };
 		F3BF5BE1239BA2E900B9F8D8 /* LocationCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5BE0239BA2E900B9F8D8 /* LocationCollectionViewModel.swift */; };
+		F3BF5BE7239CF84D00B9F8D8 /* LocationCollection+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5BE6239CF84D00B9F8D8 /* LocationCollection+Computeds.swift */; };
+		F3BF5BE9239CF89B00B9F8D8 /* Location+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5BE8239CF89B00B9F8D8 /* Location+Comparable.swift */; };
+		F3BF5C0E239D332400B9F8D8 /* Location+LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5C0D239D332400B9F8D8 /* Location+LocationAnnotation.swift */; };
+		F3BF5C11239D33D600B9F8D8 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5C10239D33D600B9F8D8 /* LocationAnnotation.swift */; };
+		F3BF5C14239D3DC000B9F8D8 /* Double+IsValidCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5C13239D3DC000B9F8D8 /* Double+IsValidCoordinate.swift */; };
+		F3BF5C16239D41D700B9F8D8 /* LocationCollectionsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5C15239D41D700B9F8D8 /* LocationCollectionsContainerView.swift */; };
+		F3BF5C18239D425400B9F8D8 /* LocationCollectionsContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5C17239D425400B9F8D8 /* LocationCollectionsContainerViewModel.swift */; };
+		F3BF5C1A239D467F00B9F8D8 /* Location+FetchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5C19239D467F00B9F8D8 /* Location+FetchHelpers.swift */; };
+		F3BF5C1D239D4F8F00B9F8D8 /* CypherPoetCoreDataKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3BF5C1C239D4F8F00B9F8D8 /* CypherPoetCoreDataKit */; };
+		F3BF5C1F239D53B700B9F8D8 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5C1E239D53B700B9F8D8 /* SampleData.swift */; };
+		F3BF5C21239D549E00B9F8D8 /* LocationCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5C20239D549E00B9F8D8 /* LocationCollections.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,16 +54,31 @@
 		F36D28FE23987DE900095B66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F36D290023987DE900095B66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F36D295E239A071F00095B66 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		F36D2963239A0ACA00095B66 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		F36D2964239A0ACA00095B66 /* MapView+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+Coordinator.swift"; sourceTree = "<group>"; };
+		F36D2963239A0ACA00095B66 /* LocationCollectionMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionMapView.swift; sourceTree = "<group>"; };
+		F36D2964239A0ACA00095B66 /* LocationCollectionMapView+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCollectionMapView+Coordinator.swift"; sourceTree = "<group>"; };
 		F374DC09239A431E0016CC65 /* LocationCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionView.swift; sourceTree = "<group>"; };
 		F374DC12239A4B2B0016CC65 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F374DC13239A4B2B0016CC65 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F374DC16239A4B790016CC65 /* LocationCollection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCollection+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F374DC17239A4B790016CC65 /* LocationCollection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCollection+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F374DC1B239A57620016CC65 /* Annotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotations.swift; sourceTree = "<group>"; };
+		F374DC1B239A57620016CC65 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		F374DC35239B96770016CC65 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		F394D08D239D5E70002E8FFC /* LocationCollection+FetchHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCollection+FetchHelpers.swift"; sourceTree = "<group>"; };
+		F394D099239E7704002E8FFC /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F394D09B239E77B0002E8FFC /* LocationCollectionsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionsState.swift; sourceTree = "<group>"; };
+		F394D0A0239EC7C2002E8FFC /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		F394D0A7239FC6E2002E8FFC /* LocationCollectionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionsListView.swift; sourceTree = "<group>"; };
 		F3BF5BE0239BA2E900B9F8D8 /* LocationCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewModel.swift; sourceTree = "<group>"; };
+		F3BF5BE6239CF84D00B9F8D8 /* LocationCollection+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCollection+Computeds.swift"; sourceTree = "<group>"; };
+		F3BF5BE8239CF89B00B9F8D8 /* Location+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Comparable.swift"; sourceTree = "<group>"; };
+		F3BF5C0D239D332400B9F8D8 /* Location+LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+LocationAnnotation.swift"; sourceTree = "<group>"; };
+		F3BF5C10239D33D600B9F8D8 /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
+		F3BF5C13239D3DC000B9F8D8 /* Double+IsValidCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+IsValidCoordinate.swift"; sourceTree = "<group>"; };
+		F3BF5C15239D41D700B9F8D8 /* LocationCollectionsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionsContainerView.swift; sourceTree = "<group>"; };
+		F3BF5C17239D425400B9F8D8 /* LocationCollectionsContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionsContainerViewModel.swift; sourceTree = "<group>"; };
+		F3BF5C19239D467F00B9F8D8 /* Location+FetchHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+FetchHelpers.swift"; sourceTree = "<group>"; };
+		F3BF5C1E239D53B700B9F8D8 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		F3BF5C20239D549E00B9F8D8 /* LocationCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollections.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F394D098239E76E4002E8FFC /* CypherPoetSwiftUIKit in Frameworks */,
+				F3BF5C1D239D4F8F00B9F8D8 /* CypherPoetCoreDataKit in Frameworks */,
+				F394D09F239E7EC6002E8FFC /* Burritos in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +114,6 @@
 		F36D28EE23987DE700095B66 /* PlaceCase */ = {
 			isa = PBXGroup;
 			children = (
-				F36D2960239A093800095B66 /* Reusables */,
 				F36D290023987DE900095B66 /* Info.plist */,
 				F36D28EF23987DE700095B66 /* AppDelegate.swift */,
 				F36D28F123987DE700095B66 /* SceneDelegate.swift */,
@@ -86,6 +121,7 @@
 				F36D28FD23987DE900095B66 /* LaunchScreen.storyboard */,
 				F36D28FA23987DE900095B66 /* Preview Content */,
 				F36D295B239A04BC00095B66 /* Resources */,
+				F36D2960239A093800095B66 /* Reusables */,
 				F36D295C239A04C300095B66 /* Scenes */,
 			);
 			path = PlaceCase;
@@ -103,6 +139,7 @@
 		F36D295A239A04B800095B66 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F394D08F239D6A0B002E8FFC /* State */,
 				F374DC0F239A4ACA0016CC65 /* Models */,
 				F36D28F323987DE700095B66 /* PlaceCase.xcdatamodeld */,
 				F36D295E239A071F00095B66 /* CoreDataManager.swift */,
@@ -122,6 +159,9 @@
 			isa = PBXGroup;
 			children = (
 				F374DC08239A42C90016CC65 /* Location Collection */,
+				F3BF5C15239D41D700B9F8D8 /* LocationCollectionsContainerView.swift */,
+				F394D0A7239FC6E2002E8FFC /* LocationCollectionsListView.swift */,
+				F3BF5C17239D425400B9F8D8 /* LocationCollectionsContainerViewModel.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -129,6 +169,8 @@
 		F36D2960239A093800095B66 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F3BF5C12239D3DAE00B9F8D8 /* Extensions */,
+				F3BF5C0F239D33BE00B9F8D8 /* Protocols */,
 				F36D2961239A093D00095B66 /* Views */,
 				F374DC35239B96770016CC65 /* AuthenticationService.swift */,
 			);
@@ -138,18 +180,18 @@
 		F36D2961239A093D00095B66 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F36D2962239A0A6900095B66 /* MapView */,
+				F36D2962239A0A6900095B66 /* LocationCollectionMapView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F36D2962239A0A6900095B66 /* MapView */ = {
+		F36D2962239A0A6900095B66 /* LocationCollectionMapView */ = {
 			isa = PBXGroup;
 			children = (
-				F36D2963239A0ACA00095B66 /* MapView.swift */,
-				F36D2964239A0ACA00095B66 /* MapView+Coordinator.swift */,
+				F36D2963239A0ACA00095B66 /* LocationCollectionMapView.swift */,
+				F36D2964239A0ACA00095B66 /* LocationCollectionMapView+Coordinator.swift */,
 			);
-			path = MapView;
+			path = LocationCollectionMapView;
 			sourceTree = "<group>";
 		};
 		F374DC08239A42C90016CC65 /* Location Collection */ = {
@@ -175,6 +217,8 @@
 			children = (
 				F374DC16239A4B790016CC65 /* LocationCollection+CoreDataClass.swift */,
 				F374DC17239A4B790016CC65 /* LocationCollection+CoreDataProperties.swift */,
+				F3BF5BE6239CF84D00B9F8D8 /* LocationCollection+Computeds.swift */,
+				F394D08D239D5E70002E8FFC /* LocationCollection+FetchHelpers.swift */,
 			);
 			path = "Location Collection";
 			sourceTree = "<group>";
@@ -184,6 +228,9 @@
 			children = (
 				F374DC12239A4B2B0016CC65 /* Location+CoreDataClass.swift */,
 				F374DC13239A4B2B0016CC65 /* Location+CoreDataProperties.swift */,
+				F3BF5C19239D467F00B9F8D8 /* Location+FetchHelpers.swift */,
+				F3BF5BE8239CF89B00B9F8D8 /* Location+Comparable.swift */,
+				F3BF5C0D239D332400B9F8D8 /* Location+LocationAnnotation.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -191,9 +238,37 @@
 		F374DC1A239A57470016CC65 /* SampleData */ = {
 			isa = PBXGroup;
 			children = (
-				F374DC1B239A57620016CC65 /* Annotations.swift */,
+				F374DC1B239A57620016CC65 /* Locations.swift */,
+				F3BF5C20239D549E00B9F8D8 /* LocationCollections.swift */,
+				F3BF5C1E239D53B700B9F8D8 /* SampleData.swift */,
+				F394D0A0239EC7C2002E8FFC /* AppStore.swift */,
 			);
 			path = SampleData;
+			sourceTree = "<group>";
+		};
+		F394D08F239D6A0B002E8FFC /* State */ = {
+			isa = PBXGroup;
+			children = (
+				F394D099239E7704002E8FFC /* AppState.swift */,
+				F394D09B239E77B0002E8FFC /* LocationCollectionsState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		F3BF5C0F239D33BE00B9F8D8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F3BF5C10239D33D600B9F8D8 /* LocationAnnotation.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F3BF5C12239D3DAE00B9F8D8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F3BF5C13239D3DC000B9F8D8 /* Double+IsValidCoordinate.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +287,11 @@
 			dependencies = (
 			);
 			name = PlaceCase;
+			packageProductDependencies = (
+				F3BF5C1C239D4F8F00B9F8D8 /* CypherPoetCoreDataKit */,
+				F394D097239E76E4002E8FFC /* CypherPoetSwiftUIKit */,
+				F394D09E239E7EC6002E8FFC /* Burritos */,
+			);
 			productName = PlaceCase;
 			productReference = F36D28EC23987DE700095B66 /* PlaceCase.app */;
 			productType = "com.apple.product-type.application";
@@ -240,6 +320,11 @@
 				Base,
 			);
 			mainGroup = F36D28E323987DE700095B66;
+			packageReferences = (
+				F3BF5C1B239D4F8F00B9F8D8 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */,
+				F394D096239E76E4002E8FFC /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
+				F394D09D239E7EC6002E8FFC /* XCRemoteSwiftPackageReference "Burritos" */,
+			);
 			productRefGroup = F36D28ED23987DE700095B66 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -267,20 +352,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F394D0A8239FC6E2002E8FFC /* LocationCollectionsListView.swift in Sources */,
+				F394D09C239E77B0002E8FFC /* LocationCollectionsState.swift in Sources */,
+				F3BF5C1F239D53B700B9F8D8 /* SampleData.swift in Sources */,
 				F374DC18239A4B790016CC65 /* LocationCollection+CoreDataClass.swift in Sources */,
 				F36D28F023987DE700095B66 /* AppDelegate.swift in Sources */,
 				F36D28F223987DE700095B66 /* SceneDelegate.swift in Sources */,
-				F36D2965239A0ACA00095B66 /* MapView.swift in Sources */,
+				F3BF5C14239D3DC000B9F8D8 /* Double+IsValidCoordinate.swift in Sources */,
+				F3BF5C18239D425400B9F8D8 /* LocationCollectionsContainerViewModel.swift in Sources */,
+				F36D2965239A0ACA00095B66 /* LocationCollectionMapView.swift in Sources */,
 				F374DC19239A4B790016CC65 /* LocationCollection+CoreDataProperties.swift in Sources */,
-				F36D2966239A0ACA00095B66 /* MapView+Coordinator.swift in Sources */,
-				F374DC1C239A57620016CC65 /* Annotations.swift in Sources */,
+				F3BF5C11239D33D600B9F8D8 /* LocationAnnotation.swift in Sources */,
+				F3BF5BE7239CF84D00B9F8D8 /* LocationCollection+Computeds.swift in Sources */,
+				F36D2966239A0ACA00095B66 /* LocationCollectionMapView+Coordinator.swift in Sources */,
+				F374DC1C239A57620016CC65 /* Locations.swift in Sources */,
+				F3BF5C21239D549E00B9F8D8 /* LocationCollections.swift in Sources */,
 				F374DC14239A4B2C0016CC65 /* Location+CoreDataClass.swift in Sources */,
 				F374DC15239A4B2C0016CC65 /* Location+CoreDataProperties.swift in Sources */,
+				F3BF5C1A239D467F00B9F8D8 /* Location+FetchHelpers.swift in Sources */,
 				F3BF5BE1239BA2E900B9F8D8 /* LocationCollectionViewModel.swift in Sources */,
 				F36D295F239A071F00095B66 /* CoreDataManager.swift in Sources */,
+				F394D0A1239EC7C2002E8FFC /* AppStore.swift in Sources */,
 				F36D28F523987DE700095B66 /* PlaceCase.xcdatamodeld in Sources */,
+				F3BF5C16239D41D700B9F8D8 /* LocationCollectionsContainerView.swift in Sources */,
+				F3BF5C0E239D332400B9F8D8 /* Location+LocationAnnotation.swift in Sources */,
 				F374DC36239B96780016CC65 /* AuthenticationService.swift in Sources */,
+				F3BF5BE9239CF89B00B9F8D8 /* Location+Comparable.swift in Sources */,
+				F394D09A239E7704002E8FFC /* AppState.swift in Sources */,
 				F374DC0A239A431E0016CC65 /* LocationCollectionView.swift in Sources */,
+				F394D08E239D5E70002E8FFC /* LocationCollection+FetchHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +574,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F394D096239E76E4002E8FFC /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.24;
+			};
+		};
+		F394D09D239E7EC6002E8FFC /* XCRemoteSwiftPackageReference "Burritos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/guillermomuntaner/Burritos.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+		F3BF5C1B239D4F8F00B9F8D8 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetCoreDataKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F394D097239E76E4002E8FFC /* CypherPoetSwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F394D096239E76E4002E8FFC /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */;
+			productName = CypherPoetSwiftUIKit;
+		};
+		F394D09E239E7EC6002E8FFC /* Burritos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F394D09D239E7EC6002E8FFC /* XCRemoteSwiftPackageReference "Burritos" */;
+			productName = Burritos;
+		};
+		F3BF5C1C239D4F8F00B9F8D8 /* CypherPoetCoreDataKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3BF5C1B239D4F8F00B9F8D8 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */;
+			productName = CypherPoetCoreDataKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F36D28F323987DE700095B66 /* PlaceCase.xcdatamodeld */ = {

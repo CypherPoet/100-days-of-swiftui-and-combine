@@ -9,26 +9,42 @@
 
 import SwiftUI
 import Combine
+import CoreData
 
 
-final class LocationCollectionViewModel: ObservableObject {
+final class LocationCollectionViewModel: NSObject, ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
-
-    private let authService: AuthenticatingService
+    private let collection: LocationCollection
     
 
-    // MARK: - Published Properties
-    @Published var isAuthenticated: Bool = false
+    // MARK: - Published Outputs
+    @Published var locations: [Location] = []
 
 
     // MARK: - Init
-    init(
-        authService: AuthenticatingService
-    ) {
-        self.authService = authService
+    init(collection: LocationCollection) {
+        self.collection = collection
         
-        setupSubscribers()
+        super.init()
+        
+        self.fetchedResultsController.delegate = self
+        fetchLocations()
     }
+    
+    
+    lazy var fetchRequest: NSFetchRequest<Location> = {
+        Location.fetchRequest(for: collection)
+    }()
+    
+        
+    lazy var fetchedResultsController: NSFetchedResultsController<Location> = {
+        .init(
+            fetchRequest: fetchRequest,
+            managedObjectContext: CoreDataManager.shared.mainContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil
+        )
+    }()
 }
 
 
@@ -45,32 +61,21 @@ extension LocationCollectionViewModel {
 // MARK: - Public Methods
 extension LocationCollectionViewModel {
     
-    func onAppear() {
-        authService
-            .authenticate(reason: AuthenticationService.authReason)
-            
-            // 📝 Attempting to use `receive(on:)` here will cause the event to be dropped.
-            // This appears to be a bug: https://forums.swift.org/t/combine-receive-on-runloop-main-loses-sent-value-how-can-i-make-it-work/28631/47
-            //
-//            .receive(on: DispatchQueue.main)
-            .sink(
-                receiveCompletion: { completion in
-                    switch completion {
-                    case .failure(let error):
-                        print("Authentication failed: \(error)")
-                        self.isAuthenticated = false
-                    default:
-                        print("Authentication completed")
-                    }
-                },
-                receiveValue: {
-                    print("Authentication value received")
-                    DispatchQueue.main.async { [weak self] in
-                        self?.isAuthenticated = true
-                    }
-                }
-            )
-            .store(in: &subscriptions)
+    func fetchLocations() {
+        // TODO: Better error handling here?
+        try? fetchedResultsController.performFetch()
+        setLocations(from: fetchedResultsController)
+    }
+}
+
+
+// MARK: - NSFetchedResultsControllerDelegate
+extension LocationCollectionViewModel: NSFetchedResultsControllerDelegate {
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        guard let controller = controller as? NSFetchedResultsController<Location> else { return }
+        
+        setLocations(from: controller)
     }
 }
 
@@ -80,5 +85,18 @@ extension LocationCollectionViewModel {
 private extension LocationCollectionViewModel {
 
     func setupSubscribers() {
+    }
+    
+    
+    func setLocations(from fetchedResultsController: NSFetchedResultsController<Location>) {
+        guard
+            let section = fetchedResultsController.sections?.first,
+            let fetchedLocations = section.objects as? [Location]
+        else {
+            locations = []
+            return
+        }
+        
+        locations = fetchedLocations
     }
 }

@@ -31,15 +31,18 @@ final class CoreDataManager {
     // MARK: - Managed Object Contexts
     lazy var backgroundContext: NSManagedObjectContext = {
         let context = self.persistentContainer.newBackgroundContext()
-        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+
         return context
     }()
     
     
     lazy var mainContext: NSManagedObjectContext = {
         let context = self.persistentContainer.viewContext
+        
         context.automaticallyMergesChangesFromParent = true
+        context.shouldDeleteInaccessibleFaults = true
         
         return context
     }()
@@ -89,7 +92,7 @@ extension CoreDataManager {
     
     
     func saveContexts() {
-        [mainContext, backgroundContext].forEach(save(_:))
+        [mainContext, backgroundContext].forEach { save($0) }
     }
 }
 

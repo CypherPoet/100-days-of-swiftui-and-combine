@@ -8,22 +8,35 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 import MapKit
 
 
-extension MapView {
+extension LocationCollectionMapView {
 
     class Coordinator: NSObject {
-        enum ReuseIdentifier {
-            static let pinAnnotation = "Location List Pin"
+        @Binding var centerCoordinate: CLLocationCoordinate2D
+        
+        
+        init(centerCoordinate: Binding<CLLocationCoordinate2D>) {
+            self._centerCoordinate = centerCoordinate
         }
     }
 }
 
 
-extension MapView.Coordinator {
+// MARK: - ReuseIdentifier
+extension LocationCollectionMapView.Coordinator {
+    enum ReuseIdentifier {
+        static let pinAnnotation = "Location List Pin"
+    }
+}
+
+
+// MARK: - Private Helpers
+extension LocationCollectionMapView.Coordinator {
     
-    func configure(_ annotationView: MKAnnotationView) {
+    private func configure(_ annotationView: MKAnnotationView) {
         annotationView.canShowCallout = true
         annotationView.isEnabled = true
     }
@@ -31,7 +44,7 @@ extension MapView.Coordinator {
 
 
 // MARK: - MKMapViewDelegate
-extension MapView.Coordinator: MKMapViewDelegate {
+extension LocationCollectionMapView.Coordinator: MKMapViewDelegate {
     
     func mapView(
         _ mapView: MKMapView,
@@ -47,5 +60,10 @@ extension MapView.Coordinator: MKMapViewDelegate {
         configure(annotationView)
         
         return annotationView
+    }
+    
+
+    func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+        centerCoordinate = mapView.centerCoordinate
     }
 }

@@ -17,7 +17,7 @@ extension LocationCollection {
         return NSFetchRequest<LocationCollection>(entityName: "LocationCollection")
     }
 
-    @NSManaged public var name: String?
+    @NSManaged public var title: String?
     @NSManaged public var locations: NSSet?
 }
 

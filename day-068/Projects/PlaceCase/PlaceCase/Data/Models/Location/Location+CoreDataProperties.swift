@@ -18,10 +18,12 @@ extension Location {
         return NSFetchRequest<Location>(entityName: "Location")
     }
 
-    @NSManaged public var name: String?
+    @NSManaged public var title: String?
+    @NSManaged public var subtitle: String?
+    @NSManaged public var longDescription: String?
+    
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
-    @NSManaged public var placemark: CLPlacemark?
-    @NSManaged public var locationDescription: String?
+    
     @NSManaged public var collection: LocationCollection?
 }

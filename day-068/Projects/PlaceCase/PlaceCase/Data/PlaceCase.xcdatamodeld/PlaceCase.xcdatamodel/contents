@@ -2,18 +2,18 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="locationDescription" optional="YES" attributeType="String"/>
+        <attribute name="longDescription" optional="YES" attributeType="String"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="placemark" optional="YES" attributeType="Transformable" customClassName="CLPlacemark"/>
+        <attribute name="subtitle" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="collection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationCollection" inverseName="locations" inverseEntity="LocationCollection"/>
     </entity>
     <entity name="LocationCollection" representedClassName="LocationCollection" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Location" inverseName="collection" inverseEntity="Location"/>
     </entity>
     <elements>
-        <element name="LocationCollection" positionX="-63" positionY="-18" width="128" height="73"/>
         <element name="Location" positionX="-54" positionY="9" width="128" height="133"/>
+        <element name="LocationCollection" positionX="-63" positionY="-18" width="128" height="73"/>
     </elements>
 </model>
