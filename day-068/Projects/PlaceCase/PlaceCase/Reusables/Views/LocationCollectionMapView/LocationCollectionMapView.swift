@@ -12,7 +12,7 @@ import MapKit
 
 
 struct LocationCollectionMapView {
-    var annotations: [MKPointAnnotation] = []
+    var annotations: [LocationAnnotation] = []
     
     @Binding var centerCoordinate: CLLocationCoordinate2D
 }

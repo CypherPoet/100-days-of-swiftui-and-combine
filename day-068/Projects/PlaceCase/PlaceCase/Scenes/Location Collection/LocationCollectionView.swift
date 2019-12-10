@@ -29,8 +29,31 @@ struct LocationCollectionView: View {
 extension LocationCollectionView {
 
     var body: some View {
-        mapViewSection
-            .edgesIgnoringSafeArea(.all)
+        ZStack {
+            LocationCollectionMapView(
+                annotations: collection.locationsArray,
+                centerCoordinate: $centerCoordinate
+            )
+            
+            VStack {
+                Text("\(collection.locationsArray.count)")
+                Text("\(viewModel.locations.count)")
+            }
+            
+            centerIndicator
+            
+            
+            VStack(alignment: .trailing) {
+                Spacer()
+                
+                HStack(alignment: .bottom) {
+                    Spacer()
+                    addLocationButton
+                }
+            }
+            
+        }
+        .edgesIgnoringSafeArea(.all)
     }
     
 }
@@ -42,25 +65,25 @@ extension LocationCollectionView {
 
 }
 
-
 // MARK: - View Variables
 extension LocationCollectionView {
 
-    private var mapViewSection: some View {
-        ZStack {
-//            LocationCollectionMapView(
-//                annotations: [SampleData.Annotations.santorini],
-//                centerCoordinate: $centerCoordinate
-//            )
-            
-            Circle()
-                .fill(Color.accentColor)
-                .frame(width: 100, height: 100)
-                .opacity(0.3)
+    private var centerIndicator: some View {
+        Circle()
+            .fill(Color.accentColor)
+            .frame(width: 100, height: 100)
+            .opacity(0.3)
+    }
+    
+    
+    private var addLocationButton: some View {
+        Button(action: {
+
+        }) {
+            Image(systemName: "plus")
         }
     }
 }
-
 
 
 // MARK: - Preview

@@ -17,6 +17,21 @@ struct LocationCollectionsState: Codable {
 }
 
 
+// TODO: Remove this after debugging with it for a bit
+fileprivate let defaultLocation: Location = {
+    let location = Location(context: CoreDataManager.shared.backgroundContext)
+
+    location.title = "Santorini"
+    location.subtitle = "An an island in the southern Aegean Sea, speculated to be the inspiration for the city of Atlantis."
+    
+    location.latitude = 36.416667
+    location.longitude = 25.433333
+    
+    return location
+}()
+
+
+
 enum LocationCollectionsSideEffect: SideEffect {
     case createDefault
 //    case create(LocationCollection)
@@ -29,6 +44,7 @@ enum LocationCollectionsSideEffect: SideEffect {
                     let collection = LocationCollection(context: context)
                     
                     collection.title = "Default Collection"
+                    collection.addToLocations(defaultLocation)
                     
                     CoreDataManager.shared.save(context)
                     

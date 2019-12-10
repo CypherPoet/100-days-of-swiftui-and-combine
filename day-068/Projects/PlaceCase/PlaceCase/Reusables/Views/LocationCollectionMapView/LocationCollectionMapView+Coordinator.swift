@@ -50,6 +50,7 @@ extension LocationCollectionMapView.Coordinator: MKMapViewDelegate {
         _ mapView: MKMapView,
         viewFor annotation: MKAnnotation
     ) -> MKAnnotationView? {
+        guard annotation is LocationAnnotation else { return nil }
         
         let annotationView = mapView.dequeueReusableAnnotationView(
             withIdentifier: ReuseIdentifier.pinAnnotation
