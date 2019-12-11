@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 @objc(LocationCollection)
-public class LocationCollection: NSManagedObject {
+public class LocationCollection: NSManagedObject, Identifiable {
 
 }

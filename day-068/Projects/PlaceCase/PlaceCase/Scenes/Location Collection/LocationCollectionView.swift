@@ -11,6 +11,7 @@ import MapKit
 
 
 struct LocationCollectionView: View {
+    @Environment(\.managedObjectContext) private var managedObjectContext
     @ObservedObject private(set) var viewModel: LocationCollectionViewModel
     
     let collection: LocationCollection
@@ -30,30 +31,19 @@ extension LocationCollectionView {
 
     var body: some View {
         ZStack {
-            LocationCollectionMapView(
-                annotations: collection.locationsArray,
-                centerCoordinate: $centerCoordinate
-            )
-            
-            VStack {
-                Text("\(collection.locationsArray.count)")
-                Text("\(viewModel.locations.count)")
-            }
+            mapUnderlay
             
             centerIndicator
             
-            
-            VStack(alignment: .trailing) {
-                Spacer()
-                
-                HStack(alignment: .bottom) {
-                    Spacer()
-                    addLocationButton
-                }
-            }
-            
+            addLocationButton
         }
-        .edgesIgnoringSafeArea(.all)
+        .alert(item: $viewModel.selectedLocation) { _ in
+            Alert(
+                title: Text(viewModel.selectedLocationAlertTitle),
+                message: Text(viewModel.selectedLocationAlertMessage),
+                dismissButton: .default(Text("OK"))
+            )
+        }
     }
     
 }
@@ -61,29 +51,73 @@ extension LocationCollectionView {
 
 // MARK: - Computeds
 extension LocationCollectionView {
-
-
 }
+
 
 // MARK: - View Variables
 extension LocationCollectionView {
+    
+    private var mapUnderlay: some View {
+        LocationCollectionMapView(
+            annotations: collection.locationsArray,
+            centerCoordinate: $centerCoordinate,
+            selectedLocation: $viewModel.selectedLocation
+        )
+        .edgesIgnoringSafeArea(.all)
+    }
+    
 
     private var centerIndicator: some View {
         Circle()
             .fill(Color.accentColor)
-            .frame(width: 100, height: 100)
+            .frame(width: 32, height: 32)
             .opacity(0.3)
     }
     
     
     private var addLocationButton: some View {
-        Button(action: {
 
-        }) {
-            Image(systemName: "plus")
+        VStack(alignment: .trailing) {
+            Spacer()
+            
+            HStack(alignment: .bottom) {
+                Spacer()
+                
+                Button(action: {
+                    self.createNewLocation()
+                }) {
+                    Image(systemName: "plus.rectangle.fill")
+                        .padding(24)
+                }
+                .background(Color.accentColor.opacity(0.8))
+                .foregroundColor(.white)
+                .font(.title)
+                .clipShape(Circle())
+                .padding(.trailing)
+            }
         }
     }
 }
+
+
+// MARK: - Private Helpers
+private extension LocationCollectionView {
+    
+    func createNewLocation() {
+        guard let context = collection.managedObjectContext else { fatalError() }
+
+        let location = Location(context: context)
+        
+        location.title = "Untitled Location"
+        location.latitude = centerCoordinate.latitude
+        location.longitude = centerCoordinate.longitude
+
+        collection.addToLocations(location)
+        
+        CoreDataManager.shared.save(context)
+    }
+}
+
 
 
 // MARK: - Preview

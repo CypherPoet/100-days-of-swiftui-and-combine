@@ -31,7 +31,6 @@ extension LocationCollectionsContainerView {
         }
         .navigationBarTitle("PlaceCase")
         .onAppear(perform: viewModel.onAppear)
-        
     }
 }
 
@@ -49,7 +48,6 @@ struct LocationCollectionsContainerView_Previews: PreviewProvider {
         return LocationCollectionsContainerView(
             viewModel: viewModel
         )
-        .environmentObject(SampleData.SampleAppStore.default)
         .environment(\.managedObjectContext, CoreDataManager.shared.mainContext)
     }
 }

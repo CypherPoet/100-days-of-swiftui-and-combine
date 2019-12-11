@@ -19,8 +19,9 @@ final class LocationCollectionViewModel: NSObject, ObservableObject {
 
     // MARK: - Published Outputs
     @Published var locations: [Location] = []
+    @Published var selectedLocation: Location? = nil
 
-
+    
     // MARK: - Init
     init(collection: LocationCollection) {
         self.collection = collection
@@ -55,6 +56,14 @@ extension LocationCollectionViewModel {
 
 // MARK: - Computeds
 extension LocationCollectionViewModel {
+    
+    var selectedLocationAlertTitle: String {
+        selectedLocation?.title ?? "Undisclosed Location"
+    }
+    
+    var selectedLocationAlertMessage: String {
+        selectedLocation?.subtitle ?? "No description has been provided yet."
+    }
 }
 
 

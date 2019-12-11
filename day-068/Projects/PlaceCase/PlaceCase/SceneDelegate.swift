@@ -37,9 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         .accentColor(.pink)
         .environmentObject(store)
         .environment(\.managedObjectContext, managedObjectContext)
-        .onAppear { [weak self] in
-            guard let self = self else { return }
-            
+        .onAppear {
             if store.state.isFirstRun {
                 store.send(.setIsFirstRun(to: false))
                 store.send(LocationCollectionsSideEffect.createDefault)

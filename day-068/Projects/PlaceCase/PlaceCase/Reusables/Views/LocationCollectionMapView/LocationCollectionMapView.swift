@@ -15,6 +15,7 @@ struct LocationCollectionMapView {
     var annotations: [LocationAnnotation] = []
     
     @Binding var centerCoordinate: CLLocationCoordinate2D
+    @Binding var selectedLocation: Location?
 }
 
 
@@ -22,7 +23,10 @@ struct LocationCollectionMapView {
 extension LocationCollectionMapView: UIViewRepresentable {
 
     func makeCoordinator() -> LocationCollectionMapView.Coordinator {
-        Self.Coordinator(centerCoordinate: $centerCoordinate)
+        Self.Coordinator(
+            centerCoordinate: $centerCoordinate,
+            selectedLocation: $selectedLocation
+        )
     }
 
 
@@ -30,6 +34,7 @@ extension LocationCollectionMapView: UIViewRepresentable {
         context: UIViewRepresentableContext<LocationCollectionMapView>
     ) -> MKMapView {
         let mapView = MKMapView()
+        
         
         mapView.addAnnotations(annotations)
         mapView.delegate = context.coordinator
@@ -42,8 +47,10 @@ extension LocationCollectionMapView: UIViewRepresentable {
         _ mapView: MKMapView,
         context: UIViewRepresentableContext<LocationCollectionMapView>
     ) {
-        // TODO
-        
+        if mapView.annotations.count != annotations.count {
+            mapView.removeAnnotations(mapView.annotations)
+            mapView.addAnnotations(annotations)
+        }
     }
 }
 

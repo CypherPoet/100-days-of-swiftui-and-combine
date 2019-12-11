@@ -41,6 +41,7 @@ final class CoreDataManager {
     lazy var mainContext: NSManagedObjectContext = {
         let context = self.persistentContainer.viewContext
         
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         context.automaticallyMergesChangesFromParent = true
         context.shouldDeleteInaccessibleFaults = true
         
