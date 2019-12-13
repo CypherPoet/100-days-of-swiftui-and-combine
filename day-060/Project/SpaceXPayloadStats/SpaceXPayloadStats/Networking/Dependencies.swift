@@ -13,8 +13,7 @@ enum Dependencies {
     static let spaceXAPIService = SpaceXAPIService(
         queue: DispatchQueue(
             label: "SpaceX API Service",
-            qos: .userInitiated,
-            attributes: [.concurrent]
+            qos: .userInitiated
         )
     )
 }
