@@ -15,7 +15,8 @@ struct LocationCollectionMapView {
     var annotations: [LocationAnnotation] = []
     
     @Binding var centerCoordinate: CLLocationCoordinate2D
-    @Binding var selectedLocation: Location?
+    
+    let onSelectLocation: ((Location) -> Void)?
 }
 
 
@@ -25,7 +26,7 @@ extension LocationCollectionMapView: UIViewRepresentable {
     func makeCoordinator() -> LocationCollectionMapView.Coordinator {
         Self.Coordinator(
             centerCoordinate: $centerCoordinate,
-            selectedLocation: $selectedLocation
+            onSelectLocation: onSelectLocation
         )
     }
 

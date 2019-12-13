@@ -62,7 +62,7 @@ extension LocationCollectionViewModel {
     }
     
     var selectedLocationAlertMessage: String {
-        selectedLocation?.subtitle ?? "No description has been provided yet."
+        selectedLocation?.longDescription ?? "No description has been provided yet."
     }
 }
 

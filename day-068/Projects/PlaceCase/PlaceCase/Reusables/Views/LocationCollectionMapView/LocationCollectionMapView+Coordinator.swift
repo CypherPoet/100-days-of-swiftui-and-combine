@@ -16,15 +16,15 @@ extension LocationCollectionMapView {
 
     class Coordinator: NSObject {
         @Binding var centerCoordinate: CLLocationCoordinate2D
-        @Binding var selectedLocation: Location?
+        let onSelectLocation: ((Location) -> Void)?
 
         
         init(
             centerCoordinate: Binding<CLLocationCoordinate2D>,
-            selectedLocation: Binding<Location?>
+            onSelectLocation: ((Location) -> Void)? = nil
         ) {
             self._centerCoordinate = centerCoordinate
-            self._selectedLocation = selectedLocation
+            self.onSelectLocation = onSelectLocation
         }
     }
 }
@@ -78,9 +78,9 @@ extension LocationCollectionMapView.Coordinator: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         guard
-            let annotation = view.annotation as? Location
+            let selectedLocation = view.annotation as? Location
         else { return }
         
-        self.selectedLocation = annotation
+        self.onSelectLocation?(selectedLocation)
     }
 }

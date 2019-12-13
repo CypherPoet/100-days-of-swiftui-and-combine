@@ -17,6 +17,8 @@ struct LocationCollectionView: View {
     let collection: LocationCollection
     
     @State private var centerCoordinate = CLLocationCoordinate2D()
+    @State private var isShowingEditView = false
+    @State private var isShowingSelectedLocationAlert = false
     
     
     init(collection: LocationCollection) {
@@ -37,12 +39,29 @@ extension LocationCollectionView {
             
             addLocationButton
         }
-        .alert(item: $viewModel.selectedLocation) { _ in
+        .alert(isPresented: $isShowingSelectedLocationAlert) {
             Alert(
                 title: Text(viewModel.selectedLocationAlertTitle),
                 message: Text(viewModel.selectedLocationAlertMessage),
-                dismissButton: .default(Text("OK"))
+                primaryButton: .default(Text("Edit"), action: {
+                    self.isShowingEditView = true
+                }),
+                secondaryButton: .cancel(Text("OK"))
             )
+        }
+        .sheet(
+            isPresented: $isShowingEditView,
+            onDismiss: {
+                guard let context = self.viewModel.selectedLocation?.managedObjectContext else {
+                    fatalError()
+                }
+                
+                CoreDataManager.shared.save(context)
+            }
+        ) {
+            if self.viewModel.selectedLocation != nil {
+                EditLocationView(location: self.viewModel.selectedLocation!)
+            }
         }
     }
     
@@ -61,7 +80,7 @@ extension LocationCollectionView {
         LocationCollectionMapView(
             annotations: collection.locationsArray,
             centerCoordinate: $centerCoordinate,
-            selectedLocation: $viewModel.selectedLocation
+            onSelectLocation: locationSelected(_:)
         )
         .edgesIgnoringSafeArea(.all)
     }
@@ -73,7 +92,6 @@ extension LocationCollectionView {
             .frame(width: 32, height: 32)
             .opacity(0.3)
     }
-    
     
     private var addLocationButton: some View {
 
@@ -115,6 +133,12 @@ private extension LocationCollectionView {
         collection.addToLocations(location)
         
         CoreDataManager.shared.save(context)
+    }
+    
+    
+    func locationSelected(_ location: Location) {
+        viewModel.selectedLocation = location
+        isShowingSelectedLocationAlert = true
     }
 }
 
