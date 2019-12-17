@@ -48,6 +48,6 @@ struct LocationCollectionsContainerView_Previews: PreviewProvider {
         return LocationCollectionsContainerView(
             viewModel: viewModel
         )
-        .environment(\.managedObjectContext, CoreDataManager.shared.mainContext)
+        .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
     }
 }

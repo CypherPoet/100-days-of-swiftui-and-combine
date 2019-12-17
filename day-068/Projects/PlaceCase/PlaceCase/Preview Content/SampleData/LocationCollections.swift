@@ -15,7 +15,7 @@ extension SampleData {
     
     enum LocationCollections {
         static let `default`: LocationCollection = {
-            let context = CoreDataManager.shared.mainContext
+            let context = CurrentApp.coreDataManager.mainContext
             let collection = LocationCollection(context: context)
             
             collection.title = "Default Collection"

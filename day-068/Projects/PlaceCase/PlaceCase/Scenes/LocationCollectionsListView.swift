@@ -75,7 +75,7 @@ struct LocationCollectionsListView_Previews: PreviewProvider {
             LocationCollectionsListView(
                 buildDestination: { _ in EmptyView() }
             )
-            .environment(\.managedObjectContext, CoreDataManager.shared.mainContext)
+            .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
         }
     }
 }

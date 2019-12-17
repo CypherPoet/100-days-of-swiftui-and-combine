@@ -16,7 +16,7 @@ extension SampleData {
     enum Locations {
         
         static let santorini: Location = {
-            let location = Location(context: CoreDataManager.shared.mainContext)
+            let location = Location(context: CurrentApp.coreDataManager.mainContext)
         
             location.title = "Santorini"
             location.subtitle = "An an island in the southern Aegean Sea, speculated to be the inspiration for the city of Atlantis."

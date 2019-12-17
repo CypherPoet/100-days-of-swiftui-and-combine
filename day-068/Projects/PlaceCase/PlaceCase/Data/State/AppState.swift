@@ -16,6 +16,8 @@ import LocalAuthentication
 struct AppState {
     var authenticationService: AuthenticatingService
     var locationCollectionsState: LocationCollectionsState
+    var wikiPagesState: WikiPagesState
+    
     
     @UserDefault("isFirstRun", defaultValue: true)
     var isFirstRun: Bool
@@ -23,10 +25,12 @@ struct AppState {
     
     init(
         authenticationService: AuthenticatingService = AuthenticationService(laContextType: LAContext.self),
-        locationCollectionsState: LocationCollectionsState = .init()
+        locationCollectionsState: LocationCollectionsState = .init(),
+        wikiPagesState: WikiPagesState = .init()
     ) {
         self.authenticationService = authenticationService
         self.locationCollectionsState = locationCollectionsState
+        self.wikiPagesState = wikiPagesState
     }
 }
 
@@ -35,6 +39,7 @@ struct AppState {
 enum AppAction {
     case setIsFirstRun(to: Bool)
     case locationCollections(_ locationCollectionsAction: LocationCollectionsAction)
+    case wikiPages(_ wikiPagesAction: WikiPagesAction)
 }
 
 
@@ -48,6 +53,8 @@ let appReducer = Reducer<AppState, AppAction> { appState, action in
         appState.isFirstRun = isFirstRun
     case let .locationCollections(action):
         locationCollectionsReducer.reduce(&appState.locationCollectionsState, action)
+    case .wikiPages(let action):
+        wikiPagesReducer.reduce(&appState.wikiPagesState, action)
     }
 }
 

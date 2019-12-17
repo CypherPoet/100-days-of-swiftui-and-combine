@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="longDescription" optional="YES" attributeType="String"/>
@@ -7,6 +7,13 @@
         <attribute name="subtitle" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="collection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationCollection" inverseName="locations" inverseEntity="LocationCollection"/>
+        <relationship name="wikiPages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WikiPage" inverseName="location" inverseEntity="WikiPage"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="latitude"/>
+                <constraint value="longitude"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="LocationCollection" representedClassName="LocationCollection" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String"/>
@@ -17,8 +24,21 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="WikiPage" representedClassName="WikiPage" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="terms" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String: [String]]"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="wikiPages" inverseEntity="Location"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="title"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
     <elements>
-        <element name="Location" positionX="-54" positionY="9" width="128" height="133"/>
-        <element name="LocationCollection" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Location" positionX="-144.60546875" positionY="60.58203125" width="128" height="28"/>
+        <element name="LocationCollection" positionX="-386.72265625" positionY="-110.62109375" width="128" height="73"/>
+        <element name="WikiPage" positionX="54.08984375" positionY="264.7734375" width="155.65234375" height="28"/>
     </elements>
 </model>

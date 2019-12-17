@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "CypherPoetNetStack",
+        "repositoryURL": "https://github.com/CypherPoet/CypherPoetNetStack.git",
+        "state": {
+          "branch": null,
+          "revision": "0bc904367aac76c39a3ca38b216c21fe4841e415",
+          "version": "0.0.26"
+        }
+      },
+      {
         "package": "CypherPoetSwiftUIKit",
         "repositoryURL": "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git",
         "state": {

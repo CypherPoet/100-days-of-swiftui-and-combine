@@ -12,7 +12,7 @@ import Foundation
 extension Location: Comparable {
  
     public static func < (lhs: Location, rhs: Location) -> Bool {
-        // Assign a lower sort priority if `name` doesn't exist
+        // Assign a lower sort priority if `title` doesn't exist
         guard let lhsTitle = lhs.title else { return false }
         guard let rhsTitle = rhs.title else { return true }
         

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F34643B323A457B500033065 /* WikiPage+DecodingUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34643B223A457B500033065 /* WikiPage+DecodingUtils.swift */; };
+		F34643C123A5BDBE00033065 /* CurrentApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34643C023A5BDBE00033065 /* CurrentApplication.swift */; };
+		F34643D023A6D35D00033065 /* WikiPage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34643CE23A6D35D00033065 /* WikiPage+CoreDataClass.swift */; };
+		F34643D123A6D35D00033065 /* WikiPage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34643CF23A6D35D00033065 /* WikiPage+CoreDataProperties.swift */; };
+		F34643D723A6D4D800033065 /* Location+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34643D623A6D4D700033065 /* Location+Computeds.swift */; };
+		F34643D923A6D52700033065 /* WikiPage+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34643D823A6D52700033065 /* WikiPage+Comparable.swift */; };
 		F36D28F023987DE700095B66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D28EF23987DE700095B66 /* AppDelegate.swift */; };
 		F36D28F223987DE700095B66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D28F123987DE700095B66 /* SceneDelegate.swift */; };
 		F36D28F523987DE700095B66 /* PlaceCase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F36D28F323987DE700095B66 /* PlaceCase.xcdatamodeld */; };
@@ -32,6 +38,9 @@
 		F394D0A8239FC6E2002E8FFC /* LocationCollectionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394D0A7239FC6E2002E8FFC /* LocationCollectionsListView.swift */; };
 		F39A41BA23A3E2BB00F3B91D /* Binding+OptionalWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A41B923A3E2BB00F3B91D /* Binding+OptionalWrappers.swift */; };
 		F39A41BD23A3F53E00F3B91D /* EditLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A41BC23A3F53E00F3B91D /* EditLocationView.swift */; };
+		F39A41C023A40C3800F3B91D /* WikipediaAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A41BF23A40C3800F3B91D /* WikipediaAPIService.swift */; };
+		F39A41C323A4179400F3B91D /* CypherPoetNetStack in Frameworks */ = {isa = PBXBuildFile; productRef = F39A41C223A4179400F3B91D /* CypherPoetNetStack */; };
+		F39A41C523A41B5200F3B91D /* Endpoint+WikipediaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A41C423A41B5200F3B91D /* Endpoint+WikipediaAPI.swift */; };
 		F3BF5BE1239BA2E900B9F8D8 /* LocationCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5BE0239BA2E900B9F8D8 /* LocationCollectionViewModel.swift */; };
 		F3BF5BE7239CF84D00B9F8D8 /* LocationCollection+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5BE6239CF84D00B9F8D8 /* LocationCollection+Computeds.swift */; };
 		F3BF5BE9239CF89B00B9F8D8 /* Location+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5BE8239CF89B00B9F8D8 /* Location+Comparable.swift */; };
@@ -44,9 +53,17 @@
 		F3BF5C1D239D4F8F00B9F8D8 /* CypherPoetCoreDataKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3BF5C1C239D4F8F00B9F8D8 /* CypherPoetCoreDataKit */; };
 		F3BF5C1F239D53B700B9F8D8 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5C1E239D53B700B9F8D8 /* SampleData.swift */; };
 		F3BF5C21239D549E00B9F8D8 /* LocationCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5C20239D549E00B9F8D8 /* LocationCollections.swift */; };
+		F3C8F65423A82E1C008B66A7 /* WikiPagesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8F65323A82E1C008B66A7 /* WikiPagesState.swift */; };
+		F3C8F65623A837A7008B66A7 /* EditLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8F65523A837A7008B66A7 /* EditLocationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F34643B223A457B500033065 /* WikiPage+DecodingUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WikiPage+DecodingUtils.swift"; sourceTree = "<group>"; };
+		F34643C023A5BDBE00033065 /* CurrentApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentApplication.swift; sourceTree = "<group>"; };
+		F34643CE23A6D35D00033065 /* WikiPage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WikiPage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F34643CF23A6D35D00033065 /* WikiPage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WikiPage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F34643D623A6D4D700033065 /* Location+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Computeds.swift"; sourceTree = "<group>"; };
+		F34643D823A6D52700033065 /* WikiPage+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WikiPage+Comparable.swift"; sourceTree = "<group>"; };
 		F36D28EC23987DE700095B66 /* PlaceCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaceCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36D28EF23987DE700095B66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36D28F123987DE700095B66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +89,8 @@
 		F394D0A7239FC6E2002E8FFC /* LocationCollectionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionsListView.swift; sourceTree = "<group>"; };
 		F39A41B923A3E2BB00F3B91D /* Binding+OptionalWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+OptionalWrappers.swift"; sourceTree = "<group>"; };
 		F39A41BC23A3F53E00F3B91D /* EditLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLocationView.swift; sourceTree = "<group>"; };
+		F39A41BF23A40C3800F3B91D /* WikipediaAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaAPIService.swift; sourceTree = "<group>"; };
+		F39A41C423A41B5200F3B91D /* Endpoint+WikipediaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+WikipediaAPI.swift"; sourceTree = "<group>"; };
 		F3BF5BE0239BA2E900B9F8D8 /* LocationCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewModel.swift; sourceTree = "<group>"; };
 		F3BF5BE6239CF84D00B9F8D8 /* LocationCollection+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCollection+Computeds.swift"; sourceTree = "<group>"; };
 		F3BF5BE8239CF89B00B9F8D8 /* Location+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Comparable.swift"; sourceTree = "<group>"; };
@@ -83,6 +102,8 @@
 		F3BF5C19239D467F00B9F8D8 /* Location+FetchHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+FetchHelpers.swift"; sourceTree = "<group>"; };
 		F3BF5C1E239D53B700B9F8D8 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		F3BF5C20239D549E00B9F8D8 /* LocationCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollections.swift; sourceTree = "<group>"; };
+		F3C8F65323A82E1C008B66A7 /* WikiPagesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPagesState.swift; sourceTree = "<group>"; };
+		F3C8F65523A837A7008B66A7 /* EditLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLocationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +113,7 @@
 			files = (
 				F394D098239E76E4002E8FFC /* CypherPoetSwiftUIKit in Frameworks */,
 				F3BF5C1D239D4F8F00B9F8D8 /* CypherPoetCoreDataKit in Frameworks */,
+				F39A41C323A4179400F3B91D /* CypherPoetNetStack in Frameworks */,
 				F394D09F239E7EC6002E8FFC /* Burritos in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +121,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F34643B123A457AB00033065 /* Wiki Page */ = {
+			isa = PBXGroup;
+			children = (
+				F34643CE23A6D35D00033065 /* WikiPage+CoreDataClass.swift */,
+				F34643CF23A6D35D00033065 /* WikiPage+CoreDataProperties.swift */,
+				F34643B223A457B500033065 /* WikiPage+DecodingUtils.swift */,
+				F34643D823A6D52700033065 /* WikiPage+Comparable.swift */,
+			);
+			path = "Wiki Page";
+			sourceTree = "<group>";
+		};
 		F36D28E323987DE700095B66 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +151,7 @@
 		F36D28EE23987DE700095B66 /* PlaceCase */ = {
 			isa = PBXGroup;
 			children = (
+				F39A41BE23A40A5300F3B91D /* Networking */,
 				F36D290023987DE900095B66 /* Info.plist */,
 				F36D28EF23987DE700095B66 /* AppDelegate.swift */,
 				F36D28F123987DE700095B66 /* SceneDelegate.swift */,
@@ -202,8 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				F374DC09239A431E0016CC65 /* LocationCollectionView.swift */,
-				F39A41BB23A3F52600F3B91D /* Edit Location */,
 				F3BF5BE0239BA2E900B9F8D8 /* LocationCollectionViewModel.swift */,
+				F39A41BB23A3F52600F3B91D /* Edit Location */,
 			);
 			path = "Location Collection";
 			sourceTree = "<group>";
@@ -211,6 +245,7 @@
 		F374DC0F239A4ACA0016CC65 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F34643B123A457AB00033065 /* Wiki Page */,
 				F374DC11239A4AEC0016CC65 /* Location */,
 				F374DC10239A4AE00016CC65 /* Location Collection */,
 			);
@@ -235,6 +270,7 @@
 				F374DC13239A4B2B0016CC65 /* Location+CoreDataProperties.swift */,
 				F3BF5C19239D467F00B9F8D8 /* Location+FetchHelpers.swift */,
 				F3BF5BE8239CF89B00B9F8D8 /* Location+Comparable.swift */,
+				F34643D623A6D4D700033065 /* Location+Computeds.swift */,
 				F3BF5C0D239D332400B9F8D8 /* Location+LocationAnnotation.swift */,
 			);
 			path = Location;
@@ -255,7 +291,9 @@
 			isa = PBXGroup;
 			children = (
 				F394D099239E7704002E8FFC /* AppState.swift */,
+				F34643C023A5BDBE00033065 /* CurrentApplication.swift */,
 				F394D09B239E77B0002E8FFC /* LocationCollectionsState.swift */,
+				F3C8F65323A82E1C008B66A7 /* WikiPagesState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -264,8 +302,18 @@
 			isa = PBXGroup;
 			children = (
 				F39A41BC23A3F53E00F3B91D /* EditLocationView.swift */,
+				F3C8F65523A837A7008B66A7 /* EditLocationViewModel.swift */,
 			);
 			path = "Edit Location";
+			sourceTree = "<group>";
+		};
+		F39A41BE23A40A5300F3B91D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F39A41BF23A40C3800F3B91D /* WikipediaAPIService.swift */,
+				F39A41C423A41B5200F3B91D /* Endpoint+WikipediaAPI.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		F3BF5C0F239D33BE00B9F8D8 /* Protocols */ = {
@@ -305,6 +353,7 @@
 				F3BF5C1C239D4F8F00B9F8D8 /* CypherPoetCoreDataKit */,
 				F394D097239E76E4002E8FFC /* CypherPoetSwiftUIKit */,
 				F394D09E239E7EC6002E8FFC /* Burritos */,
+				F39A41C223A4179400F3B91D /* CypherPoetNetStack */,
 			);
 			productName = PlaceCase;
 			productReference = F36D28EC23987DE700095B66 /* PlaceCase.app */;
@@ -338,6 +387,7 @@
 				F3BF5C1B239D4F8F00B9F8D8 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */,
 				F394D096239E76E4002E8FFC /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
 				F394D09D239E7EC6002E8FFC /* XCRemoteSwiftPackageReference "Burritos" */,
+				F39A41C123A4179400F3B91D /* XCRemoteSwiftPackageReference "CypherPoetNetStack" */,
 			);
 			productRefGroup = F36D28ED23987DE700095B66 /* Products */;
 			projectDirPath = "";
@@ -369,6 +419,7 @@
 				F394D0A8239FC6E2002E8FFC /* LocationCollectionsListView.swift in Sources */,
 				F394D09C239E77B0002E8FFC /* LocationCollectionsState.swift in Sources */,
 				F3BF5C1F239D53B700B9F8D8 /* SampleData.swift in Sources */,
+				F34643C123A5BDBE00033065 /* CurrentApplication.swift in Sources */,
 				F374DC18239A4B790016CC65 /* LocationCollection+CoreDataClass.swift in Sources */,
 				F36D28F023987DE700095B66 /* AppDelegate.swift in Sources */,
 				F36D28F223987DE700095B66 /* SceneDelegate.swift in Sources */,
@@ -385,18 +436,27 @@
 				F374DC15239A4B2C0016CC65 /* Location+CoreDataProperties.swift in Sources */,
 				F3BF5C1A239D467F00B9F8D8 /* Location+FetchHelpers.swift in Sources */,
 				F3BF5BE1239BA2E900B9F8D8 /* LocationCollectionViewModel.swift in Sources */,
+				F3C8F65423A82E1C008B66A7 /* WikiPagesState.swift in Sources */,
 				F36D295F239A071F00095B66 /* CoreDataManager.swift in Sources */,
+				F3C8F65623A837A7008B66A7 /* EditLocationViewModel.swift in Sources */,
 				F394D0A1239EC7C2002E8FFC /* AppStore.swift in Sources */,
 				F39A41BA23A3E2BB00F3B91D /* Binding+OptionalWrappers.swift in Sources */,
+				F39A41C023A40C3800F3B91D /* WikipediaAPIService.swift in Sources */,
+				F34643D923A6D52700033065 /* WikiPage+Comparable.swift in Sources */,
 				F36D28F523987DE700095B66 /* PlaceCase.xcdatamodeld in Sources */,
 				F3BF5C16239D41D700B9F8D8 /* LocationCollectionsContainerView.swift in Sources */,
 				F39A41BD23A3F53E00F3B91D /* EditLocationView.swift in Sources */,
+				F34643D123A6D35D00033065 /* WikiPage+CoreDataProperties.swift in Sources */,
 				F3BF5C0E239D332400B9F8D8 /* Location+LocationAnnotation.swift in Sources */,
+				F34643D023A6D35D00033065 /* WikiPage+CoreDataClass.swift in Sources */,
 				F374DC36239B96780016CC65 /* AuthenticationService.swift in Sources */,
+				F39A41C523A41B5200F3B91D /* Endpoint+WikipediaAPI.swift in Sources */,
 				F3BF5BE9239CF89B00B9F8D8 /* Location+Comparable.swift in Sources */,
+				F34643B323A457B500033065 /* WikiPage+DecodingUtils.swift in Sources */,
 				F394D09A239E7704002E8FFC /* AppState.swift in Sources */,
 				F374DC0A239A431E0016CC65 /* LocationCollectionView.swift in Sources */,
 				F394D08E239D5E70002E8FFC /* LocationCollection+FetchHelpers.swift in Sources */,
+				F34643D723A6D4D800033065 /* Location+Computeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +668,14 @@
 				minimumVersion = 0.0.3;
 			};
 		};
+		F39A41C123A4179400F3B91D /* XCRemoteSwiftPackageReference "CypherPoetNetStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetNetStack.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.23;
+			};
+		};
 		F3BF5C1B239D4F8F00B9F8D8 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CypherPoet/CypherPoetCoreDataKit.git";
@@ -628,6 +696,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F394D09D239E7EC6002E8FFC /* XCRemoteSwiftPackageReference "Burritos" */;
 			productName = Burritos;
+		};
+		F39A41C223A4179400F3B91D /* CypherPoetNetStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F39A41C123A4179400F3B91D /* XCRemoteSwiftPackageReference "CypherPoetNetStack" */;
+			productName = CypherPoetNetStack;
 		};
 		F3BF5C1C239D4F8F00B9F8D8 /* CypherPoetCoreDataKit */ = {
 			isa = XCSwiftPackageProductDependency;

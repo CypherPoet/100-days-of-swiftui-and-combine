@@ -14,13 +14,20 @@ import CoreData
 
 final class LocationCollectionViewModel: NSObject, ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
-    private let collection: LocationCollection
+
+    @ObservedObject var collection: LocationCollection
     
 
     // MARK: - Published Outputs
     @Published var locations: [Location] = []
-    @Published var selectedLocation: Location? = nil
-
+    @Published var isShowingEditView: Bool = false
+    
+    @Published var isShowingSelectedLocationAlert: Bool = false {
+        didSet {
+            print("isShowingSelectedLocationAlert - didSet: \(isShowingSelectedLocationAlert)")
+        }
+    }
+    
     
     // MARK: - Init
     init(collection: LocationCollection) {
@@ -28,8 +35,8 @@ final class LocationCollectionViewModel: NSObject, ObservableObject {
         
         super.init()
         
-        self.fetchedResultsController.delegate = self
-        fetchLocations()
+//        self.fetchedResultsController.delegate = self
+//        fetchLocations()
     }
     
     
@@ -41,7 +48,7 @@ final class LocationCollectionViewModel: NSObject, ObservableObject {
     lazy var fetchedResultsController: NSFetchedResultsController<Location> = {
         .init(
             fetchRequest: fetchRequest,
-            managedObjectContext: CoreDataManager.shared.mainContext,
+            managedObjectContext: CurrentApp.coreDataManager.mainContext,
             sectionNameKeyPath: nil,
             cacheName: nil
         )
@@ -56,14 +63,6 @@ extension LocationCollectionViewModel {
 
 // MARK: - Computeds
 extension LocationCollectionViewModel {
-    
-    var selectedLocationAlertTitle: String {
-        selectedLocation?.title ?? "Undisclosed Location"
-    }
-    
-    var selectedLocationAlertMessage: String {
-        selectedLocation?.longDescription ?? "No description has been provided yet."
-    }
 }
 
 
@@ -93,10 +92,6 @@ extension LocationCollectionViewModel: NSFetchedResultsControllerDelegate {
 // MARK: - Private Helpers
 private extension LocationCollectionViewModel {
 
-    func setupSubscribers() {
-    }
-    
-    
     func setLocations(from fetchedResultsController: NSFetchedResultsController<Location>) {
         guard
             let section = fetchedResultsController.sections?.first,

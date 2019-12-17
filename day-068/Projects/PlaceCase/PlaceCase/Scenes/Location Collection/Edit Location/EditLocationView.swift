@@ -11,7 +11,14 @@ import SwiftUI
 
 struct EditLocationView: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var location: Location
+    @EnvironmentObject var store: AppStore
+    
+    @ObservedObject private(set) var viewModel: EditLocationViewModel
+    
+    
+    init(location: Location) {
+        self.viewModel = EditLocationViewModel(location: location)
+    }
 }
 
 
@@ -22,13 +29,33 @@ extension EditLocationView {
         NavigationView {
             Form {
                 Section {
-                    TextField("Location Name", text: Binding($location.title, "Untitled Location"))
-//                    TextField("Description", text: Binding($location.longDescription, ""))
-                    TextField("Description", text: Binding($location.longDescription, replacingNilWith: ""))
+                    TextField("Location Name", text: Binding($viewModel.location.title, "Untitled Location"))
+                    //                    TextField("Description", text: Binding($viewModel.location.longDescription, ""))
+                    TextField("Description", text: Binding($viewModel.location.longDescription, replacingNilWith: ""))
+                }
+                .padding(.bottom)
+                
+                
+                Section(header: Text("Nearby Locations...").font(.headline)) {
+                    if viewModel.wikiPagesFetchState == .fetching {
+                        Text("Fetching...")
+                    } else if viewModel.wikiPages.isEmpty {
+                        Text("None Found")
+                    } else {
+                        List(viewModel.wikiPages) { page in
+                            Text(page.title ?? "Untitled Page")
+                        }
+                    }
                 }
             }
             .navigationBarTitle("Edit Location")
             .navigationBarItems(trailing: saveButton)
+        }
+        .onAppear {
+            self.viewModel.store = self.store
+            
+            self.store.send(.wikiPages(.fetchStateSet(.fetching)))
+            self.store.send(WikiPagesSideEffect.fetchPages(near: self.viewModel.location))
         }
     }
 }
@@ -62,5 +89,7 @@ struct EditLocationView_Previews: PreviewProvider {
         EditLocationView(
             location: SampleData.Locations.santorini
         )
+        .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
+        .environmentObject(SampleData.SampleAppStore.default)
     }
 }

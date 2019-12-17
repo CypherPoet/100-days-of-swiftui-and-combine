@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let store = AppStore(initialState: AppState(), appReducer: appReducer)
         
         // Get the managed object context from the shared persistent container.
-        let managedObjectContext = CoreDataManager.shared.mainContext
+        let managedObjectContext = CurrentApp.coreDataManager.mainContext
         
         // Create the SwiftUI view that provides the window contents.
         let entryView = LocationCollectionsContainerView(
@@ -78,7 +78,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-        CoreDataManager.shared.saveContexts()
+        CurrentApp.coreDataManager.saveContexts()
     }
 }
 

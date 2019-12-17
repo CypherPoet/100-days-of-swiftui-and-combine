@@ -11,18 +11,17 @@ import MapKit
 
 
 struct LocationCollectionView: View {
-    @Environment(\.managedObjectContext) private var managedObjectContext
+    @EnvironmentObject var store: AppStore
+    
     @ObservedObject private(set) var viewModel: LocationCollectionViewModel
     
-    let collection: LocationCollection
-    
     @State private var centerCoordinate = CLLocationCoordinate2D()
+    @State var selectedLocation: Location? = nil
     @State private var isShowingEditView = false
     @State private var isShowingSelectedLocationAlert = false
     
     
     init(collection: LocationCollection) {
-        self.collection = collection
         self.viewModel = LocationCollectionViewModel(collection: collection)
     }
 }
@@ -39,29 +38,32 @@ extension LocationCollectionView {
             
             addLocationButton
         }
+        .sheet(
+            isPresented: $isShowingEditView,
+            onDismiss: {
+                guard let context = self.selectedLocation?.managedObjectContext else {
+                    fatalError()
+                }
+                
+                CurrentApp.coreDataManager.save(context)
+            }
+        ) {
+            if self.selectedLocation != nil {
+                EditLocationView(location: self.selectedLocation!)
+                    .environmentObject(self.store)
+            } else {
+                Text("No Location found for editing")
+            }
+        }
         .alert(isPresented: $isShowingSelectedLocationAlert) {
             Alert(
-                title: Text(viewModel.selectedLocationAlertTitle),
-                message: Text(viewModel.selectedLocationAlertMessage),
+                title: Text(selectedLocation?.title ?? "Undisclosed Location"),
+                message: Text(selectedLocation?.longDescription ?? "No description has been provided yet."),
                 primaryButton: .default(Text("Edit"), action: {
                     self.isShowingEditView = true
                 }),
                 secondaryButton: .cancel(Text("OK"))
             )
-        }
-        .sheet(
-            isPresented: $isShowingEditView,
-            onDismiss: {
-                guard let context = self.viewModel.selectedLocation?.managedObjectContext else {
-                    fatalError()
-                }
-                
-                CoreDataManager.shared.save(context)
-            }
-        ) {
-            if self.viewModel.selectedLocation != nil {
-                EditLocationView(location: self.viewModel.selectedLocation!)
-            }
         }
     }
     
@@ -78,7 +80,9 @@ extension LocationCollectionView {
     
     private var mapUnderlay: some View {
         LocationCollectionMapView(
-            annotations: collection.locationsArray,
+//            annotations: collection.locationsArray,
+//            annotations: viewModel.locations,
+            annotations: viewModel.collection.locationsArray,
             centerCoordinate: $centerCoordinate,
             onSelectLocation: locationSelected(_:)
         )
@@ -93,8 +97,8 @@ extension LocationCollectionView {
             .opacity(0.3)
     }
     
-    private var addLocationButton: some View {
 
+    private var addLocationButton: some View {
         VStack(alignment: .trailing) {
             Spacer()
             
@@ -122,7 +126,7 @@ extension LocationCollectionView {
 private extension LocationCollectionView {
     
     func createNewLocation() {
-        guard let context = collection.managedObjectContext else { fatalError() }
+        guard let context = viewModel.collection.managedObjectContext else { fatalError() }
 
         let location = Location(context: context)
         
@@ -130,15 +134,17 @@ private extension LocationCollectionView {
         location.latitude = centerCoordinate.latitude
         location.longitude = centerCoordinate.longitude
 
-        collection.addToLocations(location)
+        viewModel.collection.addToLocations(location)
         
-        CoreDataManager.shared.save(context)
+        CurrentApp.coreDataManager.save(context)
     }
     
     
     func locationSelected(_ location: Location) {
-        viewModel.selectedLocation = location
-        isShowingSelectedLocationAlert = true
+//        viewModel.selectedLocation = location
+//        viewModel.isShowingSelectedLocationAlert = true
+        self.selectedLocation = location
+        self.isShowingSelectedLocationAlert = true
     }
 }
 
@@ -149,6 +155,6 @@ struct LocationCollectionView_Previews: PreviewProvider {
 
     static var previews: some View {
         LocationCollectionView(collection: SampleData.LocationCollections.default)
-            .environment(\.managedObjectContext, CoreDataManager.shared.mainContext)
+            .environmentObject(SampleData.SampleAppStore.default)
     }
 }
