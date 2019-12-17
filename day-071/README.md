@@ -15,3 +15,15 @@ It focuses on several specific topics:
 - Extending existing types to support ObservableObject
 - Downloading data from Wikipedia
 - Sorting Wikipedia results
+
+The majority of the project changes to go along with this day can be found at [this commit](https://github.com/CypherPoet/100-days-of-swiftui/commit/c260d9a545e36d38c5f34778a4b37755d604939c).
+
+
+
+# 📸 Screenshots
+
+
+<div style="text-align: center;">
+  <img src="../day-068/Projects/PlaceCase/Screenshots/day-71-recording-1.gif" width="400px"/>
+</div>
+
