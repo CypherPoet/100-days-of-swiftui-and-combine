@@ -29,6 +29,8 @@ extension LocationCollectionsListView {
             NavigationLink(
                 collection.title ?? "Untitled Collection",
                 destination: self.buildDestination(collection)
+                // ⚠️ This currently breaks when we navigate back to the list view from the destination.
+                // It appears to be a SwiftUI bug consonant to iOS 13.3: https://stackoverflow.com/a/59291574/8859365
             )
         }
         .navigationBarTitle(Text("Location Collections"))
@@ -53,15 +55,11 @@ extension LocationCollectionsListView {
 
 // MARK: - Computeds
 extension LocationCollectionsListView {
-
-
 }
 
 
 // MARK: - View Variables
 extension LocationCollectionsListView {
-
-
 }
 
 
