@@ -109,11 +109,11 @@ extension LocationCollectionView {
                     self.createNewLocation()
                 }) {
                     Image(systemName: "plus.rectangle.fill")
+                        .font(.title)
                         .padding(24)
+                        .background(Color.accentColor.opacity(0.8))
+                        .foregroundColor(.white)
                 }
-                .background(Color.accentColor.opacity(0.8))
-                .foregroundColor(.white)
-                .font(.title)
                 .clipShape(Circle())
                 .padding(.trailing)
             }

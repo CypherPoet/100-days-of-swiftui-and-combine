@@ -30,7 +30,7 @@ extension LocationCollectionsListView {
                 collection.title ?? "Untitled Collection",
                 destination: self.buildDestination(collection)
                 // ⚠️ This currently breaks when we navigate back to the list view from the destination.
-                // It appears to be a SwiftUI bug consonant to iOS 13.3: https://stackoverflow.com/a/59291574/8859365
+                // It appears to be a SwiftUI bug consonant with iOS 13.3: https://stackoverflow.com/a/59291574/8859365
             )
         }
         .navigationBarTitle(Text("Location Collections"))
