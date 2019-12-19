@@ -80,8 +80,6 @@ extension LocationCollectionView {
     
     private var mapUnderlay: some View {
         LocationCollectionMapView(
-//            annotations: collection.locationsArray,
-//            annotations: viewModel.locations,
             annotations: viewModel.collection.locationsArray,
             centerCoordinate: $centerCoordinate,
             onSelectLocation: locationSelected(_:)

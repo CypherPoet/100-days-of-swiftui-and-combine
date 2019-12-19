@@ -13,7 +13,7 @@ For each day that proves conducive to some kind of code or content, I'll make a 
 
 ### Personal Note
 
-I'm currently seeking freelance, remote opportunities as an iOS developer! If you're looking for an experienced software engineer who's been diving deep into SwiftUI, Combine, and iOS 13 since WWDC (and who relishes being paid in Bitcoin 🙂), and you could use some help with any of those things, please feel free to [reach out](mailto:CypherPoet@gmail.com) ✌️.
+I'm currently seeking freelance, remote opportunities as an iOS developer! If you're looking for an experienced software engineer who's been diving deep into SwiftUI, Combine, and iOS 13 since WWDC (and who welcomes being paid in Bitcoin 🙂), and you could use some help with any of those things, please feel free to [reach out](mailto:CypherPoet@gmail.com) ✌️.
 
 
 ## Days
@@ -78,10 +78,11 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 69:** [_Project 14: PlaceCase_ (Part Two)](./day-069/)
 - **Day 70:** [_Project 14: PlaceCase_ (Part Three)](./day-070/)
 - **Day 71:** [_Project 14: PlaceCase_ (Part Three)](./day-071/)
+- **Day 72:** [_Project 14: PlaceCase_ (Part Four)](./day-072/)
 
 </details>
 
-- **Day 72:** [_Project 14: PlaceCase_ (Part Four)](./day-072/)
+- **Day 73:** [_Project 14: PlaceCase_ (Part Five)](./day-073/)
 
 
 
@@ -231,6 +232,17 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 
 <div style="text-align: center;">
   <img src="./day-062/Projects/Instafilter/Screenshots/day-66-recording-1.gif" width="300px"/>
+</div>
+
+<br/>
+<br/>
+
+
+
+- [Project 14: PlaceCase](./day-062/Projects/PlaceCase/)
+
+<div style="text-align: center;">
+  <img src="./day-068/Projects/PlaceCase/Screenshots/day-71-recording-1.gif" width="300px"/>
 </div>
 
 <br/>
