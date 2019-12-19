@@ -1,4 +1,4 @@
-# Day 73: _Project 14: PlaceCase_ (Part Five)
+# Day 73: _Project 14: PlaceCase_ (Part Six)
 
 _Follow along at https://www.hackingwithswift.com/100/swiftui/73_.
 
@@ -7,7 +7,7 @@ _Follow along at https://www.hackingwithswift.com/100/swiftui/73_.
 
 # 📒 Field Notes
 
-This day covers Part Five of _`Project 14`_ in the [100 Days of SwiftUI Challenge](https://www.hackingwithswift.com/100/swiftui/73). (Project 14 files can be found in the [directory for Part One](../day-068/).)
+This day covers Part Six of _`Project 14`_ in the [100 Days of SwiftUI Challenge](https://www.hackingwithswift.com/100/swiftui/73). (Project 14 files can be found in the [directory for Part One](../day-068/).)
 
 
 In addition to recapping the material covered during the project's other days, Day 67 focuses on extending the project according to a set of challenges.
