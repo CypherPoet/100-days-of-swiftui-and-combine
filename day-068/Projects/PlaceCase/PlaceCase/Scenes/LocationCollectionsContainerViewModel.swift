@@ -36,7 +36,7 @@ final class LocationCollectionsContainerViewModel: ObservableObject {
 // MARK: - Public Methods
 extension LocationCollectionsContainerViewModel {
     
-    func onAppear() {
+    func authenticate() {
         authService
             .authenticate(reason: AuthenticationService.authReason)
             
@@ -48,8 +48,10 @@ extension LocationCollectionsContainerViewModel {
                 receiveCompletion: { completion in
                     switch completion {
                     case .failure(let error):
-                        print("Authentication failed: \(error)")
-                        self.isAuthenticated = false
+                        DispatchQueue.main.async { [weak self] in
+                            print("Authentication failed: \(error)")
+                            self?.isAuthenticated = false
+                         }
                     default:
                         print("Authentication completed")
                     }

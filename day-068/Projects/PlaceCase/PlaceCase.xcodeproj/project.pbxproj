@@ -196,10 +196,10 @@
 		F36D295C239A04C300095B66 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F374DC08239A42C90016CC65 /* Location Collection */,
 				F3BF5C15239D41D700B9F8D8 /* LocationCollectionsContainerView.swift */,
-				F394D0A7239FC6E2002E8FFC /* LocationCollectionsListView.swift */,
 				F3BF5C17239D425400B9F8D8 /* LocationCollectionsContainerViewModel.swift */,
+				F394D0A7239FC6E2002E8FFC /* LocationCollectionsListView.swift */,
+				F374DC08239A42C90016CC65 /* Location Collection */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";

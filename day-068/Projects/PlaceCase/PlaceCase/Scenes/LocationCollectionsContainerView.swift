@@ -25,15 +25,52 @@ extension LocationCollectionsContainerView {
                         buildDestination: LocationCollectionView.init(collection:)
                     )
                 } else {
-                    Text("This is app is locked.")
+                    authenticationNotice
                 }
             }
         }
         .navigationBarTitle("PlaceCase")
-        .onAppear(perform: viewModel.onAppear)
     }
 }
 
+
+// MARK: - View Variables
+extension LocationCollectionsContainerView {
+    
+    private var authenticateButton: some View {
+        Button(action: {
+            self.viewModel.authenticate()
+        }) {
+            Text("Authenticate")
+                .font(.headline)
+                .foregroundColor(.white)
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.accentColor)
+                .shadow(color: .gray, radius: 3, x: 0, y: 0)
+        )
+    }
+    
+    
+    private var authenticationNotice: some View {
+        VStack {
+            Spacer()
+            
+            VStack(spacing: 10.0) {
+                Text("🛡 This is app is locked.")
+                Text("Please try authenticating to access location lists.")
+            }
+            
+            Spacer()
+            authenticateButton
+            Spacer()
+            Spacer()
+        }
+        .padding()
+    }
+}
 
 
 
@@ -43,7 +80,7 @@ struct LocationCollectionsContainerView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = LocationCollectionsContainerViewModel(authService: SampleData.AuthService())
         
-        viewModel.isAuthenticated = true
+        viewModel.isAuthenticated = false
         
         return LocationCollectionsContainerView(
             viewModel: viewModel
