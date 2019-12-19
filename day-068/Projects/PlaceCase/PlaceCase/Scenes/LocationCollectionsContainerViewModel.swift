@@ -14,20 +14,19 @@ import Combine
 final class LocationCollectionsContainerViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
 
-    private let authService: AuthenticatingService
+    private let authService: AuthenticationService
     
 
     // MARK: - Published Properties
     @Published var isAuthenticated: Bool = false
+    @Published var authenticationError: AuthenticationService.Error? = nil
 
 
     // MARK: - Init
     init(
-        authService: AuthenticatingService
+        authService: AuthenticationService
     ) {
         self.authService = authService
-        
-        setupSubscribers()
     }
 }
 
@@ -49,7 +48,7 @@ extension LocationCollectionsContainerViewModel {
                     switch completion {
                     case .failure(let error):
                         DispatchQueue.main.async { [weak self] in
-                            print("Authentication failed: \(error)")
+                            self?.authenticationError = error
                             self?.isAuthenticated = false
                          }
                     default:
@@ -67,11 +66,25 @@ extension LocationCollectionsContainerViewModel {
     }
 }
 
+// MARK: - Computed
+extension LocationCollectionsContainerViewModel {
+    
+    var authenticationErrorAlertTitle: String { "Authentication Failed" }
+    
+    var authenticationErrorAlertBody: String {
+        guard let error = authenticationError else { return "" }
+        
+        switch error {
+        case .noBiometricsEnabled:
+            return "No Biomentric authentication is enabled on this device."
+        case .evaluationFailed(_):
+            return "An error occured while attempting evaluation."
+        }
+    }
+}
+
 
 
 // MARK: - Private Helpers
 private extension LocationCollectionsContainerViewModel {
-
-    func setupSubscribers() {
-    }
 }

@@ -30,6 +30,7 @@ extension LocationCollectionsContainerView {
             }
         }
         .navigationBarTitle("PlaceCase")
+        .alert(item: $viewModel.authenticationError) { _ in self.authenticationErrorAlert }
     }
 }
 
@@ -69,6 +70,15 @@ extension LocationCollectionsContainerView {
             Spacer()
         }
         .padding()
+    }
+    
+    
+    private var authenticationErrorAlert: Alert {
+        .init(
+            title: Text(viewModel.authenticationErrorAlertTitle),
+            message: Text(viewModel.authenticationErrorAlertBody),
+            dismissButton: .default(Text("OK"))
+        )
     }
 }
 

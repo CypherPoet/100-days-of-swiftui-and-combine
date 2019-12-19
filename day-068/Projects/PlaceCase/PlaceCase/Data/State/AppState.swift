@@ -14,7 +14,7 @@ import LocalAuthentication
 
 
 struct AppState {
-    var authenticationService: AuthenticatingService
+    var authenticationService: AuthenticationService
     var locationCollectionsState: LocationCollectionsState
     var wikiPagesState: WikiPagesState
     
@@ -24,7 +24,7 @@ struct AppState {
     
     
     init(
-        authenticationService: AuthenticatingService = AuthenticationService(laContextType: LAContext.self),
+        authenticationService: AuthenticationService = AuthenticationService(laContextType: LAContext.self),
         locationCollectionsState: LocationCollectionsState = .init(),
         wikiPagesState: WikiPagesState = .init()
     ) {
