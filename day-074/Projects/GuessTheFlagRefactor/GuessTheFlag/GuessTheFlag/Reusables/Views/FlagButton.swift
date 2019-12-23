@@ -23,6 +23,8 @@ struct FlagButton: View {
                 .cornerRadius(42)
                 .shadow(color: .purple, radius: 9, x: 0, y: -1.3)
         }
+        .accessibilityElement(children: .combine)
+        .accessibility(label: Text(flag.accessibilityDescription))
     }
 }
 
