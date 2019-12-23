@@ -47,24 +47,23 @@ extension StarRatingView {
         HStack {
             ForEach(1...maxRating, id: \.self) { number in
                 self.image(for: number)
-                    .accessibility(hidden: true)
                     .foregroundColor(self.color(for: number))
                     .onTapGesture {
                         self.rating = number
                     }
+                    .accessibility(
+                        label: Text(self.label(for: number))
+                    )
+                    .accessibility(removeTraits: .isImage)
+                    .accessibility(addTraits: self.accessibilityTraits(for: number))
             }
         }
-        .accessibility(label: Text("\(rating) stars out of \(maxRating)"))
     }
 }
 
 
 // MARK: - Computeds
 extension StarRatingView {
-//
-//    private var starImages: [Image] {
-//        (1...maxRating).map { image(for: $0) }
-//    }
 }
 
 
@@ -79,13 +78,21 @@ private extension StarRatingView {
     func color(for number: Int) -> Color {
         number <= rating ? onColor : offColor
     }
+    
+    
+    func label(for number: Int) -> String {
+        "\(number == 1 ? "1 star" : "\(number) stars") out of \(maxRating)"
+    }
+    
+    
+    func accessibilityTraits(for number: Int) -> AccessibilityTraits {
+        number > rating ? [.isButton] : [.isButton, .isSelected]
+    }
 }
 
 
 // MARK: - View Variables
 extension StarRatingView {
-
-
 }
 
 

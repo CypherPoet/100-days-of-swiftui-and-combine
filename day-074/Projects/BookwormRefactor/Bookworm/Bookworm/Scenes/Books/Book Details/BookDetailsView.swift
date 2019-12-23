@@ -99,9 +99,9 @@ extension BookDetailsView {
             StarRatingView(rating: .constant(Int(viewModel.book.rating)))
                 .font(.title)
 
-        Text(viewModel.reivewDateText)
-            .font(.callout)
-            .foregroundColor(.secondary)
+            Text(viewModel.reivewDateText)
+                .font(.callout)
+                .foregroundColor(.secondary)
         }
     }
     
