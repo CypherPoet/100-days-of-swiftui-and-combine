@@ -54,10 +54,7 @@ extension GameView {
                         .padding()
                     ) {
                         List(viewModel.usedWords, id: \.self) { word in
-                            Text(word)
-                            Spacer()
-                            Image(systemName: "\(word.count).circle")
-                                .imageScale(.large)
+                            UsedWordListItem(word: word)
                         }
                     }
                 }
@@ -92,5 +89,22 @@ struct GameView_Previews: PreviewProvider {
 
     static var previews: some View {
         GameView(viewModel: GameViewModel(rootWords: sampleWords))
+    }
+}
+
+
+private struct UsedWordListItem: View {
+    let word: String
+    
+    
+    var body: some View {
+        HStack {
+            Text(word)
+            Spacer()
+            Image(systemName: "\(word.count).circle")
+                .imageScale(.large)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibility(label: Text("\(word). \(word.count) letters."))
     }
 }
