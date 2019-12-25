@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F30444A123706FA200DF3F55 /* CrewMemberDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30444A023706FA200DF3F55 /* CrewMemberDetailsViewModel.swift */; };
+		F3AE83CB236C2E610017AF2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE83CA236C2E610017AF2C /* AppDelegate.swift */; };
+		F3AE83CD236C2E610017AF2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE83CC236C2E610017AF2C /* SceneDelegate.swift */; };
+		F3AE83D1236C2E620017AF2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3AE83D0236C2E620017AF2C /* Assets.xcassets */; };
+		F3AE83D4236C2E620017AF2C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3AE83D3236C2E620017AF2C /* Preview Assets.xcassets */; };
+		F3AE83D7236C2E620017AF2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3AE83D5236C2E620017AF2C /* LaunchScreen.storyboard */; };
+		F3AE83F7236D6E540017AF2C /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE83F6236D6E540017AF2C /* Astronaut.swift */; };
+		F3AE83FA236D71BE0017AF2C /* CypherPoetCore.FileSystem in Frameworks */ = {isa = PBXBuildFile; productRef = F3AE83F9236D71BE0017AF2C /* CypherPoetCore.FileSystem */; };
+		F3AE83FD236D741D0017AF2C /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = F3AE83FB236D741C0017AF2C /* missions.json */; };
+		F3AE83FE236D741D0017AF2C /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = F3AE83FC236D741D0017AF2C /* astronauts.json */; };
+		F3AE8400236D74870017AF2C /* Mission+CrewMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE83FF236D74870017AF2C /* Mission+CrewMember.swift */; };
+		F3AE8402236D74950017AF2C /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE8401236D74950017AF2C /* Mission.swift */; };
+		F3AE8406236D796A0017AF2C /* MissionsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE8405236D796A0017AF2C /* MissionsState.swift */; };
+		F3AE8409236D79A40017AF2C /* CypherPoetSwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3AE8408236D79A40017AF2C /* CypherPoetSwiftUIKit */; };
+		F3AE840B236DA3030017AF2C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE840A236DA3030017AF2C /* AppState.swift */; };
+		F3AE840D236DA7550017AF2C /* MissionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE840C236DA7550017AF2C /* MissionsListView.swift */; };
+		F3AE8410236DA8370017AF2C /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE840F236DA8370017AF2C /* SampleData.swift */; };
+		F3AE8413236DB3BA0017AF2C /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE8412236DB3BA0017AF2C /* DataLoader.swift */; };
+		F3AE8417236DC1A30017AF2C /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE8416236DC1A30017AF2C /* DateFormatters.swift */; };
+		F3AE841A236DC1F40017AF2C /* MissionDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE8419236DC1F40017AF2C /* MissionDecoder.swift */; };
+		F3E53662236EF78C00C512B8 /* MissionsListItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E53661236EF78C00C512B8 /* MissionsListItemRow.swift */; };
+		F3E53667236F088E00C512B8 /* MissionDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E53666236F088E00C512B8 /* MissionDetailsViewModel.swift */; };
+		F3E53669236F0A4400C512B8 /* MissionDetailsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E53668236F0A4400C512B8 /* MissionDetailsContainerView.swift */; };
+		F3E5366B236F123200C512B8 /* AstronautsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E5366A236F123200C512B8 /* AstronautsState.swift */; };
+		F3E5366D236F14A700C512B8 /* MissionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E5366C236F14A700C512B8 /* MissionDetailsView.swift */; };
+		F3E53670236F2C4C00C512B8 /* CrewMemberDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E5366F236F2C4C00C512B8 /* CrewMemberDetails.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F30444A023706FA200DF3F55 /* CrewMemberDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMemberDetailsViewModel.swift; sourceTree = "<group>"; };
+		F3AE83C7236C2E610017AF2C /* Moonshot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonshot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3AE83CA236C2E610017AF2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F3AE83CC236C2E610017AF2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F3AE83D0236C2E620017AF2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F3AE83D3236C2E620017AF2C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F3AE83D6236C2E620017AF2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F3AE83D8236C2E620017AF2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3AE83F6236D6E540017AF2C /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
+		F3AE83FB236D741C0017AF2C /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = missions.json; path = Resources/Data/missions.json; sourceTree = SOURCE_ROOT; };
+		F3AE83FC236D741D0017AF2C /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = astronauts.json; path = Resources/Data/astronauts.json; sourceTree = SOURCE_ROOT; };
+		F3AE83FF236D74870017AF2C /* Mission+CrewMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mission+CrewMember.swift"; sourceTree = "<group>"; };
+		F3AE8401236D74950017AF2C /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		F3AE8405236D796A0017AF2C /* MissionsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsState.swift; sourceTree = "<group>"; };
+		F3AE840A236DA3030017AF2C /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F3AE840C236DA7550017AF2C /* MissionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsListView.swift; sourceTree = "<group>"; };
+		F3AE840F236DA8370017AF2C /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		F3AE8412236DB3BA0017AF2C /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		F3AE8416236DC1A30017AF2C /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
+		F3AE8419236DC1F40017AF2C /* MissionDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDecoder.swift; sourceTree = "<group>"; };
+		F3E53661236EF78C00C512B8 /* MissionsListItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsListItemRow.swift; sourceTree = "<group>"; };
+		F3E53666236F088E00C512B8 /* MissionDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsViewModel.swift; sourceTree = "<group>"; };
+		F3E53668236F0A4400C512B8 /* MissionDetailsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsContainerView.swift; sourceTree = "<group>"; };
+		F3E5366A236F123200C512B8 /* AstronautsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautsState.swift; sourceTree = "<group>"; };
+		F3E5366C236F14A700C512B8 /* MissionDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionDetailsView.swift; sourceTree = "<group>"; };
+		F3E5366F236F2C4C00C512B8 /* CrewMemberDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMemberDetails.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3AE83C4236C2E610017AF2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3AE8409236D79A40017AF2C /* CypherPoetSwiftUIKit in Frameworks */,
+				F3AE83FA236D71BE0017AF2C /* CypherPoetCore.FileSystem in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F3AE83BE236C2E610017AF2C = {
+			isa = PBXGroup;
+			children = (
+				F3AE83C9236C2E610017AF2C /* Moonshot */,
+				F3AE83C8236C2E610017AF2C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F3AE83C8236C2E610017AF2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE83C7236C2E610017AF2C /* Moonshot.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3AE83C9236C2E610017AF2C /* Moonshot */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE83D8236C2E620017AF2C /* Info.plist */,
+				F3AE83CA236C2E610017AF2C /* AppDelegate.swift */,
+				F3AE83CC236C2E610017AF2C /* SceneDelegate.swift */,
+				F3AE83F3236D6BCF0017AF2C /* Data */,
+				F3AE83D5236C2E620017AF2C /* LaunchScreen.storyboard */,
+				F3AE83D2236C2E620017AF2C /* Preview Content */,
+				F3AE83F2236D6BC70017AF2C /* Resources */,
+				F3AE8414236DC17B0017AF2C /* Reusables */,
+				F3AE83F5236D6BDF0017AF2C /* Scenes */,
+			);
+			path = Moonshot;
+			sourceTree = "<group>";
+		};
+		F3AE83D2236C2E620017AF2C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE840E236DA7C50017AF2C /* Sample Data */,
+				F3AE83D3236C2E620017AF2C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F3AE83F2236D6BC70017AF2C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE83FC236D741D0017AF2C /* astronauts.json */,
+				F3AE83FB236D741C0017AF2C /* missions.json */,
+				F3AE83D0236C2E620017AF2C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F3AE83F3236D6BCF0017AF2C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE83F4236D6BDB0017AF2C /* Models */,
+				F3AE8411236DB3A70017AF2C /* Services */,
+				F3AE8404236D79560017AF2C /* State */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F3AE83F4236D6BDB0017AF2C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE83F6236D6E540017AF2C /* Astronaut.swift */,
+				F3AE83FF236D74870017AF2C /* Mission+CrewMember.swift */,
+				F3AE8401236D74950017AF2C /* Mission.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F3AE83F5236D6BDF0017AF2C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE8403236D76280017AF2C /* Missions */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F3AE8403236D76280017AF2C /* Missions */ = {
+			isa = PBXGroup;
+			children = (
+				F3E53661236EF78C00C512B8 /* MissionsListItemRow.swift */,
+				F3AE840C236DA7550017AF2C /* MissionsListView.swift */,
+				F3E53665236F086400C512B8 /* Mission Details */,
+			);
+			path = Missions;
+			sourceTree = "<group>";
+		};
+		F3AE8404236D79560017AF2C /* State */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE8405236D796A0017AF2C /* MissionsState.swift */,
+				F3E5366A236F123200C512B8 /* AstronautsState.swift */,
+				F3AE840A236DA3030017AF2C /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		F3AE840E236DA7C50017AF2C /* Sample Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE840F236DA8370017AF2C /* SampleData.swift */,
+			);
+			path = "Sample Data";
+			sourceTree = "<group>";
+		};
+		F3AE8411236DB3A70017AF2C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE8412236DB3BA0017AF2C /* DataLoader.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F3AE8414236DC17B0017AF2C /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE8418236DC1E80017AF2C /* Decoders */,
+				F3AE8415236DC1850017AF2C /* Formatters */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		F3AE8415236DC1850017AF2C /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE8416236DC1A30017AF2C /* DateFormatters.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		F3AE8418236DC1E80017AF2C /* Decoders */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE8419236DC1F40017AF2C /* MissionDecoder.swift */,
+			);
+			path = Decoders;
+			sourceTree = "<group>";
+		};
+		F3E53665236F086400C512B8 /* Mission Details */ = {
+			isa = PBXGroup;
+			children = (
+				F3E5366E236F2C2E00C512B8 /* Crew Member Details */,
+				F3E53668236F0A4400C512B8 /* MissionDetailsContainerView.swift */,
+				F3E5366C236F14A700C512B8 /* MissionDetailsView.swift */,
+				F3E53666236F088E00C512B8 /* MissionDetailsViewModel.swift */,
+			);
+			path = "Mission Details";
+			sourceTree = "<group>";
+		};
+		F3E5366E236F2C2E00C512B8 /* Crew Member Details */ = {
+			isa = PBXGroup;
+			children = (
+				F3E5366F236F2C4C00C512B8 /* CrewMemberDetails.swift */,
+				F30444A023706FA200DF3F55 /* CrewMemberDetailsViewModel.swift */,
+			);
+			path = "Crew Member Details";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3AE83C6236C2E610017AF2C /* Moonshot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3AE83DB236C2E620017AF2C /* Build configuration list for PBXNativeTarget "Moonshot" */;
+			buildPhases = (
+				F3AE83C3236C2E610017AF2C /* Sources */,
+				F3AE83C4236C2E610017AF2C /* Frameworks */,
+				F3AE83C5236C2E610017AF2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Moonshot;
+			packageProductDependencies = (
+				F3AE83F9236D71BE0017AF2C /* CypherPoetCore.FileSystem */,
+				F3AE8408236D79A40017AF2C /* CypherPoetSwiftUIKit */,
+			);
+			productName = Moonshot;
+			productReference = F3AE83C7236C2E610017AF2C /* Moonshot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3AE83BF236C2E610017AF2C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = CypherPoet;
+				TargetAttributes = {
+					F3AE83C6236C2E610017AF2C = {
+						CreatedOnToolsVersion = 11.2;
+					};
+				};
+			};
+			buildConfigurationList = F3AE83C2236C2E610017AF2C /* Build configuration list for PBXProject "Moonshot" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3AE83BE236C2E610017AF2C;
+			packageReferences = (
+				F3AE83F8236D71BE0017AF2C /* XCRemoteSwiftPackageReference "CypherPoetCore" */,
+				F3AE8407236D79A40017AF2C /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
+			);
+			productRefGroup = F3AE83C8236C2E610017AF2C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3AE83C6236C2E610017AF2C /* Moonshot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3AE83C5236C2E610017AF2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3AE83D7236C2E620017AF2C /* LaunchScreen.storyboard in Resources */,
+				F3AE83D4236C2E620017AF2C /* Preview Assets.xcassets in Resources */,
+				F3AE83FD236D741D0017AF2C /* missions.json in Resources */,
+				F3AE83FE236D741D0017AF2C /* astronauts.json in Resources */,
+				F3AE83D1236C2E620017AF2C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3AE83C3236C2E610017AF2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3AE8413236DB3BA0017AF2C /* DataLoader.swift in Sources */,
+				F3AE8406236D796A0017AF2C /* MissionsState.swift in Sources */,
+				F3AE8400236D74870017AF2C /* Mission+CrewMember.swift in Sources */,
+				F3AE841A236DC1F40017AF2C /* MissionDecoder.swift in Sources */,
+				F3AE840B236DA3030017AF2C /* AppState.swift in Sources */,
+				F30444A123706FA200DF3F55 /* CrewMemberDetailsViewModel.swift in Sources */,
+				F3E53669236F0A4400C512B8 /* MissionDetailsContainerView.swift in Sources */,
+				F3AE8417236DC1A30017AF2C /* DateFormatters.swift in Sources */,
+				F3AE83F7236D6E540017AF2C /* Astronaut.swift in Sources */,
+				F3AE83CB236C2E610017AF2C /* AppDelegate.swift in Sources */,
+				F3AE840D236DA7550017AF2C /* MissionsListView.swift in Sources */,
+				F3E53667236F088E00C512B8 /* MissionDetailsViewModel.swift in Sources */,
+				F3E53662236EF78C00C512B8 /* MissionsListItemRow.swift in Sources */,
+				F3AE8402236D74950017AF2C /* Mission.swift in Sources */,
+				F3E53670236F2C4C00C512B8 /* CrewMemberDetails.swift in Sources */,
+				F3AE8410236DA8370017AF2C /* SampleData.swift in Sources */,
+				F3E5366D236F14A700C512B8 /* MissionDetailsView.swift in Sources */,
+				F3E5366B236F123200C512B8 /* AstronautsState.swift in Sources */,
+				F3AE83CD236C2E610017AF2C /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F3AE83D5236C2E620017AF2C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3AE83D6236C2E620017AF2C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F3AE83D9236C2E620017AF2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F3AE83DA236C2E620017AF2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F3AE83DC236C2E620017AF2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Moonshot/Preview Content\"";
+				DEVELOPMENT_TEAM = QRXXH2RKAG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Moonshot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.cypherpoet.Moonshot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F3AE83DD236C2E620017AF2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Moonshot/Preview Content\"";
+				DEVELOPMENT_TEAM = QRXXH2RKAG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Moonshot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.cypherpoet.Moonshot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3AE83C2236C2E610017AF2C /* Build configuration list for PBXProject "Moonshot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3AE83D9236C2E620017AF2C /* Debug */,
+				F3AE83DA236C2E620017AF2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3AE83DB236C2E620017AF2C /* Build configuration list for PBXNativeTarget "Moonshot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3AE83DC236C2E620017AF2C /* Debug */,
+				F3AE83DD236C2E620017AF2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3AE83F8236D71BE0017AF2C /* XCRemoteSwiftPackageReference "CypherPoetCore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetCore.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.18;
+			};
+		};
+		F3AE8407236D79A40017AF2C /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.21;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3AE83F9236D71BE0017AF2C /* CypherPoetCore.FileSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3AE83F8236D71BE0017AF2C /* XCRemoteSwiftPackageReference "CypherPoetCore" */;
+			productName = CypherPoetCore.FileSystem;
+		};
+		F3AE8408236D79A40017AF2C /* CypherPoetSwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3AE8407236D79A40017AF2C /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */;
+			productName = CypherPoetSwiftUIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F3AE83BF236C2E610017AF2C /* Project object */;
+}
