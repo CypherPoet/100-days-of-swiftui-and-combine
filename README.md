@@ -81,10 +81,11 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 72:** [_Project 14: PlaceCase_ (Part Five)](./day-072/)
 - **Day 73:** [_Project 14: PlaceCase_ (Part Six)](./day-073/)
 - **Day 74:** [_Project 15: Accessibility_ (Part One)](./day-074/)
+- **Day 75:** [_Project 15: Accessibility_ (Part Two)](./day-075/)
 
 </details>
 
-- **Day 75:** [_Project 15: Accessibility_ (Part Two)](./day-075/)
+- **Day 76:** [_Project 15: Accessibility_ (Part Three)](./day-076/)
 
 
 
