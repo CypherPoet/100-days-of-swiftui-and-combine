@@ -25,7 +25,7 @@ extension CheckoutView {
             ScrollView(.vertical) {
                     
                 VStack(spacing: 32.0) {
-                    Image("cupcakes")
+                    Image(decorative: "cupcakes")
                         .resizable()
                         .scaledToFit()
                         .frame(width: geometry.size.width)
