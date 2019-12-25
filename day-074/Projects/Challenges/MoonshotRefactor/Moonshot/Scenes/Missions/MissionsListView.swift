@@ -44,6 +44,8 @@ extension MissionsListView {
                 NavigationLink(destination: MissionDetailsContainerView(mission: mission)) {
                     MissionsListItemRow(mission: mission, displayMode: self.itemDisplayMode)
                 }
+                .accessibility(addTraits: .isLink)
+                .accessibility(removeTraits: .isButton)
             }
             .navigationBarTitle("Missions")
             .navigationBarItems(trailing: displayModeButton)

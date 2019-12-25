@@ -54,7 +54,7 @@ extension MissionDetailsView {
 extension MissionDetailsView {
     
     private var badgeImage: some View {
-        Image(viewModel.imageName)
+        Image(decorative: viewModel.imageName)
             .resizable()
             .scaledToFit()
             .frame(maxWidth: geometry.size.width * 0.7)

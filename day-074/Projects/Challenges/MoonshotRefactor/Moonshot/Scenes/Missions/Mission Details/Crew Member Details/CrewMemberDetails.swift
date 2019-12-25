@@ -21,7 +21,7 @@ extension CrewMemberDetails {
         List {
             
             Section {
-                Image(viewModel.astronautImageName)
+                Image(decorative: viewModel.astronautImageName)
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: .infinity)
