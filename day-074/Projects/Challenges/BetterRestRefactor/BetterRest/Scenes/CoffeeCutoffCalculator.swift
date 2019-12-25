@@ -48,14 +48,17 @@ extension CoffeeCutoffCalculator {
                     .font(.headline)
         ) {
 
-            DatePicker(
-                "Desired Wake Up Time",
-                selection: $viewModel.desiredWakeup,
-                in: Date()...,
-                displayedComponents: .hourAndMinute
-            )
-            .labelsHidden()
-            .datePickerStyle(WheelDatePickerStyle())
+            VStack {
+                DatePicker(
+                    "Desired Wake Up Time",
+                    selection: $viewModel.desiredWakeup,
+                    in: Date()...,
+                    displayedComponents: .hourAndMinute
+                )
+                .frame(maxWidth: .infinity)
+                .labelsHidden()
+                .datePickerStyle(WheelDatePickerStyle())
+            }
         }
     }
     
@@ -74,6 +77,7 @@ extension CoffeeCutoffCalculator {
                     maximumValueLabel: Text("20"),
                     label: { Text("Desired 8-ounce cups of coffee") }
                 )
+                .accessibility(value: Text(viewModel.formattedDesiredCoffeeAmount))
     
                 Text(viewModel.formattedDesiredCoffeeAmount)
             }
@@ -94,6 +98,7 @@ extension CoffeeCutoffCalculator {
                 label: { Text(viewModel.formattedDesiredSleepAmount) }
             )
             .accessibility(label: Text("Hours of desired sleep"))
+            .accessibility(value: Text(viewModel.formattedDesiredSleepAmount))
         }
     }
 }
