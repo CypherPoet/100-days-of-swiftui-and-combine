@@ -13,12 +13,7 @@ struct EditLocationView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var store: AppStore
     
-    @ObservedObject private(set) var viewModel: EditLocationViewModel
-    
-    
-    init(location: Location) {
-        self.viewModel = EditLocationViewModel(location: location)
-    }
+    @ObservedObject var viewModel: EditLocationViewModel
 }
 
 
@@ -28,12 +23,47 @@ extension EditLocationView {
     var body: some View {
         NavigationView {
             Form {
-                Section {
-                    TextField("Location Name", text: Binding($viewModel.location.title, "Untitled Location"))
-                    //                    TextField("Description", text: Binding($viewModel.location.longDescription, ""))
-                    TextField("Description", text: Binding($viewModel.location.longDescription, replacingNilWith: ""))
+                Section(header: Text("Details").font(.headline)) {
+                    TextField(
+                        "Location Name",
+                        text: Binding($viewModel.location.title, "Untitled Location")
+                    )
+                    TextField(
+                        "Description",
+                        text: Binding($viewModel.location.longDescription, replacingNilWith: "")
+                    )
                 }
-                .padding(.bottom)
+                
+                
+                Section(header: Text("Add A Photo").font(.headline)) {
+
+                    Button(action: {
+                        
+                    }) {
+                        Group {
+//                            if viewModel.location.userPhoto != nil {
+                            if false {
+                            } else {
+                                HStack {
+                                    Spacer()
+                                    
+                                    VStack {
+                                        Image(systemName: "camera")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 120)
+
+                                        Text("No Photo Selected")
+                                            .font(.title)
+                                    }
+                                    Spacer()
+                                }
+                            }
+                        }
+                        .frame(height: 200)
+                    }
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                }
                 
                 
                 Section(header: Text("Nearby Locations...").font(.headline)) {
@@ -52,8 +82,6 @@ extension EditLocationView {
             .navigationBarItems(trailing: saveButton)
         }
         .onAppear {
-            self.viewModel.store = self.store
-            
             self.store.send(.wikiPages(.fetchStateSet(.fetching)))
             self.store.send(WikiPagesSideEffect.fetchPages(near: self.viewModel.location))
         }
@@ -87,7 +115,10 @@ struct EditLocationView_Previews: PreviewProvider {
 
     static var previews: some View {
         EditLocationView(
-            location: SampleData.Locations.santorini
+            viewModel: EditLocationViewModel(
+                location: SampleData.Locations.santorini,
+                wikiPagesState: SampleData.SampleAppStore.default.state.wikiPagesState
+            )
         )
         .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
         .environmentObject(SampleData.SampleAppStore.default)

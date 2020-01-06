@@ -64,9 +64,17 @@ extension LocationCollectionsContainerViewModel {
             )
             .store(in: &subscriptions)
     }
+    
+    
+    static func destination(for locationCollection: LocationCollection) -> LocationCollectionView {
+        let viewModel = LocationCollectionViewModel(collection: locationCollection)
+        
+        return .init(viewModel: viewModel)
+    }
 }
 
-// MARK: - Computed
+
+// MARK: - Computeds
 extension LocationCollectionsContainerViewModel {
     
     var authenticationErrorAlertTitle: String { "Authentication Failed" }

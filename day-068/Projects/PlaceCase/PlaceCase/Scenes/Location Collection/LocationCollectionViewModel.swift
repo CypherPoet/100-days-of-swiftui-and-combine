@@ -20,13 +20,6 @@ final class LocationCollectionViewModel: NSObject, ObservableObject {
 
     // MARK: - Published Outputs
     @Published var locations: [Location] = []
-    @Published var isShowingEditView: Bool = false
-    
-    @Published var isShowingSelectedLocationAlert: Bool = false {
-        didSet {
-            print("isShowingSelectedLocationAlert - didSet: \(isShowingSelectedLocationAlert)")
-        }
-    }
     
     
     // MARK: - Init
@@ -34,9 +27,6 @@ final class LocationCollectionViewModel: NSObject, ObservableObject {
         self.collection = collection
         
         super.init()
-        
-//        self.fetchedResultsController.delegate = self
-//        fetchLocations()
     }
     
     

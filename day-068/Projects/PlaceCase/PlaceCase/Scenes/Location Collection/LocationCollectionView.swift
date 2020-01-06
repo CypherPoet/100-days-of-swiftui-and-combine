@@ -13,17 +13,12 @@ import MapKit
 struct LocationCollectionView: View {
     @EnvironmentObject var store: AppStore
     
-    @ObservedObject private(set) var viewModel: LocationCollectionViewModel
+    @ObservedObject var viewModel: LocationCollectionViewModel
     
     @State private var centerCoordinate = CLLocationCoordinate2D()
     @State var selectedLocation: Location? = nil
     @State private var isShowingEditView = false
     @State private var isShowingSelectedLocationAlert = false
-    
-    
-    init(collection: LocationCollection) {
-        self.viewModel = LocationCollectionViewModel(collection: collection)
-    }
 }
 
 
@@ -49,8 +44,13 @@ extension LocationCollectionView {
             }
         ) {
             if self.selectedLocation != nil {
-                EditLocationView(location: self.selectedLocation!)
-                    .environmentObject(self.store)
+                EditLocationView(
+                    viewModel: EditLocationViewModel(
+                        location: self.selectedLocation!,
+                        wikiPagesState: self.store.state.wikiPagesState
+                    )
+                )
+                .environmentObject(self.store)
             } else {
                 Text("No Location found for editing")
             }
@@ -59,14 +59,14 @@ extension LocationCollectionView {
             Alert(
                 title: Text(selectedLocation?.title ?? "Undisclosed Location"),
                 message: Text(selectedLocation?.longDescription ?? "No description has been provided yet."),
-                primaryButton: .default(Text("Edit"), action: {
-                    self.isShowingEditView = true
-                }),
+                primaryButton: .default(
+                    Text("Edit"),
+                    action: { self.isShowingEditView = true }
+                ),
                 secondaryButton: .cancel(Text("OK"))
             )
         }
     }
-    
 }
 
 
@@ -152,7 +152,9 @@ private extension LocationCollectionView {
 struct LocationCollectionView_Previews: PreviewProvider {
 
     static var previews: some View {
-        LocationCollectionView(collection: SampleData.LocationCollections.default)
-            .environmentObject(SampleData.SampleAppStore.default)
+        LocationCollectionView(
+            viewModel: LocationCollectionViewModel(collection: SampleData.LocationCollections.default)
+        )
+        .environmentObject(SampleData.SampleAppStore.default)
     }
 }

@@ -14,23 +14,24 @@ import Combine
 final class EditLocationViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
 
-    var store: AppStore! {
-        didSet {
-            guard store != nil else { return }
-            self.setupSubscribers()
-        }
-    }
-    
     @ObservedObject var location: Location
+    private let wikiPagesState: WikiPagesState
     
     
-    init(location: Location) {
-        self.location = location
-    }
-
-
     // MARK: - Published Outputs
     @Published var wikiPagesFetchState: WikiPagesState.FetchState = .inactive
+    
+    
+    // MARK: - Init
+    init(
+        location: Location,
+        wikiPagesState: WikiPagesState
+    ) {
+        self.location = location
+        self.wikiPagesState = wikiPagesState
+        
+        setupSubscribers()
+    }
 }
 
 
@@ -38,8 +39,7 @@ final class EditLocationViewModel: ObservableObject {
 extension EditLocationViewModel {
 
     private var wikiPagesFetchStatePublisher: AnyPublisher<WikiPagesState.FetchState, Never> {
-        store.$state
-            .map(\.wikiPagesState.currentFetchState)
+        CurrentValueSubject(wikiPagesState.currentFetchState)
             .eraseToAnyPublisher()
     }
 }

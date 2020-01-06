@@ -22,7 +22,7 @@ extension LocationCollectionsContainerView {
             Group {
                 if viewModel.isAuthenticated {
                     LocationCollectionsListView(
-                        buildDestination: LocationCollectionView.init(collection:)
+                        buildDestination: LocationCollectionsContainerViewModel.destination(for:)
                     )
                 } else {
                     authenticationNotice
@@ -79,6 +79,16 @@ extension LocationCollectionsContainerView {
             message: Text(viewModel.authenticationErrorAlertBody),
             dismissButton: .default(Text("OK"))
         )
+    }
+}
+
+
+private extension LocationCollectionsContainerView {
+    
+    func destination(for locationCollection: LocationCollection) -> LocationCollectionView {
+        let viewModel = LocationCollectionViewModel(collection: locationCollection)
+        
+        return LocationCollectionView(viewModel: viewModel)
     }
 }
 
