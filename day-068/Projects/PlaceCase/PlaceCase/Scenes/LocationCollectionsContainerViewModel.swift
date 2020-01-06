@@ -14,17 +14,17 @@ import Combine
 final class LocationCollectionsContainerViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
 
-    private let authService: AuthenticationService
+    private let authService: AuthenticatingService
     
 
     // MARK: - Published Properties
     @Published var isAuthenticated: Bool = false
-    @Published var authenticationError: AuthenticationService.Error? = nil
+    @Published var authenticationError: AuthenticatingServiceError? = nil
 
 
     // MARK: - Init
     init(
-        authService: AuthenticationService
+        authService: AuthenticatingService
     ) {
         self.authService = authService
     }

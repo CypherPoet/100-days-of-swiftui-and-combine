@@ -24,17 +24,9 @@ extension LAContext: LAContextType {}
 
 
 
-class AuthenticationService {
+class AuthenticationService: AuthenticatingService {
     static let authReason = "Please authenticate to unlock this app and access saved locations."
-    
-    enum Error: Swift.Error, Identifiable {
-        var id: String { self.localizedDescription }
-        
-        case noBiometricsEnabled(Swift.Error?)
-        case evaluationFailed(Swift.Error?)
-    }
-    
-    
+
     private let laContextType: LAContextType.Type
     private var context: LAContextType?
 
@@ -46,7 +38,7 @@ class AuthenticationService {
     
     /// - Parameter reason: The app-provided reason for requesting authentication,
     ///     which displays in the authentication dialog presented to the user.
-    func authenticate(reason: String) -> AnyPublisher<Void, Error> {
+    func authenticate(reason: String) -> AnyPublisher<Void, AuthenticatingServiceError> {
         let context = laContextType.init()
         self.context = context
         
@@ -58,7 +50,7 @@ class AuthenticationService {
         ) else {
             defer { self.context = nil }
             
-            return Fail(error: Error.noBiometricsEnabled(error))
+            return Fail(error: .noBiometricsEnabled(error))
                 .eraseToAnyPublisher()
         }
         
@@ -71,7 +63,7 @@ class AuthenticationService {
                 defer { self.context = nil }
                 
                 guard wasSuccessful else {
-                    promise(.failure(Error.evaluationFailed(error)))
+                    promise(.failure(.evaluationFailed(error)))
                     return
                 }
                 
@@ -89,8 +81,8 @@ class AuthenticationService {
 
 extension SampleData {
     
-    class AuthService: AuthenticationService {
-        override func authenticate(reason: String) -> AnyPublisher<Void, Error> {
+    class AuthService: AuthenticatingService {
+        func authenticate(reason: String) -> AnyPublisher<Void, AuthenticatingServiceError> {
             Empty().eraseToAnyPublisher()
         }
     }

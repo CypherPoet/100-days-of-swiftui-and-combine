@@ -55,6 +55,7 @@
 		F3BF5C21239D549E00B9F8D8 /* LocationCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5C20239D549E00B9F8D8 /* LocationCollections.swift */; };
 		F3C8F65423A82E1C008B66A7 /* WikiPagesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8F65323A82E1C008B66A7 /* WikiPagesState.swift */; };
 		F3C8F65623A837A7008B66A7 /* EditLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8F65523A837A7008B66A7 /* EditLocationViewModel.swift */; };
+		F3E4260A23C2D24F00A143BE /* AuthenticatingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4260923C2D24F00A143BE /* AuthenticatingService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		F3BF5C20239D549E00B9F8D8 /* LocationCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollections.swift; sourceTree = "<group>"; };
 		F3C8F65323A82E1C008B66A7 /* WikiPagesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPagesState.swift; sourceTree = "<group>"; };
 		F3C8F65523A837A7008B66A7 /* EditLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLocationViewModel.swift; sourceTree = "<group>"; };
+		F3E4260923C2D24F00A143BE /* AuthenticatingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatingService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				F3BF5C10239D33D600B9F8D8 /* LocationAnnotation.swift */,
+				F3E4260923C2D24F00A143BE /* AuthenticatingService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				F34643B323A457B500033065 /* WikiPage+DecodingUtils.swift in Sources */,
 				F394D09A239E7704002E8FFC /* AppState.swift in Sources */,
 				F374DC0A239A431E0016CC65 /* LocationCollectionView.swift in Sources */,
+				F3E4260A23C2D24F00A143BE /* AuthenticatingService.swift in Sources */,
 				F394D08E239D5E70002E8FFC /* LocationCollection+FetchHelpers.swift in Sources */,
 				F34643D723A6D4D800033065 /* Location+Computeds.swift in Sources */,
 			);
