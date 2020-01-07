@@ -6,8 +6,7 @@
 // ✌️
 //
 
-import Foundation
-
+import SwiftUI
 
 extension Location {
 
@@ -16,6 +15,15 @@ extension Location {
         
         return wikiPages.sorted()
     }
-
+    
+    
+    var userPhoto: Image? {
+        guard
+            let data = userPhotoData,
+            let uiImage = UIImage(data: data)
+        else { return nil }
+     
+        return Image(uiImage: uiImage)
+    }
 }
 

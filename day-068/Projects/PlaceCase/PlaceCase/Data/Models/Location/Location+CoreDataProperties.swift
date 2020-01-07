@@ -24,6 +24,8 @@ extension Location {
     @NSManaged public var title: String?
     @NSManaged public var subtitle: String?
     @NSManaged public var longDescription: String?
+    @NSManaged public var userPhotoData: Data?
+
     
     @NSManaged public var collection: LocationCollection?
     @NSManaged public var wikiPages: NSSet?

@@ -22,6 +22,8 @@
 		F36D295F239A071F00095B66 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D295E239A071F00095B66 /* CoreDataManager.swift */; };
 		F36D2965239A0ACA00095B66 /* LocationCollectionMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D2963239A0ACA00095B66 /* LocationCollectionMapView.swift */; };
 		F36D2966239A0ACA00095B66 /* LocationCollectionMapView+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D2964239A0ACA00095B66 /* LocationCollectionMapView+Coordinator.swift */; };
+		F37071DA23C3E9B900FAC6AB /* UIImagePickerWrapper+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37071D823C3E9B900FAC6AB /* UIImagePickerWrapper+Coordinator.swift */; };
+		F37071DB23C3E9B900FAC6AB /* UIImagePickerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37071D923C3E9B900FAC6AB /* UIImagePickerWrapper.swift */; };
 		F374DC0A239A431E0016CC65 /* LocationCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374DC09239A431E0016CC65 /* LocationCollectionView.swift */; };
 		F374DC14239A4B2C0016CC65 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374DC12239A4B2B0016CC65 /* Location+CoreDataClass.swift */; };
 		F374DC15239A4B2C0016CC65 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374DC13239A4B2B0016CC65 /* Location+CoreDataProperties.swift */; };
@@ -76,6 +78,8 @@
 		F36D295E239A071F00095B66 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F36D2963239A0ACA00095B66 /* LocationCollectionMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionMapView.swift; sourceTree = "<group>"; };
 		F36D2964239A0ACA00095B66 /* LocationCollectionMapView+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCollectionMapView+Coordinator.swift"; sourceTree = "<group>"; };
+		F37071D823C3E9B900FAC6AB /* UIImagePickerWrapper+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePickerWrapper+Coordinator.swift"; sourceTree = "<group>"; };
+		F37071D923C3E9B900FAC6AB /* UIImagePickerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerWrapper.swift; sourceTree = "<group>"; };
 		F374DC09239A431E0016CC65 /* LocationCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionView.swift; sourceTree = "<group>"; };
 		F374DC12239A4B2B0016CC65 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F374DC13239A4B2B0016CC65 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 		F36D2961239A093D00095B66 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F37071D623C3E96400FAC6AB /* UIView Wrappers */,
 				F36D2962239A0A6900095B66 /* LocationCollectionMapView */,
 			);
 			path = Views;
@@ -232,6 +237,23 @@
 				F36D2964239A0ACA00095B66 /* LocationCollectionMapView+Coordinator.swift */,
 			);
 			path = LocationCollectionMapView;
+			sourceTree = "<group>";
+		};
+		F37071D623C3E96400FAC6AB /* UIView Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				F37071D723C3E96D00FAC6AB /* UIImagePickerController */,
+			);
+			path = "UIView Wrappers";
+			sourceTree = "<group>";
+		};
+		F37071D723C3E96D00FAC6AB /* UIImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				F37071D823C3E9B900FAC6AB /* UIImagePickerWrapper+Coordinator.swift */,
+				F37071D923C3E9B900FAC6AB /* UIImagePickerWrapper.swift */,
+			);
+			path = UIImagePickerController;
 			sourceTree = "<group>";
 		};
 		F374DC08239A42C90016CC65 /* Location Collection */ = {
@@ -420,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F394D0A8239FC6E2002E8FFC /* LocationCollectionsListView.swift in Sources */,
+				F37071DA23C3E9B900FAC6AB /* UIImagePickerWrapper+Coordinator.swift in Sources */,
 				F394D09C239E77B0002E8FFC /* LocationCollectionsState.swift in Sources */,
 				F3BF5C1F239D53B700B9F8D8 /* SampleData.swift in Sources */,
 				F34643C123A5BDBE00033065 /* CurrentApplication.swift in Sources */,
@@ -443,6 +466,7 @@
 				F36D295F239A071F00095B66 /* CoreDataManager.swift in Sources */,
 				F3C8F65623A837A7008B66A7 /* EditLocationViewModel.swift in Sources */,
 				F394D0A1239EC7C2002E8FFC /* AppStore.swift in Sources */,
+				F37071DB23C3E9B900FAC6AB /* UIImagePickerWrapper.swift in Sources */,
 				F39A41BA23A3E2BB00F3B91D /* Binding+OptionalWrappers.swift in Sources */,
 				F39A41C023A40C3800F3B91D /* WikipediaAPIService.swift in Sources */,
 				F34643D923A6D52700033065 /* WikiPage+Comparable.swift in Sources */,

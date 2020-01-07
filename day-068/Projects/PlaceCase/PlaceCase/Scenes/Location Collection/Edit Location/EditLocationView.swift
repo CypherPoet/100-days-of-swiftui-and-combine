@@ -14,6 +14,8 @@ struct EditLocationView: View {
     @EnvironmentObject var store: AppStore
     
     @ObservedObject var viewModel: EditLocationViewModel
+    
+    @State private var isShowingImagePicker = false
 }
 
 
@@ -35,34 +37,9 @@ extension EditLocationView {
                 }
                 
                 
-                Section(header: Text("Add A Photo").font(.headline)) {
-
-                    Button(action: {
-                        
-                    }) {
-                        Group {
-//                            if viewModel.location.userPhoto != nil {
-                            if false {
-                            } else {
-                                HStack {
-                                    Spacer()
-                                    
-                                    VStack {
-                                        Image(systemName: "camera")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 120)
-
-                                        Text("No Photo Selected")
-                                            .font(.title)
-                                    }
-                                    Spacer()
-                                }
-                            }
-                        }
-                        .frame(height: 200)
-                    }
-                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                Section(header: Text("Custom Photo").font(.headline)) {
+                    customPhotoField
+                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 }
                 
                 
@@ -85,20 +62,54 @@ extension EditLocationView {
             self.store.send(.wikiPages(.fetchStateSet(.fetching)))
             self.store.send(WikiPagesSideEffect.fetchPages(near: self.viewModel.location))
         }
+        .sheet(isPresented: $isShowingImagePicker) {
+            UIImagePickerWrapper(onSelect: self.userPhotoSelected(_:))
+        }
     }
 }
 
 
 // MARK: - Computeds
-extension EditLocationView {
+extension EditLocationView {}
 
-
-}
 
 
 // MARK: - View Variables
 extension EditLocationView {
 
+    private var customPhotoField: some View {
+        Button(action: {
+            self.isShowingImagePicker = true
+        }) {
+            HStack {
+                Group {
+                    if viewModel.location.userPhoto != nil {
+                        viewModel.location.userPhoto!
+                                .renderingMode(.original)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(height: 200)
+                                .clipped()
+                    } else {
+                        Spacer()
+
+                        VStack {
+                            Image(systemName: "camera")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 120)
+
+                            Text("Add a Photo")
+                                .font(.title)
+                        }
+                        Spacer()
+                    }
+                }
+            }
+            .frame(height: 200)
+        }
+    }
+    
     private var saveButton: some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
@@ -107,6 +118,16 @@ extension EditLocationView {
         }
     }
 }
+
+
+// MARK: - Private Helpers
+private extension EditLocationView {
+    
+    func userPhotoSelected(_ uiImage: UIImage) {
+        viewModel.location.userPhotoData = uiImage.pngData()
+    }
+}
+
 
 
 

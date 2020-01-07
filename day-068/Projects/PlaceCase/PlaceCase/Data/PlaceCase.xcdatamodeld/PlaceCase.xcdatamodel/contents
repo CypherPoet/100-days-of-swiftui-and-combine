@@ -6,6 +6,7 @@
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="subtitle" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="userPhotoData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <relationship name="collection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationCollection" inverseName="locations" inverseEntity="LocationCollection"/>
         <relationship name="wikiPages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WikiPage" inverseName="location" inverseEntity="WikiPage"/>
         <uniquenessConstraints>
@@ -37,7 +38,7 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Location" positionX="-144.60546875" positionY="60.58203125" width="128" height="28"/>
+        <element name="Location" positionX="-144.60546875" positionY="60.58203125" width="128" height="163"/>
         <element name="LocationCollection" positionX="-386.72265625" positionY="-110.62109375" width="128" height="73"/>
         <element name="WikiPage" positionX="54.08984375" positionY="264.7734375" width="155.65234375" height="28"/>
     </elements>
