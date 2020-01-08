@@ -83,10 +83,11 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 74:** [_Project 15: Accessibility_ (Part One)](./day-074/)
 - **Day 75:** [_Project 15: Accessibility_ (Part Two)](./day-075/)
 - **Day 76:** [_Project 15: Accessibility_ (Part Three)](./day-076/)
+- **Day 77:** [Milestone for Projects 13-15 (Part One)](./day-077/)
 
 </details>
 
-- **Day 77:** [Milestone for Projects 13-15](./day-077/)
+- **Day 78:** [Milestone for Projects 13-15 (Part Two)](./day-078/)
 
 
 
