@@ -109,8 +109,8 @@ extension LocationCollectionView.ViewModel  {
     }
     
     
-    // TODO: Could this functionality live in a separate redux state struct
-    // (e.g. UserLocationState)?
+    // TODO: Could this functionality live in a separate ObservableObject?
+    // Perhaps it might also lend itself to a `LocationReading` protocol
     func requestLocationTrackingAuthorization() {
         locationManager.requestWhenInUseAuthorization()
     }
@@ -160,7 +160,6 @@ extension LocationCollectionView.ViewModel: CLLocationManagerDelegate {
         currentAlertState = .currentLocationReadingFailed
     }
 }
-
 
 
 // MARK: - Private Helpers
