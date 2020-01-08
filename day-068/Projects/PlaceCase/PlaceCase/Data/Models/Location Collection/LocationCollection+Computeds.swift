@@ -16,5 +16,4 @@ extension LocationCollection {
         
         return locations.sorted()
     }
-
 }

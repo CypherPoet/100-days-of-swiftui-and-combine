@@ -43,7 +43,7 @@
 		F39A41C023A40C3800F3B91D /* WikipediaAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A41BF23A40C3800F3B91D /* WikipediaAPIService.swift */; };
 		F39A41C323A4179400F3B91D /* CypherPoetNetStack in Frameworks */ = {isa = PBXBuildFile; productRef = F39A41C223A4179400F3B91D /* CypherPoetNetStack */; };
 		F39A41C523A41B5200F3B91D /* Endpoint+WikipediaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A41C423A41B5200F3B91D /* Endpoint+WikipediaAPI.swift */; };
-		F3BF5BE1239BA2E900B9F8D8 /* LocationCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5BE0239BA2E900B9F8D8 /* LocationCollectionViewModel.swift */; };
+		F3BF5BE1239BA2E900B9F8D8 /* LocationCollectionView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5BE0239BA2E900B9F8D8 /* LocationCollectionView+ViewModel.swift */; };
 		F3BF5BE7239CF84D00B9F8D8 /* LocationCollection+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5BE6239CF84D00B9F8D8 /* LocationCollection+Computeds.swift */; };
 		F3BF5BE9239CF89B00B9F8D8 /* Location+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5BE8239CF89B00B9F8D8 /* Location+Comparable.swift */; };
 		F3BF5C0E239D332400B9F8D8 /* Location+LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF5C0D239D332400B9F8D8 /* Location+LocationAnnotation.swift */; };
@@ -96,7 +96,7 @@
 		F39A41BC23A3F53E00F3B91D /* EditLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLocationView.swift; sourceTree = "<group>"; };
 		F39A41BF23A40C3800F3B91D /* WikipediaAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaAPIService.swift; sourceTree = "<group>"; };
 		F39A41C423A41B5200F3B91D /* Endpoint+WikipediaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+WikipediaAPI.swift"; sourceTree = "<group>"; };
-		F3BF5BE0239BA2E900B9F8D8 /* LocationCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewModel.swift; sourceTree = "<group>"; };
+		F3BF5BE0239BA2E900B9F8D8 /* LocationCollectionView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCollectionView+ViewModel.swift"; sourceTree = "<group>"; };
 		F3BF5BE6239CF84D00B9F8D8 /* LocationCollection+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCollection+Computeds.swift"; sourceTree = "<group>"; };
 		F3BF5BE8239CF89B00B9F8D8 /* Location+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Comparable.swift"; sourceTree = "<group>"; };
 		F3BF5C0D239D332400B9F8D8 /* Location+LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+LocationAnnotation.swift"; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				F374DC09239A431E0016CC65 /* LocationCollectionView.swift */,
-				F3BF5BE0239BA2E900B9F8D8 /* LocationCollectionViewModel.swift */,
+				F3BF5BE0239BA2E900B9F8D8 /* LocationCollectionView+ViewModel.swift */,
 				F39A41BB23A3F52600F3B91D /* Edit Location */,
 			);
 			path = "Location Collection";
@@ -461,7 +461,7 @@
 				F374DC14239A4B2C0016CC65 /* Location+CoreDataClass.swift in Sources */,
 				F374DC15239A4B2C0016CC65 /* Location+CoreDataProperties.swift in Sources */,
 				F3BF5C1A239D467F00B9F8D8 /* Location+FetchHelpers.swift in Sources */,
-				F3BF5BE1239BA2E900B9F8D8 /* LocationCollectionViewModel.swift in Sources */,
+				F3BF5BE1239BA2E900B9F8D8 /* LocationCollectionView+ViewModel.swift in Sources */,
 				F3C8F65423A82E1C008B66A7 /* WikiPagesState.swift in Sources */,
 				F36D295F239A071F00095B66 /* CoreDataManager.swift in Sources */,
 				F3C8F65623A837A7008B66A7 /* EditLocationViewModel.swift in Sources */,

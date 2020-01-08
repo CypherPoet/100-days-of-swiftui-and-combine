@@ -15,16 +15,16 @@ import MapKit
 extension LocationCollectionMapView {
 
     class Coordinator: NSObject {
-        @Binding var centerCoordinate: CLLocationCoordinate2D
         let onSelectLocation: ((Location) -> Void)?
+        let onCenterChanged: ((CLLocationCoordinate2D) -> Void)?
 
         
         init(
-            centerCoordinate: Binding<CLLocationCoordinate2D>,
-            onSelectLocation: ((Location) -> Void)? = nil
+            onSelectLocation: ((Location) -> Void)? = nil,
+            onCenterChanged: ((CLLocationCoordinate2D) -> Void)? = nil
         ) {
-            self._centerCoordinate = centerCoordinate
             self.onSelectLocation = onSelectLocation
+            self.onCenterChanged = onCenterChanged
         }
     }
 }
@@ -54,7 +54,7 @@ extension LocationCollectionMapView.Coordinator {
 extension LocationCollectionMapView.Coordinator: MKMapViewDelegate {
     
     func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-        centerCoordinate = mapView.centerCoordinate
+        onCenterChanged?(mapView.centerCoordinate)
     }
     
     
@@ -68,7 +68,6 @@ extension LocationCollectionMapView.Coordinator: MKMapViewDelegate {
             withIdentifier: ReuseIdentifier.pinAnnotation
         ) as? MKPinAnnotationView
             ?? MKPinAnnotationView(annotation: annotation, reuseIdentifier: ReuseIdentifier.pinAnnotation)
-        
         
         configure(annotationView)
 

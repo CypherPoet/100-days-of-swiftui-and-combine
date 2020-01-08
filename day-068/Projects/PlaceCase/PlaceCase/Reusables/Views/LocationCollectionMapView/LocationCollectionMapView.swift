@@ -13,10 +13,10 @@ import MapKit
 
 struct LocationCollectionMapView {
     var annotations: [LocationAnnotation] = []
-    
-    @Binding var centerCoordinate: CLLocationCoordinate2D
+    var startingCenterCoordinate: CLLocationCoordinate2D?
     
     let onSelectLocation: ((Location) -> Void)?
+    let onCenterChanged: ((CLLocationCoordinate2D) -> Void)?
 }
 
 
@@ -25,8 +25,8 @@ extension LocationCollectionMapView: UIViewRepresentable {
 
     func makeCoordinator() -> LocationCollectionMapView.Coordinator {
         Self.Coordinator(
-            centerCoordinate: $centerCoordinate,
-            onSelectLocation: onSelectLocation
+            onSelectLocation: onSelectLocation,
+            onCenterChanged: onCenterChanged
         )
     }
 
@@ -51,6 +51,10 @@ extension LocationCollectionMapView: UIViewRepresentable {
         if mapView.annotations.count != annotations.count {
             mapView.removeAnnotations(mapView.annotations)
             mapView.addAnnotations(annotations)
+        }
+        
+        if let startingCenterCoordinate = startingCenterCoordinate {
+            mapView.setCenter(startingCenterCoordinate, animated: true)
         }
     }
 }

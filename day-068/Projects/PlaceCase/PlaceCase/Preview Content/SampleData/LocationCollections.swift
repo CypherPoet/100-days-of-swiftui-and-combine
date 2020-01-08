@@ -15,12 +15,11 @@ extension SampleData {
     
     enum LocationCollections {
         static let `default`: LocationCollection = {
-            let context = CurrentApp.coreDataManager.mainContext
-            let collection = LocationCollection(context: context)
-            
+            let collection = LocationCollection()
+
             collection.title = "Default Collection"
             collection.addToLocations(SampleData.Locations.santorini)
-            
+
             return collection
         }()
     }

@@ -12,13 +12,9 @@ import MapKit
 
 struct LocationCollectionView: View {
     @EnvironmentObject var store: AppStore
-    
-    @ObservedObject var viewModel: LocationCollectionViewModel
+    @ObservedObject var viewModel: ViewModel
     
     @State private var centerCoordinate = CLLocationCoordinate2D()
-    @State var selectedLocation: Location? = nil
-    @State private var isShowingEditView = false
-    @State private var isShowingSelectedLocationAlert = false
 }
 
 
@@ -28,25 +24,24 @@ extension LocationCollectionView {
     var body: some View {
         ZStack {
             mapUnderlay
-            
             centerIndicator
-            
-            addLocationButton
+            mapControls
         }
+        .alert(isPresented: $viewModel.isShowingAlert, content: { self.currentAlert })
         .sheet(
-            isPresented: $isShowingEditView,
+            isPresented: $viewModel.isShowingEditView,
             onDismiss: {
-                guard let context = self.selectedLocation?.managedObjectContext else {
+                guard let context = self.viewModel.selectedLocation?.managedObjectContext else {
                     fatalError()
                 }
                 
                 CurrentApp.coreDataManager.save(context)
             }
         ) {
-            if self.selectedLocation != nil {
+            if self.viewModel.selectedLocation != nil {
                 EditLocationView(
                     viewModel: EditLocationViewModel(
-                        location: self.selectedLocation!,
+                        location: self.viewModel.selectedLocation!,
                         wikiPagesState: self.store.state.wikiPagesState
                     )
                 )
@@ -55,23 +50,41 @@ extension LocationCollectionView {
                 Text("No Location found for editing")
             }
         }
-        .alert(isPresented: $isShowingSelectedLocationAlert) {
-            Alert(
-                title: Text(selectedLocation?.title ?? "Undisclosed Location"),
-                message: Text(selectedLocation?.longDescription ?? "No description has been provided yet."),
-                primaryButton: .default(
-                    Text("Edit"),
-                    action: { self.isShowingEditView = true }
-                ),
-                secondaryButton: .cancel(Text("OK"))
-            )
-        }
     }
 }
 
 
 // MARK: - Computeds
 extension LocationCollectionView {
+    
+    var currentAlert: Alert {
+        switch viewModel.currentAlertState {
+        case .currentLocationDisabled:
+            return Alert(
+                title: Text("Location Services are Disabled"),
+                message: Text("Location authorization settings can be changed from within the Settings app."),
+                dismissButton: .default(Text("👌 Got It"))
+            )
+        case .currentLocationReadingFailed:
+            return Alert(
+                title: Text("Error while attempting to read location."),
+                message: Text("Your current location could not be determined."),
+                dismissButton: .default(Text("OK"))
+            )
+        case .locationSelected:
+            return Alert(
+                title: Text(viewModel.selectedLocationAlertTitle),
+                message: Text(viewModel.selectedLocationAlertMessage),
+                primaryButton: .default(
+                    Text("Edit"),
+                    action: { self.viewModel.isShowingEditView = true }
+                ),
+                secondaryButton: .cancel(Text("OK"))
+            )
+        default:
+            preconditionFailure("No alert should be set")
+        }
+    }
 }
 
 
@@ -80,9 +93,10 @@ extension LocationCollectionView {
     
     private var mapUnderlay: some View {
         LocationCollectionMapView(
-            annotations: viewModel.collection.locationsArray,
-            centerCoordinate: $centerCoordinate,
-            onSelectLocation: locationSelected(_:)
+            annotations: viewModel.locations,
+            startingCenterCoordinate: viewModel.userLocationCoordinate,
+            onSelectLocation: locationSelected(_:),
+            onCenterChanged: centerCoordinateChanged(_:)
         )
         .edgesIgnoringSafeArea(.all)
     }
@@ -96,27 +110,50 @@ extension LocationCollectionView {
     }
     
 
-    private var addLocationButton: some View {
+    private var mapControls: some View {
         VStack(alignment: .trailing) {
             Spacer()
             
             HStack(alignment: .bottom) {
                 Spacer()
                 
-                Button(action: {
-                    self.createNewLocation()
-                }) {
-                    Image(systemName: "plus.rectangle.fill")
-                        .font(.title)
-                        .padding(24)
-                        .background(Color.accentColor.opacity(0.8))
-                        .foregroundColor(.white)
+                VStack {
+                    snapToCurrentLocationButton
+                    addLocationButton
                 }
-                .clipShape(Circle())
                 .padding(.trailing)
             }
         }
     }
+    
+    
+    private var addLocationButton: some View {
+        Button(action: {
+            self.createNewLocation()
+        }) {
+            Image(systemName: "plus.rectangle.fill")
+                .font(.title)
+                .padding(24)
+                .background(Color.accentColor.opacity(0.8))
+                .foregroundColor(.white)
+        }
+        .clipShape(Circle())
+    }
+    
+    
+    private var snapToCurrentLocationButton: some View {
+        Button(action: {
+            self.viewModel.activateLocationManager()
+        }) {
+            Image(systemName: "location.fill")
+                .font(.headline)
+                .padding(18)
+                .background(Color.accentColor.opacity(0.8))
+                .foregroundColor(.white)
+        }
+        .clipShape(Circle())
+    }
+    
 }
 
 
@@ -139,10 +176,13 @@ private extension LocationCollectionView {
     
     
     func locationSelected(_ location: Location) {
-//        viewModel.selectedLocation = location
-//        viewModel.isShowingSelectedLocationAlert = true
-        self.selectedLocation = location
-        self.isShowingSelectedLocationAlert = true
+        viewModel.selectedLocation = location
+        viewModel.currentAlertState = .locationSelected
+    }
+    
+    
+    func centerCoordinateChanged(_ newCoordinate: CLLocationCoordinate2D) {
+        centerCoordinate = newCoordinate
     }
 }
 
@@ -153,8 +193,9 @@ struct LocationCollectionView_Previews: PreviewProvider {
 
     static var previews: some View {
         LocationCollectionView(
-            viewModel: LocationCollectionViewModel(collection: SampleData.LocationCollections.default)
+            viewModel: .init(collection: SampleData.LocationCollections.default)
         )
+        .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
         .environmentObject(SampleData.SampleAppStore.default)
     }
 }

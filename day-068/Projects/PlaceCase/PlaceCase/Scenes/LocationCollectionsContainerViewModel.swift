@@ -31,7 +31,6 @@ final class LocationCollectionsContainerViewModel: ObservableObject {
 }
 
 
-
 // MARK: - Public Methods
 extension LocationCollectionsContainerViewModel {
     
@@ -67,9 +66,7 @@ extension LocationCollectionsContainerViewModel {
     
     
     static func destination(for locationCollection: LocationCollection) -> LocationCollectionView {
-        let viewModel = LocationCollectionViewModel(collection: locationCollection)
-        
-        return .init(viewModel: viewModel)
+        .init(viewModel: .init(collection: locationCollection))
     }
 }
 

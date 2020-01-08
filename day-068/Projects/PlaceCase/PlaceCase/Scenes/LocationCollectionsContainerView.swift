@@ -83,17 +83,6 @@ extension LocationCollectionsContainerView {
 }
 
 
-private extension LocationCollectionsContainerView {
-    
-    func destination(for locationCollection: LocationCollection) -> LocationCollectionView {
-        let viewModel = LocationCollectionViewModel(collection: locationCollection)
-        
-        return LocationCollectionView(viewModel: viewModel)
-    }
-}
-
-
-
 // MARK: - Preview
 struct LocationCollectionsContainerView_Previews: PreviewProvider {
 

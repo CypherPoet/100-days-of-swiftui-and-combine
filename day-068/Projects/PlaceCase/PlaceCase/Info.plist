@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This application would like permission to read your current location. This will be used to enable current location pinning in a location collection map.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This application would like permission to read and load images from your Photos Album. These can be used to as custom images for a location. </string>
 	<key>CFBundleDevelopmentRegion</key>
