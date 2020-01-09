@@ -86,10 +86,11 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 77:** [Milestone for Projects 13-15 (Part One)](./day-077/)
 - **Day 78:** [Milestone for Projects 13-15 (Part Two)](./day-078/)
 - **Day 79:** [_Project 16: QRCollector (Part One)_](./day-079/)
+- **Day 80:** [_Project 16: QRCollector (Part Two)_](./day-080/)
 
 </details>
 
-- **Day 80:** [_Project 16: QRCollector (Part Two)_](./day-080/)
+- **Day 81:** [_Project 16: QRCollector (Part Three)_](./day-081/)
 
 
 
