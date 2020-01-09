@@ -27,6 +27,13 @@ extension LocationCollectionView {
             centerIndicator
             mapControls
         }
+        // 🤔 FIXME (Xcode 11.3): In some cases, even when `$viewModel.isShowingAlert` is true,
+        // the alert for showing location details never surfaces on the UI.
+        //
+        // I'm not sure if this is a bug, or a limitation of the
+        // the way alerts currently attach themselves via modifiers, but in any case, it's all the more
+        // reason to be conservative with alerts and design more thoughtful, richer, "real" views for
+        // presenting data such as location details.
         .alert(isPresented: $viewModel.isShowingAlert, content: { self.currentAlert })
         .sheet(
             isPresented: $viewModel.isShowingEditView,
