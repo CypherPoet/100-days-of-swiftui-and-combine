@@ -11,6 +11,7 @@
 		F3203B6A23C6AEA100265268 /* ManualObservableObjectExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203B6923C6AEA100265268 /* ManualObservableObjectExample.swift */; };
 		F3203B6C23C6BE7D00265268 /* ImageInterpolationControlExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203B6B23C6BE7D00265268 /* ImageInterpolationControlExample.swift */; };
 		F3203B7023C6BF0B00265268 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3203B6E23C6BF0B00265268 /* LaunchScreen.storyboard */; };
+		F3203B7423C7377C00265268 /* ContextMenuExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203B7323C7377C00265268 /* ContextMenuExample.swift */; };
 		F37071EB23C6AC3300FAC6AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37071EA23C6AC3300FAC6AB /* AppDelegate.swift */; };
 		F37071ED23C6AC3300FAC6AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37071EC23C6AC3300FAC6AB /* SceneDelegate.swift */; };
 		F37071F123C6AC3700FAC6AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37071F023C6AC3700FAC6AB /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		F3203B6923C6AEA100265268 /* ManualObservableObjectExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualObservableObjectExample.swift; sourceTree = "<group>"; };
 		F3203B6B23C6BE7D00265268 /* ImageInterpolationControlExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInterpolationControlExample.swift; sourceTree = "<group>"; };
 		F3203B6F23C6BF0B00265268 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Project16Concepts/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		F3203B7323C7377C00265268 /* ContextMenuExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuExample.swift; sourceTree = "<group>"; };
 		F37071E723C6AC3300FAC6AB /* Project16Concepts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project16Concepts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37071EA23C6AC3300FAC6AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F37071EC23C6AC3300FAC6AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				F3203B6723C6ACBB00265268 /* RootView.swift */,
+				F3203B7323C7377C00265268 /* ContextMenuExample.swift */,
 				F3203B6B23C6BE7D00265268 /* ImageInterpolationControlExample.swift */,
 				F3203B6923C6AEA100265268 /* ManualObservableObjectExample.swift */,
 			);
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3203B6A23C6AEA100265268 /* ManualObservableObjectExample.swift in Sources */,
+				F3203B7423C7377C00265268 /* ContextMenuExample.swift in Sources */,
 				F37071EB23C6AC3300FAC6AB /* AppDelegate.swift in Sources */,
 				F37071ED23C6AC3300FAC6AB /* SceneDelegate.swift in Sources */,
 				F3203B6C23C6BE7D00265268 /* ImageInterpolationControlExample.swift in Sources */,

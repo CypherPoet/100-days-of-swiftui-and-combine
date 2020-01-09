@@ -26,6 +26,9 @@ extension RootView {
                 NavigationLink(destination: ImageInterpolationControlExample()) {
                     Text("Controlling Image Interpolation")
                 }
+                NavigationLink(destination: ContextMenuExample()) {
+                    Text("Creating Context Menus")
+                }
             }
             .navigationBarTitle("Project 16 Concepts")
         }
