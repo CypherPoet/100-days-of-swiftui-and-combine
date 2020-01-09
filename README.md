@@ -13,7 +13,7 @@ For each day that proves conducive to some kind of code or content, I'll make a 
 
 ### Personal Note
 
-I'm currently seeking freelance, remote opportunities as an iOS developer! If you're looking for an experienced software engineer who's been diving deep into SwiftUI, Combine, and iOS 13 since WWDC (and who welcomes being paid in Bitcoin 🙂), and you could use some help with any of those things, please feel free to [reach out](mailto:CypherPoet@gmail.com) ✌️.
+I'm currently seeking freelance, remote opportunities as an iOS developer! If you're looking for an experienced software engineer who's been [diving deep into SwiftUI, Combine, and iOS 13](https://github.com/CypherPoet/Swifty-Portfolio) since WWDC (and who welcomes being paid in Bitcoin 🙂), and you could use some help with any of those things, please feel free to [reach out](mailto:CypherPoet@gmail.com) ✌️.
 
 
 ## Days
@@ -87,10 +87,11 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 78:** [Milestone for Projects 13-15 (Part Two)](./day-078/)
 - **Day 79:** [_Project 16: QRCollector (Part One)_](./day-079/)
 - **Day 80:** [_Project 16: QRCollector (Part Two)_](./day-080/)
+- **Day 81:** [_Project 16: QRCollector (Part Three)_](./day-081/)
 
 </details>
 
-- **Day 81:** [_Project 16: QRCollector (Part Three)_](./day-081/)
+- **Day 82:** [_Project 16: QRCollector (Part Four)_](./day-082/)
 
 
 
