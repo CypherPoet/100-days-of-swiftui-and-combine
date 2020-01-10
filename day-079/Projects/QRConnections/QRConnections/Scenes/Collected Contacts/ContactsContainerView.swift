@@ -18,7 +18,6 @@ struct ContactsContainerView: View {
 extension ContactsContainerView {
 
     var body: some View {
-
         NavigationView {
             VStack {
                 filterPicker

@@ -26,3 +26,12 @@ From the project description:
 > This app is going to display four SwiftUI views inside a tab bar: one to show everyone that you met, one to show people you have contacted, another to show people you haven’t contacted, and a final one showing your information for others to scan.
 
 
+Given that I tend to tabs as [organizing application categories](https://developer.apple.com/design/human-interface-guidelines/ios/bars/tab-bars/), I took a slightly different approach by only making two: A tab for our collected contacts and a tab for the user's own QR Code.
+
+Filtering, then, can be facilitated by a segmented picker:
+
+
+<div style="text-align: center;">
+  <img src="../day-079/Projects/QRConnections/Screenshots/day-82-recording-1.gif" width="400px"/>
+</div>
+
