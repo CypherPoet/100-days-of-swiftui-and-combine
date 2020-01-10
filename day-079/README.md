@@ -1,4 +1,4 @@
-# Day 79: _Project 16: QRCollector_ (Part One)
+# Day 79: _Project 16: QRConnections_ (Part One)
 
 _Follow along at https://www.hackingwithswift.com/100/swiftui/79_.
 
@@ -23,7 +23,7 @@ From the description:
 
 > ...an app to track who you meet at conferences. You’ve probably seen apps like it before: it will show a QR code that stores your attendee information, then others can scan that code to add you to their list of possible leads for later follow up.
 
-I could be wrong, but the way this app is going to be structured, the actual contents of the QR codes could be pretty open-ended. With that in mind, I'm going to name the app `QRCollector` -- and see if it would be more interesting to embed diverse kinds of information into the codes we store.
+I could be wrong, but the way this app is going to be structured, the actual contents of the QR codes could be pretty open-ended. With that in mind, I'm going to name the app `QRConnections` -- and see if it would be more interesting to embed diverse kinds of information into the codes we store.
 
 
 

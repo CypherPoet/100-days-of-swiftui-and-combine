@@ -1,4 +1,4 @@
-# Day 81: _Project 16: QRCollector_ (Part Three)
+# Day 81: _Project 16: QRConnections_ (Part Three)
 
 _Follow along at https://www.hackingwithswift.com/100/swiftui/81_.
 

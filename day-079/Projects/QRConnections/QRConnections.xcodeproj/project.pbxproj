@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F3203B8223C7609500265268 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203B8123C7609500265268 /* AppDelegate.swift */; };
+		F3203B8423C7609500265268 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203B8323C7609500265268 /* SceneDelegate.swift */; };
+		F3203B8723C7609500265268 /* QRConnections.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3203B8523C7609500265268 /* QRConnections.xcdatamodeld */; };
+		F3203B8B23C7609700265268 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3203B8A23C7609700265268 /* Assets.xcassets */; };
+		F3203B8E23C7609700265268 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3203B8D23C7609700265268 /* Preview Assets.xcassets */; };
+		F3203B9F23C7610400265268 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3203B9D23C7610400265268 /* LaunchScreen.storyboard */; };
+		F3203BA223C7632C00265268 /* CypherPoetSwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3203BA123C7632C00265268 /* CypherPoetSwiftUIKit */; };
+		F3203BA523C7634600265268 /* CypherPoetCoreDataKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3203BA423C7634600265268 /* CypherPoetCoreDataKit */; };
+		F3203BA723C7636600265268 /* CoreDataManager+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BA623C7636600265268 /* CoreDataManager+Utils.swift */; };
+		F3203BAA23C82CB100265268 /* CurrentApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BA923C82CB100265268 /* CurrentApplication.swift */; };
+		F3203BB123C8345400265268 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BB023C8345400265268 /* RootView.swift */; };
+		F3203BB323C8368800265268 /* ContactsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BB223C8368800265268 /* ContactsContainerView.swift */; };
+		F3203BB523C841A700265268 /* ContactsContainerView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BB423C841A700265268 /* ContactsContainerView+ViewModel.swift */; };
+		F3203BB723C844F100265268 /* ContactsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BB623C844F100265268 /* ContactsListView.swift */; };
+		F3203BB923C8467000265268 /* Contact+FilterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BB823C8467000265268 /* Contact+FilterState.swift */; };
+		F3203BBD23C8579400265268 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BBB23C8579400265268 /* Contact+CoreDataClass.swift */; };
+		F3203BBE23C8579400265268 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BBC23C8579400265268 /* Contact+CoreDataProperties.swift */; };
+		F3203BC023C8584500265268 /* Contact+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BBF23C8584500265268 /* Contact+Status.swift */; };
+		F3203BC223C8588F00265268 /* Contact+FetchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BC123C8588E00265268 /* Contact+FetchHelpers.swift */; };
+		F3203BC523C8714700265268 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BC423C8714700265268 /* SampleData.swift */; };
+		F3203BC723C8717F00265268 /* SampleData+Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BC623C8717F00265268 /* SampleData+Contacts.swift */; };
+		F3203BC923C871D300265268 /* PreviewDevice+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BC823C871D300265268 /* PreviewDevice+Utils.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F3203B7E23C7609500265268 /* QRConnections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRConnections.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3203B8123C7609500265268 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F3203B8323C7609500265268 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F3203B8623C7609500265268 /* QRConnections.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QRConnections.xcdatamodel; sourceTree = "<group>"; };
+		F3203B8A23C7609700265268 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F3203B8D23C7609700265268 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F3203B9223C7609700265268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3203B9E23C7610400265268 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QRConnections/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		F3203BA623C7636600265268 /* CoreDataManager+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+Utils.swift"; sourceTree = "<group>"; };
+		F3203BA923C82CB100265268 /* CurrentApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentApplication.swift; sourceTree = "<group>"; };
+		F3203BB023C8345400265268 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		F3203BB223C8368800265268 /* ContactsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsContainerView.swift; sourceTree = "<group>"; };
+		F3203BB423C841A700265268 /* ContactsContainerView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactsContainerView+ViewModel.swift"; sourceTree = "<group>"; };
+		F3203BB623C844F100265268 /* ContactsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListView.swift; sourceTree = "<group>"; };
+		F3203BB823C8467000265268 /* Contact+FilterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+FilterState.swift"; sourceTree = "<group>"; };
+		F3203BBB23C8579400265268 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F3203BBC23C8579400265268 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F3203BBF23C8584500265268 /* Contact+Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+Status.swift"; sourceTree = "<group>"; };
+		F3203BC123C8588E00265268 /* Contact+FetchHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+FetchHelpers.swift"; sourceTree = "<group>"; };
+		F3203BC423C8714700265268 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		F3203BC623C8717F00265268 /* SampleData+Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleData+Contacts.swift"; sourceTree = "<group>"; };
+		F3203BC823C871D300265268 /* PreviewDevice+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewDevice+Utils.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3203B7B23C7609500265268 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3203BA223C7632C00265268 /* CypherPoetSwiftUIKit in Frameworks */,
+				F3203BA523C7634600265268 /* CypherPoetCoreDataKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F3203B7523C7609500265268 = {
+			isa = PBXGroup;
+			children = (
+				F3203B8023C7609500265268 /* QRConnections */,
+				F3203B7F23C7609500265268 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F3203B7F23C7609500265268 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3203B7E23C7609500265268 /* QRConnections.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3203B8023C7609500265268 /* QRConnections */ = {
+			isa = PBXGroup;
+			children = (
+				F3203B9223C7609700265268 /* Info.plist */,
+				F3203B9823C760BF00265268 /* App */,
+				F3203B9A23C760C700265268 /* Data */,
+				F3203B8C23C7609700265268 /* Preview Content */,
+				F3203B9C23C760D000265268 /* Resources */,
+				F3203B9B23C760C900265268 /* Reusables */,
+				F3203B9923C760C300265268 /* Scenes */,
+			);
+			path = QRConnections;
+			sourceTree = "<group>";
+		};
+		F3203B8C23C7609700265268 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F3203BC323C8713300265268 /* SampleData */,
+				F3203B8D23C7609700265268 /* Preview Assets.xcassets */,
+				F3203BC823C871D300265268 /* PreviewDevice+Utils.swift */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F3203B9823C760BF00265268 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F3203B9D23C7610400265268 /* LaunchScreen.storyboard */,
+				F3203B8323C7609500265268 /* SceneDelegate.swift */,
+				F3203B8123C7609500265268 /* AppDelegate.swift */,
+				F3203BA923C82CB100265268 /* CurrentApplication.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F3203B9923C760C300265268 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F3203BAD23C8339400265268 /* Collected Contacts */,
+				F3203BAC23C8337F00265268 /* User QR Code */,
+				F3203BB023C8345400265268 /* RootView.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F3203B9A23C760C700265268 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3203BAB23C831E300265268 /* Models */,
+				F3203BA823C82C8F00265268 /* State */,
+				F3203B8523C7609500265268 /* QRConnections.xcdatamodeld */,
+				F3203BA623C7636600265268 /* CoreDataManager+Utils.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F3203B9B23C760C900265268 /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		F3203B9C23C760D000265268 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F3203B8A23C7609700265268 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F3203BA823C82C8F00265268 /* State */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		F3203BAB23C831E300265268 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3203BBA23C8577800265268 /* Contact */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F3203BAC23C8337F00265268 /* User QR Code */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "User QR Code";
+			sourceTree = "<group>";
+		};
+		F3203BAD23C8339400265268 /* Collected Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				F3203BB223C8368800265268 /* ContactsContainerView.swift */,
+				F3203BB623C844F100265268 /* ContactsListView.swift */,
+				F3203BB423C841A700265268 /* ContactsContainerView+ViewModel.swift */,
+			);
+			path = "Collected Contacts";
+			sourceTree = "<group>";
+		};
+		F3203BBA23C8577800265268 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				F3203BB823C8467000265268 /* Contact+FilterState.swift */,
+				F3203BBB23C8579400265268 /* Contact+CoreDataClass.swift */,
+				F3203BBC23C8579400265268 /* Contact+CoreDataProperties.swift */,
+				F3203BC123C8588E00265268 /* Contact+FetchHelpers.swift */,
+				F3203BBF23C8584500265268 /* Contact+Status.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		F3203BC323C8713300265268 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				F3203BC423C8714700265268 /* SampleData.swift */,
+				F3203BC623C8717F00265268 /* SampleData+Contacts.swift */,
+			);
+			path = SampleData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3203B7D23C7609500265268 /* QRConnections */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3203B9523C7609700265268 /* Build configuration list for PBXNativeTarget "QRConnections" */;
+			buildPhases = (
+				F3203B7A23C7609500265268 /* Sources */,
+				F3203B7B23C7609500265268 /* Frameworks */,
+				F3203B7C23C7609500265268 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QRConnections;
+			packageProductDependencies = (
+				F3203BA123C7632C00265268 /* CypherPoetSwiftUIKit */,
+				F3203BA423C7634600265268 /* CypherPoetCoreDataKit */,
+			);
+			productName = QRConnections;
+			productReference = F3203B7E23C7609500265268 /* QRConnections.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3203B7623C7609500265268 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = CypherPoet;
+				TargetAttributes = {
+					F3203B7D23C7609500265268 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = F3203B7923C7609500265268 /* Build configuration list for PBXProject "QRConnections" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3203B7523C7609500265268;
+			packageReferences = (
+				F3203BA023C7632C00265268 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
+				F3203BA323C7634600265268 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */,
+			);
+			productRefGroup = F3203B7F23C7609500265268 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3203B7D23C7609500265268 /* QRConnections */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3203B7C23C7609500265268 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3203B9F23C7610400265268 /* LaunchScreen.storyboard in Resources */,
+				F3203B8E23C7609700265268 /* Preview Assets.xcassets in Resources */,
+				F3203B8B23C7609700265268 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3203B7A23C7609500265268 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3203BBE23C8579400265268 /* Contact+CoreDataProperties.swift in Sources */,
+				F3203BB323C8368800265268 /* ContactsContainerView.swift in Sources */,
+				F3203BC923C871D300265268 /* PreviewDevice+Utils.swift in Sources */,
+				F3203BB923C8467000265268 /* Contact+FilterState.swift in Sources */,
+				F3203BC223C8588F00265268 /* Contact+FetchHelpers.swift in Sources */,
+				F3203BC023C8584500265268 /* Contact+Status.swift in Sources */,
+				F3203BA723C7636600265268 /* CoreDataManager+Utils.swift in Sources */,
+				F3203B8223C7609500265268 /* AppDelegate.swift in Sources */,
+				F3203BB123C8345400265268 /* RootView.swift in Sources */,
+				F3203BC723C8717F00265268 /* SampleData+Contacts.swift in Sources */,
+				F3203BB723C844F100265268 /* ContactsListView.swift in Sources */,
+				F3203BB523C841A700265268 /* ContactsContainerView+ViewModel.swift in Sources */,
+				F3203B8723C7609500265268 /* QRConnections.xcdatamodeld in Sources */,
+				F3203BBD23C8579400265268 /* Contact+CoreDataClass.swift in Sources */,
+				F3203BAA23C82CB100265268 /* CurrentApplication.swift in Sources */,
+				F3203BC523C8714700265268 /* SampleData.swift in Sources */,
+				F3203B8423C7609500265268 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F3203B9D23C7610400265268 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3203B9E23C7610400265268 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F3203B9323C7609700265268 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F3203B9423C7609700265268 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F3203B9623C7609700265268 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"QRConnections/Preview Content\"";
+				DEVELOPMENT_TEAM = QRXXH2RKAG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = QRConnections/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.cypherpoet.QRConnections;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F3203B9723C7609700265268 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"QRConnections/Preview Content\"";
+				DEVELOPMENT_TEAM = QRXXH2RKAG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = QRConnections/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.cypherpoet.QRConnections;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3203B7923C7609500265268 /* Build configuration list for PBXProject "QRConnections" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3203B9323C7609700265268 /* Debug */,
+				F3203B9423C7609700265268 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3203B9523C7609700265268 /* Build configuration list for PBXNativeTarget "QRConnections" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3203B9623C7609700265268 /* Debug */,
+				F3203B9723C7609700265268 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3203BA023C7632C00265268 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.32;
+			};
+		};
+		F3203BA323C7634600265268 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetCoreDataKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3203BA123C7632C00265268 /* CypherPoetSwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3203BA023C7632C00265268 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */;
+			productName = CypherPoetSwiftUIKit;
+		};
+		F3203BA423C7634600265268 /* CypherPoetCoreDataKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3203BA323C7634600265268 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */;
+			productName = CypherPoetCoreDataKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		F3203B8523C7609500265268 /* QRConnections.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F3203B8623C7609500265268 /* QRConnections.xcdatamodel */,
+			);
+			currentVersion = F3203B8623C7609500265268 /* QRConnections.xcdatamodel */;
+			path = QRConnections.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F3203B7623C7609500265268 /* Project object */;
+}
