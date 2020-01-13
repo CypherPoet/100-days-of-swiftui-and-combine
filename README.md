@@ -1,4 +1,4 @@
-# 100 Days of SwiftUI
+# 100 Days of SwiftUI & Combine
 
 <img src="./Assets/swiftui-badge.png" width="88px" />
 <img src="./Assets/combine-badge.png" width="88px" />
@@ -88,10 +88,11 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 79:** [_Project 16: QRConnections (Part One)_](./day-079/)
 - **Day 80:** [_Project 16: QRConnections (Part Two)_](./day-080/)
 - **Day 81:** [_Project 16: QRConnections (Part Three)_](./day-081/)
+- **Day 82:** [_Project 16: QRConnections (Part Four)_](./day-082/)
 
 </details>
 
-- **Day 82:** [_Project 16: QRConnections (Part Four)_](./day-082/)
+- **Day 83:** [_Project 16: QRConnections (Part Five)_](./day-083/)
 
 
 
