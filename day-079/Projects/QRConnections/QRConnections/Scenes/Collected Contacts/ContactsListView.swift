@@ -25,7 +25,7 @@ extension ContactsListView {
 
     var body: some View {
         List(contacts) { contact in
-            Text(contact.name ?? "No Name")
+            Text(contact.name)
         }
     }
 }

@@ -11,15 +11,18 @@ import Foundation
 import CoreData
 
 
-extension Contact {
-    @NSManaged public var uuid: UUID?
-    @NSManaged public var name: String?
+extension Contact: ContactQRCodeRepresentable {
+    @NSManaged public var qrCodeData: Data?
     
     @NSManaged public var statusValue: Int16
-    
     
     var status: Status {
         get { Contact.Status(rawValue: statusValue)! }
         set { statusValue = newValue.rawValue }
     }
+    
+    
+    // MARK: - ContactQRCodeRepresentable
+    @NSManaged public var name: String
+    @NSManaged public var uuid: UUID
 }

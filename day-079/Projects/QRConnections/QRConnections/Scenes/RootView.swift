@@ -10,6 +10,8 @@ import SwiftUI
 
 
 struct RootView: View {
+    @EnvironmentObject private var store: AppStore
+    
     enum Tab {
         case collectedContacts
         case userQRCode
@@ -32,13 +34,15 @@ extension RootView {
                 }
                 .tag(Tab.collectedContacts)
                 
-            Text("")
+            
+            UserQRCodeContainerView(viewModel: .init(userProfileState: userProfileState))
                 .tabItem {
                     Image(systemName: "qrcode")
-                    Text("My Alias")
+                    Text("Your QR")
                 }
                 .tag(Tab.userQRCode)
         }
+//        .environmentObject(store)
         .edgesIgnoringSafeArea(.top)
     }
 }
@@ -46,8 +50,7 @@ extension RootView {
 
 // MARK: - Computeds
 extension RootView {
-
-
+    var userProfileState: UserProfileState { store.state.userProfileState }
 }
 
 
@@ -64,5 +67,6 @@ struct RootView_Previews: PreviewProvider {
 
     static var previews: some View {
         RootView()
+            .environmentObject(SampleData.appStore)
     }
 }

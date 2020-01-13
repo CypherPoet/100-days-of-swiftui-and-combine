@@ -10,7 +10,7 @@ import SwiftUI
 
 
 struct ContactsContainerView: View {
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject var viewModel = ViewModel()
 }
 
 

@@ -29,6 +29,17 @@
 		F3203BC523C8714700265268 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BC423C8714700265268 /* SampleData.swift */; };
 		F3203BC723C8717F00265268 /* SampleData+Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BC623C8717F00265268 /* SampleData+Contacts.swift */; };
 		F3203BC923C871D300265268 /* PreviewDevice+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BC823C871D300265268 /* PreviewDevice+Utils.swift */; };
+		F3203BCF23C9DAE100265268 /* UserQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BCE23C9DAE000265268 /* UserQRCodeView.swift */; };
+		F3203BD123C9DFDF00265268 /* ImageFilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BD023C9DFDF00265268 /* ImageFilterService.swift */; };
+		F3203BD323C9F20C00265268 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BD223C9F20C00265268 /* AppState.swift */; };
+		F3203BD523C9F3E900265268 /* UserProfileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BD423C9F3E900265268 /* UserProfileState.swift */; };
+		F3203BE223CA31EB00265268 /* SampleData+AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BE123CA31EB00265268 /* SampleData+AppStore.swift */; };
+		F3203BE523CA412600265268 /* Burritos in Frameworks */ = {isa = PBXBuildFile; productRef = F3203BE423CA412600265268 /* Burritos */; };
+		F3203BEB23CC977000265268 /* UserQRCodeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BEA23CC977000265268 /* UserQRCodeContainerView.swift */; };
+		F3203BED23CC97DC00265268 /* UserQRCodeContainerView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BEC23CC97DC00265268 /* UserQRCodeContainerView+ViewModel.swift */; };
+		F3203BEF23CC985100265268 /* UserQRCodeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BEE23CC985100265268 /* UserQRCodeFormView.swift */; };
+		F3203BF123CC9B1600265268 /* UserQRCodeFormView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BF023CC9B1600265268 /* UserQRCodeFormView+ViewModel.swift */; };
+		F3203BF423CD140100265268 /* ContactQRCodeRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BF323CD140100265268 /* ContactQRCodeRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +65,16 @@
 		F3203BC423C8714700265268 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		F3203BC623C8717F00265268 /* SampleData+Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleData+Contacts.swift"; sourceTree = "<group>"; };
 		F3203BC823C871D300265268 /* PreviewDevice+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewDevice+Utils.swift"; sourceTree = "<group>"; };
+		F3203BCE23C9DAE000265268 /* UserQRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQRCodeView.swift; sourceTree = "<group>"; };
+		F3203BD023C9DFDF00265268 /* ImageFilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilterService.swift; sourceTree = "<group>"; };
+		F3203BD223C9F20C00265268 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F3203BD423C9F3E900265268 /* UserProfileState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileState.swift; sourceTree = "<group>"; };
+		F3203BE123CA31EB00265268 /* SampleData+AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleData+AppStore.swift"; sourceTree = "<group>"; };
+		F3203BEA23CC977000265268 /* UserQRCodeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQRCodeContainerView.swift; sourceTree = "<group>"; };
+		F3203BEC23CC97DC00265268 /* UserQRCodeContainerView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserQRCodeContainerView+ViewModel.swift"; sourceTree = "<group>"; };
+		F3203BEE23CC985100265268 /* UserQRCodeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQRCodeFormView.swift; sourceTree = "<group>"; };
+		F3203BF023CC9B1600265268 /* UserQRCodeFormView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserQRCodeFormView+ViewModel.swift"; sourceTree = "<group>"; };
+		F3203BF323CD140100265268 /* ContactQRCodeRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactQRCodeRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +84,7 @@
 			files = (
 				F3203BA223C7632C00265268 /* CypherPoetSwiftUIKit in Frameworks */,
 				F3203BA523C7634600265268 /* CypherPoetCoreDataKit in Frameworks */,
+				F3203BE523CA412600265268 /* Burritos in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +166,8 @@
 		F3203B9B23C760C900265268 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F3203BF223CD13F300265268 /* Protocols */,
+				F3203BD023C9DFDF00265268 /* ImageFilterService.swift */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -159,6 +183,8 @@
 		F3203BA823C82C8F00265268 /* State */ = {
 			isa = PBXGroup;
 			children = (
+				F3203BD223C9F20C00265268 /* AppState.swift */,
+				F3203BD423C9F3E900265268 /* UserProfileState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -174,6 +200,11 @@
 		F3203BAC23C8337F00265268 /* User QR Code */ = {
 			isa = PBXGroup;
 			children = (
+				F3203BCE23C9DAE000265268 /* UserQRCodeView.swift */,
+				F3203BEA23CC977000265268 /* UserQRCodeContainerView.swift */,
+				F3203BEE23CC985100265268 /* UserQRCodeFormView.swift */,
+				F3203BEC23CC97DC00265268 /* UserQRCodeContainerView+ViewModel.swift */,
+				F3203BF023CC9B1600265268 /* UserQRCodeFormView+ViewModel.swift */,
 			);
 			path = "User QR Code";
 			sourceTree = "<group>";
@@ -205,8 +236,17 @@
 			children = (
 				F3203BC423C8714700265268 /* SampleData.swift */,
 				F3203BC623C8717F00265268 /* SampleData+Contacts.swift */,
+				F3203BE123CA31EB00265268 /* SampleData+AppStore.swift */,
 			);
 			path = SampleData;
+			sourceTree = "<group>";
+		};
+		F3203BF223CD13F300265268 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F3203BF323CD140100265268 /* ContactQRCodeRepresentable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +268,7 @@
 			packageProductDependencies = (
 				F3203BA123C7632C00265268 /* CypherPoetSwiftUIKit */,
 				F3203BA423C7634600265268 /* CypherPoetCoreDataKit */,
+				F3203BE423CA412600265268 /* Burritos */,
 			);
 			productName = QRConnections;
 			productReference = F3203B7E23C7609500265268 /* QRConnections.app */;
@@ -260,6 +301,7 @@
 			packageReferences = (
 				F3203BA023C7632C00265268 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
 				F3203BA323C7634600265268 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */,
+				F3203BE323CA412500265268 /* XCRemoteSwiftPackageReference "Burritos" */,
 			);
 			productRefGroup = F3203B7F23C7609500265268 /* Products */;
 			projectDirPath = "";
@@ -295,15 +337,25 @@
 				F3203BC223C8588F00265268 /* Contact+FetchHelpers.swift in Sources */,
 				F3203BC023C8584500265268 /* Contact+Status.swift in Sources */,
 				F3203BA723C7636600265268 /* CoreDataManager+Utils.swift in Sources */,
+				F3203BCF23C9DAE100265268 /* UserQRCodeView.swift in Sources */,
 				F3203B8223C7609500265268 /* AppDelegate.swift in Sources */,
 				F3203BB123C8345400265268 /* RootView.swift in Sources */,
 				F3203BC723C8717F00265268 /* SampleData+Contacts.swift in Sources */,
+				F3203BD323C9F20C00265268 /* AppState.swift in Sources */,
+				F3203BF423CD140100265268 /* ContactQRCodeRepresentable.swift in Sources */,
 				F3203BB723C844F100265268 /* ContactsListView.swift in Sources */,
+				F3203BED23CC97DC00265268 /* UserQRCodeContainerView+ViewModel.swift in Sources */,
 				F3203BB523C841A700265268 /* ContactsContainerView+ViewModel.swift in Sources */,
+				F3203BEB23CC977000265268 /* UserQRCodeContainerView.swift in Sources */,
+				F3203BF123CC9B1600265268 /* UserQRCodeFormView+ViewModel.swift in Sources */,
+				F3203BEF23CC985100265268 /* UserQRCodeFormView.swift in Sources */,
+				F3203BE223CA31EB00265268 /* SampleData+AppStore.swift in Sources */,
+				F3203BD123C9DFDF00265268 /* ImageFilterService.swift in Sources */,
 				F3203B8723C7609500265268 /* QRConnections.xcdatamodeld in Sources */,
 				F3203BBD23C8579400265268 /* Contact+CoreDataClass.swift in Sources */,
 				F3203BAA23C82CB100265268 /* CurrentApplication.swift in Sources */,
 				F3203BC523C8714700265268 /* SampleData.swift in Sources */,
+				F3203BD523C9F3E900265268 /* UserProfileState.swift in Sources */,
 				F3203B8423C7609500265268 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +568,14 @@
 				minimumVersion = 0.0.3;
 			};
 		};
+		F3203BE323CA412500265268 /* XCRemoteSwiftPackageReference "Burritos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/guillermomuntaner/Burritos.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -528,6 +588,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F3203BA323C7634600265268 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */;
 			productName = CypherPoetCoreDataKit;
+		};
+		F3203BE423CA412600265268 /* Burritos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3203BE323CA412500265268 /* XCRemoteSwiftPackageReference "Burritos" */;
+			productName = Burritos;
 		};
 /* End XCSwiftPackageProductDependency section */
 

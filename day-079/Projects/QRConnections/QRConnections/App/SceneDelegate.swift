@@ -25,6 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
+            let appStore = AppStore(initialState: AppState(), appReducer: appReducer)
             
             // Get the managed object context from the shared persistent container.
             let managedObjectContext = CurrentApp.coreDataManager.mainContext
@@ -37,6 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
             let contentView = RootView()
                 .environment(\.managedObjectContext, managedObjectContext)
+                .environmentObject(appStore)
             
             window.rootViewController = UIHostingController(rootView: contentView)
             
