@@ -11,7 +11,7 @@ import SwiftUI
 
 
 struct UserQRCodeView {
-    let cgImage: CGImage
+    let cgImage: CGImage?
 }
 
 
@@ -19,7 +19,27 @@ struct UserQRCodeView {
 extension UserQRCodeView: View {
 
     var body: some View {
-          Image(uiImage: .init(cgImage: cgImage))
+        GeometryReader { geometry in
+            if self.cgImage != nil {
+                HStack {
+                    Spacer()
+                    Image(uiImage: .init(cgImage: self.cgImage!))
+                        .interpolation(.none)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: geometry.size.height)
+                        .transition(
+                            AnyTransition
+                                .scale(scale: 0, anchor: .center)
+                                .animation(Animation.easeOut(duration: 0.4))
+                        )
+                    Spacer()
+                }
+            } else {
+                self.noQRCodeView
+            }
+        }
+        .padding()
     }
 }
 
@@ -29,7 +49,20 @@ extension UserQRCodeView {}
 
 
 // MARK: - View Variables
-extension UserQRCodeView {}
+extension UserQRCodeView {
+    
+    var noQRCodeView: some View {
+        VStack(spacing: 22) {
+            Image(systemName: "xmark.square")
+                .resizable()
+                .scaledToFit()
+            
+            Text("Begin entering your information to generate a QR Code.")
+                .layoutPriority(1)
+                .padding()
+        }
+    }
+}
 
 
 // MARK: - Private Helpers

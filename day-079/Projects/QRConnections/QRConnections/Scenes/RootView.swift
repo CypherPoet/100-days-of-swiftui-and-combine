@@ -67,6 +67,7 @@ struct RootView_Previews: PreviewProvider {
 
     static var previews: some View {
         RootView()
+            .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
             .environmentObject(SampleData.appStore)
     }
 }

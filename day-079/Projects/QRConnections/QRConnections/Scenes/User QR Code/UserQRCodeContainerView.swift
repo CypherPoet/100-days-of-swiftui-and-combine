@@ -21,15 +21,8 @@ extension UserQRCodeContainerView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if viewModel.qrCodeCGImage != nil {
-                    UserQRCodeView(cgImage: viewModel.qrCodeCGImage!)
-                        .transition(
-                            AnyTransition
-                                .move(edge: .top)
-                                .animation(Animation.easeOut(duration: 0.4))
-                        )
-                }
-        
+                UserQRCodeView(cgImage: viewModel.qrCodeCGImage)
+                    .frame(height: 200)
                 
                 UserQRCodeFormView(
                     viewModel: .init(userProfileState: viewModel.userProfileState)
