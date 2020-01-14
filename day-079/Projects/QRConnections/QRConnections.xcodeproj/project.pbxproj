@@ -40,6 +40,11 @@
 		F3203BEF23CC985100265268 /* UserQRCodeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BEE23CC985100265268 /* UserQRCodeFormView.swift */; };
 		F3203BF123CC9B1600265268 /* UserQRCodeFormView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BF023CC9B1600265268 /* UserQRCodeFormView+ViewModel.swift */; };
 		F3203BF423CD140100265268 /* ContactQRCodeRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BF323CD140100265268 /* ContactQRCodeRepresentable.swift */; };
+		F3203BFB23CD430500265268 /* QRCodeScannerView+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BF923CD430500265268 /* QRCodeScannerView+Coordinator.swift */; };
+		F3203BFC23CD430500265268 /* QRCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BFA23CD430500265268 /* QRCodeScannerView.swift */; };
+		F3203BFF23CDF6D100265268 /* ScannerViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3203BFE23CDF6D100265268 /* ScannerViewControlller.swift */; };
+		F326140823CE3928009EC215 /* ContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326140723CE3928009EC215 /* ContactsState.swift */; };
+		F326140A23CE689A009EC215 /* Contact+InitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326140923CE689A009EC215 /* Contact+InitHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +80,11 @@
 		F3203BEE23CC985100265268 /* UserQRCodeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQRCodeFormView.swift; sourceTree = "<group>"; };
 		F3203BF023CC9B1600265268 /* UserQRCodeFormView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserQRCodeFormView+ViewModel.swift"; sourceTree = "<group>"; };
 		F3203BF323CD140100265268 /* ContactQRCodeRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactQRCodeRepresentable.swift; sourceTree = "<group>"; };
+		F3203BF923CD430500265268 /* QRCodeScannerView+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QRCodeScannerView+Coordinator.swift"; sourceTree = "<group>"; };
+		F3203BFA23CD430500265268 /* QRCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerView.swift; sourceTree = "<group>"; };
+		F3203BFE23CDF6D100265268 /* ScannerViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewControlller.swift; sourceTree = "<group>"; };
+		F326140723CE3928009EC215 /* ContactsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsState.swift; sourceTree = "<group>"; };
+		F326140923CE689A009EC215 /* Contact+InitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+InitHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,10 +144,10 @@
 		F3203B9823C760BF00265268 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				F3203B9D23C7610400265268 /* LaunchScreen.storyboard */,
-				F3203B8323C7609500265268 /* SceneDelegate.swift */,
 				F3203B8123C7609500265268 /* AppDelegate.swift */,
 				F3203BA923C82CB100265268 /* CurrentApplication.swift */,
+				F3203B8323C7609500265268 /* SceneDelegate.swift */,
+				F3203B9D23C7610400265268 /* LaunchScreen.storyboard */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -145,9 +155,9 @@
 		F3203B9923C760C300265268 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F3203BB023C8345400265268 /* RootView.swift */,
 				F3203BAD23C8339400265268 /* Collected Contacts */,
 				F3203BAC23C8337F00265268 /* User QR Code */,
-				F3203BB023C8345400265268 /* RootView.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -155,10 +165,10 @@
 		F3203B9A23C760C700265268 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F3203BAB23C831E300265268 /* Models */,
-				F3203BA823C82C8F00265268 /* State */,
-				F3203B8523C7609500265268 /* QRConnections.xcdatamodeld */,
 				F3203BA623C7636600265268 /* CoreDataManager+Utils.swift */,
+				F3203BAB23C831E300265268 /* Models */,
+				F3203B8523C7609500265268 /* QRConnections.xcdatamodeld */,
+				F3203BA823C82C8F00265268 /* State */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -166,8 +176,9 @@
 		F3203B9B23C760C900265268 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
-				F3203BF223CD13F300265268 /* Protocols */,
+				F3203BF823CD42F400265268 /* UIKit Wrappers */,
 				F3203BD023C9DFDF00265268 /* ImageFilterService.swift */,
+				F3203BF223CD13F300265268 /* Protocols */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -185,6 +196,7 @@
 			children = (
 				F3203BD223C9F20C00265268 /* AppState.swift */,
 				F3203BD423C9F3E900265268 /* UserProfileState.swift */,
+				F326140723CE3928009EC215 /* ContactsState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -200,11 +212,11 @@
 		F3203BAC23C8337F00265268 /* User QR Code */ = {
 			isa = PBXGroup;
 			children = (
-				F3203BCE23C9DAE000265268 /* UserQRCodeView.swift */,
 				F3203BEA23CC977000265268 /* UserQRCodeContainerView.swift */,
-				F3203BEE23CC985100265268 /* UserQRCodeFormView.swift */,
 				F3203BEC23CC97DC00265268 /* UserQRCodeContainerView+ViewModel.swift */,
+				F3203BEE23CC985100265268 /* UserQRCodeFormView.swift */,
 				F3203BF023CC9B1600265268 /* UserQRCodeFormView+ViewModel.swift */,
+				F3203BCE23C9DAE000265268 /* UserQRCodeView.swift */,
 			);
 			path = "User QR Code";
 			sourceTree = "<group>";
@@ -213,8 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				F3203BB223C8368800265268 /* ContactsContainerView.swift */,
-				F3203BB623C844F100265268 /* ContactsListView.swift */,
 				F3203BB423C841A700265268 /* ContactsContainerView+ViewModel.swift */,
+				F3203BB623C844F100265268 /* ContactsListView.swift */,
 			);
 			path = "Collected Contacts";
 			sourceTree = "<group>";
@@ -225,6 +237,7 @@
 				F3203BB823C8467000265268 /* Contact+FilterState.swift */,
 				F3203BBB23C8579400265268 /* Contact+CoreDataClass.swift */,
 				F3203BBC23C8579400265268 /* Contact+CoreDataProperties.swift */,
+				F326140923CE689A009EC215 /* Contact+InitHelpers.swift */,
 				F3203BC123C8588E00265268 /* Contact+FetchHelpers.swift */,
 				F3203BBF23C8584500265268 /* Contact+Status.swift */,
 			);
@@ -247,6 +260,24 @@
 				F3203BF323CD140100265268 /* ContactQRCodeRepresentable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F3203BF823CD42F400265268 /* UIKit Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				F3203BFD23CDF68D00265268 /* Scanner View */,
+			);
+			path = "UIKit Wrappers";
+			sourceTree = "<group>";
+		};
+		F3203BFD23CDF68D00265268 /* Scanner View */ = {
+			isa = PBXGroup;
+			children = (
+				F3203BF923CD430500265268 /* QRCodeScannerView+Coordinator.swift */,
+				F3203BFA23CD430500265268 /* QRCodeScannerView.swift */,
+				F3203BFE23CDF6D100265268 /* ScannerViewControlller.swift */,
+			);
+			path = "Scanner View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,11 +365,13 @@
 				F3203BB323C8368800265268 /* ContactsContainerView.swift in Sources */,
 				F3203BC923C871D300265268 /* PreviewDevice+Utils.swift in Sources */,
 				F3203BB923C8467000265268 /* Contact+FilterState.swift in Sources */,
+				F3203BFB23CD430500265268 /* QRCodeScannerView+Coordinator.swift in Sources */,
 				F3203BC223C8588F00265268 /* Contact+FetchHelpers.swift in Sources */,
 				F3203BC023C8584500265268 /* Contact+Status.swift in Sources */,
 				F3203BA723C7636600265268 /* CoreDataManager+Utils.swift in Sources */,
 				F3203BCF23C9DAE100265268 /* UserQRCodeView.swift in Sources */,
 				F3203B8223C7609500265268 /* AppDelegate.swift in Sources */,
+				F326140823CE3928009EC215 /* ContactsState.swift in Sources */,
 				F3203BB123C8345400265268 /* RootView.swift in Sources */,
 				F3203BC723C8717F00265268 /* SampleData+Contacts.swift in Sources */,
 				F3203BD323C9F20C00265268 /* AppState.swift in Sources */,
@@ -346,9 +379,11 @@
 				F3203BB723C844F100265268 /* ContactsListView.swift in Sources */,
 				F3203BED23CC97DC00265268 /* UserQRCodeContainerView+ViewModel.swift in Sources */,
 				F3203BB523C841A700265268 /* ContactsContainerView+ViewModel.swift in Sources */,
+				F326140A23CE689A009EC215 /* Contact+InitHelpers.swift in Sources */,
 				F3203BEB23CC977000265268 /* UserQRCodeContainerView.swift in Sources */,
 				F3203BF123CC9B1600265268 /* UserQRCodeFormView+ViewModel.swift in Sources */,
 				F3203BEF23CC985100265268 /* UserQRCodeFormView.swift in Sources */,
+				F3203BFF23CDF6D100265268 /* ScannerViewControlller.swift in Sources */,
 				F3203BE223CA31EB00265268 /* SampleData+AppStore.swift in Sources */,
 				F3203BD123C9DFDF00265268 /* ImageFilterService.swift in Sources */,
 				F3203B8723C7609500265268 /* QRConnections.xcdatamodeld in Sources */,
@@ -357,6 +392,7 @@
 				F3203BC523C8714700265268 /* SampleData.swift in Sources */,
 				F3203BD523C9F3E900265268 /* UserProfileState.swift in Sources */,
 				F3203B8423C7609500265268 /* SceneDelegate.swift in Sources */,
+				F3203BFC23CD430500265268 /* QRCodeScannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

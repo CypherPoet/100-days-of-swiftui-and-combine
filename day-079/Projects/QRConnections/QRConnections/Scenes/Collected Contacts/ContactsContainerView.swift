@@ -9,13 +9,17 @@
 import SwiftUI
 
 
-struct ContactsContainerView: View {
+struct ContactsContainerView {
+    @EnvironmentObject private var store: AppStore
+    
     @ObservedObject var viewModel = ViewModel()
+    
+    @State private var isShowingScannerView = false
 }
 
 
-// MARK: - Body
-extension ContactsContainerView {
+// MARK: - View
+extension ContactsContainerView: View {
 
     var body: some View {
         NavigationView {
@@ -27,6 +31,12 @@ extension ContactsContainerView {
             }
             .navigationBarTitle("Collected Contacts")
             .navigationBarItems(trailing: addContactButton)
+            .sheet(isPresented: $isShowingScannerView) {
+                QRCodeScannerView(
+                    simulatedData: "🚀 Rocket Man",
+                    onScanCompleted: self.codeScanCompleted(_:)
+                )
+            }
         }
     }
 }
@@ -56,7 +66,7 @@ extension ContactsContainerView {
     
     private var addContactButton: some View {
         Button(action: {
-            
+            self.isShowingScannerView = true
         }) {
             Image(systemName: "qrcode.viewfinder")
                 .imageScale(.large)
@@ -64,6 +74,30 @@ extension ContactsContainerView {
         }
     }
 }
+
+
+// MARK: - Private Helpers
+private extension ContactsContainerView {
+    
+    func codeScanCompleted(_ result: QRCodeScannerView.Completion) {
+        switch result {
+        case .success(let qrCodeString):
+            createNewContact(from: qrCodeString)
+//            self.store.send(ContactsSideEffect.createContact(qrCodeString))
+        case .failure(let error):
+            print("Scanning failed. Error \(error.localizedDescription)")
+        }
+    }
+    
+    
+    func createNewContact(from qrCodeString: String) {
+        let context = CurrentApp.coreDataManager.backgroundContext
+        let contact = Contact.make(fromName: qrCodeString, using: context)
+
+        self.store.send(ContactsSideEffect.save(contact))
+    }
+}
+
 
 
 // MARK: - Preview
@@ -74,5 +108,6 @@ struct ContactsContainerView_Previews: PreviewProvider {
             viewModel: .init()
         )
         .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
+        .environmentObject(SampleData.appStore)
     }
 }

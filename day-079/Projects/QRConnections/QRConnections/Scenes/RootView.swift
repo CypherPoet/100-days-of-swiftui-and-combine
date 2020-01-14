@@ -25,7 +25,6 @@ struct RootView: View {
 extension RootView {
 
     var body: some View {
-        
         TabView {
             ContactsContainerView(viewModel: .init())
                 .tabItem {
@@ -42,7 +41,6 @@ extension RootView {
                 }
                 .tag(Tab.userQRCode)
         }
-//        .environmentObject(store)
         .edgesIgnoringSafeArea(.top)
     }
 }
