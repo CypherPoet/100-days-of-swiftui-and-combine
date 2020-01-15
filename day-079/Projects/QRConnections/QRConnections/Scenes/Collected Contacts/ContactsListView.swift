@@ -38,38 +38,6 @@ extension ContactsListView {
 extension ContactsListView {}
 
 
-// MARK: - List Item
-extension ContactsListView {
-    
-    struct ListItem: View {
-        // ⚠️ TODO: Clean up other guesses since this is what we need here
-        @ObservedObject var contact: Contact
-        
-        var body: some View {
-            HStack {
-                Text(contact.name)
-            }
-            .contextMenu {
-                Button(action: {
-                    self.toggleStatus()
-                }) {
-                    Text("Mark \(self.contact.status == .contacted ? "Uncontacted" : "Contacted")")
-                }
-            }
-        }
-        
-        
-        func toggleStatus() {
-            guard let context = contact.managedObjectContext else { fatalError() }
-
-            contact.status = (contact.status == .contacted) ? .uncontacted : .contacted
-            CurrentApp.coreDataManager.save(context)
-        }
-    }
-}
-
-
-
 
 // MARK: - Preview
 struct ContactsListView_Previews: PreviewProvider {
