@@ -83,7 +83,6 @@ private extension ContactsContainerView {
         switch result {
         case .success(let qrCodeString):
             createNewContact(from: qrCodeString)
-//            self.store.send(ContactsSideEffect.createContact(qrCodeString))
         case .failure(let error):
             print("Scanning failed. Error \(error.localizedDescription)")
         }

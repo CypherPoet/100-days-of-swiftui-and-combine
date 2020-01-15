@@ -12,7 +12,6 @@ import SwiftUI
 struct ContactsListView: View {
     private let fetchRequest: FetchRequest<Contact>
     
-    
     init(filterState: Contact.FilterState) {
         self.fetchRequest = FetchRequest(fetchRequest: Contact.fetchRequest(for: filterState))
     }
@@ -24,9 +23,7 @@ struct ContactsListView: View {
 extension ContactsListView {
 
     var body: some View {
-        List(contacts) { contact in
-            Text(contact.name)
-        }
+        List(contacts, rowContent: ListItem.init)
     }
 }
 
@@ -38,7 +35,37 @@ extension ContactsListView {
 
 
 // MARK: - View Variables
+extension ContactsListView {}
+
+
+// MARK: - List Item
 extension ContactsListView {
+    
+    struct ListItem: View {
+        // ⚠️ TODO: Clean up other guesses since this is what we need here
+        @ObservedObject var contact: Contact
+        
+        var body: some View {
+            HStack {
+                Text(contact.name)
+            }
+            .contextMenu {
+                Button(action: {
+                    self.toggleStatus()
+                }) {
+                    Text("Mark \(self.contact.status == .contacted ? "Uncontacted" : "Contacted")")
+                }
+            }
+        }
+        
+        
+        func toggleStatus() {
+            guard let context = contact.managedObjectContext else { fatalError() }
+
+            contact.status = (contact.status == .contacted) ? .uncontacted : .contacted
+            CurrentApp.coreDataManager.save(context)
+        }
+    }
 }
 
 
@@ -48,18 +75,16 @@ extension ContactsListView {
 struct ContactsListView_Previews: PreviewProvider {
     static var previews: some View {
         let managedObjectContext = CurrentApp.coreDataManager.mainContext
-        
-        _ = SampleData.makeContacts(in: managedObjectContext)
+        SampleData.makeContacts(in: managedObjectContext)
         
         try? managedObjectContext.save()
         
         return Group {
-            ContactsListView(filterState: .all)
+            ContactsListView(filterState: .contacted)
                 .environment(\.managedObjectContext, managedObjectContext)
         
             PreviewDevice.ApplicationSupportText()
         }
     }
 }
-
 

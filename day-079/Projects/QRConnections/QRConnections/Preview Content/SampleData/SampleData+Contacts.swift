@@ -19,6 +19,7 @@ extension SampleData {
         UUID(uuidString: "611132c1-2276-435d-b7fd-5e1f54e6f203")!,
     ]
     
+    
     @discardableResult
     static func makeContacts(in context: NSManagedObjectContext) -> [Contact] {
         contactUUIDs.enumerated().map { (index, uuid) in
