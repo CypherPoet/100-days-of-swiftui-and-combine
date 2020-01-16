@@ -9,21 +9,30 @@
 import SwiftUI
 
 
-struct ContactsListView: View {
+struct ContactsListView {
     private let fetchRequest: FetchRequest<Contact>
     
-    init(filterState: Contact.FilterState) {
+    var viewModel: ViewModel
+    
+    
+    init(
+        viewModel: ViewModel = .init(),
+        filterState: Contact.FilterState
+    ) {
+        self.viewModel = viewModel
         self.fetchRequest = FetchRequest(fetchRequest: Contact.fetchRequest(for: filterState))
     }
 }
 
 
 
-// MARK: - Body
-extension ContactsListView {
+// MARK: - View
+extension ContactsListView: View {
 
     var body: some View {
-        List(contacts, rowContent: ListItem.init)
+        List(contacts) { contact in
+            ListItem(contact: contact, onScheduleNotification: self.scheduleNotification(for:))
+        }
     }
 }
 
@@ -36,6 +45,16 @@ extension ContactsListView {
 
 // MARK: - View Variables
 extension ContactsListView {}
+
+
+// MARK: - Private Helpers
+private extension ContactsListView {
+    
+    func scheduleNotification(for contact: Contact) {
+        viewModel.scheduleNotification(for: contact)
+    }
+}
+
 
 
 

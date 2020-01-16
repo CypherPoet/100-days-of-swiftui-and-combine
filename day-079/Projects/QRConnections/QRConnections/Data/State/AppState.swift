@@ -17,9 +17,7 @@ struct AppState {
 }
 
 
-
 //enum AppSideEffect: SideEffect {}
-
 
 
 enum AppAction {

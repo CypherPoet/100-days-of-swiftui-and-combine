@@ -10,13 +10,17 @@ import Foundation
 import CypherPoetCoreDataKit_CoreDataManager
 
 
+
 struct CurrentApplication {
     var coreDataManager: CoreDataManager
     var imageFilteringService: ImageFilterService
+    var userNotificationsService: UserNotificationsService
 }
+
 
 
 var CurrentApp = CurrentApplication(
     coreDataManager: .shared,
-    imageFilteringService: .shared
+    imageFilteringService: .shared,
+    userNotificationsService: .shared
 )

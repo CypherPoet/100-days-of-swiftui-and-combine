@@ -46,6 +46,9 @@
 		F326140823CE3928009EC215 /* ContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326140723CE3928009EC215 /* ContactsState.swift */; };
 		F326140A23CE689A009EC215 /* Contact+InitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326140923CE689A009EC215 /* Contact+InitHelpers.swift */; };
 		F326140C23CFB650009EC215 /* ContactsListView+ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326140B23CFB650009EC215 /* ContactsListView+ListItem.swift */; };
+		F326140E23CFFDE2009EC215 /* ContactsListView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326140D23CFFDE2009EC215 /* ContactsListView+ViewModel.swift */; };
+		F326141323D1073A009EC215 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326141223D1073A009EC215 /* LocalNotifications.swift */; };
+		F326141523D107FC009EC215 /* UserNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326141423D107FC009EC215 /* UserNotificationsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +90,9 @@
 		F326140723CE3928009EC215 /* ContactsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsState.swift; sourceTree = "<group>"; };
 		F326140923CE689A009EC215 /* Contact+InitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+InitHelpers.swift"; sourceTree = "<group>"; };
 		F326140B23CFB650009EC215 /* ContactsListView+ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactsListView+ListItem.swift"; sourceTree = "<group>"; };
+		F326140D23CFFDE2009EC215 /* ContactsListView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactsListView+ViewModel.swift"; sourceTree = "<group>"; };
+		F326141223D1073A009EC215 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
+		F326141423D107FC009EC215 /* UserNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +184,7 @@
 		F3203B9B23C760C900265268 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F326141123D10725009EC215 /* Notifications */,
 				F3203BF823CD42F400265268 /* UIKit Wrappers */,
 				F3203BD023C9DFDF00265268 /* ImageFilterService.swift */,
 				F3203BF223CD13F300265268 /* Protocols */,
@@ -229,6 +236,7 @@
 				F3203BB223C8368800265268 /* ContactsContainerView.swift */,
 				F3203BB423C841A700265268 /* ContactsContainerView+ViewModel.swift */,
 				F3203BB623C844F100265268 /* ContactsListView.swift */,
+				F326140D23CFFDE2009EC215 /* ContactsListView+ViewModel.swift */,
 				F326140B23CFB650009EC215 /* ContactsListView+ListItem.swift */,
 			);
 			path = "Collected Contacts";
@@ -281,6 +289,15 @@
 				F3203BFE23CDF6D100265268 /* ScannerViewControlller.swift */,
 			);
 			path = "Scanner View";
+			sourceTree = "<group>";
+		};
+		F326141123D10725009EC215 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				F326141223D1073A009EC215 /* LocalNotifications.swift */,
+				F326141423D107FC009EC215 /* UserNotificationsService.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,8 +391,11 @@
 				F3203BA723C7636600265268 /* CoreDataManager+Utils.swift in Sources */,
 				F3203BCF23C9DAE100265268 /* UserQRCodeView.swift in Sources */,
 				F3203B8223C7609500265268 /* AppDelegate.swift in Sources */,
+				F326140E23CFFDE2009EC215 /* ContactsListView+ViewModel.swift in Sources */,
+				F326141323D1073A009EC215 /* LocalNotifications.swift in Sources */,
 				F326140823CE3928009EC215 /* ContactsState.swift in Sources */,
 				F3203BB123C8345400265268 /* RootView.swift in Sources */,
+				F326141523D107FC009EC215 /* UserNotificationsService.swift in Sources */,
 				F3203BC723C8717F00265268 /* SampleData+Contacts.swift in Sources */,
 				F3203BD323C9F20C00265268 /* AppState.swift in Sources */,
 				F3203BF423CD140100265268 /* ContactQRCodeRepresentable.swift in Sources */,
