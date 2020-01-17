@@ -16,5 +16,17 @@ extension Contact {
     }
 }
 
-
 extension Contact.Status: CaseIterable {}
+
+
+extension Contact.Status {
+
+    var sfSymbolName: String {
+        switch self {
+        case .contacted:
+            return "person.crop.circle.badge.checkmark"
+        case .uncontacted:
+            return "person.crop.circle.badge.xmark"
+        }
+    }
+}

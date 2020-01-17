@@ -13,9 +13,11 @@ extension ContactsListView {
     struct ListItem {
         @ObservedObject var contact: Contact
         
+        let isShowingStatusIndicator: Bool
         let onScheduleNotification: ((Contact) -> Void)
     }
 }
+
 
 
 // MARK: - View
@@ -23,6 +25,13 @@ extension ContactsListView.ListItem: View {
     var body: some View {
         HStack {
             Text(contact.name)
+            
+            if isShowingStatusIndicator {
+                Spacer()
+                
+                Image(systemName: contact.status.sfSymbolName)
+                    .foregroundColor(contact.status == .contacted ? Color.green : Color.secondary)
+            }
         }
         .contextMenu { self.contextMenu }
     }
@@ -38,7 +47,11 @@ private extension ContactsListView.ListItem {
                self.toggleStatus()
             }) {
                 Text("Mark \(self.contact.status == .contacted ? "Uncontacted" : "Contacted")")
-                Image(systemName: "person.crop.circle.badge.\(self.contact.status == .contacted ? "xmark" : "checkmark")")
+                Image(
+                    systemName: self.contact.status == .contacted ?
+                        Contact.Status.uncontacted.sfSymbolName
+                        : Contact.Status.contacted.sfSymbolName
+                )
             }
             
             Button(action: {

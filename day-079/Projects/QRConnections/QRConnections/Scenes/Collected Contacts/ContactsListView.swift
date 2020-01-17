@@ -12,7 +12,7 @@ import SwiftUI
 struct ContactsListView {
     private let fetchRequest: FetchRequest<Contact>
     
-    var viewModel: ViewModel
+    @ObservedObject var viewModel: ViewModel
     
     
     init(
@@ -31,7 +31,11 @@ extension ContactsListView: View {
 
     var body: some View {
         List(contacts) { contact in
-            ListItem(contact: contact, onScheduleNotification: self.scheduleNotification(for:))
+            ListItem(
+                contact: contact,
+                isShowingStatusIndicator: self.viewModel.shouldShowContactStatusIndicator,
+                onScheduleNotification: self.scheduleNotification(for:)
+            )
         }
     }
 }
@@ -67,7 +71,10 @@ struct ContactsListView_Previews: PreviewProvider {
         try? managedObjectContext.save()
         
         return Group {
-            ContactsListView(filterState: .contacted)
+            ContactsListView(
+                viewModel: .init(filterState: .all),
+                filterState: .all
+            )
                 .environment(\.managedObjectContext, managedObjectContext)
         
             PreviewDevice.ApplicationSupportText()

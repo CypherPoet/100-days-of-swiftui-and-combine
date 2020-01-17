@@ -60,7 +60,10 @@ extension ContactsContainerView {
     
     
     private var contactsList: some View {
-        ContactsListView(filterState: viewModel.filterState)
+        ContactsListView(
+            viewModel: .init(filterState: viewModel.filterState),
+            filterState: viewModel.filterState
+        )
     }
     
     

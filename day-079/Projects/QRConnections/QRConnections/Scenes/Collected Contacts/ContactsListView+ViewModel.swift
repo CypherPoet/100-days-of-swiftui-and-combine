@@ -16,13 +16,16 @@ extension ContactsListView {
     final class ViewModel: ObservableObject {
         private var subscriptions = Set<AnyCancellable>()
 
+        
         // MARK: - Published Outputs
-        @Published var someValue: String = ""
+        @Published var filterState: Contact.FilterState
         
 
         // MARK: - Init
-        init() {
-            setupSubscribers()
+        init(
+            filterState: Contact.FilterState = .all
+        ) {
+            self.filterState = filterState
         }
     }
 }
@@ -35,6 +38,7 @@ extension ContactsListView.ViewModel {
 
 // MARK: - Computeds
 extension ContactsListView.ViewModel {
+    var shouldShowContactStatusIndicator: Bool { filterState == .all }
 }
 
 
@@ -92,12 +96,4 @@ extension ContactsListView.ViewModel {
 
 
 // MARK: - Private Helpers
-private extension ContactsListView.ViewModel {
-
-    func setupSubscribers() {
-//        someValuePublisher
-//            .receive(on: DispatchQueue.main)
-//            .assign(to: \.someValue, on: self)
-//            .store(in: &subscriptions)
-    }
-}
+private extension ContactsListView.ViewModel {}
