@@ -15,6 +15,7 @@ struct ContactsContainerView {
     @ObservedObject var viewModel = ViewModel()
     
     @State private var isShowingScannerView = false
+    @State private var isShowingSortingActionSheet = false
 }
 
 
@@ -30,13 +31,17 @@ extension ContactsContainerView: View {
                 contactsList
             }
             .navigationBarTitle("Collected Contacts")
-            .navigationBarItems(trailing: addContactButton)
+            .navigationBarItems(
+                leading: changeSortingButton,
+                trailing: addContactButton
+            )
             .sheet(isPresented: $isShowingScannerView) {
                 QRCodeScannerView(
                     simulatedData: "🚀 Rocket Man",
                     onScanCompleted: self.codeScanCompleted(_:)
                 )
             }
+            .actionSheet(isPresented: $isShowingSortingActionSheet) { self.sortingActionSheet }
         }
     }
 }
@@ -61,9 +66,23 @@ extension ContactsContainerView {
     
     private var contactsList: some View {
         ContactsListView(
-            viewModel: .init(filterState: viewModel.filterState),
-            filterState: viewModel.filterState
+            viewModel: .init(
+                filterState: viewModel.filterState
+            ),
+            filterState: viewModel.filterState,
+            sortingState: viewModel.sortingState
         )
+    }
+    
+    
+    private var changeSortingButton: some View {
+        Button(action: {
+            self.isShowingSortingActionSheet = true
+        }) {
+            Image(systemName: "arrow.up.and.down")
+                .imageScale(.large)
+            Text("Sorting")
+        }
     }
     
     
@@ -75,6 +94,21 @@ extension ContactsContainerView {
                 .imageScale(.large)
             Text("Scan")
         }
+    }
+    
+    
+    private var sortingActionSheet: ActionSheet {
+        let actionButtons: [ActionSheet.Button] = Contact.SortingState.allCases.map { sortingState in
+            .default(
+                Text(sortingState.displayName),
+                action: { self.viewModel.sortingState = sortingState }
+            )
+        }
+        
+        return ActionSheet(
+            title: Text("Sort contacts in the list"),
+            buttons: actionButtons + [.cancel()]
+        )
     }
 }
 

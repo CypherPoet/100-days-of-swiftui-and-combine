@@ -20,8 +20,10 @@ extension Contact {
         let contact = Contact(context: context)
         
         contact.name = name
-        contact.uuid = UUID()
         contact.status = status
+
+        contact.uuid = UUID()
+        contact.dateAdded = Date()
         
         return contact
     }

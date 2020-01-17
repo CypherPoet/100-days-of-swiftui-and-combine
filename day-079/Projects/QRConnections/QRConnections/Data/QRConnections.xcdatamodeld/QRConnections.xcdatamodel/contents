@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Contact" representedClassName="Contact" syncable="YES">
+        <attribute name="dateAdded" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="qrCodeData" optional="YES" attributeType="Binary"/>
         <attribute name="statusValue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -12,6 +13,6 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Contact" positionX="6.3984375" positionY="-108.1640625" width="128" height="103"/>
+        <element name="Contact" positionX="6.3984375" positionY="-108.1640625" width="128" height="118"/>
     </elements>
 </model>

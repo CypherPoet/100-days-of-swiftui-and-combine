@@ -18,16 +18,31 @@ extension Contact {
     }
     
     
-    enum SortDescriptors {
-        static let `default` = [
-            NSSortDescriptor(keyPath: \Contact.name, ascending: true)
-        ]
+    public enum SortDescriptors {
+        public static let byName = NSSortDescriptor(keyPath: \Contact.name, ascending: true)
+        public static let byMostRecent = NSSortDescriptor(keyPath: \Contact.dateAdded, ascending: false)
+        public static let byOldestAdded = NSSortDescriptor(keyPath: \Contact.dateAdded, ascending: true)
+        
+        
+        public static let `default` = Self.byName
+        
+        
+        public static func forSortingState(_ sortingState: Contact.SortingState) -> [NSSortDescriptor] {
+            switch sortingState {
+            case .byName:
+                return [Self.byName]
+            case .byMostRecent:
+                return [Self.byMostRecent, byName]
+            case .byOldestAdded:
+                return [Self.byOldestAdded, byName]
+            }
+        }
     }
     
     
-    enum Predicate {
+    public enum Predicate {
         
-        static func contacts(for status: Status) -> NSPredicate {
+        public static func contacts(for status: Contact.Status) -> NSPredicate {
             let keyword = NSComparisonPredicate.keyword(for: .equalTo)
             
             return NSPredicate(
@@ -40,10 +55,13 @@ extension Contact {
     
     
     
-    static func fetchRequest(for filterState: FilterState) -> NSFetchRequest<Contact> {
+    @nonobjc public class func fetchRequest(
+        filteringOn filterState: FilterState,
+        sortingBy sortingState: SortingState
+    ) -> NSFetchRequest<Contact> {
         let fetchRequest: NSFetchRequest<Contact> = Self.fetchRequest()
         
-        fetchRequest.sortDescriptors = Self.SortDescriptors.default
+        fetchRequest.sortDescriptors = Self.SortDescriptors.forSortingState(sortingState)
         
         if let status = filterState.contactStatus {
             fetchRequest.predicate = Self.Predicate.contacts(for: status)
@@ -51,5 +69,4 @@ extension Contact {
         
         return fetchRequest
     }
-
 }

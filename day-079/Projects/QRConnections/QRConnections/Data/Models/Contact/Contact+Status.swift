@@ -10,7 +10,7 @@ import Foundation
 
 
 extension Contact {
-    enum Status: Int16 {
+    public enum Status: Int16 {
         case contacted
         case uncontacted
     }

@@ -25,6 +25,7 @@ extension SampleData {
         contactUUIDs.enumerated().map { (index, uuid) in
             let contact = Contact(context: context)
             
+            contact.dateAdded = Date()
             contact.status = Contact.Status.allCases.randomElement()!
             contact.uuid = uuid
             contact.name = "Contact \(index + 1)"

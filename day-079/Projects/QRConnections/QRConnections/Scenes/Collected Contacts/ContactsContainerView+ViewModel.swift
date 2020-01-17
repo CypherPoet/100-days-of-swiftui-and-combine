@@ -19,6 +19,7 @@ extension ContactsContainerView {
 
         // MARK: - Published Properties
         @Published var filterState: Contact.FilterState = .all
+        @Published var sortingState: Contact.SortingState = .byName
     }
 }
 

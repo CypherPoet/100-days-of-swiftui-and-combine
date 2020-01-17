@@ -13,7 +13,8 @@ import CoreData
 
 extension Contact: ContactQRCodeRepresentable {
     @NSManaged public var qrCodeData: Data?
-    
+
+    @NSManaged public var dateAdded: Date
     @NSManaged public var statusValue: Int16
     
     var status: Status {

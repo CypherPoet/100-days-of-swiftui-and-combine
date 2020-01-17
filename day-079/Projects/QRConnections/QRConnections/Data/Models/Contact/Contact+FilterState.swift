@@ -10,7 +10,7 @@ import SwiftUI
 
 
 extension Contact {
-    enum FilterState: String {
+    public enum FilterState: String {
         case all
         case contacted
         case uncontacted
@@ -20,14 +20,14 @@ extension Contact {
 extension Contact.FilterState: CaseIterable {}
 
 extension Contact.FilterState: Identifiable {
-    var id: String { self.rawValue }
+    public var id: String { self.rawValue }
 }
 
 
 // MARK: -  Computeds
 extension Contact.FilterState {
     
-    var displayName: String {
+    public var displayName: String {
         switch self {
         case .all:
             return "All"

@@ -49,6 +49,7 @@
 		F326140E23CFFDE2009EC215 /* ContactsListView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326140D23CFFDE2009EC215 /* ContactsListView+ViewModel.swift */; };
 		F326141323D1073A009EC215 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326141223D1073A009EC215 /* LocalNotifications.swift */; };
 		F326141523D107FC009EC215 /* UserNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326141423D107FC009EC215 /* UserNotificationsService.swift */; };
+		F326141723D14EEF009EC215 /* Contact+SortingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326141623D14EEF009EC215 /* Contact+SortingState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		F326140D23CFFDE2009EC215 /* ContactsListView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactsListView+ViewModel.swift"; sourceTree = "<group>"; };
 		F326141223D1073A009EC215 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
 		F326141423D107FC009EC215 /* UserNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationsService.swift; sourceTree = "<group>"; };
+		F326141623D14EEF009EC215 /* Contact+SortingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+SortingState.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				F3203BB823C8467000265268 /* Contact+FilterState.swift */,
+				F326141623D14EEF009EC215 /* Contact+SortingState.swift */,
 				F3203BBB23C8579400265268 /* Contact+CoreDataClass.swift */,
 				F3203BBC23C8579400265268 /* Contact+CoreDataProperties.swift */,
 				F326140923CE689A009EC215 /* Contact+InitHelpers.swift */,
@@ -401,6 +404,7 @@
 				F3203BF423CD140100265268 /* ContactQRCodeRepresentable.swift in Sources */,
 				F3203BB723C844F100265268 /* ContactsListView.swift in Sources */,
 				F3203BED23CC97DC00265268 /* UserQRCodeContainerView+ViewModel.swift in Sources */,
+				F326141723D14EEF009EC215 /* Contact+SortingState.swift in Sources */,
 				F3203BB523C841A700265268 /* ContactsContainerView+ViewModel.swift in Sources */,
 				F326140A23CE689A009EC215 /* Contact+InitHelpers.swift in Sources */,
 				F3203BEB23CC977000265268 /* UserQRCodeContainerView.swift in Sources */,

@@ -17,10 +17,17 @@ struct ContactsListView {
     
     init(
         viewModel: ViewModel = .init(),
-        filterState: Contact.FilterState
+        filterState: Contact.FilterState,
+        sortingState: Contact.SortingState
     ) {
         self.viewModel = viewModel
-        self.fetchRequest = FetchRequest(fetchRequest: Contact.fetchRequest(for: filterState))
+        
+        self.fetchRequest = FetchRequest(
+            fetchRequest: Contact.fetchRequest(
+                filteringOn: filterState,
+                sortingBy: sortingState
+            )
+        )
     }
 }
 
@@ -73,7 +80,8 @@ struct ContactsListView_Previews: PreviewProvider {
         return Group {
             ContactsListView(
                 viewModel: .init(filterState: .all),
-                filterState: .all
+                filterState: .all,
+                sortingState: .byName
             )
                 .environment(\.managedObjectContext, managedObjectContext)
         
