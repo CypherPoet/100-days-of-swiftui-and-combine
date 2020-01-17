@@ -90,10 +90,11 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 81:** [_Project 16: QRConnections (Part Three)_](./day-081/)
 - **Day 82:** [_Project 16: QRConnections (Part Four)_](./day-082/)
 - **Day 83:** [_Project 16: QRConnections (Part Five)_](./day-083/)
+- **Day 84:** [_Project 16: QRConnections (Part Six)_](./day-084/)
 
 </details>
 
-- **Day 84:** [_Project 16: QRConnections (Part Six)_](./day-084/)
+- **Day 85:** [_Project 16: QRConnections (Part Seven)_](./day-085/)
 
 
 
@@ -255,6 +256,17 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 
 <div style="text-align: center;">
   <img src="./day-068/Projects/PlaceCase/Screenshots/day-71-recording-1.gif" width="300px"/>
+</div>
+
+<br/>
+<br/>
+
+
+
+- [Project 16: QRConnections](./day-079/Projects/QRConnections/)
+
+<div style="text-align: center;">
+  <img src="./day-079/Projects/QRConnections/Screenshots/day-83-recording-1.gif" width="300px"/>
 </div>
 
 <br/>
