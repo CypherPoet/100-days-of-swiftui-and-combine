@@ -32,11 +32,6 @@ From the project description:
 My intuition for when to use `@GestureState` vs `@State` when updating the UI via gestures remains a bit tenuous -- but I'm definitely seeing how the former can be useful: `@GestureState` is way of telling SwiftUI that this value can _only_ be mutated during a gesture's `updating` callback. `@State` is much more liberal.
 
 
+# Code
 
-## Making vibrations with UINotificationFeedbackGenerator and Core Haptics
-
-
-
-
-
-## Disabling user interactivity with allowsHitTesting()
+The concepts project to go along with this day can be found [here](./Projects/Project17Concepts/).
