@@ -23,6 +23,7 @@
 		F326145623D31201009EC215 /* CoreHapticsExample+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326145523D31201009EC215 /* CoreHapticsExample+ViewModel.swift */; };
 		F326145923D319D7009EC215 /* AllowsHitTestingExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326145823D319D7009EC215 /* AllowsHitTestingExample.swift */; };
 		F326145B23D31E94009EC215 /* ContentShapeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326145A23D31E94009EC215 /* ContentShapeExample.swift */; };
+		F378A9B123D408FB00296A76 /* ReducingMotionExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9B023D408FB00296A76 /* ReducingMotionExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		F326145523D31201009EC215 /* CoreHapticsExample+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreHapticsExample+ViewModel.swift"; sourceTree = "<group>"; };
 		F326145823D319D7009EC215 /* AllowsHitTestingExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowsHitTestingExample.swift; sourceTree = "<group>"; };
 		F326145A23D31E94009EC215 /* ContentShapeExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentShapeExample.swift; sourceTree = "<group>"; };
+		F378A9B023D408FB00296A76 /* ReducingMotionExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducingMotionExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				F326144F23D2AA98009EC215 /* Gestures */,
 				F326143F23D1699C009EC215 /* RootView.swift */,
+				F378A9AF23D4089800296A76 /* Accessibility */,
 				F326145723D319C3009EC215 /* Hit Testing */,
 				F326145023D2AAAA009EC215 /* Haptics */,
 			);
@@ -159,6 +162,14 @@
 				F326145A23D31E94009EC215 /* ContentShapeExample.swift */,
 			);
 			path = "Hit Testing";
+			sourceTree = "<group>";
+		};
+		F378A9AF23D4089800296A76 /* Accessibility */ = {
+			isa = PBXGroup;
+			children = (
+				F378A9B023D408FB00296A76 /* ReducingMotionExample.swift */,
+			);
+			path = Accessibility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +248,7 @@
 				F326145923D319D7009EC215 /* AllowsHitTestingExample.swift in Sources */,
 				F326145423D2FF4B009EC215 /* CoreHapticsExample.swift in Sources */,
 				F326142523D16901009EC215 /* AppDelegate.swift in Sources */,
+				F378A9B123D408FB00296A76 /* ReducingMotionExample.swift in Sources */,
 				F326144823D176E7009EC215 /* BasicLongPressGestureExample.swift in Sources */,
 				F326145223D2AAB7009EC215 /* UIKitHapticsExample.swift in Sources */,
 				F326142723D16901009EC215 /* SceneDelegate.swift in Sources */,

@@ -70,6 +70,13 @@ extension RootView: View {
                         destination: ContentShapeExample()
                     )
                 }
+                
+                Section(header: Text("Accessbility")) {
+                    NavigationLink(
+                        "Reducing Motion",
+                        destination: ReducingMotionExample()
+                    )
+                }
             }
             .navigationBarTitle("Project 17 Concepts")
             .listStyle(GroupedListStyle())
