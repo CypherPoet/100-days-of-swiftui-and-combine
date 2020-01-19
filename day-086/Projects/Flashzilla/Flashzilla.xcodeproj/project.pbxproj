@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F378A9BF23D438AE00296A76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9BE23D438AE00296A76 /* AppDelegate.swift */; };
+		F378A9C123D438AE00296A76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9C023D438AE00296A76 /* SceneDelegate.swift */; };
+		F378A9C423D438AE00296A76 /* Flashzilla.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F378A9C223D438AE00296A76 /* Flashzilla.xcdatamodeld */; };
+		F378A9C823D438B200296A76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378A9C723D438B200296A76 /* Assets.xcassets */; };
+		F378A9CB23D438B200296A76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378A9CA23D438B200296A76 /* Preview Assets.xcassets */; };
+		F378A9DA23D4393100296A76 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9D923D4393100296A76 /* RootView.swift */; };
+		F378A9E223D439B700296A76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F378A9E023D439B700296A76 /* LaunchScreen.storyboard */; };
+		F378A9E423D43A1700296A76 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9E323D43A1700296A76 /* PreviewData.swift */; };
+		F378A9E623D43A6900296A76 /* CoreDataManager+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9E523D43A6900296A76 /* CoreDataManager+Utils.swift */; };
+		F378A9E823D43B6A00296A76 /* CurrentApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9E723D43B6A00296A76 /* CurrentApplication.swift */; };
+		F378A9EB23D43C3200296A76 /* CypherPoetSwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = F378A9EA23D43C3200296A76 /* CypherPoetSwiftUIKit */; };
+		F378A9EE23D43C5600296A76 /* CypherPoetCoreDataKit in Frameworks */ = {isa = PBXBuildFile; productRef = F378A9ED23D43C5600296A76 /* CypherPoetCoreDataKit */; };
+		F378A9F123D43C6F00296A76 /* CypherPoetSwiftUIAnimationKit in Frameworks */ = {isa = PBXBuildFile; productRef = F378A9F023D43C6F00296A76 /* CypherPoetSwiftUIAnimationKit */; };
+		F378A9F323D43CAA00296A76 /* PreviewData+Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9F223D43CA900296A76 /* PreviewData+Cards.swift */; };
+		F378A9F623D44E3900296A76 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9F423D44E3800296A76 /* Card+CoreDataClass.swift */; };
+		F378A9F723D44E3900296A76 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9F523D44E3900296A76 /* Card+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F378A9BB23D438AE00296A76 /* Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F378A9BE23D438AE00296A76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F378A9C023D438AE00296A76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F378A9C323D438AE00296A76 /* Flashzilla.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flashzilla.xcdatamodel; sourceTree = "<group>"; };
+		F378A9C723D438B200296A76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F378A9CA23D438B200296A76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F378A9CF23D438B200296A76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F378A9D923D4393100296A76 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		F378A9E123D439B700296A76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Flashzilla/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		F378A9E323D43A1700296A76 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		F378A9E523D43A6900296A76 /* CoreDataManager+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+Utils.swift"; sourceTree = "<group>"; };
+		F378A9E723D43B6A00296A76 /* CurrentApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentApplication.swift; sourceTree = "<group>"; };
+		F378A9F223D43CA900296A76 /* PreviewData+Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewData+Cards.swift"; sourceTree = "<group>"; };
+		F378A9F423D44E3800296A76 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F378A9F523D44E3900296A76 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F378A9B823D438AE00296A76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F378A9EB23D43C3200296A76 /* CypherPoetSwiftUIKit in Frameworks */,
+				F378A9EE23D43C5600296A76 /* CypherPoetCoreDataKit in Frameworks */,
+				F378A9F123D43C6F00296A76 /* CypherPoetSwiftUIAnimationKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F378A9B223D438AE00296A76 = {
+			isa = PBXGroup;
+			children = (
+				F378A9BD23D438AE00296A76 /* Flashzilla */,
+				F378A9BC23D438AE00296A76 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F378A9BC23D438AE00296A76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F378A9BB23D438AE00296A76 /* Flashzilla.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F378A9BD23D438AE00296A76 /* Flashzilla */ = {
+			isa = PBXGroup;
+			children = (
+				F378A9CF23D438B200296A76 /* Info.plist */,
+				F378A9D523D438D600296A76 /* App */,
+				F378A9DB23D4394300296A76 /* Data */,
+				F378A9C923D438B200296A76 /* Preview Content */,
+				F378A9D723D438DD00296A76 /* Resources */,
+				F378A9D823D438E000296A76 /* Reusables */,
+				F378A9D623D438D900296A76 /* Scenes */,
+			);
+			path = Flashzilla;
+			sourceTree = "<group>";
+		};
+		F378A9C923D438B200296A76 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F378A9DE23D4397100296A76 /* Preview Data */,
+				F378A9CA23D438B200296A76 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F378A9D523D438D600296A76 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F378A9E023D439B700296A76 /* LaunchScreen.storyboard */,
+				F378A9BE23D438AE00296A76 /* AppDelegate.swift */,
+				F378A9E723D43B6A00296A76 /* CurrentApplication.swift */,
+				F378A9C023D438AE00296A76 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F378A9D623D438D900296A76 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F378A9D923D4393100296A76 /* RootView.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F378A9D723D438DD00296A76 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F378A9C723D438B200296A76 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F378A9D823D438E000296A76 /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		F378A9DB23D4394300296A76 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F378A9DD23D4396000296A76 /* Models */,
+				F378A9DC23D4395D00296A76 /* State */,
+				F378A9E523D43A6900296A76 /* CoreDataManager+Utils.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F378A9DC23D4395D00296A76 /* State */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		F378A9DD23D4396000296A76 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F378A9DF23D4399000296A76 /* Card */,
+				F378A9C223D438AE00296A76 /* Flashzilla.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F378A9DE23D4397100296A76 /* Preview Data */ = {
+			isa = PBXGroup;
+			children = (
+				F378A9E323D43A1700296A76 /* PreviewData.swift */,
+				F378A9F223D43CA900296A76 /* PreviewData+Cards.swift */,
+			);
+			path = "Preview Data";
+			sourceTree = "<group>";
+		};
+		F378A9DF23D4399000296A76 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				F378A9F423D44E3800296A76 /* Card+CoreDataClass.swift */,
+				F378A9F523D44E3900296A76 /* Card+CoreDataProperties.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F378A9BA23D438AE00296A76 /* Flashzilla */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F378A9D223D438B200296A76 /* Build configuration list for PBXNativeTarget "Flashzilla" */;
+			buildPhases = (
+				F378A9B723D438AE00296A76 /* Sources */,
+				F378A9B823D438AE00296A76 /* Frameworks */,
+				F378A9B923D438AE00296A76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Flashzilla;
+			packageProductDependencies = (
+				F378A9EA23D43C3200296A76 /* CypherPoetSwiftUIKit */,
+				F378A9ED23D43C5600296A76 /* CypherPoetCoreDataKit */,
+				F378A9F023D43C6F00296A76 /* CypherPoetSwiftUIAnimationKit */,
+			);
+			productName = Flashzilla;
+			productReference = F378A9BB23D438AE00296A76 /* Flashzilla.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F378A9B323D438AE00296A76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = CypherPoet;
+				TargetAttributes = {
+					F378A9BA23D438AE00296A76 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = F378A9B623D438AE00296A76 /* Build configuration list for PBXProject "Flashzilla" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F378A9B223D438AE00296A76;
+			packageReferences = (
+				F378A9E923D43C3200296A76 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
+				F378A9EC23D43C5600296A76 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */,
+				F378A9EF23D43C6E00296A76 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIAnimationKit" */,
+			);
+			productRefGroup = F378A9BC23D438AE00296A76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F378A9BA23D438AE00296A76 /* Flashzilla */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F378A9B923D438AE00296A76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F378A9E223D439B700296A76 /* LaunchScreen.storyboard in Resources */,
+				F378A9CB23D438B200296A76 /* Preview Assets.xcassets in Resources */,
+				F378A9C823D438B200296A76 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F378A9B723D438AE00296A76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F378A9F623D44E3900296A76 /* Card+CoreDataClass.swift in Sources */,
+				F378A9F723D44E3900296A76 /* Card+CoreDataProperties.swift in Sources */,
+				F378A9E823D43B6A00296A76 /* CurrentApplication.swift in Sources */,
+				F378A9E423D43A1700296A76 /* PreviewData.swift in Sources */,
+				F378A9DA23D4393100296A76 /* RootView.swift in Sources */,
+				F378A9C423D438AE00296A76 /* Flashzilla.xcdatamodeld in Sources */,
+				F378A9BF23D438AE00296A76 /* AppDelegate.swift in Sources */,
+				F378A9E623D43A6900296A76 /* CoreDataManager+Utils.swift in Sources */,
+				F378A9F323D43CAA00296A76 /* PreviewData+Cards.swift in Sources */,
+				F378A9C123D438AE00296A76 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F378A9E023D439B700296A76 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F378A9E123D439B700296A76 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F378A9D023D438B200296A76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F378A9D123D438B200296A76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F378A9D323D438B200296A76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Flashzilla/Preview Content\"";
+				DEVELOPMENT_TEAM = QRXXH2RKAG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Flashzilla/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.cypherpoet.Flashzilla;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F378A9D423D438B200296A76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Flashzilla/Preview Content\"";
+				DEVELOPMENT_TEAM = QRXXH2RKAG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Flashzilla/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.cypherpoet.Flashzilla;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F378A9B623D438AE00296A76 /* Build configuration list for PBXProject "Flashzilla" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F378A9D023D438B200296A76 /* Debug */,
+				F378A9D123D438B200296A76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F378A9D223D438B200296A76 /* Build configuration list for PBXNativeTarget "Flashzilla" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F378A9D323D438B200296A76 /* Debug */,
+				F378A9D423D438B200296A76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F378A9E923D43C3200296A76 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.33;
+			};
+		};
+		F378A9EC23D43C5600296A76 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetCoreDataKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.6;
+			};
+		};
+		F378A9EF23D43C6E00296A76 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIAnimationKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetSwiftUIAnimationKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F378A9EA23D43C3200296A76 /* CypherPoetSwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F378A9E923D43C3200296A76 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */;
+			productName = CypherPoetSwiftUIKit;
+		};
+		F378A9ED23D43C5600296A76 /* CypherPoetCoreDataKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F378A9EC23D43C5600296A76 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */;
+			productName = CypherPoetCoreDataKit;
+		};
+		F378A9F023D43C6F00296A76 /* CypherPoetSwiftUIAnimationKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F378A9EF23D43C6E00296A76 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIAnimationKit" */;
+			productName = CypherPoetSwiftUIAnimationKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		F378A9C223D438AE00296A76 /* Flashzilla.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F378A9C323D438AE00296A76 /* Flashzilla.xcdatamodel */,
+			);
+			currentVersion = F378A9C323D438AE00296A76 /* Flashzilla.xcdatamodel */;
+			path = Flashzilla.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F378A9B323D438AE00296A76 /* Project object */;
+}
