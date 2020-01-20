@@ -31,7 +31,7 @@ extension CardDeckView: View {
                     horizontalSensitivity: 1.0,
                     onRemove: { _ in self.onRemove?(card, index) }
                 )
-                .stacked(at: index, outOf: deckSize, offsetMultiple: 10)
+                .stacked(at: index + 1, outOf: deckSize, offsetMultiple: CGFloat(30 / deckSize))
             }
         }
         .frame(width: width, height: height)

@@ -11,6 +11,8 @@ import CypherPoetSwiftUIKit
 
 
 struct CardDeckContainerView {
+    @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
+
     @ObservedObject var viewModel: ViewModel = .init()
 }
 
@@ -20,16 +22,27 @@ extension CardDeckContainerView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                CardDeckView(
-                    width: min(max(800, geometry.size.width) * 0.8, 480),
-                    height: min(max(800, geometry.size.width) * 0.8, 480) * 0.6,
-                    cards: self.viewModel.cards,
-                    onRemove: { (card, index) in self.cardRemoved(at: index) }
-                )
-                .padding()
+            ZStack {
+                VStack {
+                    CardDeckView(
+                        width: min(max(800, geometry.size.width) * 0.8, 480),
+                        height: min(max(800, geometry.size.width) * 0.8, 480) * 0.5,
+                        cards: self.viewModel.cards,
+                        onRemove: { (card, index) in self.cardRemoved(at: index) }
+                    )
+                    .padding()
+                }
+                
+                if self.differentiateWithoutColor {
+                    VStack {
+                        Spacer()
+
+                        self.swipeDirectionIndicators
+                    }
+                }
             }
         }
+        .padding()
         .background(Color("CardDeckBackground"))
         .edgesIgnoringSafeArea(.all)
     }
@@ -43,6 +56,26 @@ extension CardDeckContainerView {
 
 // MARK: - View Variables
 extension CardDeckContainerView {
+    
+    private var swipeDirectionIndicators: some View {
+        HStack {
+            Image(systemName: "xmark.circle")
+                .padding()
+                .background(Color.black.opacity(0.7))
+                .clipShape(Circle())
+            
+            Spacer()
+            
+            
+            Image(systemName: "checkmark.circle")
+                .padding()
+                .background(Color.black.opacity(0.7))
+                .clipShape(Circle())
+        }
+        .foregroundColor(.white)
+        .font(.largeTitle)
+        
+    }
 }
 
 
