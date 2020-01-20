@@ -10,6 +10,8 @@ import SwiftUI
 
 
 struct CardDeckView {
+    @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
+
     var width: CGFloat
     var height: CGFloat
     
@@ -33,7 +35,36 @@ extension CardDeckView: View {
                 )
                 .stacked(at: index + 1, outOf: deckSize, offsetMultiple: CGFloat(30 / deckSize))
             }
+            
+            
+            if self.differentiateWithoutColor {
+                VStack {
+                    Spacer()
+
+                    self.swipeDirectionIndicators
+                }
+            }
         }
         .frame(width: width, height: height)
+    }
+    
+    
+    private var swipeDirectionIndicators: some View {
+        HStack {
+            Image(systemName: "xmark.circle")
+                .padding()
+                .background(Color.black.opacity(0.7))
+                .clipShape(Circle())
+            
+            Spacer()
+            
+            
+            Image(systemName: "checkmark.circle")
+                .padding()
+                .background(Color.black.opacity(0.7))
+                .clipShape(Circle())
+        }
+        .foregroundColor(.white)
+        .font(.largeTitle)
     }
 }

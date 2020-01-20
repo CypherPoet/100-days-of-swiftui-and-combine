@@ -40,9 +40,10 @@ extension CardDeckContainerView {
         @Published var cards: [Card] = []
         @Published var timeRemaining: TimeInterval
         
+        
         // MARK: - Init
         init(
-            roundDuration: TimeInterval = 10.0
+            roundDuration: TimeInterval = 100.0
         ) {
             self.roundDuration = roundDuration
             self.timeRemaining = roundDuration
@@ -80,10 +81,11 @@ extension CardDeckContainerView.ViewModel {
 
 // MARK: - Computeds
 extension CardDeckContainerView.ViewModel {
-    
     var timeRemainingText: String {
         NumberFormatters.cardCountdown.string(for: timeRemaining) ?? ""
     }
+    
+    var isDeckEmpty: Bool { cards.isEmpty }
 }
 
 
@@ -94,6 +96,18 @@ extension CardDeckContainerView.ViewModel {
     func fetchCards() {
         try? fetchedResultsController.performFetch()
         cards = extractResults(from: fetchedResultsController)
+    }
+    
+    
+    func resetDeck() {
+        fetchCards()
+        self.timeRemaining = roundDuration
+        self.isTimerActive = true
+    }
+    
+    
+    func pauseRound() {
+        isTimerActive = false
     }
 }
 
@@ -116,7 +130,7 @@ private extension CardDeckContainerView.ViewModel {
         
         CurrentApp.notificationCenter
             .publisher(for: UIApplication.willEnterForegroundNotification)
-            .map { _ in true }
+            .map { _ in self.isDeckEmpty == false }
             .assign(to: \.isTimerActive, on: self)
             .store(in: &subscriptions)
     }

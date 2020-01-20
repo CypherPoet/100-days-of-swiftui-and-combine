@@ -11,8 +11,6 @@ import CypherPoetSwiftUIKit
 
 
 struct CardDeckContainerView {
-    @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
-
     @ObservedObject var viewModel: ViewModel = .init()
 }
 
@@ -23,8 +21,8 @@ extension CardDeckContainerView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                VStack {
-                    Text("Time Remaining: \(self.viewModel.timeRemaining)")
+                VStack(spacing: 22) {
+                    Text("Time Remaining: \(self.viewModel.timeRemainingText)")
                         .font(.largeTitle)
                         .foregroundColor(Color.yellow)
                         .padding(.horizontal)
@@ -39,18 +37,21 @@ extension CardDeckContainerView: View {
                         onRemove: { (card, index) in self.cardRemoved(at: index) }
                     )
                     .allowsHitTesting(self.viewModel.timeRemaining > 0)
-                    .padding()
                 }
+                    
                 
-                if self.differentiateWithoutColor {
+                if self.viewModel.isDeckEmpty {
                     VStack {
                         Spacer()
-
-                        self.swipeDirectionIndicators
+                        HStack {
+                            Spacer()
+                            self.resetButton
+                        }
                     }
                 }
             }
         }
+        .padding()
         .padding()
         .background(Color("CardDeckBackground"))
         .edgesIgnoringSafeArea(.all)
@@ -66,24 +67,12 @@ extension CardDeckContainerView {
 // MARK: - View Variables
 extension CardDeckContainerView {
     
-    private var swipeDirectionIndicators: some View {
-        HStack {
-            Image(systemName: "xmark.circle")
-                .padding()
-                .background(Color.black.opacity(0.7))
-                .clipShape(Circle())
-            
-            Spacer()
-            
-            
-            Image(systemName: "checkmark.circle")
-                .padding()
-                .background(Color.black.opacity(0.7))
-                .clipShape(Circle())
-        }
-        .foregroundColor(.white)
-        .font(.largeTitle)
-        
+    private var resetButton: some View {
+        Button("Start Again", action: viewModel.resetDeck)
+            .padding()
+            .background(Color.white)
+            .foregroundColor(.black)
+            .clipShape(Capsule())
     }
 }
 
@@ -94,6 +83,10 @@ extension CardDeckContainerView {
 private extension CardDeckContainerView {
     func cardRemoved(at index: Int) {
         viewModel.cards.remove(at: index)
+        
+        if viewModel.isDeckEmpty {
+            viewModel.pauseRound()
+        }
     }
 }
 
@@ -105,7 +98,6 @@ struct CardDeckContainerView_Previews: PreviewProvider {
     static var previews: some View {
         CardDeckContainerView()
             .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
-//            .environment(\.accessibilityDifferentiateWithoutColor, .constant(true))
-            .previewLayout(PreviewLayout.iPhone11Landscape)
+//            .previewLayout(PreviewLayout.iPhone11Landscape)
     }
 }
