@@ -10,7 +10,6 @@ import SwiftUI
 
 
 struct RootView {
-
 }
 
 
@@ -18,7 +17,7 @@ struct RootView {
 extension RootView: View {
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        CardDeckContainerView()
     }
 }
 
@@ -44,5 +43,6 @@ struct RootView_Previews: PreviewProvider {
 
     static var previews: some View {
         RootView()
+            .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
     }
 }

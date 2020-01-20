@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CypherPoetCoreDataKit",
+        "repositoryURL": "https://github.com/CypherPoet/CypherPoetCoreDataKit.git",
+        "state": {
+          "branch": null,
+          "revision": "e14a3abf3e679d41c9e0fcc55d3e4d7ccd8ce1b6",
+          "version": "0.0.6"
+        }
+      },
+      {
+        "package": "CypherPoetSwiftUIAnimationKit",
+        "repositoryURL": "https://github.com/CypherPoet/CypherPoetSwiftUIAnimationKit.git",
+        "state": {
+          "branch": null,
+          "revision": "5c18b74c9f1ada729b0e3d3ec5c2ad95043a809d",
+          "version": "0.0.1"
+        }
+      },
+      {
+        "package": "CypherPoetSwiftUIKit",
+        "repositoryURL": "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git",
+        "state": {
+          "branch": null,
+          "revision": "65d4268cddbedfeabe44cd625b35bd1812a37587",
+          "version": "0.0.33"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

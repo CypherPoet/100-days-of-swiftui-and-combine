@@ -3,12 +3,6 @@
     <entity name="Card" representedClassName="Card" syncable="YES">
         <attribute name="answer" optional="YES" attributeType="String"/>
         <attribute name="prompt" optional="YES" attributeType="String"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="answer"/>
-                <constraint value="prompt"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
     </entity>
     <elements>
         <element name="Card" positionX="-63" positionY="-18" width="128" height="73"/>

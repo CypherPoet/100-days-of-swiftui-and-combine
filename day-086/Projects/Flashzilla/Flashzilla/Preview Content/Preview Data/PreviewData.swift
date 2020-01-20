@@ -7,6 +7,14 @@
 //
 
 import Foundation
+import CoreData
 
 
-enum PreviewData {}
+enum PreviewData {
+    
+    static func setupSimulatorPreviewData(in managedObjectContext: NSManagedObjectContext) {
+        let _ = PreviewData.Cards.buildDeck()
+        
+        try? managedObjectContext.save()
+    }
+}

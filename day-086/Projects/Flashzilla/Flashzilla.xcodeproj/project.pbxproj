@@ -23,6 +23,15 @@
 		F378A9F323D43CAA00296A76 /* PreviewData+Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9F223D43CA900296A76 /* PreviewData+Cards.swift */; };
 		F378A9F623D44E3900296A76 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9F423D44E3800296A76 /* Card+CoreDataClass.swift */; };
 		F378A9F723D44E3900296A76 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9F523D44E3900296A76 /* Card+CoreDataProperties.swift */; };
+		F378A9FB23D47DD900296A76 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9FA23D47DD900296A76 /* CardView.swift */; };
+		F378A9FD23D47E1000296A76 /* CardView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A9FC23D47E1000296A76 /* CardView+ViewModel.swift */; };
+		F378A9FF23D4884900296A76 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378A9FE23D4884900296A76 /* Colors.xcassets */; };
+		F378AA0223D48CB900296A76 /* CardDeckContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0123D48CB900296A76 /* CardDeckContainerView.swift */; };
+		F378AA0423D48D6D00296A76 /* CardDeckContainerView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0323D48D6D00296A76 /* CardDeckContainerView+ViewModel.swift */; };
+		F378AA0723D4985200296A76 /* FetchedResultsControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0623D4985200296A76 /* FetchedResultsControlling.swift */; };
+		F378AA0B23D4A5D300296A76 /* StackedViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0923D4A5D300296A76 /* StackedViewModifier.swift */; };
+		F378AA0C23D4A5D300296A76 /* View+Stacked.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0A23D4A5D300296A76 /* View+Stacked.swift */; };
+		F378AA0E23D4CC6400296A76 /* DraggableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0D23D4CC6400296A76 /* DraggableCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +50,15 @@
 		F378A9F223D43CA900296A76 /* PreviewData+Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewData+Cards.swift"; sourceTree = "<group>"; };
 		F378A9F423D44E3800296A76 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F378A9F523D44E3900296A76 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F378A9FA23D47DD900296A76 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F378A9FC23D47E1000296A76 /* CardView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+ViewModel.swift"; sourceTree = "<group>"; };
+		F378A9FE23D4884900296A76 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		F378AA0123D48CB900296A76 /* CardDeckContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeckContainerView.swift; sourceTree = "<group>"; };
+		F378AA0323D48D6D00296A76 /* CardDeckContainerView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardDeckContainerView+ViewModel.swift"; sourceTree = "<group>"; };
+		F378AA0623D4985200296A76 /* FetchedResultsControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedResultsControlling.swift; sourceTree = "<group>"; };
+		F378AA0923D4A5D300296A76 /* StackedViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedViewModifier.swift; sourceTree = "<group>"; };
+		F378AA0A23D4A5D300296A76 /* View+Stacked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Stacked.swift"; sourceTree = "<group>"; };
+		F378AA0D23D4CC6400296A76 /* DraggableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				F378A9D923D4393100296A76 /* RootView.swift */,
+				F378AA0023D48CA900296A76 /* Card Deck */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -119,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				F378A9C723D438B200296A76 /* Assets.xcassets */,
+				F378A9FE23D4884900296A76 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -126,6 +146,9 @@
 		F378A9D823D438E000296A76 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F378AA0823D4A5BE00296A76 /* View Modifiers */,
+				F378AA0523D4984500296A76 /* Protocols */,
+				F378A9F823D47DC200296A76 /* Views */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -172,6 +195,50 @@
 				F378A9F523D44E3900296A76 /* Card+CoreDataProperties.swift */,
 			);
 			path = Card;
+			sourceTree = "<group>";
+		};
+		F378A9F823D47DC200296A76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F378A9F923D47DCE00296A76 /* Card */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F378A9F923D47DCE00296A76 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				F378A9FA23D47DD900296A76 /* CardView.swift */,
+				F378AA0D23D4CC6400296A76 /* DraggableCardView.swift */,
+				F378A9FC23D47E1000296A76 /* CardView+ViewModel.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		F378AA0023D48CA900296A76 /* Card Deck */ = {
+			isa = PBXGroup;
+			children = (
+				F378AA0123D48CB900296A76 /* CardDeckContainerView.swift */,
+				F378AA0323D48D6D00296A76 /* CardDeckContainerView+ViewModel.swift */,
+			);
+			path = "Card Deck";
+			sourceTree = "<group>";
+		};
+		F378AA0523D4984500296A76 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F378AA0623D4985200296A76 /* FetchedResultsControlling.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F378AA0823D4A5BE00296A76 /* View Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F378AA0923D4A5D300296A76 /* StackedViewModifier.swift */,
+				F378AA0A23D4A5D300296A76 /* View+Stacked.swift */,
+			);
+			path = "View Modifiers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F378A9E223D439B700296A76 /* LaunchScreen.storyboard in Resources */,
+				F378A9FF23D4884900296A76 /* Colors.xcassets in Resources */,
 				F378A9CB23D438B200296A76 /* Preview Assets.xcassets in Resources */,
 				F378A9C823D438B200296A76 /* Assets.xcassets in Resources */,
 			);
@@ -255,15 +323,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F378AA0423D48D6D00296A76 /* CardDeckContainerView+ViewModel.swift in Sources */,
 				F378A9F623D44E3900296A76 /* Card+CoreDataClass.swift in Sources */,
+				F378AA0C23D4A5D300296A76 /* View+Stacked.swift in Sources */,
 				F378A9F723D44E3900296A76 /* Card+CoreDataProperties.swift in Sources */,
 				F378A9E823D43B6A00296A76 /* CurrentApplication.swift in Sources */,
+				F378A9FD23D47E1000296A76 /* CardView+ViewModel.swift in Sources */,
 				F378A9E423D43A1700296A76 /* PreviewData.swift in Sources */,
 				F378A9DA23D4393100296A76 /* RootView.swift in Sources */,
+				F378AA0B23D4A5D300296A76 /* StackedViewModifier.swift in Sources */,
 				F378A9C423D438AE00296A76 /* Flashzilla.xcdatamodeld in Sources */,
+				F378AA0E23D4CC6400296A76 /* DraggableCardView.swift in Sources */,
 				F378A9BF23D438AE00296A76 /* AppDelegate.swift in Sources */,
 				F378A9E623D43A6900296A76 /* CoreDataManager+Utils.swift in Sources */,
 				F378A9F323D43CAA00296A76 /* PreviewData+Cards.swift in Sources */,
+				F378AA0223D48CB900296A76 /* CardDeckContainerView.swift in Sources */,
+				F378A9FB23D47DD900296A76 /* CardView.swift in Sources */,
+				F378AA0723D4985200296A76 /* FetchedResultsControlling.swift in Sources */,
 				F378A9C123D438AE00296A76 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

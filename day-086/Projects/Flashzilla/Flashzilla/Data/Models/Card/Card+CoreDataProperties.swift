@@ -19,4 +19,5 @@ extension Card {
 
     @NSManaged public var prompt: String?
     @NSManaged public var answer: String?
+
 }
