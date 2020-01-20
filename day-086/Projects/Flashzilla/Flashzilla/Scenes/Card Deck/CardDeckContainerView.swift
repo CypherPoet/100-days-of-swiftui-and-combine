@@ -24,12 +24,21 @@ extension CardDeckContainerView: View {
         GeometryReader { geometry in
             ZStack {
                 VStack {
+                    Text("Time Remaining: \(self.viewModel.timeRemaining)")
+                        .font(.largeTitle)
+                        .foregroundColor(Color.yellow)
+                        .padding(.horizontal)
+                        .padding(.horizontal)
+                        .background(Capsule().fill(Color.black).opacity(0.7))
+                    
+                    
                     CardDeckView(
                         width: min(max(800, geometry.size.width) * 0.8, 480),
                         height: min(max(800, geometry.size.width) * 0.8, 480) * 0.5,
                         cards: self.viewModel.cards,
                         onRemove: { (card, index) in self.cardRemoved(at: index) }
                     )
+                    .allowsHitTesting(self.viewModel.timeRemaining > 0)
                     .padding()
                 }
                 
@@ -96,6 +105,7 @@ struct CardDeckContainerView_Previews: PreviewProvider {
     static var previews: some View {
         CardDeckContainerView()
             .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
+//            .environment(\.accessibilityDifferentiateWithoutColor, .constant(true))
             .previewLayout(PreviewLayout.iPhone11Landscape)
     }
 }

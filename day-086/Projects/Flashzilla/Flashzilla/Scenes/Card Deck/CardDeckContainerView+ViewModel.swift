@@ -16,10 +16,12 @@ extension CardDeckContainerView {
     
     final class ViewModel: NSObject, FetchedResultsControlling, ObservableObject {
         typealias FetchedResult = Card
+        
         private var subscriptions = Set<AnyCancellable>()
+        private var isTimerActive = true
         
         
-        lazy var fetchRequest: NSFetchRequest<Card> = {
+        internal lazy var fetchRequest: NSFetchRequest<Card> = {
             let request: NSFetchRequest<Card> = Card.fetchRequest()
             
             request.sortDescriptors = []
@@ -28,20 +30,27 @@ extension CardDeckContainerView {
         }()
         
         
-        lazy var fetchedResultsController: FetchedResultsController = makeFetchedResultsController()
+        internal lazy var fetchedResultsController: FetchedResultsController = makeFetchedResultsController()
         
-
+        
+        var roundDuration: TimeInterval
+        
+        
         // MARK: - Published Outputs
         @Published var cards: [Card] = []
-
+        @Published var timeRemaining: TimeInterval
         
         // MARK: - Init
-        override init() {
+        init(
+            roundDuration: TimeInterval = 10.0
+        ) {
+            self.roundDuration = roundDuration
+            self.timeRemaining = roundDuration
+
             super.init()
-            
-            setupSubscribers()
-            
+
             self.fetchedResultsController.delegate = self
+            setupSubscribers()
             fetchCards()
         }
     }
@@ -51,8 +60,19 @@ extension CardDeckContainerView {
 // MARK: - Publishers
 extension CardDeckContainerView.ViewModel {
 
-    private var someValuePublisher: AnyPublisher<String, Never> {
-        Just("")
+    private var roundTickPublisher: Publishers.Share<AnyPublisher<Date, Never>> {
+        Timer.publish(every: 1.0, on: .main, in: .common)
+            .autoconnect()
+            .eraseToAnyPublisher()
+            .share()
+    }
+    
+    
+    private var timeRemainingPublisher: AnyPublisher<TimeInterval, Never> {
+        roundTickPublisher
+            .map { _ in
+                self.isTimerActive ? max(0, self.timeRemaining - 1.0) : self.timeRemaining
+            }
             .eraseToAnyPublisher()
     }
 }
@@ -60,7 +80,12 @@ extension CardDeckContainerView.ViewModel {
 
 // MARK: - Computeds
 extension CardDeckContainerView.ViewModel {
+    
+    var timeRemainingText: String {
+        NumberFormatters.cardCountdown.string(for: timeRemaining) ?? ""
+    }
 }
+
 
 
 // MARK: - Public Methods
@@ -78,10 +103,22 @@ extension CardDeckContainerView.ViewModel {
 private extension CardDeckContainerView.ViewModel {
 
     func setupSubscribers() {
-//        someValuePublisher
-//            .receive(on: DispatchQueue.main)
-//            .assign(to: \.someValue, on: self)
-//            .store(in: &subscriptions)
+        timeRemainingPublisher
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.timeRemaining, on: self)
+            .store(in: &subscriptions)
+        
+        CurrentApp.notificationCenter
+            .publisher(for: UIApplication.willResignActiveNotification)
+            .map { _ in false }
+            .assign(to: \.isTimerActive, on: self)
+            .store(in: &subscriptions)
+        
+        CurrentApp.notificationCenter
+            .publisher(for: UIApplication.willEnterForegroundNotification)
+            .map { _ in true }
+            .assign(to: \.isTimerActive, on: self)
+            .store(in: &subscriptions)
     }
 }
 

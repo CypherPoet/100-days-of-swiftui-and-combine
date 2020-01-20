@@ -33,6 +33,7 @@
 		F378AA0C23D4A5D300296A76 /* View+Stacked.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0A23D4A5D300296A76 /* View+Stacked.swift */; };
 		F378AA0E23D4CC6400296A76 /* DraggableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0D23D4CC6400296A76 /* DraggableCardView.swift */; };
 		F378AA1023D5BAD500296A76 /* CardDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0F23D5BAD500296A76 /* CardDeckView.swift */; };
+		F378AA1323D63AA700296A76 /* NumberFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA1223D63AA700296A76 /* NumberFormatters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		F378AA0A23D4A5D300296A76 /* View+Stacked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Stacked.swift"; sourceTree = "<group>"; };
 		F378AA0D23D4CC6400296A76 /* DraggableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableCardView.swift; sourceTree = "<group>"; };
 		F378AA0F23D5BAD500296A76 /* CardDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeckView.swift; sourceTree = "<group>"; };
+		F378AA1223D63AA700296A76 /* NumberFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		F378A9D823D438E000296A76 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F378AA1123D63A9700296A76 /* Formatters */,
 				F378AA0823D4A5BE00296A76 /* View Modifiers */,
 				F378AA0523D4984500296A76 /* Protocols */,
 				F378A9F823D47DC200296A76 /* Views */,
@@ -244,6 +247,14 @@
 			path = "View Modifiers";
 			sourceTree = "<group>";
 		};
+		F378AA1123D63A9700296A76 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				F378AA1223D63AA700296A76 /* NumberFormatters.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -335,6 +346,7 @@
 				F378A9E423D43A1700296A76 /* PreviewData.swift in Sources */,
 				F378A9DA23D4393100296A76 /* RootView.swift in Sources */,
 				F378AA0B23D4A5D300296A76 /* StackedViewModifier.swift in Sources */,
+				F378AA1323D63AA700296A76 /* NumberFormatters.swift in Sources */,
 				F378A9C423D438AE00296A76 /* Flashzilla.xcdatamodeld in Sources */,
 				F378AA0E23D4CC6400296A76 /* DraggableCardView.swift in Sources */,
 				F378A9BF23D438AE00296A76 /* AppDelegate.swift in Sources */,

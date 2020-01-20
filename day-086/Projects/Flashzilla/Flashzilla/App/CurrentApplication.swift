@@ -12,10 +12,12 @@ import CypherPoetCoreDataKit_CoreDataManager
 
 struct CurrentApplication {
     var coreDataManager: CoreDataManager
+    var notificationCenter: NotificationCenter
 }
 
 
 
 var CurrentApp = CurrentApplication(
-    coreDataManager: .shared
+    coreDataManager: .shared,
+    notificationCenter: .default
 )
