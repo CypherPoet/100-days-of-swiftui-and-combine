@@ -19,7 +19,6 @@ struct DraggableCardView {
     
     var onRemove: ((Card) -> Void)? = nil
     
-    
     @GestureState private var dragOffset = CGSize.zero
 }
 
@@ -28,17 +27,33 @@ struct DraggableCardView {
 extension DraggableCardView: View {
 
     var body: some View {
-        CardView(viewModel: .init(card: card))
-            .rotationEffect(cardRotation)
-            .offset(cardOffset)
-            .opacity(cardOpacity)
-            .gesture(dragGesture)
+        GeometryReader { geometry in
+            CardView(
+                viewModel: .init(card: self.card),
+                cornerRadius: min(geometry.size.width, geometry.size.height) * 0.08,
+                fillColorOpacity: self.cardOpacity
+            )
+            .background(
+                self.dragColor
+                    .opacity(self.dragColorOpacity)
+                    .clipShape(
+                        RoundedRectangle(cornerRadius: min(geometry.size.width, geometry.size.height) * 0.08)
+                    )
+                    .animation(.easeIn(duration: 0.25))
+            )
+            .rotationEffect(self.cardRotation)
+            .offset(self.cardOffset)
+            .gesture(self.dragGesture)
+        }
     }
 }
 
 
 // MARK: - Computeds
 extension DraggableCardView {
+    
+    var dragWidthAmount: Double { Double(abs(dragOffset.width)) }
+    var distanceUntilRemoval: Double { Double(distanceToDragForRemoval) - dragWidthAmount }
     
     var cardOffset: CGSize {
         .init(
@@ -53,13 +68,12 @@ extension DraggableCardView {
     }
     
     
-    var cardOpacity: Double {
-        let dragAmount = Double(abs(dragOffset.width))
-        let threshold = Double(distanceToDragForRemoval / 2)
-        
-        guard dragAmount > threshold else { return 1.0 }
+    var cardOpacity: Double { distanceUntilRemoval / Double(distanceToDragForRemoval) }
+    
+    var dragColor: Color { dragOffset.width > 0 ? Color.green : Color.red }
 
-        return 1 - ((dragAmount - threshold) / (threshold * 7))
+    var dragColorOpacity: Double {
+        1.0 - ( (distanceUntilRemoval / Double(distanceToDragForRemoval * 1.5)) )
     }
 }
 
@@ -72,16 +86,9 @@ extension DraggableCardView {
             .updating($dragOffset, body: { (newValue, offsetState, _) in
                 offsetState = newValue.translation
             })
-//            .onChanged { value in
-//                self.dragOffset = value.translation
-//            }
             .onEnded { value in
-//                print("value translation: \(value.translation)")
-//                print("dragOffset: \(self.dragOffset)")
                 if abs(value.translation.width) > self.distanceToDragForRemoval {
                     self.onRemove?(self.card)
-//                } else {
-//                    self.dragOffset = .zero
                 }
             }
     }

@@ -14,14 +14,16 @@ import CypherPoetSwiftUIAnimationKit
 
 struct CardView {
     @ObservedObject var viewModel: ViewModel
-
+    
+    var cornerRadius: CGFloat = 12.0
+    var fillColorOpacity: Double = 1.0
+    
     @State private var isShowingAnswer = false
 }
 
 
 // MARK: - View
 extension CardView: View {
-
     
     var body: some View {
         ZStack {
@@ -47,20 +49,16 @@ extension CardView {
     
     private var cardBackground: some View {
         GeometryReader { geometry in
-            RoundedRectangle(
-                cornerRadius: min(geometry.size.width, geometry.size.height) * 0.08,
-                style: .continuous
-            )
-            .fill(Color("CardBackground"))
-            .shadow(
-                color: Color.gray.opacity(0.8),
-                radius: min(geometry.size.width, geometry.size.height) * 0.02,
-                x: 0,
-                y: min(geometry.size.width, geometry.size.height) * 0.01
-            )
+            RoundedRectangle(cornerRadius: self.cornerRadius, style: .continuous)
+                .fill(Color("CardBackground").opacity(self.fillColorOpacity))
+                .shadow(
+                    color: Color.gray.opacity(0.8),
+                    radius: min(geometry.size.width, geometry.size.height) * 0.02,
+                    x: 0,
+                    y: min(geometry.size.width, geometry.size.height) * 0.01
+                )
         }
     }
-    
     
     private var cardContent: some View {
         VStack {
