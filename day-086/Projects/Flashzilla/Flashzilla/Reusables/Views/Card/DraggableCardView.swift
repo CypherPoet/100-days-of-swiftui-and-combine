@@ -22,6 +22,7 @@ struct DraggableCardView {
     var onRemove: ((Card) -> Void)? = nil
     
     @GestureState private var dragOffset = CGSize.zero
+    let feedbackGenerator = UINotificationFeedbackGenerator()
 }
 
 
@@ -97,10 +98,14 @@ extension DraggableCardView {
         DragGesture(minimumDistance: 0)
             .updating($dragOffset, body: { (newValue, offsetState, _) in
                 offsetState = newValue.translation
+                self.feedbackGenerator.prepare()
             })
             .onEnded { value in
                 if abs(value.translation.width) > self.distanceToDragForRemoval {
                     self.onRemove?(self.card)
+                    self.feedbackGenerator.notificationOccurred(.success)
+                } else {
+                    self.feedbackGenerator.notificationOccurred(.error)
                 }
             }
     }
