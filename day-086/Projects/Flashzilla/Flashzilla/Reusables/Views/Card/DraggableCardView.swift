@@ -11,6 +11,8 @@ import CypherPoetSwiftUIKit
 
 
 struct DraggableCardView {
+    @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
+    
     let card: Card
     let distanceToDragForRemoval: CGFloat
     
@@ -34,7 +36,7 @@ extension DraggableCardView: View {
                 fillColorOpacity: self.cardOpacity
             )
             .background(
-                self.dragColor
+                self.dragColor?
                     .opacity(self.dragColorOpacity)
                     .clipShape(
                         RoundedRectangle(cornerRadius: min(geometry.size.width, geometry.size.height) * 0.08)
@@ -68,9 +70,19 @@ extension DraggableCardView {
     }
     
     
-    var cardOpacity: Double { distanceUntilRemoval / Double(distanceToDragForRemoval) }
+    var cardOpacity: Double {
+        guard differentiateWithoutColor == false else { return 1.0 }
+        
+        return distanceUntilRemoval / Double(distanceToDragForRemoval)
+    }
     
-    var dragColor: Color { dragOffset.width > 0 ? Color.green : Color.red }
+    
+    var dragColor: Color? {
+        guard differentiateWithoutColor == false else { return nil }
+        
+        return dragOffset.width > 0 ? Color.green : Color.red
+    }
+    
 
     var dragColorOpacity: Double {
         1.0 - ( (distanceUntilRemoval / Double(distanceToDragForRemoval * 1.5)) )
