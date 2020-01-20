@@ -21,13 +21,15 @@ extension CardDeckContainerView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                VStack(spacing: 22) {
-                    Text("Time Remaining: \(self.viewModel.timeRemainingText)")
-                        .font(.largeTitle)
-                        .foregroundColor(Color.yellow)
-                        .padding(.horizontal)
-                        .padding(.horizontal)
-                        .background(Capsule().fill(Color.black).opacity(0.7))
+                VStack(spacing: 32) {
+                    Text("Time Remaining: ")
+                        .font(.title)
+                        .foregroundColor(Color("Accent3"))
+                    
+                    + Text(self.viewModel.timeRemainingText)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("Accent3"))
                     
                     
                     CardDeckView(
@@ -70,8 +72,8 @@ extension CardDeckContainerView {
     private var resetButton: some View {
         Button("Start Again", action: viewModel.resetDeck)
             .padding()
-            .background(Color.white)
-            .foregroundColor(.black)
+            .background(Color("Accent1"))
+            .foregroundColor(.primary)
             .clipShape(Capsule())
     }
 }
