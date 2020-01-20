@@ -101,5 +101,6 @@ struct CardView_Previews: PreviewProvider {
         }
         .environment(\.managedObjectContext, context)
         .previewLayout(PreviewLayout.iPhone11Landscape)
+        .colorScheme(.dark)
     }
 }

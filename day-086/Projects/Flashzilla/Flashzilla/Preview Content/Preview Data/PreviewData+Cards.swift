@@ -13,19 +13,41 @@ import CoreData
 extension PreviewData {
     
     enum Cards {
-        
-        static let `default`: Card = {
-            let card = Card(context: CurrentApp.coreDataManager.mainContext)
-            
-            card.prompt = "What is another word for taxation?"
-            card.answer = "Theft"
-            
-            return card
+        static let card1: Card = {
+           let card = Card(context: CurrentApp.coreDataManager.mainContext)
+           
+           card.prompt = "What is another word for taxation?"
+           card.answer = "Theft"
+           
+           return card
         }()
         
         
-        static func buildDeck(size: Int = 10) -> [Card] {
-            Array(repeating: Cards.default, count: size)
+        static let card2: Card = {
+           let card = Card(context: CurrentApp.coreDataManager.mainContext)
+           
+           card.prompt = "What is the name of our closest galaxy?"
+           card.answer = "Andromeda"
+           
+           return card
+        }()
+        
+        
+        static let card3: Card = {
+           let card = Card(context: CurrentApp.coreDataManager.mainContext)
+           
+           card.prompt = "Who invented calculus?"
+           card.answer = "Issac Netwon"
+           
+           return card
+        }()
+        
+        
+        static let `default` = card1
+        
+        
+        static func buildDeck() -> [Card] {
+            [card3, card1, card2]
         }
     }
 }

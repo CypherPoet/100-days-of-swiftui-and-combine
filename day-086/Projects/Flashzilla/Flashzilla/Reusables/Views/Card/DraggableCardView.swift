@@ -12,6 +12,7 @@ import CypherPoetSwiftUIKit
 
 struct DraggableCardView {
     let card: Card
+    let distanceToDragForRemoval: CGFloat
     
     var horizontalSensitivity: CGFloat = 1.0
     var verticalSensitivity: CGFloat = 0.0
@@ -48,16 +49,17 @@ extension DraggableCardView {
     
     
     var cardRotation: Angle {
-        .radians((Double(dragOffset.width) / 180.0) / 2.0)
+        .radians((Double(dragOffset.width) / 180.0) / 2.2)
     }
     
     
     var cardOpacity: Double {
         let dragAmount = Double(abs(dragOffset.width))
+        let threshold = Double(distanceToDragForRemoval / 2)
         
-        guard dragAmount > 50 else { return 1.0 }
+        guard dragAmount > threshold else { return 1.0 }
 
-        return 1 - ((dragAmount - 50) / (50 * 7))
+        return 1 - ((dragAmount - threshold) / (threshold * 7))
     }
 }
 
@@ -76,7 +78,7 @@ extension DraggableCardView {
             .onEnded { value in
 //                print("value translation: \(value.translation)")
 //                print("dragOffset: \(self.dragOffset)")
-                if abs(value.translation.width) > 100 {
+                if abs(value.translation.width) > self.distanceToDragForRemoval {
                     self.onRemove?(self.card)
 //                } else {
 //                    self.dragOffset = .zero
@@ -96,7 +98,10 @@ private extension DraggableCardView {
 struct DraggableCardView_Previews: PreviewProvider {
 
     static var previews: some View {
-        DraggableCardView(card: PreviewData.Cards.default)
+        DraggableCardView(
+            card: PreviewData.Cards.default,
+            distanceToDragForRemoval: 100
+        )
             .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
             .previewLayout(PreviewLayout.iPhone11Landscape)
     }

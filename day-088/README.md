@@ -16,4 +16,11 @@ It focuses on several specific topics:
 - Moving views with DragGesture and offset()
 
 
-The commit for the project changes to go along with this day can be found [here](https://github.com/CypherPoet/100-days-of-swiftui-and-combine/commit/6f1de7e6a69a3a79bc0899ca842cc6f2df34ec25).
+
+# 📸 Screenshots
+
+
+<div style="text-align: center;">
+  <img src="../day-086/Projects/Flashzilla/Screenshots/day-88-recording.gif" width="400px"/>
+</div>
+

@@ -32,6 +32,7 @@
 		F378AA0B23D4A5D300296A76 /* StackedViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0923D4A5D300296A76 /* StackedViewModifier.swift */; };
 		F378AA0C23D4A5D300296A76 /* View+Stacked.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0A23D4A5D300296A76 /* View+Stacked.swift */; };
 		F378AA0E23D4CC6400296A76 /* DraggableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0D23D4CC6400296A76 /* DraggableCardView.swift */; };
+		F378AA1023D5BAD500296A76 /* CardDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0F23D5BAD500296A76 /* CardDeckView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		F378AA0923D4A5D300296A76 /* StackedViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedViewModifier.swift; sourceTree = "<group>"; };
 		F378AA0A23D4A5D300296A76 /* View+Stacked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Stacked.swift"; sourceTree = "<group>"; };
 		F378AA0D23D4CC6400296A76 /* DraggableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableCardView.swift; sourceTree = "<group>"; };
+		F378AA0F23D5BAD500296A76 /* CardDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeckView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				F378AA0123D48CB900296A76 /* CardDeckContainerView.swift */,
+				F378AA0F23D5BAD500296A76 /* CardDeckView.swift */,
 				F378AA0323D48D6D00296A76 /* CardDeckContainerView+ViewModel.swift */,
 			);
 			path = "Card Deck";
@@ -336,6 +339,7 @@
 				F378AA0E23D4CC6400296A76 /* DraggableCardView.swift in Sources */,
 				F378A9BF23D438AE00296A76 /* AppDelegate.swift in Sources */,
 				F378A9E623D43A6900296A76 /* CoreDataManager+Utils.swift in Sources */,
+				F378AA1023D5BAD500296A76 /* CardDeckView.swift in Sources */,
 				F378A9F323D43CAA00296A76 /* PreviewData+Cards.swift in Sources */,
 				F378AA0223D48CB900296A76 /* CardDeckContainerView.swift in Sources */,
 				F378A9FB23D47DD900296A76 /* CardView.swift in Sources */,
