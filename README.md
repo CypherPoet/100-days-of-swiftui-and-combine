@@ -99,7 +99,7 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 
 **Latest Day:**
 
-- **Day 88:** [_Project 17: Flashzilla (Part Two)_](./day-088/)
+- **Day 88:** [_Project 17: Flashzilla (Part Three)_](./day-088/)
 
 
 

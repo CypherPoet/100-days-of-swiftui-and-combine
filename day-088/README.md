@@ -16,16 +16,4 @@ It focuses on several specific topics:
 - Moving views with DragGesture and offset()
 
 
-## Designing a single card view
-
-
-
-
-
-## Building a stack of cards
-
-
-
-
-
-## Moving views with DragGesture and offset()
+The commit for the project changes to go along with this day can be found [here](https://github.com/CypherPoet/100-days-of-swiftui-and-combine/commit/6f1de7e6a69a3a79bc0899ca842cc6f2df34ec25).
