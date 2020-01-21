@@ -19,7 +19,7 @@ struct DraggableCardView {
     var horizontalSensitivity: CGFloat = 1.0
     var verticalSensitivity: CGFloat = 0.0
     
-    var onRemove: ((Card) -> Void)? = nil
+    var onRemove: ((Card, Card.AnswerState) -> Void)? = nil
     
     @GestureState private var dragOffset = CGSize.zero
     let feedbackGenerator = UINotificationFeedbackGenerator()
@@ -44,8 +44,10 @@ extension DraggableCardView: View {
                     )
                     .animation(.easeIn(duration: 0.25))
             )
+            .animation(nil)
             .rotationEffect(self.cardRotation)
             .offset(self.cardOffset)
+            .animation(.spring())
             .gesture(self.dragGesture)
         }
     }
@@ -102,7 +104,9 @@ extension DraggableCardView {
             })
             .onEnded { value in
                 if abs(value.translation.width) > self.distanceToDragForRemoval {
-                    self.onRemove?(self.card)
+                    let answerState: Card.AnswerState = value.translation.width > 0 ? .correct : .incorrect
+                    
+                    self.onRemove?(self.card, answerState)
                     self.feedbackGenerator.notificationOccurred(.success)
                 } else {
                     self.feedbackGenerator.notificationOccurred(.error)
@@ -126,7 +130,7 @@ struct DraggableCardView_Previews: PreviewProvider {
             card: PreviewData.Cards.default,
             distanceToDragForRemoval: 100
         )
-            .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
-            .previewLayout(PreviewLayout.iPhone11Landscape)
+        .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
+        .previewLayout(PreviewLayout.iPhone11Landscape)
     }
 }

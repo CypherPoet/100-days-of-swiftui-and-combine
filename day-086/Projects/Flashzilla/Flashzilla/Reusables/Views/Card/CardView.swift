@@ -13,6 +13,7 @@ import CypherPoetSwiftUIAnimationKit
 
 
 struct CardView {
+    @Environment(\.accessibilityEnabled) private var isAccessibilityEnabled
     @ObservedObject var viewModel: ViewModel
     
     var cornerRadius: CGFloat = 12.0
@@ -61,15 +62,22 @@ extension CardView {
     }
     
     private var cardContent: some View {
-        VStack {
-            Text(viewModel.cardPromptText)
-                .font(.largeTitle)
-                .foregroundColor(Color("Accent2"))
-            
-            if isShowingAnswer {
-                Text(viewModel.cardAnswerText)
-                    .font(.title)
-                    .foregroundColor(Color("Accent1"))
+        Group {
+            if isAccessibilityEnabled {
+                Text(isShowingAnswer ? viewModel.cardAnswerText : viewModel.cardPromptText)
+                    .font(.largeTitle)
+            } else {
+                VStack {
+                    Text(viewModel.cardPromptText)
+                        .font(.largeTitle)
+                        .foregroundColor(Color("Accent2"))
+                    
+                    if isShowingAnswer {
+                        Text(viewModel.cardAnswerText)
+                            .font(.title)
+                            .foregroundColor(Color("Accent1"))
+                    }
+                }
             }
         }
         .padding(20)

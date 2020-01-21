@@ -16,9 +16,7 @@ extension CardDeckContainerView {
     
     final class ViewModel: NSObject, FetchedResultsControlling, ObservableObject {
         typealias FetchedResult = Card
-        
         private var subscriptions = Set<AnyCancellable>()
-        private var isTimerActive = true
         
         
         internal lazy var fetchRequest: NSFetchRequest<Card> = {
@@ -33,6 +31,7 @@ extension CardDeckContainerView {
         internal lazy var fetchedResultsController: FetchedResultsController = makeFetchedResultsController()
         
         
+        var isTimerActive = true
         var roundDuration: TimeInterval
         
         
@@ -60,7 +59,7 @@ extension CardDeckContainerView {
     
 // MARK: - Publishers
 extension CardDeckContainerView.ViewModel {
-
+    
     private var roundTickPublisher: Publishers.Share<AnyPublisher<Date, Never>> {
         Timer.publish(every: 1.0, on: .main, in: .common)
             .autoconnect()
@@ -74,6 +73,7 @@ extension CardDeckContainerView.ViewModel {
             .map { _ in
                 self.isTimerActive ? max(0, self.timeRemaining - 1.0) : self.timeRemaining
             }
+            .removeDuplicates()
             .eraseToAnyPublisher()
     }
 }
@@ -81,11 +81,12 @@ extension CardDeckContainerView.ViewModel {
 
 // MARK: - Computeds
 extension CardDeckContainerView.ViewModel {
-    var timeRemainingText: String {
-        NumberFormatters.cardCountdown.string(for: timeRemaining) ?? ""
+
+    var visibleCards: [Card] {
+        cards.filter { $0.answerState == .unanswered }
     }
-    
-    var isDeckEmpty: Bool { cards.isEmpty }
+
+    var isDeckEmpty: Bool { visibleCards.isEmpty }
 }
 
 
@@ -100,14 +101,18 @@ extension CardDeckContainerView.ViewModel {
     
     
     func resetDeck() {
-        fetchCards()
-        self.timeRemaining = roundDuration
+        cards.forEach { $0.answerState = .unanswered }
+        
         self.isTimerActive = true
     }
     
     
     func pauseRound() {
         isTimerActive = false
+    }
+    
+    func resumeRound() {
+        isTimerActive = true
     }
 }
 
@@ -127,7 +132,7 @@ private extension CardDeckContainerView.ViewModel {
             .map { _ in false }
             .assign(to: \.isTimerActive, on: self)
             .store(in: &subscriptions)
-        
+
         CurrentApp.notificationCenter
             .publisher(for: UIApplication.willEnterForegroundNotification)
             .map { _ in self.isDeckEmpty == false }

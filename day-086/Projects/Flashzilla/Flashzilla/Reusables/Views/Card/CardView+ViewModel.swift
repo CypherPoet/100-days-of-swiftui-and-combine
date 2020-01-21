@@ -22,6 +22,7 @@ extension CardView {
         @Published var cardPromptText: String = ""
         @Published var cardAnswerText: String = ""
 
+        
         // MARK: - Init
         init(card: Card) {
             self.card = card

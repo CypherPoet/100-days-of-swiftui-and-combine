@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Card" representedClassName="Card" syncable="YES">
         <attribute name="answer" optional="YES" attributeType="String"/>
+        <attribute name="answerStateValue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="prompt" optional="YES" attributeType="String"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
@@ -11,6 +12,6 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Card" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Card" positionX="-63" positionY="-18" width="128" height="88"/>
     </elements>
 </model>

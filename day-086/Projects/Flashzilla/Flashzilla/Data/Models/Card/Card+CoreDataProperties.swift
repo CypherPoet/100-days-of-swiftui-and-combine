@@ -20,4 +20,11 @@ extension Card {
     @NSManaged public var prompt: String?
     @NSManaged public var answer: String?
 
+    @NSManaged public var answerStateValue: Int16
+    
+    
+    var answerState: Card.AnswerState {
+        get { Card.AnswerState(rawValue: answerStateValue)! }
+        set { answerStateValue = newValue.rawValue }
+    }
 }
