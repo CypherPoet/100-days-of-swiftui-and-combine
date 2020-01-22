@@ -89,6 +89,27 @@ extension CardDeckContainerView.ViewModel {
 // MARK: - Computeds
 extension CardDeckContainerView.ViewModel {
     var isDeckEmpty: Bool { visibleCards.isEmpty }
+    var isTimeExpired: Bool { timeRemaining <= 0 }
+    
+    var correctAnswerCountText: String {
+        let count = cardDeck.correctAnswerCount
+        
+        return "\(count) Correct \(count == 1 ? "Answer" : "Answers")"
+    }
+    
+    
+    var incorrectAnswerCountText: String {
+        let count = cardDeck.incorrectAnswerCount
+        
+        return "\(count) Wrong \(count == 1 ? "Answer" : "Answers")"
+    }
+    
+    
+    var unansweredCountText: String {
+        let count = cardDeck.unansweredCount
+        
+          return "\(count) \(count == 1 ? "Card" : "Cards") Unattempted"
+    }
 }
 
 

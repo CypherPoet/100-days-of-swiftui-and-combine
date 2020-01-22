@@ -25,23 +25,28 @@ extension CardDeckContainerView: View {
             ZStack {
                 VStack(spacing: 32) {
                     
-                    // 📝: It can be tricky having `CardDeckContainerView` contain the timer, because SwiftUI
-                    // will re-render it on every tick.
-                    // Perhaps it would be better to have `CountdownTimerView` own its timer
-                    // and drive it with `timeRemaining`?
-                    CountdownTimerView(
-                        viewModel: .init(timeRemaining: self.viewModel.timeRemaining)
-                    )
+                    if self.viewModel.isTimeExpired {
+                        self.timeExpirationDisplay
+                    } else {
+                        // 📝
+                        // It can be tricky having `CardDeckContainerView` contain the timer,
+                        // because SwiftUI will re-render it on every tick.
+                        // 
+                        // Perhaps it would be better to have `CountdownTimerView` own its timer
+                        // and drive it with `timeRemaining`?
+                        CountdownTimerView(
+                            viewModel: .init(timeRemaining: self.viewModel.timeRemaining)
+                        )
                     
-                    CardDeckView(
-                        width: min(max(800, geometry.size.width) * 0.8, 480),
-                        height: min(max(800, geometry.size.width) * 0.8, 480) * 0.5,
-                        cards: self.viewModel.visibleCards,
-                        cardAnswered: { (answerState, index) in
-                            self.viewModel.record(answerState, forCardAt: index)
-                        }
-                    )
-                    .allowsHitTesting(self.viewModel.timeRemaining > 0)
+                        CardDeckView(
+                            width: min(max(800, geometry.size.width) * 0.8, 480),
+                            height: min(max(800, geometry.size.width) * 0.8, 480) * 0.5,
+                            cards: self.viewModel.visibleCards,
+                            cardAnswered: { (answerState, index) in
+                                self.viewModel.record(answerState, forCardAt: index)
+                            }
+                        )
+                    }
                 }
                     
                 HStack {
@@ -50,7 +55,7 @@ extension CardDeckContainerView: View {
                     VStack {
                         Spacer()
                         
-                        if self.viewModel.isDeckEmpty {
+                        if self.viewModel.isDeckEmpty || self.viewModel.isTimeExpired {
                             self.resetButton
                         } else {
                             self.editDeckButton
@@ -89,6 +94,26 @@ extension CardDeckContainerView {
 // MARK: - View Variables
 extension CardDeckContainerView {
     
+    private var timeExpirationDisplay: some View {
+        VStack {
+            Text("Your time has expired.")
+                .font(.largeTitle)
+                .foregroundColor(Color("Accent3"))
+                .offset(y: -32)
+            
+            Text("Round Summary")
+                .font(.title)
+                .padding(.bottom, 24)
+            
+            VStack(alignment: .leading, spacing: 8) {
+                Text("✅   ") + Text(viewModel.correctAnswerCountText)
+                Text("🚫  ") + Text(viewModel.incorrectAnswerCountText)
+                Text("🤷‍♂️   ") + Text(viewModel.unansweredCountText)
+            }
+        }
+    }
+    
+    
     private var editDeckButton: some View {
         Button(action: {
             self.viewModel.pauseRound()
@@ -115,10 +140,6 @@ extension CardDeckContainerView {
 
 // MARK: - Private Helpers
 private extension CardDeckContainerView {
-    
-//    func countdownFinished() {
-//        viewModel.pauseRound()
-//    }
 }
 
 
