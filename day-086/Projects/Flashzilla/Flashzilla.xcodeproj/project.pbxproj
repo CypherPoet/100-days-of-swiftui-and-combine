@@ -42,6 +42,7 @@
 		F378AA2223D7B8D900296A76 /* CardDeck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA2023D7B8D900296A76 /* CardDeck+CoreDataClass.swift */; };
 		F378AA2323D7B8D900296A76 /* CardDeck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA2123D7B8D900296A76 /* CardDeck+CoreDataProperties.swift */; };
 		F378AA2523D7B91E00296A76 /* CardDeck+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA2423D7B91E00296A76 /* CardDeck+Computeds.swift */; };
+		F378AA3023D8909C00296A76 /* KeyboardAvoider in Frameworks */ = {isa = PBXBuildFile; productRef = F378AA2F23D8909C00296A76 /* KeyboardAvoider */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 			files = (
 				F378A9EB23D43C3200296A76 /* CypherPoetSwiftUIKit in Frameworks */,
 				F378A9EE23D43C5600296A76 /* CypherPoetCoreDataKit in Frameworks */,
+				F378AA3023D8909C00296A76 /* KeyboardAvoider in Frameworks */,
 				F378A9F123D43C6F00296A76 /* CypherPoetSwiftUIAnimationKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +317,7 @@
 				F378A9EA23D43C3200296A76 /* CypherPoetSwiftUIKit */,
 				F378A9ED23D43C5600296A76 /* CypherPoetCoreDataKit */,
 				F378A9F023D43C6F00296A76 /* CypherPoetSwiftUIAnimationKit */,
+				F378AA2F23D8909C00296A76 /* KeyboardAvoider */,
 			);
 			productName = Flashzilla;
 			productReference = F378A9BB23D438AE00296A76 /* Flashzilla.app */;
@@ -348,6 +351,7 @@
 				F378A9E923D43C3200296A76 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
 				F378A9EC23D43C5600296A76 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */,
 				F378A9EF23D43C6E00296A76 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIAnimationKit" */,
+				F378AA2E23D8909C00296A76 /* XCRemoteSwiftPackageReference "KeyboardAvoider" */,
 			);
 			productRefGroup = F378A9BC23D438AE00296A76 /* Products */;
 			projectDirPath = "";
@@ -624,6 +628,14 @@
 				minimumVersion = 0.0.1;
 			};
 		};
+		F378AA2E23D8909C00296A76 /* XCRemoteSwiftPackageReference "KeyboardAvoider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/michaelhenry/KeyboardAvoider.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -641,6 +653,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F378A9EF23D43C6E00296A76 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIAnimationKit" */;
 			productName = CypherPoetSwiftUIAnimationKit;
+		};
+		F378AA2F23D8909C00296A76 /* KeyboardAvoider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F378AA2E23D8909C00296A76 /* XCRemoteSwiftPackageReference "KeyboardAvoider" */;
+			productName = KeyboardAvoider;
 		};
 /* End XCSwiftPackageProductDependency section */
 

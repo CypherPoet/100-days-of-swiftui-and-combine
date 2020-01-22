@@ -8,6 +8,7 @@
 
 import SwiftUI
 import CypherPoetCoreDataKit_BindingUtils
+import KeyboardAvoider
 
 
 struct EditDeckView {
@@ -34,8 +35,7 @@ extension EditDeckView: View {
                     .foregroundColor(.accentColor)
                 }
                 
-                
-                Section(header: Text("Current Cards")) {
+                Section(header: Text("Current Cards").font(.headline)) {
                     ForEach(viewModel.cards) { card in
                         VStack(alignment: .leading) {
                             Text(card.prompt ?? "")
@@ -53,6 +53,8 @@ extension EditDeckView: View {
             .navigationBarItems(trailing: doneButton)
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .avoidKeyboard()
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

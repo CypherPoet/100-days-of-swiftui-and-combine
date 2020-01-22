@@ -27,6 +27,15 @@
           "revision": "65d4268cddbedfeabe44cd625b35bd1812a37587",
           "version": "0.0.33"
         }
+      },
+      {
+        "package": "KeyboardAvoider",
+        "repositoryURL": "https://github.com/michaelhenry/KeyboardAvoider.git",
+        "state": {
+          "branch": null,
+          "revision": "bad568189de163e188596edcb14f9344b35f4032",
+          "version": "1.0.1"
+        }
       }
     ]
   },
