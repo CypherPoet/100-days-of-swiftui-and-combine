@@ -25,12 +25,12 @@ extension Card {
     public enum Predicate {
         
         public static func cards(in cardDeck: CardDeck) -> NSPredicate {
-            let keyword = NSComparisonPredicate.keyword(for: .contains)
+            let keyword = NSComparisonPredicate.keyword(for: .in)
             
             let predicate = NSPredicate(
-                format: "%K \(keyword) %@",
-                #keyPath(Card.decks),
-                cardDeck.objectID
+                format: "%@ \(keyword) %K",
+                cardDeck.objectID,
+                #keyPath(Card.decks)
             )
             
             return predicate

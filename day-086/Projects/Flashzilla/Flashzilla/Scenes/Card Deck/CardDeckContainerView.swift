@@ -14,6 +14,7 @@ struct CardDeckContainerView {
     @ObservedObject var viewModel: ViewModel
     
     @State private var isShowingEditView = false
+    @State private var isShowingSettingsView = false
 }
 
 
@@ -31,7 +32,7 @@ extension CardDeckContainerView: View {
                         // 📝
                         // It can be tricky having `CardDeckContainerView` contain the timer,
                         // because SwiftUI will re-render it on every tick.
-                        // 
+                        //
                         // Perhaps it would be better to have `CountdownTimerView` own its timer
                         // and drive it with `timeRemaining`?
                         CountdownTimerView(
@@ -53,6 +54,8 @@ extension CardDeckContainerView: View {
                     Spacer()
                     
                     VStack {
+                        self.settingsButton
+                        
                         Spacer()
                         
                         if self.viewModel.isDeckEmpty || self.viewModel.isTimeExpired {
@@ -82,6 +85,9 @@ extension CardDeckContainerView: View {
         .onAppear {
             self.viewModel.isTimerActive = true
         }
+        .onDisappear {
+            self.viewModel.isTimerActive = false
+        }
     }
 }
 
@@ -110,6 +116,20 @@ extension CardDeckContainerView {
                 Text("🚫  ") + Text(viewModel.incorrectAnswerCountText)
                 Text("🤷‍♂️   ") + Text(viewModel.unansweredCountText)
             }
+        }
+    }
+    
+    
+    private var settingsButton: some View {
+        Button(action: {
+            self.viewModel.pauseRound()
+            self.isShowingSettingsView = true
+        }) {
+            Image(systemName: "gear")
+                .padding()
+                .background(Color("Accent1"))
+                .clipShape(Circle())
+                .foregroundColor(.primary)
         }
     }
     

@@ -19,6 +19,7 @@ extension CardDeckContainerView {
         typealias FetchedResult = Card
         
         lazy var fetchRequest: NSFetchRequest<Card> = Card.fetchRequest(forCardsIn: cardDeck)
+        
         internal lazy var fetchedResultsController: FetchedResultsController = makeFetchedResultsController()
 
         private var subscriptions = Set<AnyCancellable>()
@@ -80,7 +81,7 @@ extension CardDeckContainerView.ViewModel {
     private var visibleCardsPublisher: AnyPublisher<[Card], Never> {
         $cards
             .map { $0.filter { $0.answerState == .unanswered } }
-//            .print("visibleCardsPublisher")
+            .print("visibleCardsPublisher")
             .eraseToAnyPublisher()
     }
 }
@@ -108,7 +109,7 @@ extension CardDeckContainerView.ViewModel {
     var unansweredCountText: String {
         let count = cardDeck.unansweredCount
         
-          return "\(count) \(count == 1 ? "Card" : "Cards") Unattempted"
+        return "\(count) \(count == 1 ? "Card" : "Cards") Unattempted"
     }
 }
 
@@ -126,7 +127,10 @@ extension CardDeckContainerView.ViewModel {
     func resetDeck() {
         cards.forEach { $0.answerState = .unanswered }
         
-        self.isTimerActive = true
+        timeRemaining = roundDuration
+        isTimerActive = true
+
+        CurrentApp.coreDataManager.saveContexts()
     }
     
     
