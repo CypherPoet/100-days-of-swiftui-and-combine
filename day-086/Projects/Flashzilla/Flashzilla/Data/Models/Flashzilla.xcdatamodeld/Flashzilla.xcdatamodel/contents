@@ -4,6 +4,7 @@
         <attribute name="answer" optional="YES" attributeType="String"/>
         <attribute name="answerStateValue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="prompt" optional="YES" attributeType="String"/>
+        <relationship name="decks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardDeck" inverseName="cards" inverseEntity="CardDeck"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="answer"/>
@@ -11,7 +12,17 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="CardDeck" representedClassName="CardDeck" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="decks" inverseEntity="Card"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
     <elements>
-        <element name="Card" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Card" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="CardDeck" positionX="-54" positionY="18" width="128" height="73"/>
     </elements>
 </model>

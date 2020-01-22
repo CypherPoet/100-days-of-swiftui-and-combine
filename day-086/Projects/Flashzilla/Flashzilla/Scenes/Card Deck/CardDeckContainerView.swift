@@ -11,7 +11,7 @@ import CypherPoetSwiftUIKit
 
 
 struct CardDeckContainerView {
-    @ObservedObject var viewModel: ViewModel = .init()
+    @ObservedObject var viewModel: ViewModel
     
     @State private var isShowingEditView = false
 }
@@ -24,6 +24,11 @@ extension CardDeckContainerView: View {
         GeometryReader { geometry in
             ZStack {
                 VStack(spacing: 32) {
+                    
+                    // 📝: It can be tricky having `CardDeckContainerView` contain the timer, because SwiftUI
+                    // will re-render it on every tick.
+                    // Perhaps it would be better to have `CountdownTimerView` own its timer
+                    // and drive it with `timeRemaining`?
                     CountdownTimerView(
                         viewModel: .init(timeRemaining: self.viewModel.timeRemaining)
                     )
@@ -32,7 +37,9 @@ extension CardDeckContainerView: View {
                         width: min(max(800, geometry.size.width) * 0.8, 480),
                         height: min(max(800, geometry.size.width) * 0.8, 480) * 0.5,
                         cards: self.viewModel.visibleCards,
-                        cardAnswered: { (answerState, index) in self.record(answerState, forCardAt: index) }
+                        cardAnswered: { (answerState, index) in
+                            self.viewModel.record(answerState, forCardAt: index)
+                        }
                     )
                     .allowsHitTesting(self.viewModel.timeRemaining > 0)
                 }
@@ -59,8 +66,11 @@ extension CardDeckContainerView: View {
         .edgesIgnoringSafeArea(.all)
         .sheet(isPresented: self.$isShowingEditView, onDismiss: self.viewModel.resumeRound) {
             EditDeckView(
-                viewModel: .init(currentDeck: self.viewModel.cards)
+                viewModel: .init(currentDeck: self.viewModel.cardDeck)
             )
+        }
+        .onAppear {
+            self.viewModel.isTimerActive = true
         }
     }
 }
@@ -104,15 +114,6 @@ private extension CardDeckContainerView {
 //    func countdownFinished() {
 //        viewModel.pauseRound()
 //    }
-    
-
-    func record(_ answerState: Card.AnswerState, forCardAt index: Int) {
-        viewModel.cards[index].answerState = answerState
-        
-        if viewModel.isDeckEmpty {
-            viewModel.pauseRound()
-        }
-    }
 }
 
 
@@ -121,7 +122,9 @@ private extension CardDeckContainerView {
 struct CardDeckContainerView_Previews: PreviewProvider {
 
     static var previews: some View {
-        CardDeckContainerView()
+        CardDeckContainerView(
+            viewModel: .init(cardDeck: PreviewData.CardDecks.default)
+        )
             .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
 //            .previewLayout(PreviewLayout.iPhone11Landscape)
     }

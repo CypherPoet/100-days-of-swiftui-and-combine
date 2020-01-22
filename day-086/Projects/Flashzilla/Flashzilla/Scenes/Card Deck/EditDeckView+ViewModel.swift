@@ -20,13 +20,13 @@ extension EditDeckView {
         
 
         // MARK: - Published Outputs
-        @Published var currentDeck: [Card]
+        @Published var currentDeck: CardDeck
         @Published var canAddNewCard: Bool = false
         
         
         // MARK: - Init
         init(
-            currentDeck: [Card] = [],
+            currentDeck: CardDeck,
             newCard: Card = Card(context: CurrentApp.coreDataManager.backgroundContext)
         ) {
             print("EditDeckView+ViewModel || init")
@@ -67,7 +67,7 @@ extension EditDeckView.ViewModel {
             newCardPromptTextPublisher,
             newCardAnswerTextPublisher
         )
-        .print("canAddNewCardPublisher")
+//        .print("canAddNewCardPublisher")
         .map { !$0.0.isEmpty && !$0.1.isEmpty }
         .eraseToAnyPublisher()
     }
@@ -76,6 +76,7 @@ extension EditDeckView.ViewModel {
 
 // MARK: - Computeds
 extension EditDeckView.ViewModel {
+    var cards: [Card] { currentDeck.cardsArray }
 }
 
 
@@ -83,17 +84,23 @@ extension EditDeckView.ViewModel {
 extension EditDeckView.ViewModel {
     
     func addNewCard() {
-        currentDeck.append(newCard)
-        // TODO: Persist changes here.
+        guard let managedObjectContext = currentDeck.managedObjectContext else { fatalError() }
+        
+        currentDeck.addToCards(newCard)
+        CurrentApp.coreDataManager.save(managedObjectContext)
         
         newCard = makeNewCard()
     }
     
     
     func removeCards(at offsets: IndexSet) {
-        currentDeck.remove(atOffsets: offsets)
-        
-        // TODO: Persist changes here.
+        guard let managedObjectContext = currentDeck.managedObjectContext else { fatalError() }
+
+        for offset in offsets {
+            currentDeck.removeFromCards(cards[offset])
+        }
+
+        CurrentApp.coreDataManager.save(managedObjectContext)
     }
 }
 

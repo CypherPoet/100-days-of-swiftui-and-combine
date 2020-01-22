@@ -14,24 +14,12 @@ import CoreData
 
 extension CardDeckContainerView {
     
-    final class ViewModel: NSObject, FetchedResultsControlling, ObservableObject {
-        typealias FetchedResult = Card
+    final class ViewModel: ObservableObject {
         private var subscriptions = Set<AnyCancellable>()
         
-        
-        internal lazy var fetchRequest: NSFetchRequest<Card> = {
-            let request: NSFetchRequest<Card> = Card.fetchRequest()
-            
-            request.sortDescriptors = []
-            
-            return request
-        }()
-        
-        
-        internal lazy var fetchedResultsController: FetchedResultsController = makeFetchedResultsController()
-        
-        
-        var isTimerActive = true
+        @ObservedObject var cardDeck: CardDeck
+
+        var isTimerActive = false
         var roundDuration: TimeInterval
         
         
@@ -42,16 +30,14 @@ extension CardDeckContainerView {
         
         // MARK: - Init
         init(
+            cardDeck: CardDeck,
             roundDuration: TimeInterval = 100.0
         ) {
+            self.cardDeck = cardDeck
             self.roundDuration = roundDuration
             self.timeRemaining = roundDuration
 
-            super.init()
-
-            self.fetchedResultsController.delegate = self
             setupSubscribers()
-            fetchCards()
         }
     }
 }
@@ -70,11 +56,20 @@ extension CardDeckContainerView.ViewModel {
     
     private var timeRemainingPublisher: AnyPublisher<TimeInterval, Never> {
         roundTickPublisher
+            .drop(while: { _ in !self.isTimerActive })
             .map { _ in
                 self.isTimerActive ? max(0, self.timeRemaining - 1.0) : self.timeRemaining
             }
             .removeDuplicates()
             .eraseToAnyPublisher()
+    }
+    
+    
+    private var cardsPublisher: Publishers.Share<AnyPublisher<[Card], Never>> {
+        cardDeck.publisher(for: \.cards)
+            .map { _ in self.cardDeck.cardsArray }
+            .eraseToAnyPublisher()
+            .share()
     }
 }
 
@@ -94,12 +89,6 @@ extension CardDeckContainerView.ViewModel {
 // MARK: - Public Methods
 extension CardDeckContainerView.ViewModel {
     
-    func fetchCards() {
-        try? fetchedResultsController.performFetch()
-        cards = extractResults(from: fetchedResultsController)
-    }
-    
-    
     func resetDeck() {
         cards.forEach { $0.answerState = .unanswered }
         
@@ -114,6 +103,20 @@ extension CardDeckContainerView.ViewModel {
     func resumeRound() {
         isTimerActive = true
     }
+    
+    
+    func record(_ answerState: Card.AnswerState, forCardAt index: Int) {
+        let card = cards[index]
+        
+        guard let managedObjectContext = card.managedObjectContext else { fatalError() }
+        
+        card.answerState = answerState
+        CurrentApp.coreDataManager.save(managedObjectContext)
+        
+        if isDeckEmpty {
+           pauseRound()
+        }
+    }
 }
 
 
@@ -122,6 +125,11 @@ extension CardDeckContainerView.ViewModel {
 private extension CardDeckContainerView.ViewModel {
 
     func setupSubscribers() {
+        cardsPublisher
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.cards, on: self)
+            .store(in: &subscriptions)
+        
         timeRemainingPublisher
             .receive(on: DispatchQueue.main)
             .assign(to: \.timeRemaining, on: self)
@@ -138,17 +146,5 @@ private extension CardDeckContainerView.ViewModel {
             .map { _ in self.isDeckEmpty == false }
             .assign(to: \.isTimerActive, on: self)
             .store(in: &subscriptions)
-    }
-}
-
-
-// MARK: - NSFetchedResultsControllerDelegate
-extension CardDeckContainerView.ViewModel: NSFetchedResultsControllerDelegate {
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        guard let controller = controller as? FetchedResultsController else { return }
-        
-        print("controllerDidChangeContent")
-        cards = extractResults(from: controller)
     }
 }

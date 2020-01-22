@@ -13,8 +13,7 @@ import CoreData
 enum PreviewData {
     
     static func setupSimulatorPreviewData(in managedObjectContext: NSManagedObjectContext) {
-        let _ = PreviewData.Cards.buildDeck()
-        
-        try? managedObjectContext.save()
+        let _ = PreviewData.CardDecks.default
+        let _ = try? CurrentApp.coreDataManager.saveContexts()
     }
 }

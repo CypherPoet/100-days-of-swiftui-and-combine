@@ -36,7 +36,7 @@ extension EditDeckView: View {
                 
                 
                 Section(header: Text("Current Cards")) {
-                    ForEach(viewModel.currentDeck) { card in
+                    ForEach(viewModel.cards) { card in
                         VStack(alignment: .leading) {
                             Text(card.prompt ?? "")
                                 .font(.headline)
@@ -87,7 +87,7 @@ struct EditDeckView_Previews: PreviewProvider {
         
         EditDeckView(
             viewModel: .init(
-                currentDeck: [PreviewData.Cards.card1, PreviewData.Cards.card2]
+                currentDeck: PreviewData.CardDecks.default
             )
         )
         .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)

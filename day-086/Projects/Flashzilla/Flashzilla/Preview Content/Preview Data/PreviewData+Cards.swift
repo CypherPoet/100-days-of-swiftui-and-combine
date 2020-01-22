@@ -48,9 +48,23 @@ extension PreviewData {
         
         static let `default` = card1
         
-        
-        static func buildDeck() -> [Card] {
-            [card3, card1, card2]
-        }
+    }
+}
+
+
+extension PreviewData {
+    
+    enum CardDecks {
+        static let `default`: CardDeck = {
+            let deck = CardDeck(context: CurrentApp.coreDataManager.mainContext)
+
+            deck.name = "Preview Deck"
+            
+            for card in [PreviewData.Cards.card3, PreviewData.Cards.card1, PreviewData.Cards.card2] {
+                deck.addToCards(card)
+            }
+
+            return deck
+        }()
     }
 }

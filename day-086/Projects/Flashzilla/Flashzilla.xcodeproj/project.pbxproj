@@ -39,6 +39,9 @@
 		F378AA1923D7359B00296A76 /* EditDeckView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA1823D7359B00296A76 /* EditDeckView+ViewModel.swift */; };
 		F378AA1B23D7A06600296A76 /* CountdownTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA1A23D7A06500296A76 /* CountdownTimerView.swift */; };
 		F378AA1E23D7A0B900296A76 /* CountdownTimerView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA1D23D7A0B900296A76 /* CountdownTimerView+ViewModel.swift */; };
+		F378AA2223D7B8D900296A76 /* CardDeck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA2023D7B8D900296A76 /* CardDeck+CoreDataClass.swift */; };
+		F378AA2323D7B8D900296A76 /* CardDeck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA2123D7B8D900296A76 /* CardDeck+CoreDataProperties.swift */; };
+		F378AA2523D7B91E00296A76 /* CardDeck+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA2423D7B91E00296A76 /* CardDeck+Computeds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,9 @@
 		F378AA1823D7359B00296A76 /* EditDeckView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditDeckView+ViewModel.swift"; sourceTree = "<group>"; };
 		F378AA1A23D7A06500296A76 /* CountdownTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimerView.swift; sourceTree = "<group>"; };
 		F378AA1D23D7A0B900296A76 /* CountdownTimerView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountdownTimerView+ViewModel.swift"; sourceTree = "<group>"; };
+		F378AA2023D7B8D900296A76 /* CardDeck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardDeck+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F378AA2123D7B8D900296A76 /* CardDeck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardDeck+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F378AA2423D7B91E00296A76 /* CardDeck+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardDeck+Computeds.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,7 @@
 		F378A9DD23D4396000296A76 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F378AA1F23D7B8B900296A76 /* Card Deck */,
 				F378A9DF23D4399000296A76 /* Card */,
 				F378A9C223D438AE00296A76 /* Flashzilla.xcdatamodeld */,
 			);
@@ -278,6 +285,16 @@
 			path = "Countdown Timer";
 			sourceTree = "<group>";
 		};
+		F378AA1F23D7B8B900296A76 /* Card Deck */ = {
+			isa = PBXGroup;
+			children = (
+				F378AA2023D7B8D900296A76 /* CardDeck+CoreDataClass.swift */,
+				F378AA2423D7B91E00296A76 /* CardDeck+Computeds.swift */,
+				F378AA2123D7B8D900296A76 /* CardDeck+CoreDataProperties.swift */,
+			);
+			path = "Card Deck";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -366,6 +383,7 @@
 				F378AA0C23D4A5D300296A76 /* View+Stacked.swift in Sources */,
 				F378A9F723D44E3900296A76 /* Card+CoreDataProperties.swift in Sources */,
 				F378A9E823D43B6A00296A76 /* CurrentApplication.swift in Sources */,
+				F378AA2323D7B8D900296A76 /* CardDeck+CoreDataProperties.swift in Sources */,
 				F378A9FD23D47E1000296A76 /* CardView+ViewModel.swift in Sources */,
 				F378A9E423D43A1700296A76 /* PreviewData.swift in Sources */,
 				F378A9DA23D4393100296A76 /* RootView.swift in Sources */,
@@ -382,9 +400,11 @@
 				F378AA1923D7359B00296A76 /* EditDeckView+ViewModel.swift in Sources */,
 				F378A9F323D43CAA00296A76 /* PreviewData+Cards.swift in Sources */,
 				F378AA0223D48CB900296A76 /* CardDeckContainerView.swift in Sources */,
+				F378AA2223D7B8D900296A76 /* CardDeck+CoreDataClass.swift in Sources */,
 				F378A9FB23D47DD900296A76 /* CardView.swift in Sources */,
 				F378AA0723D4985200296A76 /* FetchedResultsControlling.swift in Sources */,
 				F378A9C123D438AE00296A76 /* SceneDelegate.swift in Sources */,
+				F378AA2523D7B91E00296A76 /* CardDeck+Computeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
