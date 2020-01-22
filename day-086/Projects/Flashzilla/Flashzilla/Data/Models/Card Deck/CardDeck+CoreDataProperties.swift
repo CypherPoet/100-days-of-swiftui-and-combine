@@ -21,6 +21,7 @@ extension CardDeck {
     @NSManaged public var cards: NSSet?
 }
 
+
 // MARK: Generated accessors for cards
 extension CardDeck {
 

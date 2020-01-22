@@ -34,7 +34,7 @@
 		F378AA0E23D4CC6400296A76 /* DraggableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0D23D4CC6400296A76 /* DraggableCardView.swift */; };
 		F378AA1023D5BAD500296A76 /* CardDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA0F23D5BAD500296A76 /* CardDeckView.swift */; };
 		F378AA1323D63AA700296A76 /* NumberFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA1223D63AA700296A76 /* NumberFormatters.swift */; };
-		F378AA1523D7156200296A76 /* Card+Outcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA1423D7156100296A76 /* Card+Outcome.swift */; };
+		F378AA1523D7156200296A76 /* Card+AnswerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA1423D7156100296A76 /* Card+AnswerState.swift */; };
 		F378AA1723D733EF00296A76 /* EditDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA1623D733EE00296A76 /* EditDeckView.swift */; };
 		F378AA1923D7359B00296A76 /* EditDeckView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA1823D7359B00296A76 /* EditDeckView+ViewModel.swift */; };
 		F378AA1B23D7A06600296A76 /* CountdownTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA1A23D7A06500296A76 /* CountdownTimerView.swift */; };
@@ -43,6 +43,7 @@
 		F378AA2323D7B8D900296A76 /* CardDeck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA2123D7B8D900296A76 /* CardDeck+CoreDataProperties.swift */; };
 		F378AA2523D7B91E00296A76 /* CardDeck+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA2423D7B91E00296A76 /* CardDeck+Computeds.swift */; };
 		F378AA3023D8909C00296A76 /* KeyboardAvoider in Frameworks */ = {isa = PBXBuildFile; productRef = F378AA2F23D8909C00296A76 /* KeyboardAvoider */; };
+		F378AA3223D8A6EA00296A76 /* Card+FetchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA3123D8A6EA00296A76 /* Card+FetchHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +73,7 @@
 		F378AA0D23D4CC6400296A76 /* DraggableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableCardView.swift; sourceTree = "<group>"; };
 		F378AA0F23D5BAD500296A76 /* CardDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeckView.swift; sourceTree = "<group>"; };
 		F378AA1223D63AA700296A76 /* NumberFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatters.swift; sourceTree = "<group>"; };
-		F378AA1423D7156100296A76 /* Card+Outcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Outcome.swift"; sourceTree = "<group>"; };
+		F378AA1423D7156100296A76 /* Card+AnswerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+AnswerState.swift"; sourceTree = "<group>"; };
 		F378AA1623D733EE00296A76 /* EditDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDeckView.swift; sourceTree = "<group>"; };
 		F378AA1823D7359B00296A76 /* EditDeckView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditDeckView+ViewModel.swift"; sourceTree = "<group>"; };
 		F378AA1A23D7A06500296A76 /* CountdownTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimerView.swift; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 		F378AA2023D7B8D900296A76 /* CardDeck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardDeck+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F378AA2123D7B8D900296A76 /* CardDeck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardDeck+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F378AA2423D7B91E00296A76 /* CardDeck+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardDeck+Computeds.swift"; sourceTree = "<group>"; };
+		F378AA3123D8A6EA00296A76 /* Card+FetchHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+FetchHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,7 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				F378A9F423D44E3800296A76 /* Card+CoreDataClass.swift */,
-				F378AA1423D7156100296A76 /* Card+Outcome.swift */,
+				F378AA3123D8A6EA00296A76 /* Card+FetchHelpers.swift */,
+				F378AA1423D7156100296A76 /* Card+AnswerState.swift */,
 				F378A9F523D44E3900296A76 /* Card+CoreDataProperties.swift */,
 			);
 			path = Card;
@@ -382,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F378AA0423D48D6D00296A76 /* CardDeckContainerView+ViewModel.swift in Sources */,
+				F378AA3223D8A6EA00296A76 /* Card+FetchHelpers.swift in Sources */,
 				F378AA1E23D7A0B900296A76 /* CountdownTimerView+ViewModel.swift in Sources */,
 				F378A9F623D44E3900296A76 /* Card+CoreDataClass.swift in Sources */,
 				F378AA0C23D4A5D300296A76 /* View+Stacked.swift in Sources */,
@@ -400,7 +404,7 @@
 				F378A9E623D43A6900296A76 /* CoreDataManager+Utils.swift in Sources */,
 				F378AA1023D5BAD500296A76 /* CardDeckView.swift in Sources */,
 				F378AA1723D733EF00296A76 /* EditDeckView.swift in Sources */,
-				F378AA1523D7156200296A76 /* Card+Outcome.swift in Sources */,
+				F378AA1523D7156200296A76 /* Card+AnswerState.swift in Sources */,
 				F378AA1923D7359B00296A76 /* EditDeckView+ViewModel.swift in Sources */,
 				F378A9F323D43CAA00296A76 /* PreviewData+Cards.swift in Sources */,
 				F378AA0223D48CB900296A76 /* CardDeckContainerView.swift in Sources */,

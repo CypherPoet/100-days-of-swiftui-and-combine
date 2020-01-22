@@ -12,11 +12,6 @@ import CoreData
 
 
 extension Card {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Card> {
-        return NSFetchRequest<Card>(entityName: "Card")
-    }
-
     @NSManaged public var prompt: String?
     @NSManaged public var answer: String?
     @NSManaged public var decks: NSSet?

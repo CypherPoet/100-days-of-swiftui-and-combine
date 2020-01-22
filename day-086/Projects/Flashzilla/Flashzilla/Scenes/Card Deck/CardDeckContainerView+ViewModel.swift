@@ -10,13 +10,20 @@
 import SwiftUI
 import Combine
 import CoreData
+import CypherPoetCoreDataKit
 
 
 extension CardDeckContainerView {
     
-    final class ViewModel: ObservableObject {
+    final class ViewModel: NSObject, ObservableObject, FetchedResultsControlling {
+        typealias FetchedResult = Card
+        
+        lazy var fetchRequest: NSFetchRequest<Card> = Card.fetchRequest(forCardsIn: cardDeck)
+        internal lazy var fetchedResultsController: FetchedResultsController = makeFetchedResultsController()
+
         private var subscriptions = Set<AnyCancellable>()
         
+
         @ObservedObject var cardDeck: CardDeck
 
         var isTimerActive = false
@@ -25,6 +32,7 @@ extension CardDeckContainerView {
         
         // MARK: - Published Outputs
         @Published var cards: [Card] = []
+        @Published var visibleCards: [Card] = []
         @Published var timeRemaining: TimeInterval
         
         
@@ -37,7 +45,11 @@ extension CardDeckContainerView {
             self.roundDuration = roundDuration
             self.timeRemaining = roundDuration
 
+            super.init()
+            
+            self.fetchedResultsController.delegate = self
             setupSubscribers()
+            fetchCards()
         }
     }
 }
@@ -65,22 +77,17 @@ extension CardDeckContainerView.ViewModel {
     }
     
     
-    private var cardsPublisher: Publishers.Share<AnyPublisher<[Card], Never>> {
-        cardDeck.publisher(for: \.cards)
-            .map { _ in self.cardDeck.cardsArray }
+    private var visibleCardsPublisher: AnyPublisher<[Card], Never> {
+        $cards
+            .map { $0.filter { $0.answerState == .unanswered } }
+//            .print("visibleCardsPublisher")
             .eraseToAnyPublisher()
-            .share()
     }
 }
 
 
 // MARK: - Computeds
 extension CardDeckContainerView.ViewModel {
-
-    var visibleCards: [Card] {
-        cards.filter { $0.answerState == .unanswered }
-    }
-
     var isDeckEmpty: Bool { visibleCards.isEmpty }
 }
 
@@ -88,6 +95,12 @@ extension CardDeckContainerView.ViewModel {
 
 // MARK: - Public Methods
 extension CardDeckContainerView.ViewModel {
+    
+    func fetchCards() {
+        try? fetchedResultsController.performFetch()
+        cards = extractResults(from: fetchedResultsController)
+    }
+    
     
     func resetDeck() {
         cards.forEach { $0.answerState = .unanswered }
@@ -100,13 +113,14 @@ extension CardDeckContainerView.ViewModel {
         isTimerActive = false
     }
     
+    
     func resumeRound() {
         isTimerActive = true
     }
     
     
     func record(_ answerState: Card.AnswerState, forCardAt index: Int) {
-        let card = cards[index]
+        let card = visibleCards[index]
         
         guard let managedObjectContext = card.managedObjectContext else { fatalError() }
         
@@ -120,14 +134,13 @@ extension CardDeckContainerView.ViewModel {
 }
 
 
-
 // MARK: - Private Helpers
 private extension CardDeckContainerView.ViewModel {
 
     func setupSubscribers() {
-        cardsPublisher
+        visibleCardsPublisher
             .receive(on: DispatchQueue.main)
-            .assign(to: \.cards, on: self)
+            .assign(to: \.visibleCards, on: self)
             .store(in: &subscriptions)
         
         timeRemainingPublisher
@@ -146,5 +159,17 @@ private extension CardDeckContainerView.ViewModel {
             .map { _ in self.isDeckEmpty == false }
             .assign(to: \.isTimerActive, on: self)
             .store(in: &subscriptions)
+    }
+}
+
+
+// MARK: - NSFetchedResultsControllerDelegate
+extension CardDeckContainerView.ViewModel: NSFetchedResultsControllerDelegate {
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        guard let controller = controller as? FetchedResultsController else { return }
+        
+        print("controllerDidChangeContent")
+        cards = extractResults(from: controller)
     }
 }

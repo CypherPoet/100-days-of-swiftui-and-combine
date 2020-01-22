@@ -16,7 +16,11 @@ public protocol FetchedResultsControlling: NSObject {
     var fetchRequest: NSFetchRequest<FetchedResult> { get }
     var fetchedResultsController: NSFetchedResultsController<FetchedResult> { get }
     
-    func makeFetchedResultsController() -> FetchedResultsController
+    func makeFetchedResultsController(
+        sectionNameKeyPath: String?,
+        cacheName: String?
+    ) -> FetchedResultsController
+    
     func extractResults(from fetchedResultsController: FetchedResultsController) -> [FetchedResult]
 }
 
@@ -26,12 +30,15 @@ extension FetchedResultsControlling {
     public typealias FetchRequest = NSFetchRequest<FetchedResult>
 
     
-    public func makeFetchedResultsController() -> FetchedResultsController {
+    public func makeFetchedResultsController(
+        sectionNameKeyPath: String? = nil,
+        cacheName: String? = nil
+    ) -> FetchedResultsController {
         .init(
             fetchRequest: fetchRequest,
             managedObjectContext: CurrentApp.coreDataManager.mainContext,
-            sectionNameKeyPath: nil,
-            cacheName: nil
+            sectionNameKeyPath: sectionNameKeyPath,
+            cacheName: cacheName
         )
     }
     

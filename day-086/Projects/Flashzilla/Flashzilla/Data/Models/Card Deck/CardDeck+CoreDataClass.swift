@@ -12,7 +12,7 @@ import CoreData
 
 @objc(CardDeck)
 public class CardDeck: NSManagedObject {
-
+    
 }
 
 extension CardDeck: Identifiable {}
