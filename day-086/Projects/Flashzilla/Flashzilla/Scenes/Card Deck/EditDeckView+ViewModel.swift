@@ -17,10 +17,11 @@ extension EditDeckView {
         private var subscriptions = Set<AnyCancellable>()
 
         @ObservedObject var newCard: Card
+        var currentDeck: CardDeck
         
 
         // MARK: - Published Outputs
-        @Published var currentDeck: CardDeck
+        @Published var cards: [Card] = []
         @Published var canAddNewCard: Bool = false
         
         
@@ -42,6 +43,13 @@ extension EditDeckView {
 // MARK: - Publishers
 extension EditDeckView.ViewModel {
 
+    private var cardsPublisher: Publishers.Share<AnyPublisher<[Card], Never>> {
+        currentDeck.publisher(for: \.cards)
+            .map { _ in self.currentDeck.cardsArray }
+            .eraseToAnyPublisher()
+            .share()
+    }
+    
     private var newCardPromptTextPublisher: Publishers.Share<AnyPublisher<String, Never>> {
         newCard.publisher(for: \.prompt)
             .debounce(for: .milliseconds(200), scheduler: DispatchQueue.main)
@@ -76,7 +84,6 @@ extension EditDeckView.ViewModel {
 
 // MARK: - Computeds
 extension EditDeckView.ViewModel {
-    var cards: [Card] { currentDeck.cardsArray }
 }
 
 
@@ -84,7 +91,7 @@ extension EditDeckView.ViewModel {
 extension EditDeckView.ViewModel {
     
     func addNewCard() {
-        guard let managedObjectContext = currentDeck.managedObjectContext else { fatalError() }
+        guard let managedObjectContext = newCard.managedObjectContext else { fatalError() }
         
         currentDeck.addToCards(newCard)
         CurrentApp.coreDataManager.save(managedObjectContext)
@@ -94,13 +101,15 @@ extension EditDeckView.ViewModel {
     
     
     func removeCards(at offsets: IndexSet) {
-        guard let managedObjectContext = currentDeck.managedObjectContext else { fatalError() }
-
-        for offset in offsets {
-            currentDeck.removeFromCards(cards[offset])
+        for index in offsets {
+            let card = cards[index]
+            
+            guard let managedObjectContext = card.managedObjectContext else { fatalError() }
+            
+            managedObjectContext.delete(card)
         }
 
-        CurrentApp.coreDataManager.save(managedObjectContext)
+        CurrentApp.coreDataManager.saveContexts()
     }
 }
 
@@ -115,6 +124,11 @@ private extension EditDeckView.ViewModel {
     
     
     func setupSubscribers() {
+        cardsPublisher
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.cards, on: self)
+            .store(in: &subscriptions)
+        
         canAddNewCardPublisher
             .receive(on: DispatchQueue.main)
             .assign(to: \.canAddNewCard, on: self)

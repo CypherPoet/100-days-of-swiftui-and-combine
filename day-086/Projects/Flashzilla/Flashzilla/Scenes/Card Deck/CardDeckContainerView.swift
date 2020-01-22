@@ -44,7 +44,6 @@ extension CardDeckContainerView: View {
                     .allowsHitTesting(self.viewModel.timeRemaining > 0)
                 }
                     
-                
                 HStack {
                     Spacer()
                     
@@ -64,7 +63,13 @@ extension CardDeckContainerView: View {
         .padding()
         .background(Color("CardDeckBackground"))
         .edgesIgnoringSafeArea(.all)
-        .sheet(isPresented: self.$isShowingEditView, onDismiss: self.viewModel.resumeRound) {
+        .sheet(
+            isPresented: self.$isShowingEditView,
+            onDismiss: {
+                self.viewModel.fetchCards()
+                self.viewModel.resumeRound()
+            }
+        ) {
             EditDeckView(
                 viewModel: .init(currentDeck: self.viewModel.cardDeck)
             )
