@@ -29,7 +29,7 @@ extension CardDeckContainerView {
 
         var isTimerActive = false
         var roundDuration: TimeInterval
-        
+        var settingsState: SettingsState
         
         // MARK: - Published Outputs
         @Published var cards: [Card] = []
@@ -40,11 +40,13 @@ extension CardDeckContainerView {
         // MARK: - Init
         init(
             cardDeck: CardDeck,
-            roundDuration: TimeInterval = 100.0
+            roundDuration: TimeInterval = 100.0,
+            settingsState: SettingsState = .init()
         ) {
             self.cardDeck = cardDeck
             self.roundDuration = roundDuration
             self.timeRemaining = roundDuration
+            self.settingsState = settingsState
 
             super.init()
             
@@ -79,10 +81,21 @@ extension CardDeckContainerView.ViewModel {
     
     
     private var visibleCardsPublisher: AnyPublisher<[Card], Never> {
-        $cards
-            .map { $0.filter { $0.answerState == .unanswered } }
-            .print("visibleCardsPublisher")
-            .eraseToAnyPublisher()
+        Publishers.CombineLatest(
+            $cards,
+            CurrentValueSubject(settingsState)
+        )
+        .map { (cards, settingsState) in
+            cards.filter { card in
+                let answerState = card.answerState
+
+                // An optimization here would be to include sorting logic that accounted
+                // for the answer state. That way, incorrect cards could slide to the back.
+                return answerState == .unanswered ||
+                    (settingsState.restacksIncorrectCards && answerState == .incorrect)
+            }
+        }
+        .eraseToAnyPublisher()
     }
 }
 
@@ -109,7 +122,7 @@ extension CardDeckContainerView.ViewModel {
     var unansweredCountText: String {
         let count = cardDeck.unansweredCount
         
-        return "\(count) \(count == 1 ? "Card" : "Cards") Unattempted"
+        return "\(count) \(count == 1 ? "Card" : "Cards") Unanswered"
     }
 }
 
@@ -146,7 +159,6 @@ extension CardDeckContainerView.ViewModel {
     
     func record(_ answerState: Card.AnswerState, forCardAt index: Int) {
         let card = visibleCards[index]
-        
         guard let managedObjectContext = card.managedObjectContext else { fatalError() }
         
         card.answerState = answerState

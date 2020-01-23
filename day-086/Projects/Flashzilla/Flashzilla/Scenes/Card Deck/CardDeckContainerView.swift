@@ -11,6 +11,7 @@ import CypherPoetSwiftUIKit
 
 
 struct CardDeckContainerView {
+    @EnvironmentObject var store: AppStore
     @ObservedObject var viewModel: ViewModel
     
     @State private var isShowingEditView = false
@@ -64,11 +65,11 @@ extension CardDeckContainerView: View {
                             self.editDeckButton
                         }
                     }
+                    .padding()
                 }
+                .padding()
             }
         }
-        .padding()
-        .padding()
         .background(Color("CardDeckBackground"))
         .edgesIgnoringSafeArea(.all)
         .sheet(
@@ -81,6 +82,13 @@ extension CardDeckContainerView: View {
             EditDeckView(
                 viewModel: .init(currentDeck: self.viewModel.cardDeck)
             )
+        }
+        .sheet(
+            isPresented: self.$isShowingSettingsView,
+            onDismiss: viewModel.resumeRound
+        ) {
+            SettingsContainerView()
+                .environmentObject(self.store)
         }
         .onAppear {
             self.viewModel.isTimerActive = true
@@ -172,6 +180,7 @@ struct CardDeckContainerView_Previews: PreviewProvider {
             viewModel: .init(cardDeck: PreviewData.CardDecks.default)
         )
             .environment(\.managedObjectContext, CurrentApp.coreDataManager.mainContext)
+            .environmentObject(PreviewData.AppStores.default)
 //            .previewLayout(PreviewLayout.iPhone11Landscape)
     }
 }

@@ -63,7 +63,8 @@ extension CardView {
     
     private var cardContent: some View {
         Group {
-            if isAccessibilityEnabled {
+//            if isAccessibilityEnabled { // 📝 This appears to become true whenever a sheet is presented and dismissed over the deck view (Xcode 11.3.1)
+            if false {
                 Text(isShowingAnswer ? viewModel.cardAnswerText : viewModel.cardPromptText)
                     .font(.largeTitle)
             } else {

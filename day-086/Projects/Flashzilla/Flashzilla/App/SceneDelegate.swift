@@ -30,10 +30,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             PreviewData.setupSimulatorPreviewData(in: context)
             #endif
             
+            let store = AppStore(initialState: .init(), appReducer: appReducer)
+            
             // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
             // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
             let entryView = RootView()
                 .environment(\.managedObjectContext, context)
+                .environmentObject(store)
 
             window.rootViewController = UIHostingController(rootView: entryView)
 

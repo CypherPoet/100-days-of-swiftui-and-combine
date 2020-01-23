@@ -42,11 +42,16 @@ extension DraggableCardView: View {
                     .clipShape(
                         RoundedRectangle(cornerRadius: min(geometry.size.width, geometry.size.height) * 0.08)
                     )
+                    
                     .animation(.easeIn(duration: 0.25))
             )
             .animation(nil)
             .rotationEffect(self.cardRotation)
             .offset(self.cardOffset)
+            
+            // TODO: We'd need to manually animate this back into position if we don't
+            // want to have to cancel the animations before it. (Look into using @State instead
+            // of @GestureState -- since the latter automatically handles resettting on end)
             .animation(.spring())
             .gesture(self.dragGesture)
         }

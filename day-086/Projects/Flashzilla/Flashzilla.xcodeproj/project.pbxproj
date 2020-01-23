@@ -44,6 +44,12 @@
 		F378AA2523D7B91E00296A76 /* CardDeck+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA2423D7B91E00296A76 /* CardDeck+Computeds.swift */; };
 		F378AA3023D8909C00296A76 /* KeyboardAvoider in Frameworks */ = {isa = PBXBuildFile; productRef = F378AA2F23D8909C00296A76 /* KeyboardAvoider */; };
 		F378AA3223D8A6EA00296A76 /* Card+FetchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA3123D8A6EA00296A76 /* Card+FetchHelpers.swift */; };
+		F378AA3623D91B5100296A76 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA3523D91B5100296A76 /* AppState.swift */; };
+		F378AA3823D91B8C00296A76 /* SettingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA3723D91B8C00296A76 /* SettingsState.swift */; };
+		F378AA3B23D91BD900296A76 /* Burritos in Frameworks */ = {isa = PBXBuildFile; productRef = F378AA3A23D91BD900296A76 /* Burritos */; };
+		F378AA3E23D91DFE00296A76 /* SettingsFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA3D23D91DFE00296A76 /* SettingsFormView.swift */; };
+		F378AA4023D91E1500296A76 /* SettingsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA3F23D91E1500296A76 /* SettingsContainerView.swift */; };
+		F378AA4223D9215400296A76 /* PreviewData+AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378AA4123D9215400296A76 /* PreviewData+AppStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +88,11 @@
 		F378AA2123D7B8D900296A76 /* CardDeck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardDeck+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F378AA2423D7B91E00296A76 /* CardDeck+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardDeck+Computeds.swift"; sourceTree = "<group>"; };
 		F378AA3123D8A6EA00296A76 /* Card+FetchHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+FetchHelpers.swift"; sourceTree = "<group>"; };
+		F378AA3523D91B5100296A76 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F378AA3723D91B8C00296A76 /* SettingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsState.swift; sourceTree = "<group>"; };
+		F378AA3D23D91DFE00296A76 /* SettingsFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFormView.swift; sourceTree = "<group>"; };
+		F378AA3F23D91E1500296A76 /* SettingsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContainerView.swift; sourceTree = "<group>"; };
+		F378AA4123D9215400296A76 /* PreviewData+AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewData+AppStore.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F378A9EB23D43C3200296A76 /* CypherPoetSwiftUIKit in Frameworks */,
+				F378AA3B23D91BD900296A76 /* Burritos in Frameworks */,
 				F378A9EE23D43C5600296A76 /* CypherPoetCoreDataKit in Frameworks */,
 				F378AA3023D8909C00296A76 /* KeyboardAvoider in Frameworks */,
 				F378A9F123D43C6F00296A76 /* CypherPoetSwiftUIAnimationKit in Frameworks */,
@@ -152,6 +164,7 @@
 		F378A9D623D438D900296A76 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F378AA3C23D91D9700296A76 /* Settings */,
 				F378A9D923D4393100296A76 /* RootView.swift */,
 				F378AA0023D48CA900296A76 /* Card Deck */,
 			);
@@ -191,6 +204,8 @@
 		F378A9DC23D4395D00296A76 /* State */ = {
 			isa = PBXGroup;
 			children = (
+				F378AA3523D91B5100296A76 /* AppState.swift */,
+				F378AA3723D91B8C00296A76 /* SettingsState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -210,6 +225,7 @@
 			children = (
 				F378A9E323D43A1700296A76 /* PreviewData.swift */,
 				F378A9F223D43CA900296A76 /* PreviewData+Cards.swift */,
+				F378AA4123D9215400296A76 /* PreviewData+AppStore.swift */,
 			);
 			path = "Preview Data";
 			sourceTree = "<group>";
@@ -300,6 +316,15 @@
 			path = "Card Deck";
 			sourceTree = "<group>";
 		};
+		F378AA3C23D91D9700296A76 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F378AA3D23D91DFE00296A76 /* SettingsFormView.swift */,
+				F378AA3F23D91E1500296A76 /* SettingsContainerView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,6 +346,7 @@
 				F378A9ED23D43C5600296A76 /* CypherPoetCoreDataKit */,
 				F378A9F023D43C6F00296A76 /* CypherPoetSwiftUIAnimationKit */,
 				F378AA2F23D8909C00296A76 /* KeyboardAvoider */,
+				F378AA3A23D91BD900296A76 /* Burritos */,
 			);
 			productName = Flashzilla;
 			productReference = F378A9BB23D438AE00296A76 /* Flashzilla.app */;
@@ -355,6 +381,7 @@
 				F378A9EC23D43C5600296A76 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */,
 				F378A9EF23D43C6E00296A76 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIAnimationKit" */,
 				F378AA2E23D8909C00296A76 /* XCRemoteSwiftPackageReference "KeyboardAvoider" */,
+				F378AA3923D91BD900296A76 /* XCRemoteSwiftPackageReference "Burritos" */,
 			);
 			productRefGroup = F378A9BC23D438AE00296A76 /* Products */;
 			projectDirPath = "";
@@ -391,6 +418,7 @@
 				F378AA0C23D4A5D300296A76 /* View+Stacked.swift in Sources */,
 				F378A9F723D44E3900296A76 /* Card+CoreDataProperties.swift in Sources */,
 				F378A9E823D43B6A00296A76 /* CurrentApplication.swift in Sources */,
+				F378AA3823D91B8C00296A76 /* SettingsState.swift in Sources */,
 				F378AA2323D7B8D900296A76 /* CardDeck+CoreDataProperties.swift in Sources */,
 				F378A9FD23D47E1000296A76 /* CardView+ViewModel.swift in Sources */,
 				F378A9E423D43A1700296A76 /* PreviewData.swift in Sources */,
@@ -400,11 +428,14 @@
 				F378AA1323D63AA700296A76 /* NumberFormatters.swift in Sources */,
 				F378A9C423D438AE00296A76 /* Flashzilla.xcdatamodeld in Sources */,
 				F378AA0E23D4CC6400296A76 /* DraggableCardView.swift in Sources */,
+				F378AA3E23D91DFE00296A76 /* SettingsFormView.swift in Sources */,
 				F378A9BF23D438AE00296A76 /* AppDelegate.swift in Sources */,
 				F378A9E623D43A6900296A76 /* CoreDataManager+Utils.swift in Sources */,
 				F378AA1023D5BAD500296A76 /* CardDeckView.swift in Sources */,
 				F378AA1723D733EF00296A76 /* EditDeckView.swift in Sources */,
 				F378AA1523D7156200296A76 /* Card+AnswerState.swift in Sources */,
+				F378AA3623D91B5100296A76 /* AppState.swift in Sources */,
+				F378AA4023D91E1500296A76 /* SettingsContainerView.swift in Sources */,
 				F378AA1923D7359B00296A76 /* EditDeckView+ViewModel.swift in Sources */,
 				F378A9F323D43CAA00296A76 /* PreviewData+Cards.swift in Sources */,
 				F378AA0223D48CB900296A76 /* CardDeckContainerView.swift in Sources */,
@@ -412,6 +443,7 @@
 				F378A9FB23D47DD900296A76 /* CardView.swift in Sources */,
 				F378AA0723D4985200296A76 /* FetchedResultsControlling.swift in Sources */,
 				F378A9C123D438AE00296A76 /* SceneDelegate.swift in Sources */,
+				F378AA4223D9215400296A76 /* PreviewData+AppStore.swift in Sources */,
 				F378AA2523D7B91E00296A76 /* CardDeck+Computeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -640,6 +672,14 @@
 				minimumVersion = 1.0.1;
 			};
 		};
+		F378AA3923D91BD900296A76 /* XCRemoteSwiftPackageReference "Burritos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/guillermomuntaner/Burritos.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -662,6 +702,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F378AA2E23D8909C00296A76 /* XCRemoteSwiftPackageReference "KeyboardAvoider" */;
 			productName = KeyboardAvoider;
+		};
+		F378AA3A23D91BD900296A76 /* Burritos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F378AA3923D91BD900296A76 /* XCRemoteSwiftPackageReference "Burritos" */;
+			productName = Burritos;
 		};
 /* End XCSwiftPackageProductDependency section */
 
