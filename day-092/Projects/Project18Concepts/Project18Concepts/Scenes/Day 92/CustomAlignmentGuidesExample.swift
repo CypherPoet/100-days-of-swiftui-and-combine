@@ -9,8 +9,7 @@
 import SwiftUI
 
 
-struct CustomAlignmentGuidesExample {
-    
+extension VerticalAlignment {
     enum CustomAlignment: AlignmentID {
         static func defaultValue(in dimensions: ViewDimensions) -> CGFloat {
             dimensions[VerticalAlignment.center]
@@ -22,14 +21,19 @@ struct CustomAlignmentGuidesExample {
 }
 
 
+
+struct CustomAlignmentGuidesExample {
+}
+
+
 // MARK: - View
 extension CustomAlignmentGuidesExample: View {
 
     var body: some View {
-        HStack(alignment: Self.customAlignment) {
+        HStack(alignment: .customAlignment) {
             VStack {
                 Text("Twitter: @Cypher_Poet")
-                    .alignmentGuide(Self.customAlignment) { dimensions in
+                    .alignmentGuide(.customAlignment) { dimensions in
                         dimensions[VerticalAlignment.top]
                     }
                 
@@ -45,7 +49,7 @@ extension CustomAlignmentGuidesExample: View {
                 
                 Text("HUMAN")
                     .font(.largeTitle)
-                    .alignmentGuide(Self.customAlignment) { dimensions in
+                    .alignmentGuide(.customAlignment) { dimensions in
                         dimensions[VerticalAlignment.bottom]
                     }
                 
