@@ -30,6 +30,7 @@ extension GameView.UsedWordListItem: View {
                 }
                 .offset(x: self.xOffset(forItemWith: geometry))
                 .animation(.easeOut(duration: 0.4))
+                .foregroundColor(self.color(forItemWith: geometry))
             }
             .accessibilityElement(children: .ignore)
             .accessibility(label: Text("\(word). \(word.count) letters."))
@@ -38,18 +39,47 @@ extension GameView.UsedWordListItem: View {
 
 
 // MARK: - Private Helpers
-extension GameView.UsedWordListItem {
+private extension GameView.UsedWordListItem {
         
-    func xOffset(forItemWith geometry: GeometryProxy) -> CGFloat {
-        let listWidth = listGeometry.size.width
+    func yPercentageInList(forItemWith geometry: GeometryProxy) -> Double {
         let listHeight = listGeometry.size.height
         let listStartY = listGeometry.frame(in: .global).minY
         let itemGlobalEndY = geometry.frame(in: .global).maxY
         let itemHeight = geometry.size.height
         
-        let yPercentageInList = (itemGlobalEndY - listStartY - (itemHeight * 2)) / listHeight
+        return Double(
+            (itemGlobalEndY - listStartY - (itemHeight * 2))
+            / listHeight
+        )
+    }
+    
+    
+    func xOffset(forItemWith geometry: GeometryProxy) -> CGFloat {
+        let listWidth = listGeometry.size.width
+        let yPercentageInList = self.yPercentageInList(forItemWith: geometry)
         
         return yPercentageInList > 1.0 ? listWidth : 0.0
     }
+    
+    
+    func color(forItemWith geometry: GeometryProxy) -> Color {
+        let yPercentageInList = self.yPercentageInList(forItemWith: geometry)
+            
+        return .init(
+            red: yPercentageInList * 0.5,
+            green: 1.0 - (yPercentageInList / 2.3),
+            blue: yPercentageInList * 0.985
+        )
+    }
 }
+
+
+// MARK: - Preview
+struct UsedWordListItem_Previews: PreviewProvider {
+
+    static var previews: some View {
+        GameView(viewModel: GameViewModel(rootWords: sampleWords))
+    }
+}
+
 
