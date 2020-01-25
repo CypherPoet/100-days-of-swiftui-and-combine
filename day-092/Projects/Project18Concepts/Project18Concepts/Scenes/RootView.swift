@@ -30,6 +30,25 @@ extension RootView: View {
                         destination: CustomAlignmentGuidesExample()
                     )
                 }
+                
+                Section(header: Text("Day 93").font(.headline)) {
+                    NavigationLink(
+                        "Absolute Positioning",
+                        destination: AbsolutePositioningExample()
+                    )
+                    NavigationLink(
+                        "GeometryReader & Coordinate Spaces",
+                        destination: GeometryReaderAndCoordinatesExample()
+                    )
+                    NavigationLink(
+                        "Scroll View Effects with GeometryReaders (1)",
+                        destination: NestedGeometryReadersHelixExample()
+                    )
+                    NavigationLink(
+                        "Scroll View Effects with GeometryReaders (2)",
+                        destination: NestedGeometryReadersCoverFlowExample()
+                    )
+                }
             }
             .navigationBarTitle("Geometry & Layout")
         }

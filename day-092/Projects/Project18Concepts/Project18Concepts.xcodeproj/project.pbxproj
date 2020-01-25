@@ -15,6 +15,12 @@
 		F331C40823DA77110061925E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C40723DA77110061925E /* RootView.swift */; };
 		F331C41823DAB9700061925E /* AlignmentAndGuidesExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C41723DAB9700061925E /* AlignmentAndGuidesExample.swift */; };
 		F331C41A23DABDA70061925E /* CustomAlignmentGuidesExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C41923DABDA70061925E /* CustomAlignmentGuidesExample.swift */; };
+		F331C41D23DAC8E30061925E /* AbsolutePositioningExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C41C23DAC8E30061925E /* AbsolutePositioningExample.swift */; };
+		F331C42123DBCC5A0061925E /* GeometryReaderAndCoordinatesExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C42023DBCC5A0061925E /* GeometryReaderAndCoordinatesExample.swift */; };
+		F331C42623DBDD610061925E /* SpinningHelixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C42523DBDD610061925E /* SpinningHelixView.swift */; };
+		F331C42823DBE2CB0061925E /* NestedGeometryReadersHelixExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C42723DBE2CB0061925E /* NestedGeometryReadersHelixExample.swift */; };
+		F331C42A23DBE2F90061925E /* NestedGeometryReadersCoverFlowExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C42923DBE2F90061925E /* NestedGeometryReadersCoverFlowExample.swift */; };
+		F331C42C23DC056F0061925E /* SideScrollingRectangleFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C42B23DC056F0061925E /* SideScrollingRectangleFlowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		F331C40723DA77110061925E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F331C41723DAB9700061925E /* AlignmentAndGuidesExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentAndGuidesExample.swift; sourceTree = "<group>"; };
 		F331C41923DABDA70061925E /* CustomAlignmentGuidesExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlignmentGuidesExample.swift; sourceTree = "<group>"; };
+		F331C41C23DAC8E30061925E /* AbsolutePositioningExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsolutePositioningExample.swift; sourceTree = "<group>"; };
+		F331C42023DBCC5A0061925E /* GeometryReaderAndCoordinatesExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderAndCoordinatesExample.swift; sourceTree = "<group>"; };
+		F331C42523DBDD610061925E /* SpinningHelixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinningHelixView.swift; sourceTree = "<group>"; };
+		F331C42723DBE2CB0061925E /* NestedGeometryReadersHelixExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedGeometryReadersHelixExample.swift; sourceTree = "<group>"; };
+		F331C42923DBE2F90061925E /* NestedGeometryReadersCoverFlowExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedGeometryReadersCoverFlowExample.swift; sourceTree = "<group>"; };
+		F331C42B23DC056F0061925E /* SideScrollingRectangleFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideScrollingRectangleFlowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				F331C40723DA77110061925E /* RootView.swift */,
+				F331C41B23DAC8D60061925E /* Day 93 */,
 				F331C41623DAB9640061925E /* Day 92 */,
 			);
 			path = Scenes;
@@ -99,6 +112,7 @@
 		F331C40523DA76B60061925E /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F331C42423DBDD560061925E /* Views */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -119,6 +133,26 @@
 				F331C41923DABDA70061925E /* CustomAlignmentGuidesExample.swift */,
 			);
 			path = "Day 92";
+			sourceTree = "<group>";
+		};
+		F331C41B23DAC8D60061925E /* Day 93 */ = {
+			isa = PBXGroup;
+			children = (
+				F331C42723DBE2CB0061925E /* NestedGeometryReadersHelixExample.swift */,
+				F331C41C23DAC8E30061925E /* AbsolutePositioningExample.swift */,
+				F331C42023DBCC5A0061925E /* GeometryReaderAndCoordinatesExample.swift */,
+				F331C42923DBE2F90061925E /* NestedGeometryReadersCoverFlowExample.swift */,
+			);
+			path = "Day 93";
+			sourceTree = "<group>";
+		};
+		F331C42423DBDD560061925E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F331C42523DBDD610061925E /* SpinningHelixView.swift */,
+				F331C42B23DC056F0061925E /* SideScrollingRectangleFlowView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,10 +226,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F331C42A23DBE2F90061925E /* NestedGeometryReadersCoverFlowExample.swift in Sources */,
 				F331C3F023DA76390061925E /* AppDelegate.swift in Sources */,
+				F331C42C23DC056F0061925E /* SideScrollingRectangleFlowView.swift in Sources */,
+				F331C42623DBDD610061925E /* SpinningHelixView.swift in Sources */,
 				F331C41823DAB9700061925E /* AlignmentAndGuidesExample.swift in Sources */,
+				F331C42123DBCC5A0061925E /* GeometryReaderAndCoordinatesExample.swift in Sources */,
+				F331C42823DBE2CB0061925E /* NestedGeometryReadersHelixExample.swift in Sources */,
 				F331C3F223DA76390061925E /* SceneDelegate.swift in Sources */,
 				F331C40823DA77110061925E /* RootView.swift in Sources */,
+				F331C41D23DAC8E30061925E /* AbsolutePositioningExample.swift in Sources */,
 				F331C41A23DABDA70061925E /* CustomAlignmentGuidesExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
