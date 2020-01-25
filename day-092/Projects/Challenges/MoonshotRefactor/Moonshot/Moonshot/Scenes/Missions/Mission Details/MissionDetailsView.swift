@@ -13,14 +13,12 @@ struct MissionDetailsView: View {
     @EnvironmentObject private var store: AppStore
     private(set) var viewModel: MissionDetailsViewModel
     
-    let geometry: GeometryProxy
+    let container: GeometryProxy
 }
 
 
 // MARK: - Computeds
-extension MissionDetailsView {
-
-}
+extension MissionDetailsView {}
 
 
 // MARK: - Body
@@ -54,10 +52,15 @@ extension MissionDetailsView {
 extension MissionDetailsView {
     
     private var badgeImage: some View {
-        Image(decorative: viewModel.imageName)
-            .resizable()
-            .scaledToFit()
-            .frame(maxWidth: geometry.size.width * 0.7)
+        GeometryReader { geometry in
+            Image(decorative: self.viewModel.imageName)
+                .resizable()
+                .scaledToFit()
+                .scaleEffect(self.scale(forHeaderImageWith: geometry))
+                .animation(.easeOut(duration: 0.3))
+                .frame(width: geometry.size.width)
+        }
+        .frame(height: self.container.size.width * 0.7)
     }
     
     
@@ -123,6 +126,14 @@ extension MissionDetailsView {
 }
 
 
+// MARK: - Private Helpers
+private extension MissionDetailsView {
+    
+    func scale(forHeaderImageWith geometry: GeometryProxy) -> CGFloat {
+        geometry.frame(in: .global).minY > 40 ? 1.0 : 0.8
+    }
+}
+
 
 // MARK: - Preview
 struct MissionDetailsView_Previews: PreviewProvider {
@@ -136,7 +147,7 @@ struct MissionDetailsView_Previews: PreviewProvider {
                     store: store,
                     mission: store.state.missionsState.missions[1]
                 ),
-                geometry: geometry
+                container: geometry
             )
         }
         .environmentObject(store)

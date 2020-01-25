@@ -23,7 +23,7 @@ extension MissionDetailsContainerView {
         GeometryReader { geometry in
             MissionDetailsView(
                 viewModel: MissionDetailsViewModel(store: self.store, mission: self.mission),
-                geometry: geometry
+                container: geometry
             )
         }
         .navigationBarTitle(Text(mission.displayName), displayMode: .inline)
