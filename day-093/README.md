@@ -18,3 +18,11 @@ It focuses on several specific topics:
 
 
 The commits for most of the changes related to this day can be found [here](https://github.com/CypherPoet/100-days-of-swiftui-and-combine/commit/013ce270c007a6b432a739a55771acf24daab0d1).
+
+
+
+# 📸 Screenshots
+
+<div style="text-align: center;">
+    <img src="../day-092/Projects/Project18Concepts/Screenshots/day-93-recording-1.gif" width="400px"/>
+</div>

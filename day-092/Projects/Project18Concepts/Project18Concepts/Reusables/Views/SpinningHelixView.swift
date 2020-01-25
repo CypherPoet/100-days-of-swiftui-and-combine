@@ -24,16 +24,15 @@ extension SpinningHelixView: View {
     var body: some View {
         ForEach(0..<50) { row in
             GeometryReader { geometry in
-                Text("Row \(row)")
-                    .font(.largeTitle)
+                Rectangle()
+                    .fill(self.colors[row % self.colors.count])
                     .frame(width: self.container.size.width)
-                    .background(self.colors[row % self.colors.count])
                     .rotation3DEffect(
                         self.rotation(forRowWith: geometry),
                         axis: (x: 0, y: 1, z: 0)
                     )
             }
-            .frame(height: 40)
+            .frame(height: 60)
         }
     }
 }
@@ -56,7 +55,7 @@ private extension SpinningHelixView {
         let containerMidHeight = Double(container.size.height) / 2.0
         
         return .radians(
-            ((screenHeight / 4 / 180) * Double.pi) - containerMidHeight
+            ((screenHeight / 6 / 180) * Double.pi) - containerMidHeight
         )
     }
 }
