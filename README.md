@@ -99,12 +99,13 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 90:** [_Project 17: Flashzilla (Part Five)_](./day-090/)
 - **Day 91:** [_Project 17: Flashzilla (Part Six)_](./day-091/)
 - **Day 92:** [_Project 18: Layout And Geometry (Part One)_](./day-092/)
+- **Day 93:** [_Project 18: Layout And Geometry (Part Two)_](./day-093/)
 
 </details>
 
 **Latest Day:**
 
-- **Day 93:** [_Project 18: Layout And Geometry (Part Two)_](./day-093/)
+- **Day 94:** [_Project 18: Layout And Geometry (Part Three)_](./day-094/)
 
 
 
@@ -285,6 +286,17 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 
 
 - [Project 17: Flashzilla](./day-086/Projects/Flashzilla/)
+
+<br/>
+<br/>
+
+
+
+- [Project 18: Layout And Geometry](./day-092/Projects/Project18Concepts/)
+
+<div style="text-align: center;">
+  <img src="./day-092/Projects/Project18Concepts/Screenshots/day-93-recording-1.gif" width="300px"/>
+</div>
 
 <br/>
 <br/>
