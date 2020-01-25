@@ -1,4 +1,4 @@
-# Day 92: Project 18: _Layout And Geometry_ (Part One)
+# Day 92: _Project 18: Layout And Geometry_ (Part One)
 
 _Follow along at https://www.hackingwithswift.com/100/swiftui/92_.
 
