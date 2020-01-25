@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F331C42E23DC5D400061925E /* GameView+UsedWordListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C42D23DC5D400061925E /* GameView+UsedWordListItem.swift */; };
 		F3660D9B235EC5B000FAF849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3660D9A235EC5B000FAF849 /* AppDelegate.swift */; };
 		F3660D9D235EC5B000FAF849 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3660D9C235EC5B000FAF849 /* SceneDelegate.swift */; };
 		F3660DA1235EC5B100FAF849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3660DA0235EC5B100FAF849 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F331C42D23DC5D400061925E /* GameView+UsedWordListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameView+UsedWordListItem.swift"; sourceTree = "<group>"; };
 		F3660D97235EC5B000FAF849 /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3660D9A235EC5B000FAF849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3660D9C235EC5B000FAF849 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				F367BF232360873600FDEB0C /* GameViewModel.swift */,
 				F367BF2523608A4500FDEB0C /* GameContainerView.swift */,
 				F367BF2723608B1600FDEB0C /* GameView.swift */,
+				F331C42D23DC5D400061925E /* GameView+UsedWordListItem.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			files = (
 				F3660DB5235EC9D000FAF849 /* Bundle+DecodeFromFileName.swift in Sources */,
 				F3660D9B235EC5B000FAF849 /* AppDelegate.swift in Sources */,
+				F331C42E23DC5D400061925E /* GameView+UsedWordListItem.swift in Sources */,
 				F367BF242360873600FDEB0C /* GameViewModel.swift in Sources */,
 				F3660D9D235EC5B000FAF849 /* SceneDelegate.swift in Sources */,
 				F367BF2A23609FC400FDEB0C /* Appearance.swift in Sources */,

@@ -9,6 +9,11 @@
 import SwiftUI
 
 
+enum CoordinateSpaceName {
+    static let gameViewList = "Game View List"
+}
+
+
 struct GameView: View {
     @ObservedObject var viewModel: GameViewModel
 }
@@ -37,27 +42,33 @@ extension GameView {
                     text: $viewModel.currentGuess,
                     onCommit: viewModel.checkNewWord
                 )
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-                    .padding()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
+                .padding()
 
                 
-                Form {
-                    Section(
-                        header: HStack {
-                            Text("Used Words")
-                            Spacer()
-                            Text("Current Score: \(viewModel.currentScore)")
-                        }
-                        .font(.headline)
-                        .padding()
-                    ) {
-                        List(viewModel.usedWords, id: \.self) { word in
-                            UsedWordListItem(word: word)
+                GeometryReader { geometry in
+                    List {
+                        Section(
+                            header: HStack {
+                                Text("Used Words")
+                                Spacer()
+                                Text("Current Score: \(self.viewModel.currentScore)")
+                            }
+                            .font(.headline)
+                            .padding()
+                        ) {
+                            ForEach(self.viewModel.usedWords, id: \.self) { word in
+                                UsedWordListItem(
+                                    word: word,
+                                    listGeometry: geometry
+                                )
+                            }
                         }
                     }
                 }
+                .coordinateSpace(name: CoordinateSpaceName.gameViewList)
             }
             .navigationBarTitle("Anagrams")
             .navigationBarItems(leading: restartButton)
@@ -93,18 +104,3 @@ struct GameView_Previews: PreviewProvider {
 }
 
 
-private struct UsedWordListItem: View {
-    let word: String
-    
-    
-    var body: some View {
-        HStack {
-            Text(word)
-            Spacer()
-            Image(systemName: "\(word.count).circle")
-                .imageScale(.large)
-        }
-        .accessibilityElement(children: .ignore)
-        .accessibility(label: Text("\(word). \(word.count) letters."))
-    }
-}
