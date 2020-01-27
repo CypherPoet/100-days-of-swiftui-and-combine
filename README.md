@@ -102,12 +102,13 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 93:** [_Project 18: Layout And Geometry (Part Two)_](./day-093/)
 - **Day 94:** [_Project 18: Layout And Geometry (Part Three)_](./day-094/)
 - **Day 95:** [Milestone for Projects 16-18](./day-095/)
+- **Day 96:** [_Project 19: SnowSeeker (Part One)_](./day-096/)
 
 </details>
 
 **Latest Day:**
 
-- **Day 96:** [_Project 19: SnowSeeker (Part One)_](./day-096/)
+- **Day 97:** [_Project 19: SnowSeeker (Part Two)_](./day-097/)
 
 
 
