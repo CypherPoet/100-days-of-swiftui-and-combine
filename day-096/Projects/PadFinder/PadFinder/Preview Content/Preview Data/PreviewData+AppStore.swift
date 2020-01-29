@@ -16,7 +16,6 @@ extension PreviewData {
             id: 166,
             name: "Rocket Lab Launch Complex 1",
             padType: .landing,
-//            mapURL: URL(string: #"https:\/\/twitter.com\/rocketlab"#.replacingOccurrences(of: #"\"#, with: ""))!,
             mapURL: URL(
                 string: #"https:\/\/www.google.ee\/maps\/place\/39°15'46.2\"S+177°51'52.1\"E\/"#
                     .replacingOccurrences(of: #"\"#, with: "")

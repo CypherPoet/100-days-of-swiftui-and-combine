@@ -9,10 +9,11 @@
 import SwiftUI
 
 
-struct PadsListView {
+struct PadsListView<Destination: View> {
     @EnvironmentObject private var store: AppStore
 
     @ObservedObject var viewModel: ViewModel
+    let buildDestination: ((Pad) -> Destination)
 }
 
 
@@ -21,7 +22,7 @@ extension PadsListView: View {
 
     var body: some View {
         List(viewModel.pads) { pad in
-            NavigationLink(destination: Text(pad.name)) {
+            NavigationLink(destination: self.buildDestination(pad)) {
                 HStack {
                     pad.padType.listItemImage
                     
@@ -64,7 +65,8 @@ struct PadsListView_Previews: PreviewProvider {
         let store = PreviewData.AppStores.withPads
 
         return PadsListView(
-            viewModel: .init(padsState: store.state.padsState)
+            viewModel: .init(padsState: store.state.padsState),
+            buildDestination: { _ in EmptyView() }
         )
         .environmentObject(store)
     }
