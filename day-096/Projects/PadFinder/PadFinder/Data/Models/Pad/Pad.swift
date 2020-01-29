@@ -15,10 +15,11 @@ struct Pad {
     var name: String
     var padType: PadType
     var mapURL: URL
+    var wikiURL: URL?
     var latitude: CLLocationDegrees
     var longitude: CLLocationDegrees
     var isRetired: Bool
-    var infoURLs: [URL]
+    var infoURLs: [URL]?
 }
 
 
@@ -42,6 +43,7 @@ extension Pad: Decodable {
         case name = "name"
         case padType = "padType"
         case mapURL = "mapURL"
+        case wikiURL = "wikiURL"
         case latitude = "latitude"
         case longitude = "longitude"
         case isRetired = "retired"
@@ -64,6 +66,14 @@ extension Pad: Decodable {
 //            print("failed to make URL from string \(mapURLString)")
 //        }
         
+        if let wikiURLString = try? container
+            .decode(String.self, forKey: .wikiURL)
+            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        {
+            wikiURL = URL(string: wikiURLString)
+        }
+        
+        
         let latitudeString = try container.decode(String.self, forKey: .latitude)
         latitude = CLLocationDegrees(latitudeString) ?? 0.0
         
@@ -73,7 +83,7 @@ extension Pad: Decodable {
         let isRetiredInt = try container.decode(Int.self, forKey: .isRetired)
         
         isRetired = Pad.isRetired(int: isRetiredInt)
-        infoURLs = try container.decodeIfPresent([URL].self, forKey: .infoURLs) ?? []
+        infoURLs = try container.decodeIfPresent([URL].self, forKey: .infoURLs)
     }
 }
 
