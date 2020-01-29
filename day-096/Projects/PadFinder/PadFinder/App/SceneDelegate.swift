@@ -27,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // Create the SwiftUI view that provides the window contents.
             let entryView = PadsListContainerView()
                 .environmentObject(store)
+                .accentColor(.pink)
             
             window.rootViewController = UIHostingController(rootView: entryView)
 

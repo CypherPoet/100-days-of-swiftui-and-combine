@@ -105,21 +105,24 @@ extension PadDetailsView.ViewModel {
 // MARK: - Private Helpers
 private extension PadDetailsView.ViewModel {
 
+    /// Strips the leading "sub domain" and trailing "top-level domain"
+    /// parts (including the ".") from a URL `host` string
     func strippedHostName(from hostNameString: String) -> String {
-        hostNameString
-            .replacingOccurrences(of: "www.", with: "")
+        var hostNameString = hostNameString
+        
+        // Strip the leading sub domain part if it exists
+        if hostNameString.split(separator: ".").count > 2 {
+            hostNameString = hostNameString
+                .replacingOccurrences(of: "^(\\w*\\.){1}", with: "", options: .regularExpression)
+        }
+
+        // Strip the trailing top-level domain part
+        return hostNameString
             .replacingOccurrences(of: "\\.(.*)", with: "", options: .regularExpression)
             .capitalized
     }
     
     
     func setupSubscribers() {
-        
-//        snapshotImagePublisher
-//            .receive(on: DispatchQueue.main)
-//            .sink(
-//                receiveValue: { self.mapSnapshotImage = $0 }
-//            )
-//            .store(in: &subscriptions)
     }
 }

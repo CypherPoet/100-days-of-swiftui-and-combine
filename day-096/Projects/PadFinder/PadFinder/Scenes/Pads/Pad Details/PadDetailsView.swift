@@ -38,6 +38,8 @@ extension PadDetailsView: View {
                     }
                 }
                 .padding(.horizontal)
+                
+                Spacer()
             }
             .onAppear {
                 self.viewModel.takeMapSnapshot(
@@ -82,6 +84,7 @@ extension PadDetailsView {
         .padding(.top)
     }
     
+    
     private var linksSection: some View {
         Section(
             header: Text("Links").font(.headline)
@@ -123,5 +126,6 @@ struct PadDetailsView_Previews: PreviewProvider {
                 )
             )
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

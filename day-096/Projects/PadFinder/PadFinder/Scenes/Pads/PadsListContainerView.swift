@@ -52,17 +52,7 @@ private extension PadsListContainerView {
         store.send(PadsSideEffect.fetchPads)
     }
     
-    
-//    func makeSnapshotter(for pad: Pad) -> MKMapSnapshotter {
-//        let snapshotOptions = pad.baseSnapshotOptions
-//
-//        snapshotOptions.size = CGSize(width: 200, height: 200)
-//
-//
-//        return MKMapSnapshotter(options: snapshotOptions)
-//    }
-    
-    
+
     func makeSnapshotOptions(for pad: Pad) -> MKMapSnapshotter.Options {
         let snapshotOptions = pad.baseSnapshotOptions
 
@@ -70,26 +60,13 @@ private extension PadsListContainerView {
     }
     
     
-//    func makeSnapshotService(for pad: Pad) -> MKMapSnapshotter {
-//        let service = MapSnapshottingService.shared
-//        let snapshotOptions = pad.baseSnapshotOptions
-//
-//        snapshotOptions.size = CGSize(width: 300, height: 300)
-//
-//
-//        return MKMapSnapshotter(options: snapshotOptions)
-//    }
-//
-    
     func buildDestination(forPad pad: Pad) -> some View {
         PadDetailsView(
             viewModel: .init(
                 pad: pad,
                 snapshotService: MapSnapshottingService(
-//                    snapshotter: makeSnapshotter(for: pad)
                     snapshotOptions: makeSnapshotOptions(for: pad)
                 )
-                
             )
         )
     }
