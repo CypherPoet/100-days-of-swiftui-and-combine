@@ -101,12 +101,15 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 92:** [_Project 18: Layout And Geometry (Part One)_](./day-092/)
 - **Day 93:** [_Project 18: Layout And Geometry (Part Two)_](./day-093/)
 - **Day 94:** [_Project 18: Layout And Geometry (Part Three)_](./day-094/)
+- **Day 95:** [Milestone for Projects 16-18](./day-095/)
+- **Day 96:** [_Project 19: PadFinder (Part One)_](./day-096/)
+- **Day 97:** [_Project 19: PadFinder (Part Two)_](./day-097/)
 
 </details>
 
 **Latest Day:**
 
-- **Day 95:** [Milestone for Projects 16-18](./day-095/)
+- **Day 98:** [_Project 19: PadFinder (Part Three)_](./day-098/)
 
 
 
