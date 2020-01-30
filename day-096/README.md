@@ -30,6 +30,10 @@ From the project description:
 > This will be the first app where we specifically aim to make something that works great on iPad by showing two views side by side, but you’ll also get deep into solving problematic layouts, learn a new way to show sheets and alerts, and more.
 
 
+📝 Since I couldn't help myself and wanted to use data from a real API, I decided to put a twist on this project and make it search for rocket launch pads through the [Launch Library API](https://github.com/CypherPoet/100-days-of-swiftui-and-combine/commit/c6ea070356c0910398a0e70f9b5083d402038756).
+
+I'm also thinking there's a good opportunity to integrate Map Kit snapshots for showing the location of each launch pad -- we'll see 🙂.
+
 
 ## Working with two side by side views in SwiftUI
 
