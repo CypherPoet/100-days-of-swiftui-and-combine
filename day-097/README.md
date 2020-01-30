@@ -14,3 +14,6 @@ It focuses on several specific topics:
 - Building a primary list of items
 - Making NavigationView work in landscape
 - Creating a secondary view for NavigationView
+
+
+Commits for the changes related to this day can be found in the vicinity of [this one](https://github.com/CypherPoet/100-days-of-swiftui-and-combine/commit/c6ea070356c0910398a0e70f9b5083d402038756).
