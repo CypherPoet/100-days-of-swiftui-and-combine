@@ -44,6 +44,8 @@ extension MapSnapshotServicing {
         
         let snapshotter = MKMapSnapshotter(options: snapshotOptions)
         
+        // TOOD: Ideally, we'd implement some kind of cahcing here, or save the images
+        // as part of each pad model -- which could be persisted in Core Data.
         return Future { promise in
             snapshotter.start(with: self.queue) { (snapshot, error) in
                 guard error == nil else {

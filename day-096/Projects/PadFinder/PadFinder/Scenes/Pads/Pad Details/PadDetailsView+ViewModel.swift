@@ -35,6 +35,14 @@ extension PadDetailsView {
             self.isPadFavorited = isPadFavorited
             self.snapshotService = snapshotService
             
+            // In lieu of image caching or persistance, we'll have to call
+            // this during init instead of onAppear. That's not the greatest.
+//            self.takeMapSnapshot(
+//                size: CGSize(
+//                    width: UIScreen.main.bounds.width,
+//                    height: UIScreen.main.bounds.width * 0.75
+//                )
+//            )
             setupSubscribers()
         }
     }
@@ -84,7 +92,7 @@ extension PadDetailsView.ViewModel {
 // MARK: - Public Methods
 extension PadDetailsView.ViewModel {
     
-    func takeMapSnapshot(with size: CGSize) {
+    func takeMapSnapshot(size: CGSize) {
         snapshotService
             .takeSnapshot(with: size, at: pad.coordinate)
             .assertNoFailure()

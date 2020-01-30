@@ -12,8 +12,6 @@ import CypherPoetSwiftUIKit
 
 
 struct PadDetailsView {
-    @EnvironmentObject private var store: AppStore
-
     @ObservedObject var viewModel: ViewModel
     
     var onFavoriteToggled: ((Pad) -> Void)?
@@ -42,17 +40,17 @@ extension PadDetailsView: View {
 
                 self.optionsSection
             }
-            .onAppear {
-                self.viewModel.takeMapSnapshot(
-                    with: CGSize(
-                        width: UIScreen.main.bounds.width,
-                        height: UIScreen.main.bounds.width * 0.75
-                    )
-                )
-            }
             .embedInScrollView(axes: .vertical)
         }
         .navigationBarTitle(Text(viewModel.padNameText), displayMode: .inline)
+        .onAppear {
+            self.viewModel.takeMapSnapshot(
+                size: CGSize(
+                    width: UIScreen.main.bounds.width,
+                    height: UIScreen.main.bounds.width * 0.75
+                )
+            )
+        }
     }
 }
 

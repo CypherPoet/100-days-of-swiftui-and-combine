@@ -48,8 +48,6 @@ extension PadsState.DataFetchingState: Equatable {
             return false
         }
     }
-    
-        
 }
 
 
