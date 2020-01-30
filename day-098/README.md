@@ -16,3 +16,4 @@ It focuses on several specific topics:
 - Letting the user mark favorites
 
 
+Commits for the changes related to this day can be found in the vicinity of [this one](https://github.com/CypherPoet/100-days-of-swiftui-and-combine/commit/0d37238c500572a2df6ae320ac4dfc5464dc4e9e).

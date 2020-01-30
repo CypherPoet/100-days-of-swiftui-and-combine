@@ -30,8 +30,8 @@ extension MapSnapshotServicing {
     func takeSnapshot(
         with size: CGSize,
         at coordinate: CLLocationCoordinate2D,
-        latitudeSpan: CLLocationDegrees = 0.15,
-        longitudeSpan: CLLocationDegrees = 0.15
+        latitudeSpan: CLLocationDegrees = 1.75,
+        longitudeSpan: CLLocationDegrees = 1.75
     ) -> Future<MKMapSnapshotter.Snapshot, Error> {
         let span = MKCoordinateSpan(latitudeDelta: latitudeSpan, longitudeDelta: longitudeSpan)
         

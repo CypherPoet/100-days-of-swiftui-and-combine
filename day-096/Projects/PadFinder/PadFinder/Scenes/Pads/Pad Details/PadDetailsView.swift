@@ -12,6 +12,7 @@ import CypherPoetSwiftUIKit
 
 
 struct PadDetailsView {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @ObservedObject var viewModel: ViewModel
     
     var onFavoriteToggled: ((Pad) -> Void)?
@@ -23,31 +24,35 @@ extension PadDetailsView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            List {
+            VStack {
                 if self.viewModel.mapSnapshotImage != nil {
-                    Image(uiImage: self.viewModel.mapSnapshotImage!)
-                        .resizable()
-                        .scaledToFit()
-                        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                    self.snapshotImageSection
+                        .transition(
+                            AnyTransition
+                                .move(edge: .bottom)
+                                .animation(Animation.easeOut(duration: 0.5))
+                        )
                 }
+                
+                List {
+                    self.coordinateHeader
+                        .padding(.vertical)
+                        
+                    if self.viewModel.webLinkData.isEmpty == false {
+                        self.linksSection
+                    }
 
-                self.coordinateHeader
-                    .padding(.vertical)
-                    
-                if self.viewModel.webLinkData.isEmpty == false {
-                    self.linksSection
+                    self.optionsSection
                 }
-
-                self.optionsSection
             }
-            .embedInScrollView(axes: .vertical)
         }
+        .embedInScrollView(axes: .vertical)
         .navigationBarTitle(Text(viewModel.padNameText), displayMode: .inline)
         .onAppear {
             self.viewModel.takeMapSnapshot(
                 size: CGSize(
                     width: UIScreen.main.bounds.width,
-                    height: UIScreen.main.bounds.width * 0.75
+                    height: UIScreen.main.bounds.height * self.snapshotHeightRatio
                 )
             )
         }
@@ -57,11 +62,33 @@ extension PadDetailsView: View {
 
 // MARK: - Computeds
 extension PadDetailsView {
+    
+    var snapshotHeightRatio: CGFloat {
+        horizontalSizeClass == .compact ? 0.35 : 0.60
+    }
 }
 
 
 // MARK: - View Variables
 extension PadDetailsView {
+    
+    private var snapshotImageSection: some View {
+        ZStack {
+            Image(uiImage: self.viewModel.mapSnapshotImage!)
+                .resizable()
+                .scaledToFit()
+                .zIndex(0)
+            
+            Image("RocketAnnotation")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 80, height: 80)
+                .offset(x: 0, y: -40)
+                .transition(.move(edge: .bottom))
+                .animation(Animation.spring().delay(0.3))
+                .zIndex(1)
+        }
+    }
     
     private var coordinateHeader: some View {
         HStack(spacing: 12) {
@@ -74,10 +101,10 @@ extension PadDetailsView {
                 .clipShape(Circle())
             
             Group {
-                Text("Lat: ").fontWeight(.bold)
+                Text("Latitude: ").fontWeight(.bold)
                     + Text(self.viewModel.latitudeText)
 
-                Text("Lon: ").fontWeight(.bold)
+                Text("Longitude: ").fontWeight(.bold)
                     + Text(self.viewModel.longitudeText)
             }
             .embedInCompactableStack()
