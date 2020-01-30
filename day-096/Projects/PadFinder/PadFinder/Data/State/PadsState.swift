@@ -10,10 +10,14 @@
 import Foundation
 import Combine
 import CypherPoetSwiftUIKit_DataFlowUtils
+import CypherPoetPropertyWrappers_UserDefault
 
 
 struct PadsState {
     var dataFetchingState: DataFetchingState = .inactive
+    
+    @UserDefault("pads-state-favorites", defaultValue: [Pad.ID]())
+    var favorites: [Pad.ID]
 }
 
 
@@ -26,6 +30,7 @@ extension PadsState {
         case errored(Error)
     }
 }
+
 
 extension PadsState.DataFetchingState: Equatable {
     
@@ -71,6 +76,8 @@ enum PadsAction {
     case padsFetchStart
     case fetchedPadsSet([Pad])
     case fetchErrorSet(Error)
+    case favoriteAdded(Pad.ID)
+    case favoriteRemoved(Pad.ID)
 }
 
 
@@ -84,7 +91,10 @@ let padsReducer: Reducer<PadsState, PadsAction> = Reducer(
             state.dataFetchingState = .fetching
         case .fetchErrorSet(let error):
             state.dataFetchingState = .errored(error)
+        case .favoriteAdded(let padID):
+            state.favorites.append(padID)
+        case .favoriteRemoved(let padID):
+            state.favorites.removeAll(where: { $0 == padID })
         }
     }
 )
-

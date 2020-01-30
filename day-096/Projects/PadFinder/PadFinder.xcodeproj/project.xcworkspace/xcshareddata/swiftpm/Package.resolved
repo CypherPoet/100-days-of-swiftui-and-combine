@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "CypherPoetPropertyWrappers",
+        "repositoryURL": "https://github.com/CypherPoet/CypherPoetPropertyWrappers.git",
+        "state": {
+          "branch": null,
+          "revision": "9e1c62432f5a25a159e80dee28965e8cc20b7939",
+          "version": "0.0.1"
+        }
+      },
+      {
         "package": "CypherPoetSwiftUIKit",
         "repositoryURL": "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git",
         "state": {

@@ -16,6 +16,7 @@
 		F32ED62623E0D525006A5195 /* Pad+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32ED62523E0D525006A5195 /* Pad+Computeds.swift */; };
 		F32ED62923E0F0C6006A5195 /* MapSnapshottingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32ED62823E0F0C6006A5195 /* MapSnapshottingService.swift */; };
 		F32ED62B23E0F0F1006A5195 /* MapSnapshotServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32ED62A23E0F0F1006A5195 /* MapSnapshotServicing.swift */; };
+		F32ED62E23E163BB006A5195 /* CypherPoetPropertyWrappers in Frameworks */ = {isa = PBXBuildFile; productRef = F32ED62D23E163BB006A5195 /* CypherPoetPropertyWrappers */; };
 		F331C45C23DDB0AE0061925E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C45B23DDB0AE0061925E /* AppDelegate.swift */; };
 		F331C45E23DDB0AE0061925E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C45D23DDB0AE0061925E /* SceneDelegate.swift */; };
 		F331C46223DDB0B00061925E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F331C46123DDB0B00061925E /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		F331C49823DE10010061925E /* PreviewData+AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C49723DE10010061925E /* PreviewData+AppStore.swift */; };
 		F331C49C23DE18650061925E /* PadsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C49B23DE18650061925E /* PadsListView.swift */; };
 		F331C49E23DE187A0061925E /* PadsListView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C49D23DE187A0061925E /* PadsListView+ViewModel.swift */; };
+		F356E61E23E25E7A008553B0 /* PadDetailsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F356E61D23E25E7A008553B0 /* PadDetailsContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,7 @@
 		F331C49723DE10010061925E /* PreviewData+AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewData+AppStore.swift"; sourceTree = "<group>"; };
 		F331C49B23DE18650061925E /* PadsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadsListView.swift; sourceTree = "<group>"; };
 		F331C49D23DE187A0061925E /* PadsListView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PadsListView+ViewModel.swift"; sourceTree = "<group>"; };
+		F356E61D23E25E7A008553B0 /* PadDetailsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadDetailsContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F331C49123DDF0A30061925E /* CypherPoetNetStack in Frameworks */,
+				F32ED62E23E163BB006A5195 /* CypherPoetPropertyWrappers in Frameworks */,
 				F331C48123DDDE080061925E /* CypherPoetSwiftUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +90,7 @@
 			children = (
 				F32ED61C23DF9B46006A5195 /* PadDetailsView.swift */,
 				F32ED61E23DF9B7C006A5195 /* PadDetailsView+ViewModel.swift */,
+				F356E61D23E25E7A008553B0 /* PadDetailsContainerView.swift */,
 			);
 			path = "Pad Details";
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			packageProductDependencies = (
 				F331C48023DDDE080061925E /* CypherPoetSwiftUIKit */,
 				F331C49023DDF0A30061925E /* CypherPoetNetStack */,
+				F32ED62D23E163BB006A5195 /* CypherPoetPropertyWrappers */,
 			);
 			productName = PadFinder;
 			productReference = F331C45823DDB0AE0061925E /* PadFinder.app */;
@@ -302,6 +308,7 @@
 			packageReferences = (
 				F331C47F23DDDE080061925E /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
 				F331C48F23DDF0A30061925E /* XCRemoteSwiftPackageReference "CypherPoetNetStack" */,
+				F32ED62C23E163BB006A5195 /* XCRemoteSwiftPackageReference "CypherPoetPropertyWrappers" */,
 			);
 			productRefGroup = F331C45923DDB0AE0061925E /* Products */;
 			projectDirPath = "";
@@ -331,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F331C47C23DDB1710061925E /* PadsListContainerView.swift in Sources */,
+				F356E61E23E25E7A008553B0 /* PadDetailsContainerView.swift in Sources */,
 				F331C48523DDDE710061925E /* AppState.swift in Sources */,
 				F32ED62923E0F0C6006A5195 /* MapSnapshottingService.swift in Sources */,
 				F32ED61F23DF9B7C006A5195 /* PadDetailsView+ViewModel.swift in Sources */,
@@ -548,6 +556,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F32ED62C23E163BB006A5195 /* XCRemoteSwiftPackageReference "CypherPoetPropertyWrappers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetPropertyWrappers.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
 		F331C47F23DDDE080061925E /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git";
@@ -567,6 +583,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F32ED62D23E163BB006A5195 /* CypherPoetPropertyWrappers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F32ED62C23E163BB006A5195 /* XCRemoteSwiftPackageReference "CypherPoetPropertyWrappers" */;
+			productName = CypherPoetPropertyWrappers;
+		};
 		F331C48023DDDE080061925E /* CypherPoetSwiftUIKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F331C47F23DDDE080061925E /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */;

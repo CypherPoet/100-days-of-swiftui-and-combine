@@ -25,6 +25,7 @@ extension PadsListContainerView: View {
                 buildDestination: buildDestination(forPad:)
             )
             .navigationBarTitle("Launch Pads")
+            .environmentObject(store)
             
             WelcomeView()
         }
@@ -59,16 +60,18 @@ private extension PadsListContainerView {
         return snapshotOptions
     }
     
-    
+
+    func toggleFavorite(for pad: Pad) {
+        if padsState.favorites.contains(pad.id) {
+            store.send(.pads(.favoriteRemoved(pad.id)))
+        } else {
+            store.send(.pads(.favoriteAdded(pad.id)))
+        }
+    }
+
+
     func buildDestination(forPad pad: Pad) -> some View {
-        PadDetailsView(
-            viewModel: .init(
-                pad: pad,
-                snapshotService: MapSnapshottingService(
-                    snapshotOptions: makeSnapshotOptions(for: pad)
-                )
-            )
-        )
+        PadDetailsContainerView(pad: pad)
     }
 }
 

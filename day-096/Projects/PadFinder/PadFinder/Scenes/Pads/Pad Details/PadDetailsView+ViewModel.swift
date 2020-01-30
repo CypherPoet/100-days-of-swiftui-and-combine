@@ -16,20 +16,23 @@ extension PadDetailsView {
     final class ViewModel: ObservableObject {
         private var subscriptions = Set<AnyCancellable>()
 
-        private let pad: Pad
+        let pad: Pad
+        let isPadFavorited: Bool
         private let snapshotService: MapSnapshotServicing
         
 
         // MARK: - Published Outputs
         @Published var mapSnapshotImage: UIImage?
 
-
+        
         // MARK: - Init
         init(
             pad: Pad,
+            isPadFavorited: Bool,
             snapshotService: MapSnapshotServicing
         ) {
             self.pad = pad
+            self.isPadFavorited = isPadFavorited
             self.snapshotService = snapshotService
             
             setupSubscribers()
@@ -46,15 +49,7 @@ extension PadDetailsView.ViewModel {
 // MARK: - Computeds
 extension PadDetailsView.ViewModel {
     
-    // TODO: Replace with MapKit Snapshot
-    var mapImageName: String {
-        "CanaveralMapSample"
-    }
-    
-    var padNameText: String {
-        pad.name
-    }
-    
+    var padNameText: String { pad.name }
     
     var latitudeText: String {
         NumberFormatters.padCoordinateDisplay.string(for: pad.latitude) ?? ""
@@ -64,9 +59,7 @@ extension PadDetailsView.ViewModel {
         NumberFormatters.padCoordinateDisplay.string(for: pad.longitude) ?? ""
     }
     
-    var wikipediaURL: URL? {
-        pad.wikiURL
-    }
+    var wikipediaURL: URL? { pad.wikiURL }
     
     
     var webLinkData: [(hostName: String, url: URL)] {
@@ -79,6 +72,11 @@ extension PadDetailsView.ViewModel {
                 
                 return (hostName: strippedHostName(from: hostName), url: url)
             }
+    }
+    
+    
+    var favoritesButtonText: String {
+        return isPadFavorited ? "Remove From Favorites" : "Add to Favorites"
     }
 }
 

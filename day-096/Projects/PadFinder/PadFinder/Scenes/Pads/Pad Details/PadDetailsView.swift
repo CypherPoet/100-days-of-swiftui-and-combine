@@ -12,7 +12,11 @@ import CypherPoetSwiftUIKit
 
 
 struct PadDetailsView {
+    @EnvironmentObject private var store: AppStore
+
     @ObservedObject var viewModel: ViewModel
+    
+    var onFavoriteToggled: ((Pad) -> Void)?
 }
 
 
@@ -21,25 +25,22 @@ extension PadDetailsView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            VStack {
+            List {
                 if self.viewModel.mapSnapshotImage != nil {
                     Image(uiImage: self.viewModel.mapSnapshotImage!)
                         .resizable()
                         .scaledToFit()
+                        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 }
-                
-                Group {
-                    self.coordinateHeader
+
+                self.coordinateHeader
+                    .padding(.vertical)
                     
-                    VStack(alignment: .leading) {
-                        if self.viewModel.webLinkData.isEmpty == false {
-                            self.linksSection
-                        }
-                    }
+                if self.viewModel.webLinkData.isEmpty == false {
+                    self.linksSection
                 }
-                .padding(.horizontal)
-                
-                Spacer()
+
+                self.optionsSection
             }
             .onAppear {
                 self.viewModel.takeMapSnapshot(
@@ -66,6 +67,8 @@ extension PadDetailsView {
     
     private var coordinateHeader: some View {
         HStack(spacing: 12) {
+            Spacer()
+            
             Image(systemName: "mappin")
                 .padding()
                 .foregroundColor(.white)
@@ -80,8 +83,9 @@ extension PadDetailsView {
                     + Text(self.viewModel.longitudeText)
             }
             .embedInCompactableStack()
+            
+            Spacer()
         }
-        .padding(.top)
     }
     
     
@@ -89,7 +93,7 @@ extension PadDetailsView {
         Section(
             header: Text("Links").font(.headline)
         ) {
-            List(viewModel.webLinkData, id: \.0) { linkItem in
+            ForEach(viewModel.webLinkData, id: \.0) { linkItem in
                 Button(action: {
                     UIApplication.shared.open(linkItem.url)
                 }) {
@@ -97,6 +101,25 @@ extension PadDetailsView {
                         .foregroundColor(.accentColor)
                 }
             }
+        }
+    }
+    
+    
+    private var optionsSection: some View {
+        Section(
+            header: Text("Options").font(.headline)
+        ) {
+            favoritesButton
+        }
+    }
+    
+    
+    private var favoritesButton: some View {
+        Button(action: {
+            self.onFavoriteToggled?(self.viewModel.pad)
+        }) {
+            Text(viewModel.favoritesButtonText)
+                .foregroundColor(.accentColor)
         }
     }
 }
@@ -120,6 +143,7 @@ struct PadDetailsView_Previews: PreviewProvider {
             PadDetailsView(
                 viewModel: .init(
                     pad: PreviewData.Pads.pad1,
+                    isPadFavorited: false,
                     snapshotService: MapSnapshottingService(
                         snapshotOptions: snapshotOptions
                     )
@@ -127,5 +151,6 @@ struct PadDetailsView_Previews: PreviewProvider {
             )
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .environmentObject(PreviewData.AppStores.withPads)
     }
 }

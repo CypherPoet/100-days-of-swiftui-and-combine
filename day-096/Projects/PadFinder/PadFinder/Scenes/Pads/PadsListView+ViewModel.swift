@@ -20,11 +20,11 @@ extension PadsListView {
         
         // MARK: - Published Outputs
         @Published var pads: [Pad] = []
-
+        
 
         // MARK: - Init
         init(
-            padsState: PadsState = .init()
+            padsState: PadsState
         ) {
             self.padsState = padsState
             
