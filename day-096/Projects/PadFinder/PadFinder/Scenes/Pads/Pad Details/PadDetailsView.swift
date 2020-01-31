@@ -28,7 +28,7 @@ extension PadDetailsView: View {
                     self.snapshotImageSection
                         .transition(
                             AnyTransition
-                                .move(edge: .bottom)
+                                .move(edge: .top).combined(with: .opacity)
                                 .animation(Animation.easeOut(duration: 0.5))
                         )
                 }
@@ -71,7 +71,6 @@ extension PadDetailsView {
                 .scaledToFit()
                 .frame(width: 80, height: 80)
                 .offset(x: 0, y: -40)
-                .transition(.move(edge: .bottom))
                 .animation(Animation.spring().delay(0.3))
                 .zIndex(1)
         }
