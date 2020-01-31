@@ -19,19 +19,31 @@ struct PadsListView<Destination: View> {
 extension PadsListView: View {
 
     var body: some View {
-        List(viewModel.pads) { pad in
-            NavigationLink(destination: self.buildDestination(pad)) {
-                HStack {
-                    pad.padType.listItemImage
-                    
-                    VStack(alignment: .leading) {
-                        Text(pad.name)
-                            .foregroundColor(.primary)
-                            .font(.headline)
+        List {
+            Section(header: Text("Sorting").font(.headline)) {
+                sortingPicker
+                    .padding()
+            }
+            
+            Section(header: Text("Filters").font(.headline)) {
+                activityTypeFilterPicker
+                    .padding()
+            }
+            
+            ForEach(viewModel.displayedPads) { pad in
+                NavigationLink(destination: self.buildDestination(pad)) {
+                    HStack {
+                        pad.padType.listItemImage
                         
-                        Text(pad.padType.displayName)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
+                        VStack(alignment: .leading) {
+                            Text(pad.name)
+                                .foregroundColor(.primary)
+                                .font(.headline)
+                            
+                            Text(pad.padType.displayName)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
             }
@@ -47,6 +59,30 @@ extension PadsListView {
 
 // MARK: - View Variables
 extension PadsListView {
+    
+    private var sortingPicker: some View {
+        Picker("Sorting Mode", selection: $viewModel.sortingMode) {
+            ForEach(ViewModel.SortMode.allCases) { sortMode in
+                Text(sortMode.displayName).tag(sortMode)
+            }
+        }
+        .pickerStyle(SegmentedPickerStyle())
+    }
+    
+    
+    private var activityTypeFilterPicker: some View {
+        VStack(alignment: .leading) {
+            Text("Pad Activity Type").font(.headline)
+            
+            Picker("Pad Activity Type Filtering Mode", selection: $viewModel.activityTypeFilteringMode) {
+                ForEach(ViewModel.ActivityTypeFilterMode.allCases) { filterMode in
+                    Text(filterMode.displayName).tag(filterMode)
+                }
+            }
+            .labelsHidden()
+            .pickerStyle(SegmentedPickerStyle())
+        }
+    }
 }
 
 
@@ -62,10 +98,14 @@ struct PadsListView_Previews: PreviewProvider {
     static var previews: some View {
         let store = PreviewData.AppStores.withPads
 
-        return PadsListView(
-            viewModel: .init(padsState: store.state.padsState),
-            buildDestination: { _ in EmptyView() }
-        )
+        return NavigationView {
+            PadsListView(
+                viewModel: .init(padsState: store.state.padsState),
+                buildDestination: { _ in EmptyView() }
+            )
+            .navigationBarTitle("Launch Pads")
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
         .environmentObject(store)
     }
 }

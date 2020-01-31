@@ -17,8 +17,11 @@ extension PadsListView {
 
         private let padsState: PadsState
         
-        // MARK: - Published Outputs
         
+        // MARK: - Published Outputs
+        @Published var sortingMode: SortMode = .alphanumericAscending
+        @Published var activityTypeFilteringMode: ActivityTypeFilterMode = .all
+
 
         // MARK: - Init
         init(
@@ -40,11 +43,35 @@ extension PadsListView.ViewModel {
 // MARK: - Computeds
 extension PadsListView.ViewModel {
     
-    var pads: [Pad] {
+    private var pads: [Pad] {
         if case let .fetched(pads) = padsState.dataFetchingState {
             return pads
         } else {
             return []
+        }
+    }
+    
+    
+    private var sortedPads: [Pad] {
+        switch sortingMode {
+        case .alphanumericAscending:
+            return pads.sorted { $0.name < $1.name }
+        case .westToEast:
+            return pads.sorted { $0.longitude < $1.longitude }
+        case .northToSouth:
+            return pads.sorted { $0.latitude < $1.latitude }
+        }
+    }
+    
+    
+    var displayedPads: [Pad] {
+        switch activityTypeFilteringMode {
+        case .all:
+            return sortedPads
+        case .activePads:
+            return sortedPads.filter { $0.isRetired == false }
+        case .retiredPads:
+            return sortedPads.filter { $0.isRetired }
         }
     }
 }
@@ -53,7 +80,6 @@ extension PadsListView.ViewModel {
 // MARK: - Public Methods
 extension PadsListView.ViewModel {
 }
-
 
 
 // MARK: - Private Helpers
