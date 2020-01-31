@@ -104,12 +104,13 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 - **Day 95:** [Milestone for Projects 16-18](./day-095/)
 - **Day 96:** [_Project 19: PadFinder (Part One)_](./day-096/)
 - **Day 97:** [_Project 19: PadFinder (Part Two)_](./day-097/)
+- **Day 98:** [_Project 19: PadFinder (Part Three)_](./day-098/)
 
 </details>
 
 **Latest Day:**
 
-- **Day 98:** [_Project 19: PadFinder (Part Three)_](./day-098/)
+- **Day 99:** [_Project 19: PadFinder (Part Four)_](./day-099/)
 
 
 
@@ -300,6 +301,17 @@ I'm currently seeking freelance, remote opportunities as an iOS developer! If yo
 
 <div style="text-align: center;">
   <img src="./day-092/Projects/Project18Concepts/Screenshots/day-93-recording-1.gif" width="300px"/>
+</div>
+
+<br/>
+<br/>
+
+
+
+- [Project 19: PadFinder](./day-096/Projects/PadFinder/)
+
+<div style="text-align: center;">
+  <img src="./day-096/Projects/PadFinder/Screenshots/day-099-recording-1.gif" width="300px"/>
 </div>
 
 <br/>
