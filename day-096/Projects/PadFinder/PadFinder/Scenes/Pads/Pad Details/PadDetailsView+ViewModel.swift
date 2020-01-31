@@ -109,7 +109,7 @@ extension PadDetailsView.ViewModel {
             snapshotService
                 .takeSnapshot(cacheKey: cacheKey, size: size, coordinate: pad.coordinate)
                 .assertNoFailure()
-                .print("takeMapSnapshot")
+//                .print("takeMapSnapshot")
                 .map(\.image)
                 .receive(on: DispatchQueue.main)
                 .sink(

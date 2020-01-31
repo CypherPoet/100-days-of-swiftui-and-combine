@@ -17,9 +17,7 @@ extension PadsListView {
 
         private let padsState: PadsState
         
-        
         // MARK: - Published Outputs
-        @Published var pads: [Pad] = []
         
 
         // MARK: - Init
@@ -36,26 +34,19 @@ extension PadsListView {
 
 // MARK: - Publishers
 extension PadsListView.ViewModel {
-
-    private var padsStatePublisher: Publishers.Share<AnyPublisher<PadsState, Never>> {
-        CurrentValueSubject(padsState)
-//            .print("padsStatePublisher")
-            .eraseToAnyPublisher()
-            .share()
-    }
-    
-    
-    private var padsFetchingStatePublisher: Publishers.Share<AnyPublisher<PadsState.DataFetchingState, Never>> {
-        padsStatePublisher
-            .map(\.dataFetchingState)
-            .eraseToAnyPublisher()
-            .share()
-    }
 }
 
 
 // MARK: - Computeds
 extension PadsListView.ViewModel {
+    
+    var pads: [Pad] {
+        if case let .fetched(pads) = padsState.dataFetchingState {
+            return pads
+        } else {
+            return []
+        }
+    }
 }
 
 
@@ -69,20 +60,5 @@ extension PadsListView.ViewModel {
 private extension PadsListView.ViewModel {
 
     func setupSubscribers() {
-        padsFetchingStatePublisher
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { (fetchingState: PadsState.DataFetchingState) in
-                switch fetchingState {
-                case .inactive:
-                    self.pads = []
-                case .fetching:
-                    self.pads = []
-                case .fetched(let pads):
-                    self.pads = pads
-                case .errored(_):
-                    fatalError()
-                }
-            })
-            .store(in: &subscriptions)
     }
 }

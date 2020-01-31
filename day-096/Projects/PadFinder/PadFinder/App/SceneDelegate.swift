@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let store = AppStore(initialState: .init(), appReducer: appReducer)
             
             // Create the SwiftUI view that provides the window contents.
-            let entryView = PadsListContainerView()
+            let entryView = RootView()
                 .environmentObject(store)
                 .accentColor(.pink)
             

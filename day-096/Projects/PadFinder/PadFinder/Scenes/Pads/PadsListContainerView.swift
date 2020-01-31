@@ -19,16 +19,12 @@ struct PadsListContainerView {
 extension PadsListContainerView: View {
 
     var body: some View {
-        NavigationView {
-            PadsListView(
-                viewModel: .init(padsState: padsState),
-                buildDestination: buildDestination(forPad:)
-            )
-            .navigationBarTitle("Launch Pads")
-            .environmentObject(store)
-            
-            WelcomeView()
-        }
+        PadsListView(
+            viewModel: .init(padsState: padsState),
+            buildDestination: buildDestination(forPad:)
+        )
+        .navigationBarTitle("Launch Pads")
+        .environmentObject(store)
         .onAppear(perform: fetchPads)
     }
 }

@@ -10,8 +10,6 @@ import SwiftUI
 
 
 struct PadsListView<Destination: View> {
-    @EnvironmentObject private var store: AppStore
-
     @ObservedObject var viewModel: ViewModel
     let buildDestination: ((Pad) -> Destination)
 }

@@ -2,22 +2,20 @@
 //  WelcomeView.swift
 //  PadFinder
 //
-//  Created by CypherPoet on 1/27/20.
+//  Created by CypherPoet on 1/31/20.
 // ✌️
 //
 
 import SwiftUI
 
 
-extension PadsListContainerView {
-    struct WelcomeView {
+struct WelcomeView {
 
-    }
 }
 
 
 // MARK: - View
-extension PadsListContainerView.WelcomeView: View {
+extension WelcomeView: View {
 
     var body: some View {
         
@@ -36,25 +34,25 @@ extension PadsListContainerView.WelcomeView: View {
 
 
 // MARK: - Computeds
-extension PadsListContainerView.WelcomeView {
+extension WelcomeView {
 }
 
 
 // MARK: - View Variables
-extension PadsListContainerView.WelcomeView {
+extension WelcomeView {
 }
 
 
 // MARK: - Private Helpers
-private extension PadsListContainerView.WelcomeView {
+private extension WelcomeView {
 }
+
 
 
 // MARK: - Preview
-struct PadsListContainerView_WelcomeView_Previews: PreviewProvider {
+struct WelcomeView_Previews: PreviewProvider {
 
     static var previews: some View {
-        PadsListContainerView.WelcomeView()
+        WelcomeView()
     }
 }
-

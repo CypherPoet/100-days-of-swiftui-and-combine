@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F32ED61823DF69E6006A5195 /* PadsListContainerView+WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32ED61723DF69E6006A5195 /* PadsListContainerView+WelcomeView.swift */; };
 		F32ED61A23DF91C1006A5195 /* Pad+PadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32ED61923DF91C1006A5195 /* Pad+PadType.swift */; };
 		F32ED61D23DF9B46006A5195 /* PadDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32ED61C23DF9B46006A5195 /* PadDetailsView.swift */; };
 		F32ED61F23DF9B7C006A5195 /* PadDetailsView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32ED61E23DF9B7C006A5195 /* PadDetailsView+ViewModel.swift */; };
@@ -40,10 +39,11 @@
 		F3596BC423E3EE6800FA2C66 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3596BC323E3EE6800FA2C66 /* Cache.swift */; };
 		F3596BC723E3F71500FA2C66 /* Cache+WrappedKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3596BC623E3F71500FA2C66 /* Cache+WrappedKey.swift */; };
 		F3596BC923E3F72200FA2C66 /* Cache+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3596BC823E3F72200FA2C66 /* Cache+Entry.swift */; };
+		F3596BCB23E4298300FA2C66 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3596BCA23E4298300FA2C66 /* RootView.swift */; };
+		F3596BCD23E42BED00FA2C66 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3596BCC23E42BEC00FA2C66 /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F32ED61723DF69E6006A5195 /* PadsListContainerView+WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PadsListContainerView+WelcomeView.swift"; sourceTree = "<group>"; };
 		F32ED61923DF91C1006A5195 /* Pad+PadType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pad+PadType.swift"; sourceTree = "<group>"; };
 		F32ED61C23DF9B46006A5195 /* PadDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadDetailsView.swift; sourceTree = "<group>"; };
 		F32ED61E23DF9B7C006A5195 /* PadDetailsView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PadDetailsView+ViewModel.swift"; sourceTree = "<group>"; };
@@ -75,6 +75,8 @@
 		F3596BC323E3EE6800FA2C66 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		F3596BC623E3F71500FA2C66 /* Cache+WrappedKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cache+WrappedKey.swift"; sourceTree = "<group>"; };
 		F3596BC823E3F72200FA2C66 /* Cache+Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cache+Entry.swift"; sourceTree = "<group>"; };
+		F3596BCA23E4298300FA2C66 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		F3596BCC23E42BEC00FA2C66 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				F331C47823DDB1430061925E /* Pads */,
+				F3596BCA23E4298300FA2C66 /* RootView.swift */,
+				F3596BCC23E42BEC00FA2C66 /* WelcomeView.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -219,7 +223,6 @@
 			children = (
 				F331C47B23DDB1710061925E /* PadsListContainerView.swift */,
 				F32ED61B23DF9B36006A5195 /* Pad Details */,
-				F32ED61723DF69E6006A5195 /* PadsListContainerView+WelcomeView.swift */,
 				F331C49B23DE18650061925E /* PadsListView.swift */,
 				F331C49D23DE187A0061925E /* PadsListView+ViewModel.swift */,
 			);
@@ -358,15 +361,16 @@
 				F356E61E23E25E7A008553B0 /* PadDetailsContainerView.swift in Sources */,
 				F331C48523DDDE710061925E /* AppState.swift in Sources */,
 				F32ED62923E0F0C6006A5195 /* MapSnapshottingService.swift in Sources */,
+				F3596BCB23E4298300FA2C66 /* RootView.swift in Sources */,
 				F32ED61F23DF9B7C006A5195 /* PadDetailsView+ViewModel.swift in Sources */,
 				F331C49C23DE18650061925E /* PadsListView.swift in Sources */,
 				F3596BC723E3F71500FA2C66 /* Cache+WrappedKey.swift in Sources */,
-				F32ED61823DF69E6006A5195 /* PadsListContainerView+WelcomeView.swift in Sources */,
 				F331C48923DDDF0E0061925E /* Pad.swift in Sources */,
 				F331C49623DE0FED0061925E /* PreviewData.swift in Sources */,
 				F32ED62423DFC7D5006A5195 /* Pad+SnapshotUtils.swift in Sources */,
 				F331C48C23DDE6A90061925E /* LaunchLibraryAPIService.swift in Sources */,
 				F32ED62B23E0F0F1006A5195 /* MapSnapshotServicing.swift in Sources */,
+				F3596BCD23E42BED00FA2C66 /* WelcomeView.swift in Sources */,
 				F32ED62623E0D525006A5195 /* Pad+Computeds.swift in Sources */,
 				F32ED62223DFB836006A5195 /* NumberFormatters.swift in Sources */,
 				F331C49E23DE187A0061925E /* PadsListView+ViewModel.swift in Sources */,
