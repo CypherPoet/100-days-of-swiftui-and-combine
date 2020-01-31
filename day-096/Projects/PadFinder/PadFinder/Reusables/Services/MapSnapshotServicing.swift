@@ -13,12 +13,17 @@ import Combine
 
 
 protocol MapSnapshotServicing: class {
+    typealias SnapshotCache = Cache<String, MKMapSnapshotter.Snapshot>
+    
     var snapshotOptions: MKMapSnapshotter.Options { get }
     var queue: DispatchQueue { get }
+    var snapshotCache: SnapshotCache { get }
+
     
     func takeSnapshot(
-        with size: CGSize,
-        at coordinate: CLLocationCoordinate2D,
+        cacheKey: String?,
+        size: CGSize,
+        coordinate: CLLocationCoordinate2D,
         latitudeSpan: CLLocationDegrees,
         longitudeSpan: CLLocationDegrees
     ) -> Future<MKMapSnapshotter.Snapshot, Error>
@@ -28,37 +33,53 @@ protocol MapSnapshotServicing: class {
 extension MapSnapshotServicing {
     
     func takeSnapshot(
-        with size: CGSize,
-        at coordinate: CLLocationCoordinate2D,
+        cacheKey: String? = nil,
+        size: CGSize,
+        coordinate: CLLocationCoordinate2D,
         latitudeSpan: CLLocationDegrees = 1.75,
         longitudeSpan: CLLocationDegrees = 1.75
     ) -> Future<MKMapSnapshotter.Snapshot, Error> {
-        let span = MKCoordinateSpan(latitudeDelta: latitudeSpan, longitudeDelta: longitudeSpan)
-        
-        snapshotOptions.region = MKCoordinateRegion(
-            center: coordinate,
-            span: span
-        )
-        
-        snapshotOptions.size = size
-        
-        let snapshotter = MKMapSnapshotter(options: snapshotOptions)
-        
-        // TOOD: Ideally, we'd implement some kind of cahcing here, or save the images
-        // as part of each pad model -- which could be persisted in Core Data.
-        return Future { promise in
+        Future { promise in
+//            if
+//                let cacheKey = cacheKey,
+//                let cachedSnapshot = self.snapshotFromCache(key: cacheKey)
+//            {
+//                return promise(.success(cachedSnapshot))
+//            }
+            
+            let span = MKCoordinateSpan(
+                latitudeDelta: latitudeSpan,
+                longitudeDelta: longitudeSpan
+            )
+            
+            self.snapshotOptions.region = MKCoordinateRegion(
+                center: coordinate,
+                span: span
+            )
+            
+            self.snapshotOptions.size = size
+            
+            let snapshotter = MKMapSnapshotter(options: self.snapshotOptions)
+            
             snapshotter.start(with: self.queue) { (snapshot, error) in
-                guard error == nil else {
+                guard let snapshot = snapshot else {
                     return promise(.failure(error!))
                 }
                 
-                guard let snapshot = snapshot else {
-                    preconditionFailure("No snapshot returned despite snapshotter completing without error.")
+                if let cacheKey = cacheKey {
+                    self.snapshotCache.insert(snapshot, forKey: cacheKey)
                 }
                 
                 return promise(.success(snapshot))
             }
         }
     }
+    
+    
+    func snapshotFromCache(key: String) -> MKMapSnapshotter.Snapshot? {
+        snapshotCache.value(forKey: key)
+    }
 }
+
+
 
