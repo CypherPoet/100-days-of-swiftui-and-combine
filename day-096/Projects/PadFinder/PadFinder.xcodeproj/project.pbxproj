@@ -37,6 +37,9 @@
 		F331C49C23DE18650061925E /* PadsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C49B23DE18650061925E /* PadsListView.swift */; };
 		F331C49E23DE187A0061925E /* PadsListView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331C49D23DE187A0061925E /* PadsListView+ViewModel.swift */; };
 		F356E61E23E25E7A008553B0 /* PadDetailsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F356E61D23E25E7A008553B0 /* PadDetailsContainerView.swift */; };
+		F3596BC423E3EE6800FA2C66 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3596BC323E3EE6800FA2C66 /* Cache.swift */; };
+		F3596BC723E3F71500FA2C66 /* Cache+WrappedKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3596BC623E3F71500FA2C66 /* Cache+WrappedKey.swift */; };
+		F3596BC923E3F72200FA2C66 /* Cache+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3596BC823E3F72200FA2C66 /* Cache+Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +72,9 @@
 		F331C49B23DE18650061925E /* PadsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadsListView.swift; sourceTree = "<group>"; };
 		F331C49D23DE187A0061925E /* PadsListView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PadsListView+ViewModel.swift"; sourceTree = "<group>"; };
 		F356E61D23E25E7A008553B0 /* PadDetailsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadDetailsContainerView.swift; sourceTree = "<group>"; };
+		F3596BC323E3EE6800FA2C66 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		F3596BC623E3F71500FA2C66 /* Cache+WrappedKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cache+WrappedKey.swift"; sourceTree = "<group>"; };
+		F3596BC823E3F72200FA2C66 /* Cache+Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cache+Entry.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +179,7 @@
 			children = (
 				F32ED62723E0F0B8006A5195 /* Services */,
 				F32ED62023DFB7E9006A5195 /* Formatters */,
+				F3596BC523E3EE7300FA2C66 /* Cache */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -254,6 +261,16 @@
 				F331C49723DE10010061925E /* PreviewData+AppStore.swift */,
 			);
 			path = "Preview Data";
+			sourceTree = "<group>";
+		};
+		F3596BC523E3EE7300FA2C66 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				F3596BC323E3EE6800FA2C66 /* Cache.swift */,
+				F3596BC623E3F71500FA2C66 /* Cache+WrappedKey.swift */,
+				F3596BC823E3F72200FA2C66 /* Cache+Entry.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +360,7 @@
 				F32ED62923E0F0C6006A5195 /* MapSnapshottingService.swift in Sources */,
 				F32ED61F23DF9B7C006A5195 /* PadDetailsView+ViewModel.swift in Sources */,
 				F331C49C23DE18650061925E /* PadsListView.swift in Sources */,
+				F3596BC723E3F71500FA2C66 /* Cache+WrappedKey.swift in Sources */,
 				F32ED61823DF69E6006A5195 /* PadsListContainerView+WelcomeView.swift in Sources */,
 				F331C48923DDDF0E0061925E /* Pad.swift in Sources */,
 				F331C49623DE0FED0061925E /* PreviewData.swift in Sources */,
@@ -355,9 +373,11 @@
 				F331C45C23DDB0AE0061925E /* AppDelegate.swift in Sources */,
 				F331C48323DDDE570061925E /* CurrentApplication.swift in Sources */,
 				F331C49323DDF0CF0061925E /* Endpoint+LaunchLibraryAPI.swift in Sources */,
+				F3596BC923E3F72200FA2C66 /* Cache+Entry.swift in Sources */,
 				F331C48E23DDE6C20061925E /* LaunchLibraryAPIServicing.swift in Sources */,
 				F331C45E23DDB0AE0061925E /* SceneDelegate.swift in Sources */,
 				F32ED61A23DF91C1006A5195 /* Pad+PadType.swift in Sources */,
+				F3596BC423E3EE6800FA2C66 /* Cache.swift in Sources */,
 				F331C49823DE10010061925E /* PreviewData+AppStore.swift in Sources */,
 				F331C48723DDDEC30061925E /* PadsState.swift in Sources */,
 				F32ED61D23DF9B46006A5195 /* PadDetailsView.swift in Sources */,

@@ -12,7 +12,6 @@ import CypherPoetSwiftUIKit
 
 
 struct PadDetailsView {
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @ObservedObject var viewModel: ViewModel
     
     var onFavoriteToggled: ((Pad) -> Void)?
@@ -48,24 +47,12 @@ extension PadDetailsView: View {
         }
         .embedInScrollView(axes: .vertical)
         .navigationBarTitle(Text(viewModel.padNameText), displayMode: .inline)
-        .onAppear {
-            self.viewModel.takeMapSnapshot(
-                size: CGSize(
-                    width: UIScreen.main.bounds.width,
-                    height: UIScreen.main.bounds.height * self.snapshotHeightRatio
-                )
-            )
-        }
     }
 }
 
 
 // MARK: - Computeds
 extension PadDetailsView {
-    
-    var snapshotHeightRatio: CGFloat {
-        horizontalSizeClass == .compact ? 0.35 : 0.60
-    }
 }
 
 

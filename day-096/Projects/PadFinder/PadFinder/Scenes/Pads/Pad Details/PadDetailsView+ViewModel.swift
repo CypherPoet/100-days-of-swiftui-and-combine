@@ -14,6 +14,9 @@ import Combine
 
 extension PadDetailsView {
     final class ViewModel: ObservableObject {
+        @Environment(\.horizontalSizeClass) var horizontalSizeClass
+        @Environment(\.verticalSizeClass) var verticalSizeClass
+
         private var subscriptions = Set<AnyCancellable>()
 
         let pad: Pad
@@ -35,14 +38,15 @@ extension PadDetailsView {
             self.isPadFavorited = isPadFavorited
             self.snapshotService = snapshotService
             
-            // In lieu of image caching or persistance, we'll have to call
-            // this during init instead of onAppear. That's not the greatest.
-//            self.takeMapSnapshot(
-//                size: CGSize(
-//                    width: UIScreen.main.bounds.width,
-//                    height: UIScreen.main.bounds.width * 0.75
-//                )
-//            )
+//             TODO: Implement snapshot caching, then retrieve it or take a new one here
+//            let imageLength = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+            
+            self.takeMapSnapshot(
+                size: CGSize(
+                    width: UIScreen.main.bounds.width,
+                    height: UIScreen.main.bounds.height * self.snapshotHeightRatio
+                )
+            )
             setupSubscribers()
         }
     }
@@ -56,6 +60,10 @@ extension PadDetailsView.ViewModel {
 
 // MARK: - Computeds
 extension PadDetailsView.ViewModel {
+    
+    private var snapshotHeightRatio: CGFloat {
+        horizontalSizeClass == .compact ? 0.35 : 0.60
+    }
     
     var padNameText: String { pad.name }
     
@@ -93,16 +101,22 @@ extension PadDetailsView.ViewModel {
 extension PadDetailsView.ViewModel {
     
     func takeMapSnapshot(size: CGSize) {
-        snapshotService
-            .takeSnapshot(with: size, at: pad.coordinate)
-            .assertNoFailure()
-            .print("takeMapSnapshot")
-            .map(\.image)
-            .receive(on: DispatchQueue.main)
-            .sink(
-                receiveValue: { self.mapSnapshotImage = $0 }
+        let cacheKey = pad.snapshotCacheKey(from: size)
+        
+        if let cachedSnapshot = snapshotService.snapshotFromCache(key: cacheKey) {
+            mapSnapshotImage = cachedSnapshot.image
+        } else {
+            snapshotService
+                .takeSnapshot(cacheKey: cacheKey, size: size, coordinate: pad.coordinate)
+                .assertNoFailure()
+                .print("takeMapSnapshot")
+                .map(\.image)
+                .receive(on: DispatchQueue.main)
+                .sink(
+                    receiveValue: { self.mapSnapshotImage = $0 }
             )
-            .store(in: &subscriptions)
+                .store(in: &subscriptions)
+        }
     }
 }
 
