@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F397601823E742E000813BD8 /* PreviewData+AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397601723E742E000813BD8 /* PreviewData+AppStore.swift */; };
+		F3CFFC6023E749A2001A2E19 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFFC5F23E749A2001A2E19 /* DiceView.swift */; };
+		F3CFFC6223E74A37001A2E19 /* DiceGeneratorContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFFC6123E74A37001A2E19 /* DiceGeneratorContainerView.swift */; };
+		F3CFFC6423E74D43001A2E19 /* DiceGeneratorView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFFC6323E74D43001A2E19 /* DiceGeneratorView+ViewModel.swift */; };
+		F3CFFC6823E77E02001A2E19 /* VerticalDiceRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFFC6723E77E02001A2E19 /* VerticalDiceRollView.swift */; };
+		F3CFFC6A23E77E22001A2E19 /* HorizontalDiceRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFFC6923E77E22001A2E19 /* HorizontalDiceRollView.swift */; };
+		F3CFFC6C23E85963001A2E19 /* PreviewData+DiceRolls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFFC6B23E85963001A2E19 /* PreviewData+DiceRolls.swift */; };
+		F3D4FD3923E5E688000CF606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4FD3823E5E688000CF606 /* AppDelegate.swift */; };
+		F3D4FD3B23E5E688000CF606 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4FD3A23E5E688000CF606 /* SceneDelegate.swift */; };
+		F3D4FD3F23E5E68A000CF606 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D4FD3E23E5E68A000CF606 /* Assets.xcassets */; };
+		F3D4FD4223E5E68A000CF606 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D4FD4123E5E68A000CF606 /* Preview Assets.xcassets */; };
+		F3D4FD5423E5EF95000CF606 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3D4FD5223E5EF95000CF606 /* LaunchScreen.storyboard */; };
+		F3D4FD5623E5EFDE000CF606 /* CurrentApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4FD5523E5EFDE000CF606 /* CurrentApplication.swift */; };
+		F3D4FD5823E5F016000CF606 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4FD5723E5F016000CF606 /* PreviewData.swift */; };
+		F3D4FD5C23E5F0E7000CF606 /* CypherPoetCoreDataKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3D4FD5B23E5F0E7000CF606 /* CypherPoetCoreDataKit */; };
+		F3D4FD5F23E5F0F6000CF606 /* CypherPoetSwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3D4FD5E23E5F0F6000CF606 /* CypherPoetSwiftUIKit */; };
+		F3D4FD6123E5F120000CF606 /* CoreDataManager+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4FD6023E5F120000CF606 /* CoreDataManager+Utils.swift */; };
+		F3D4FD6523E5F14D000CF606 /* Dicey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3D4FD6323E5F14D000CF606 /* Dicey.xcdatamodeld */; };
+		F3D4FD6E23E60076000CF606 /* DiceRoll+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4FD6C23E60076000CF606 /* DiceRoll+CoreDataClass.swift */; };
+		F3D4FD6F23E60076000CF606 /* DiceRoll+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4FD6D23E60076000CF606 /* DiceRoll+CoreDataProperties.swift */; };
+		F3D4FD7223E60115000CF606 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4FD7023E60115000CF606 /* Dice.swift */; };
+		F3D4FD7523E60166000CF606 /* DiceRoll+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4FD7423E60166000CF606 /* DiceRoll+Computeds.swift */; };
+		F3D4FD7723E60359000CF606 /* Dice+Computeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4FD7623E60359000CF606 /* Dice+Computeds.swift */; };
+		F3D4FD7E23E6FC25000CF606 /* DiceGeneratorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4FD7D23E6FC25000CF606 /* DiceGeneratorState.swift */; };
+		F3D4FD8023E6FC51000CF606 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4FD7F23E6FC51000CF606 /* AppState.swift */; };
+		F3D4FD8323E700EF000CF606 /* CypherPoetPropertyWrappers in Frameworks */ = {isa = PBXBuildFile; productRef = F3D4FD8223E700EF000CF606 /* CypherPoetPropertyWrappers */; };
+		F3D4FD8623E70657000CF606 /* DiceGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4FD8523E70657000CF606 /* DiceGeneratorView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F397601723E742E000813BD8 /* PreviewData+AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewData+AppStore.swift"; sourceTree = "<group>"; };
+		F3CFFC5F23E749A2001A2E19 /* DiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
+		F3CFFC6123E74A37001A2E19 /* DiceGeneratorContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceGeneratorContainerView.swift; sourceTree = "<group>"; };
+		F3CFFC6323E74D43001A2E19 /* DiceGeneratorView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiceGeneratorView+ViewModel.swift"; sourceTree = "<group>"; };
+		F3CFFC6723E77E02001A2E19 /* VerticalDiceRollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalDiceRollView.swift; sourceTree = "<group>"; };
+		F3CFFC6923E77E22001A2E19 /* HorizontalDiceRollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDiceRollView.swift; sourceTree = "<group>"; };
+		F3CFFC6B23E85963001A2E19 /* PreviewData+DiceRolls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewData+DiceRolls.swift"; sourceTree = "<group>"; };
+		F3D4FD3523E5E688000CF606 /* Dicey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dicey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3D4FD3823E5E688000CF606 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F3D4FD3A23E5E688000CF606 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F3D4FD3E23E5E68A000CF606 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F3D4FD4123E5E68A000CF606 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F3D4FD4623E5E68A000CF606 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3D4FD5323E5EF95000CF606 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Dicey/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		F3D4FD5523E5EFDE000CF606 /* CurrentApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentApplication.swift; sourceTree = "<group>"; };
+		F3D4FD5723E5F016000CF606 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		F3D4FD6023E5F120000CF606 /* CoreDataManager+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+Utils.swift"; sourceTree = "<group>"; };
+		F3D4FD6423E5F14D000CF606 /* Dicey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dicey.xcdatamodel; sourceTree = "<group>"; };
+		F3D4FD6C23E60076000CF606 /* DiceRoll+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiceRoll+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F3D4FD6D23E60076000CF606 /* DiceRoll+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiceRoll+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F3D4FD7023E60115000CF606 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
+		F3D4FD7423E60166000CF606 /* DiceRoll+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiceRoll+Computeds.swift"; sourceTree = "<group>"; };
+		F3D4FD7623E60359000CF606 /* Dice+Computeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dice+Computeds.swift"; sourceTree = "<group>"; };
+		F3D4FD7D23E6FC25000CF606 /* DiceGeneratorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceGeneratorState.swift; sourceTree = "<group>"; };
+		F3D4FD7F23E6FC51000CF606 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F3D4FD8523E70657000CF606 /* DiceGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceGeneratorView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3D4FD3223E5E688000CF606 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3D4FD5F23E5F0F6000CF606 /* CypherPoetSwiftUIKit in Frameworks */,
+				F3D4FD8323E700EF000CF606 /* CypherPoetPropertyWrappers in Frameworks */,
+				F3D4FD5C23E5F0E7000CF606 /* CypherPoetCoreDataKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F397601423E73E6A00813BD8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3CFFC5F23E749A2001A2E19 /* DiceView.swift */,
+				F3CFFC6723E77E02001A2E19 /* VerticalDiceRollView.swift */,
+				F3CFFC6923E77E22001A2E19 /* HorizontalDiceRollView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F3D4FD2C23E5E688000CF606 = {
+			isa = PBXGroup;
+			children = (
+				F3D4FD3723E5E688000CF606 /* Dicey */,
+				F3D4FD3623E5E688000CF606 /* Products */,
+				F3D4FD5D23E5F0F6000CF606 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F3D4FD3623E5E688000CF606 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3D4FD3523E5E688000CF606 /* Dicey.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3D4FD3723E5E688000CF606 /* Dicey */ = {
+			isa = PBXGroup;
+			children = (
+				F3D4FD4623E5E68A000CF606 /* Info.plist */,
+				F3D4FD4E23E5EF54000CF606 /* App */,
+				F3D4FD5123E5EF64000CF606 /* Data */,
+				F3D4FD4023E5E68A000CF606 /* Preview Content */,
+				F3D4FD5023E5EF5D000CF606 /* Resources */,
+				F3D4FD4F23E5EF58000CF606 /* Reusables */,
+				F3D4FD4C23E5EF46000CF606 /* Scenes */,
+			);
+			path = Dicey;
+			sourceTree = "<group>";
+		};
+		F3D4FD4023E5E68A000CF606 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F3D4FD4D23E5EF4F000CF606 /* PreviewData */,
+				F3D4FD4123E5E68A000CF606 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F3D4FD4C23E5EF46000CF606 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F3D4FD8423E705FD000CF606 /* Dice Generator */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F3D4FD4D23E5EF4F000CF606 /* PreviewData */ = {
+			isa = PBXGroup;
+			children = (
+				F3D4FD5723E5F016000CF606 /* PreviewData.swift */,
+				F3CFFC6B23E85963001A2E19 /* PreviewData+DiceRolls.swift */,
+				F397601723E742E000813BD8 /* PreviewData+AppStore.swift */,
+			);
+			path = PreviewData;
+			sourceTree = "<group>";
+		};
+		F3D4FD4E23E5EF54000CF606 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F3D4FD3823E5E688000CF606 /* AppDelegate.swift */,
+				F3D4FD3A23E5E688000CF606 /* SceneDelegate.swift */,
+				F3D4FD5223E5EF95000CF606 /* LaunchScreen.storyboard */,
+				F3D4FD5523E5EFDE000CF606 /* CurrentApplication.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F3D4FD4F23E5EF58000CF606 /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				F397601423E73E6A00813BD8 /* Views */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		F3D4FD5023E5EF5D000CF606 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F3D4FD3E23E5E68A000CF606 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F3D4FD5123E5EF64000CF606 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3D4FD6023E5F120000CF606 /* CoreDataManager+Utils.swift */,
+				F3D4FD6223E5F136000CF606 /* Models */,
+				F3D4FD7C23E6FB4B000CF606 /* State */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F3D4FD5D23E5F0F6000CF606 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3D4FD6223E5F136000CF606 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3D4FD6723E5FB7A000CF606 /* DiceRoll */,
+				F3D4FD6623E5FB77000CF606 /* Dice */,
+				F3D4FD6323E5F14D000CF606 /* Dicey.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F3D4FD6623E5FB77000CF606 /* Dice */ = {
+			isa = PBXGroup;
+			children = (
+				F3D4FD7023E60115000CF606 /* Dice.swift */,
+				F3D4FD7623E60359000CF606 /* Dice+Computeds.swift */,
+			);
+			path = Dice;
+			sourceTree = "<group>";
+		};
+		F3D4FD6723E5FB7A000CF606 /* DiceRoll */ = {
+			isa = PBXGroup;
+			children = (
+				F3D4FD6C23E60076000CF606 /* DiceRoll+CoreDataClass.swift */,
+				F3D4FD6D23E60076000CF606 /* DiceRoll+CoreDataProperties.swift */,
+				F3D4FD7423E60166000CF606 /* DiceRoll+Computeds.swift */,
+			);
+			path = DiceRoll;
+			sourceTree = "<group>";
+		};
+		F3D4FD7C23E6FB4B000CF606 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				F3D4FD7D23E6FC25000CF606 /* DiceGeneratorState.swift */,
+				F3D4FD7F23E6FC51000CF606 /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		F3D4FD8423E705FD000CF606 /* Dice Generator */ = {
+			isa = PBXGroup;
+			children = (
+				F3D4FD8523E70657000CF606 /* DiceGeneratorView.swift */,
+				F3CFFC6323E74D43001A2E19 /* DiceGeneratorView+ViewModel.swift */,
+				F3CFFC6123E74A37001A2E19 /* DiceGeneratorContainerView.swift */,
+			);
+			path = "Dice Generator";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3D4FD3423E5E688000CF606 /* Dicey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3D4FD4923E5E68A000CF606 /* Build configuration list for PBXNativeTarget "Dicey" */;
+			buildPhases = (
+				F3D4FD3123E5E688000CF606 /* Sources */,
+				F3D4FD3223E5E688000CF606 /* Frameworks */,
+				F3D4FD3323E5E688000CF606 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dicey;
+			packageProductDependencies = (
+				F3D4FD5B23E5F0E7000CF606 /* CypherPoetCoreDataKit */,
+				F3D4FD5E23E5F0F6000CF606 /* CypherPoetSwiftUIKit */,
+				F3D4FD8223E700EF000CF606 /* CypherPoetPropertyWrappers */,
+			);
+			productName = Dicey;
+			productReference = F3D4FD3523E5E688000CF606 /* Dicey.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3D4FD2D23E5E688000CF606 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = CypherPoet;
+				TargetAttributes = {
+					F3D4FD3423E5E688000CF606 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = F3D4FD3023E5E688000CF606 /* Build configuration list for PBXProject "Dicey" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3D4FD2C23E5E688000CF606;
+			packageReferences = (
+				F3D4FD5923E5F051000CF606 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */,
+				F3D4FD5A23E5F0E7000CF606 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */,
+				F3D4FD8123E700EF000CF606 /* XCRemoteSwiftPackageReference "CypherPoetPropertyWrappers" */,
+			);
+			productRefGroup = F3D4FD3623E5E688000CF606 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3D4FD3423E5E688000CF606 /* Dicey */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3D4FD3323E5E688000CF606 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3D4FD5423E5EF95000CF606 /* LaunchScreen.storyboard in Resources */,
+				F3D4FD4223E5E68A000CF606 /* Preview Assets.xcassets in Resources */,
+				F3D4FD3F23E5E68A000CF606 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3D4FD3123E5E688000CF606 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3CFFC6223E74A37001A2E19 /* DiceGeneratorContainerView.swift in Sources */,
+				F3D4FD6E23E60076000CF606 /* DiceRoll+CoreDataClass.swift in Sources */,
+				F3D4FD5823E5F016000CF606 /* PreviewData.swift in Sources */,
+				F3D4FD3923E5E688000CF606 /* AppDelegate.swift in Sources */,
+				F3D4FD6523E5F14D000CF606 /* Dicey.xcdatamodeld in Sources */,
+				F3CFFC6823E77E02001A2E19 /* VerticalDiceRollView.swift in Sources */,
+				F3D4FD7523E60166000CF606 /* DiceRoll+Computeds.swift in Sources */,
+				F3D4FD7E23E6FC25000CF606 /* DiceGeneratorState.swift in Sources */,
+				F3D4FD3B23E5E688000CF606 /* SceneDelegate.swift in Sources */,
+				F3D4FD7223E60115000CF606 /* Dice.swift in Sources */,
+				F3D4FD7723E60359000CF606 /* Dice+Computeds.swift in Sources */,
+				F3D4FD8623E70657000CF606 /* DiceGeneratorView.swift in Sources */,
+				F3CFFC6023E749A2001A2E19 /* DiceView.swift in Sources */,
+				F3D4FD8023E6FC51000CF606 /* AppState.swift in Sources */,
+				F3CFFC6C23E85963001A2E19 /* PreviewData+DiceRolls.swift in Sources */,
+				F3D4FD5623E5EFDE000CF606 /* CurrentApplication.swift in Sources */,
+				F3D4FD6123E5F120000CF606 /* CoreDataManager+Utils.swift in Sources */,
+				F397601823E742E000813BD8 /* PreviewData+AppStore.swift in Sources */,
+				F3D4FD6F23E60076000CF606 /* DiceRoll+CoreDataProperties.swift in Sources */,
+				F3CFFC6A23E77E22001A2E19 /* HorizontalDiceRollView.swift in Sources */,
+				F3CFFC6423E74D43001A2E19 /* DiceGeneratorView+ViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F3D4FD5223E5EF95000CF606 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3D4FD5323E5EF95000CF606 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F3D4FD4723E5E68A000CF606 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F3D4FD4823E5E68A000CF606 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F3D4FD4A23E5E68A000CF606 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Dicey/Preview Content\"";
+				DEVELOPMENT_TEAM = QRXXH2RKAG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Dicey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.cypherpoet.Dicey;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F3D4FD4B23E5E68A000CF606 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Dicey/Preview Content\"";
+				DEVELOPMENT_TEAM = QRXXH2RKAG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Dicey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.cypherpoet.Dicey;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3D4FD3023E5E688000CF606 /* Build configuration list for PBXProject "Dicey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3D4FD4723E5E68A000CF606 /* Debug */,
+				F3D4FD4823E5E68A000CF606 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3D4FD4923E5E68A000CF606 /* Build configuration list for PBXNativeTarget "Dicey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3D4FD4A23E5E68A000CF606 /* Debug */,
+				F3D4FD4B23E5E68A000CF606 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3D4FD5923E5F051000CF606 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetSwiftUIKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.35;
+			};
+		};
+		F3D4FD5A23E5F0E7000CF606 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetCoreDataKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.8;
+			};
+		};
+		F3D4FD8123E700EF000CF606 /* XCRemoteSwiftPackageReference "CypherPoetPropertyWrappers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/CypherPoetPropertyWrappers.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3D4FD5B23E5F0E7000CF606 /* CypherPoetCoreDataKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3D4FD5A23E5F0E7000CF606 /* XCRemoteSwiftPackageReference "CypherPoetCoreDataKit" */;
+			productName = CypherPoetCoreDataKit;
+		};
+		F3D4FD5E23E5F0F6000CF606 /* CypherPoetSwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3D4FD5923E5F051000CF606 /* XCRemoteSwiftPackageReference "CypherPoetSwiftUIKit" */;
+			productName = CypherPoetSwiftUIKit;
+		};
+		F3D4FD8223E700EF000CF606 /* CypherPoetPropertyWrappers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3D4FD8123E700EF000CF606 /* XCRemoteSwiftPackageReference "CypherPoetPropertyWrappers" */;
+			productName = CypherPoetPropertyWrappers;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		F3D4FD6323E5F14D000CF606 /* Dicey.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F3D4FD6423E5F14D000CF606 /* Dicey.xcdatamodel */,
+			);
+			currentVersion = F3D4FD6423E5F14D000CF606 /* Dicey.xcdatamodel */;
+			path = Dicey.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F3D4FD2D23E5E688000CF606 /* Project object */;
+}
