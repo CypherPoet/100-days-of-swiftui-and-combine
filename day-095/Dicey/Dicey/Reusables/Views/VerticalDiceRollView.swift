@@ -21,7 +21,7 @@ extension VerticalDiceRollView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                ForEach(self.diceCollection.indexed(), id: \.element) { (index, dice) in
+                ForEach(self.diceCollection.indexed(), id: \.0.self) { (index, dice) in
                     DiceView(dice: dice)
                         .frame(
                             width: self.sideLength(forDiceIn: geometry),
@@ -88,12 +88,13 @@ private extension VerticalDiceRollView {
         let availableVerticalSpace = geometry.size.height - (rowSpacing * CGFloat(rowCount - 1))
         let availableHorizontalSpace = geometry.size.width - (columnSpacing * CGFloat(columnCount - 1))
 
-        if columnCount >= rowCount {
-            return availableHorizontalSpace / CGFloat(columnCount)
+        if availableHorizontalSpace < availableVerticalSpace {
+            return availableHorizontalSpace / CGFloat(max(rowCount, columnCount))
         } else {
-            return availableVerticalSpace / CGFloat(rowCount)
+            return availableVerticalSpace / CGFloat(max(rowCount, columnCount))
         }
     }
+    
     
     
     func position(forDiceAt index: Int, in geometry: GeometryProxy) -> CGPoint {
@@ -103,7 +104,7 @@ private extension VerticalDiceRollView {
         
         let columnSpacingOffset = self.columnSpacingOffset(forDiceAt: index)
         let rowSpacingOffset = self.rowSpacingOffset(forDiceAt: index)
-        
+            
         
         let centerX = (columnNumber * sideLength) + columnSpacingOffset
             + (sideLength / 2)
@@ -124,11 +125,12 @@ struct VerticalDiceRollView_Previews: PreviewProvider {
     static var previews: some View {
         VStack(alignment: .center) {
             VerticalDiceRollView(
-                    diceCollection: [.one, .two, .three, .four]
+//                    diceCollection: [.one, .two, .three, .four]
+//                diceCollection: [.one, .two, .three, .four, .five,]
 //                diceCollection: [.one, .two, .three, .four, .five, .six]
 //                    diceCollection: [.one, .two,]
 //                    diceCollection: [.one]
-//                    diceCollection: [.one, .two, .three]
+                    diceCollection: [.one, .two, .three]
             )
             
             Spacer()

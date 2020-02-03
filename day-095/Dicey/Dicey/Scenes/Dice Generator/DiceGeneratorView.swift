@@ -13,7 +13,7 @@ struct DiceGeneratorView {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     
-    private let diceCountRange = 1...4
+    private let diceCountRange = 1...6
     
     @ObservedObject var viewModel: ViewModel
     let onDiceRolled: ((DiceRoll) -> Void)?
@@ -25,14 +25,12 @@ struct DiceGeneratorView {
 extension DiceGeneratorView: View {
 
     var body: some View {
-        Group {
-            if isShowingHorizontalDiceLayout {
-                HorizontalDiceRollView(diceCollection: viewModel.diceCollection)
-//                .offset(offsetFromShake)
-            } else {
-                VerticalDiceRollView(diceCollection: viewModel.diceCollection)
-//                .offset(offsetFromShake)
-            }
+        VStack {
+            diceCollectionSection
+            
+            rollButton
+            
+            controlPanel
         }
     }
 }
@@ -51,7 +49,20 @@ extension DiceGeneratorView {
 // MARK: - View Variables
 extension DiceGeneratorView {
     
-    private var roleButton: some View {
+    private var diceCollectionSection: some View {
+        Group {
+            if isShowingHorizontalDiceLayout {
+                HorizontalDiceRollView(diceCollection: viewModel.diceCollection)
+    //                .offset(offsetFromShake)
+            } else {
+                VerticalDiceRollView(diceCollection: viewModel.diceCollection)
+//                .offset(offsetFromShake)
+            }
+        }
+    }
+
+    
+    private var rollButton: some View {
         Button(action: {
 //            self.onDiceRolled?(viewModel.diceRollFromForm)
         }) {
@@ -89,9 +100,7 @@ private extension DiceGeneratorView {
 struct DiceGeneratorView_Previews: PreviewProvider {
 
     static var previews: some View {
-//        let diceRoll = DiceRoll(context: CurrentApp.coreDataManager.mainContext)
-        
-        return DiceGeneratorView(
+        DiceGeneratorView(
             viewModel: .init(
                 diceCount: .constant(2)
 //                diceRoll: .constant(diceRoll)
