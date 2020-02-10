@@ -30,9 +30,7 @@ extension DiceGeneratorContainerView: View {
     var body: some View {
         DiceGeneratorView(
             viewModel: .init(
-//                diceGeneratorState: diceGeneratorState,
                 diceCount: diceCount
-//                diceRoll:
             ),
             onDiceRolled: onDiceRolled(_:)
         )

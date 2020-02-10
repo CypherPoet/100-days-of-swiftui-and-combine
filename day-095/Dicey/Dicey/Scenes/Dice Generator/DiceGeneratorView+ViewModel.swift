@@ -16,11 +16,9 @@ extension DiceGeneratorView {
     final class ViewModel: ObservableObject {
         private var subscriptions = Set<AnyCancellable>()
 
-//        private let diceGeneratorState: DiceGeneratorState
         private var rollResults: [Dice] = []
         
         @Binding var diceCount: Int
-//        @Binding var diceRoll: DiceRoll
         
         
         // MARK: - Published Outputs
@@ -29,13 +27,9 @@ extension DiceGeneratorView {
 
         // MARK: - Init
         init(
-//            diceGeneratorState: DiceGeneratorState,
             diceCount: Binding<Int>
-//            diceRoll: Binding<DiceRoll>
         ) {
-//            self.diceGeneratorState = diceGeneratorState
             self._diceCount = diceCount
-//            self._diceRoll = diceRoll
             
             setupSubscribers()
         }
@@ -54,11 +48,7 @@ extension DiceGeneratorView.ViewModel {
     
     
     private var diceCollectionPublisher: Publishers.Share<AnyPublisher<[Dice], Never>> {
-//        guard let managedObjectContext = diceRoll.managedObjectContext else {
-//            preconditionFailure()
-//        }
-            
-        return Publishers.CombineLatest(
+        Publishers.CombineLatest(
             CurrentValueSubject(diceCount),
             rollResultsPublisher
         )

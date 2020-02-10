@@ -17,6 +17,12 @@ struct DiceGeneratorView {
     
     @ObservedObject var viewModel: ViewModel
     let onDiceRolled: ((DiceRoll) -> Void)?
+    
+//    @State private var diceShakeCompletionPercentage: CGFloat = 0.0
+    @State private var hasDiceRolledAtLeastOnce = false
+    @State private var isShakingDice = false
+    @State private var diceCollectionViewID = 1
+    @State private var isShowingDice = true
 }
 
 
@@ -25,8 +31,15 @@ struct DiceGeneratorView {
 extension DiceGeneratorView: View {
 
     var body: some View {
-        VStack {
-            diceCollectionSection
+        VStack(spacing: 20) {
+            
+            if isShowingDice {
+                diceCollectionSection
+//                    .id(self.diceCollectionViewID)
+                    .transition(self.diceCollectionTransition)
+            } else {
+                Color.clear
+            }
             
             rollButton
             
@@ -39,8 +52,28 @@ extension DiceGeneratorView: View {
 
 // MARK: - Computeds
 extension DiceGeneratorView {
+    
     var isShowingHorizontalDiceLayout: Bool {
         horizontalSizeClass == .regular && verticalSizeClass == .compact
+    }
+    
+    
+    var diceCollectionTransition: AnyTransition {
+        .asymmetric(
+            insertion: AnyTransition
+                .move(edge: .bottom).combined(with: .scale(scale: 0, anchor: .top)),
+            removal: AnyTransition
+                .opacity
+        )
+    }
+  
+    
+    // TODO: Improve this logic
+    func offsetFromShake(in geometry: GeometryProxy) -> CGSize {
+        .init(
+            width: isShakingDice ? geometry.size.width / 2 : 0,
+            height: 0
+        )
     }
 }
 
@@ -50,24 +83,58 @@ extension DiceGeneratorView {
 extension DiceGeneratorView {
     
     private var diceCollectionSection: some View {
-        Group {
-            if isShowingHorizontalDiceLayout {
-                HorizontalDiceRollView(diceCollection: viewModel.diceCollection)
-    //                .offset(offsetFromShake)
-            } else {
-                VerticalDiceRollView(diceCollection: viewModel.diceCollection)
-//                .offset(offsetFromShake)
+        GeometryReader { geometry in
+            Group {
+                if self.isShowingHorizontalDiceLayout {
+                    HorizontalDiceRollView(diceCollection: self.viewModel.diceCollection)
+                } else {
+                    VerticalDiceRollView(diceCollection: self.viewModel.diceCollection)
+                }
             }
+            .offset(self.offsetFromShake(in: geometry))
         }
     }
+    
 
     
     private var rollButton: some View {
         Button(action: {
 //            self.onDiceRolled?(viewModel.diceRollFromForm)
+            self.hasDiceRolledAtLeastOnce = true
+            
+            withAnimation(
+                Animation
+                    .timingCurve(0.3, 0.3, 0.7, 2.7, duration: 0.07)
+                    .repeatCount(10, autoreverses: true)
+            ) {
+                self.isShakingDice = true
+            }
+            
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + (0.07 * 10)) {
+//                self.diceCollectionViewID += 1
+                self.isShakingDice = false
+                self.isShowingDice = false
+                
+                DispatchQueue.main.async {
+                    withAnimation(.linear(duration: 2)) {
+                        self.isShowingDice = true
+                    }
+                }
+//                self.isShowingDice = true
+            }
         }) {
-            Text("Roll")
+            Image("roll-dice")
+                .renderingMode(.original)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50, height: 50)
+                .padding()
+                .background(Color.accentColor)
+                .clipShape(Circle())
+                .shadow(color: .gray, radius: 4, x: 0, y: 0)
         }
+        .disabled(isShakingDice)
     }
     
     
@@ -103,7 +170,6 @@ struct DiceGeneratorView_Previews: PreviewProvider {
         DiceGeneratorView(
             viewModel: .init(
                 diceCount: .constant(2)
-//                diceRoll: .constant(diceRoll)
             ),
             onDiceRolled: { _ in }
         )
