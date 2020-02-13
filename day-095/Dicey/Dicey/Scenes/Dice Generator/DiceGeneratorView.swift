@@ -14,15 +14,15 @@ struct DiceGeneratorView {
     @Environment(\.verticalSizeClass) var verticalSizeClass
     
     private let diceCountRange = 1...6
+    private let diceRollAnimationDuration = 0.76
     
     @ObservedObject var viewModel: ViewModel
     let onDiceRolled: ((DiceRoll) -> Void)?
     
-//    @State private var diceShakeCompletionPercentage: CGFloat = 0.0
-    @State private var hasDiceRolledAtLeastOnce = false
     @State private var isShakingDice = false
-    @State private var diceCollectionViewID = 1
     @State private var isShowingDice = true
+    
+    @State private var diceRollCompletion: CGFloat = 1.0
 }
 
 
@@ -35,8 +35,6 @@ extension DiceGeneratorView: View {
             
             if isShowingDice {
                 diceCollectionSection
-//                    .id(self.diceCollectionViewID)
-                    .transition(self.diceCollectionTransition)
             } else {
                 Color.clear
             }
@@ -61,9 +59,28 @@ extension DiceGeneratorView {
     var diceCollectionTransition: AnyTransition {
         .asymmetric(
             insertion: AnyTransition
-                .move(edge: .bottom).combined(with: .scale(scale: 0, anchor: .top)),
+                .move(edge: .bottom)
+                .combined(with: .scale(scale: 0, anchor: .top)),
+                
             removal: AnyTransition
                 .opacity
+        )
+    }
+    
+    
+    var diceRollAnimation: Animation {
+        Animation.spring(
+            response: diceRollAnimationDuration,
+            dampingFraction: 0.635,
+            blendDuration: 0.0
+        )
+    }
+    
+    
+    var diceRollRotation: Angle {
+        .radians(
+            (1.0 - Double(self.diceRollCompletion))
+            * (.pi * Double.random(in: 0...1))
         )
     }
   
@@ -88,7 +105,25 @@ extension DiceGeneratorView {
                 if self.isShowingHorizontalDiceLayout {
                     HorizontalDiceRollView(diceCollection: self.viewModel.diceCollection)
                 } else {
-                    VerticalDiceRollView(diceCollection: self.viewModel.diceCollection)
+                    VerticalDiceRollView(diceCollection: self.viewModel.diceCollection) { (index, dice, position, sideLength) in
+                        DiceView(dice: dice)
+                            .frame(
+                                width: sideLength,
+                                height: sideLength
+                            )
+                            .position(position)
+                            .rotation3DEffect(
+                                self.diceRollRotation,
+                                axis:  (x: 0.0, y: 0.0, z: 1.0)
+                            )
+                            .offset(
+                                x: 0,
+                                y: (
+                                    (-1.0 * (1.0 - self.diceRollCompletion) * CGFloat(geometry.size.height))
+                                    - ((1.0 - self.diceRollCompletion) * position.y)
+                                )
+                            )
+                    }
                 }
             }
             .offset(self.offsetFromShake(in: geometry))
@@ -100,28 +135,31 @@ extension DiceGeneratorView {
     private var rollButton: some View {
         Button(action: {
 //            self.onDiceRolled?(viewModel.diceRollFromForm)
-            self.hasDiceRolledAtLeastOnce = true
             
+            // Shake the current set
             withAnimation(
                 Animation
-                    .timingCurve(0.3, 0.3, 0.7, 2.7, duration: 0.07)
-                    .repeatCount(10, autoreverses: true)
+                    .timingCurve(0.3, 0.3, 0.7, 2.7, duration: 0.11)
+                    .repeatCount(8, autoreverses: true)
             ) {
                 self.isShakingDice = true
             }
             
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + (0.07 * 10)) {
-//                self.diceCollectionViewID += 1
+            // Roll in the new set
+            DispatchQueue.main.asyncAfter(deadline: .now() + (0.11 * 8)) {
                 self.isShakingDice = false
                 self.isShowingDice = false
+                self.diceRollCompletion = 0.0
                 
                 DispatchQueue.main.async {
-                    withAnimation(.linear(duration: 2)) {
-                        self.isShowingDice = true
+                    self.isShowingDice = true
+                    
+                    // 📝 TODO: Compute and set the new dice values here
+                    
+                    withAnimation(self.diceRollAnimation) {
+                        self.diceRollCompletion = 1.0
                     }
                 }
-//                self.isShowingDice = true
             }
         }) {
             Image("roll-dice")

@@ -10,8 +10,19 @@ import SwiftUI
 import CypherPoetSwiftUIKit_BindingUtils
 
 
-struct VerticalDiceRollView {
-    var diceCollection: [Dice] = []
+struct VerticalDiceRollView<Content: View> {
+    var diceCollection: [Dice]
+    
+    let content: (Int, Dice, CGPoint, CGFloat) -> Content
+    
+    
+    init(
+        diceCollection: [Dice] = [],
+        @ViewBuilder content: @escaping ((Int, Dice, CGPoint, CGFloat) -> Content)
+    ) {
+        self.diceCollection = diceCollection
+        self.content = content
+    }
 }
 
 
@@ -22,12 +33,21 @@ extension VerticalDiceRollView: View {
         GeometryReader { geometry in
             ZStack {
                 ForEach(self.diceCollection.indexed(), id: \.0.self) { (index, dice) in
-                    DiceView(dice: dice)
-                        .frame(
-                            width: self.sideLength(forDiceIn: geometry),
-                            height: self.sideLength(forDiceIn: geometry)
-                        )
-                        .position(self.position(forDiceAt: index, in: geometry))
+//                    EmptyView()
+                    self.content(
+                        index,
+                        dice,
+                        self.position(forDiceAt: index, in: geometry),
+                        self.sideLength(forDiceIn: geometry)
+                    )
+//                    DiceView(dice: dice)
+//                        .frame(
+//                            width: self.sideLength(forDiceIn: geometry),
+//                            height: self.sideLength(forDiceIn: geometry)
+//                        )
+//                        .position(self.position(forDiceAt: index, in: geometry))
+//                        .animation(Animation.linear(duration: 0.3).delay(1.0 * Double(index)))
+//                        .animation(Animation.linear.delay(1.0 * index))
                 }
             }
             .frame(
@@ -131,7 +151,14 @@ struct VerticalDiceRollView_Previews: PreviewProvider {
 //                    diceCollection: [.one, .two,]
 //                    diceCollection: [.one]
                     diceCollection: [.one, .two, .three]
-            )
+            ) { (index, dice, position, sideLength) in
+                DiceView(dice: dice)
+                    .frame(
+                        width: sideLength,
+                        height: sideLength
+                    )
+                    .position(position)
+            }
             
             Spacer()
             
