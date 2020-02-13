@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F321F76D23F5AD3C0059D5E9 /* DiceRollHistoryContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321F76C23F5AD3C0059D5E9 /* DiceRollHistoryContainerView.swift */; };
+		F321F76F23F5B1F00059D5E9 /* DiceRollHistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321F76E23F5B1F00059D5E9 /* DiceRollHistoryListView.swift */; };
+		F321F77123F5B7990059D5E9 /* DiceRoll+FetchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321F77023F5B7990059D5E9 /* DiceRoll+FetchHelpers.swift */; };
+		F321F77423F5E8410059D5E9 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321F77323F5E8410059D5E9 /* DateFormatters.swift */; };
+		F321F77623F5E8770059D5E9 /* DiceRollListItemSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321F77523F5E8770059D5E9 /* DiceRollListItemSummaryView.swift */; };
 		F397601823E742E000813BD8 /* PreviewData+AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397601723E742E000813BD8 /* PreviewData+AppStore.swift */; };
 		F3CFFC6023E749A2001A2E19 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFFC5F23E749A2001A2E19 /* DiceView.swift */; };
 		F3CFFC6223E74A37001A2E19 /* DiceGeneratorContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFFC6123E74A37001A2E19 /* DiceGeneratorContainerView.swift */; };
@@ -37,6 +42,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F321F76C23F5AD3C0059D5E9 /* DiceRollHistoryContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollHistoryContainerView.swift; sourceTree = "<group>"; };
+		F321F76E23F5B1F00059D5E9 /* DiceRollHistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollHistoryListView.swift; sourceTree = "<group>"; };
+		F321F77023F5B7990059D5E9 /* DiceRoll+FetchHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiceRoll+FetchHelpers.swift"; sourceTree = "<group>"; };
+		F321F77323F5E8410059D5E9 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
+		F321F77523F5E8770059D5E9 /* DiceRollListItemSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollListItemSummaryView.swift; sourceTree = "<group>"; };
 		F397601723E742E000813BD8 /* PreviewData+AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewData+AppStore.swift"; sourceTree = "<group>"; };
 		F3CFFC5F23E749A2001A2E19 /* DiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
 		F3CFFC6123E74A37001A2E19 /* DiceGeneratorContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceGeneratorContainerView.swift; sourceTree = "<group>"; };
@@ -79,12 +89,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F321F76B23F5AD170059D5E9 /* Dice Roll History */ = {
+			isa = PBXGroup;
+			children = (
+				F321F76C23F5AD3C0059D5E9 /* DiceRollHistoryContainerView.swift */,
+				F321F76E23F5B1F00059D5E9 /* DiceRollHistoryListView.swift */,
+			);
+			path = "Dice Roll History";
+			sourceTree = "<group>";
+		};
+		F321F77223F5E8380059D5E9 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				F321F77323F5E8410059D5E9 /* DateFormatters.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
 		F397601423E73E6A00813BD8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				F3CFFC5F23E749A2001A2E19 /* DiceView.swift */,
 				F3CFFC6723E77E02001A2E19 /* VerticalDiceRollView.swift */,
 				F3CFFC6923E77E22001A2E19 /* HorizontalDiceRollView.swift */,
+				F321F77523F5E8770059D5E9 /* DiceRollListItemSummaryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,6 +160,7 @@
 		F3D4FD4C23E5EF46000CF606 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F321F76B23F5AD170059D5E9 /* Dice Roll History */,
 				F3D4FD8423E705FD000CF606 /* Dice Generator */,
 			);
 			path = Scenes;
@@ -161,6 +190,7 @@
 		F3D4FD4F23E5EF58000CF606 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				F321F77223F5E8380059D5E9 /* Formatters */,
 				F397601423E73E6A00813BD8 /* Views */,
 			);
 			path = Reusables;
@@ -215,6 +245,7 @@
 			children = (
 				F3D4FD6C23E60076000CF606 /* DiceRoll+CoreDataClass.swift */,
 				F3D4FD6D23E60076000CF606 /* DiceRoll+CoreDataProperties.swift */,
+				F321F77023F5B7990059D5E9 /* DiceRoll+FetchHelpers.swift */,
 				F3D4FD7423E60166000CF606 /* DiceRoll+Computeds.swift */,
 			);
 			path = DiceRoll;
@@ -324,6 +355,7 @@
 				F3D4FD6E23E60076000CF606 /* DiceRoll+CoreDataClass.swift in Sources */,
 				F3D4FD5823E5F016000CF606 /* PreviewData.swift in Sources */,
 				F3D4FD3923E5E688000CF606 /* AppDelegate.swift in Sources */,
+				F321F77123F5B7990059D5E9 /* DiceRoll+FetchHelpers.swift in Sources */,
 				F3D4FD6523E5F14D000CF606 /* Dicey.xcdatamodeld in Sources */,
 				F3CFFC6823E77E02001A2E19 /* VerticalDiceRollView.swift in Sources */,
 				F3D4FD7523E60166000CF606 /* DiceRoll+Computeds.swift in Sources */,
@@ -331,15 +363,19 @@
 				F3D4FD3B23E5E688000CF606 /* SceneDelegate.swift in Sources */,
 				F3D4FD7223E60115000CF606 /* Dice.swift in Sources */,
 				F3D4FD7723E60359000CF606 /* Dice+Computeds.swift in Sources */,
+				F321F77623F5E8770059D5E9 /* DiceRollListItemSummaryView.swift in Sources */,
 				F3D4FD8623E70657000CF606 /* DiceGeneratorView.swift in Sources */,
 				F3CFFC6023E749A2001A2E19 /* DiceView.swift in Sources */,
 				F3D4FD8023E6FC51000CF606 /* AppState.swift in Sources */,
 				F3CFFC6C23E85963001A2E19 /* PreviewData+DiceRolls.swift in Sources */,
+				F321F77423F5E8410059D5E9 /* DateFormatters.swift in Sources */,
+				F321F76D23F5AD3C0059D5E9 /* DiceRollHistoryContainerView.swift in Sources */,
 				F3D4FD5623E5EFDE000CF606 /* CurrentApplication.swift in Sources */,
 				F3D4FD6123E5F120000CF606 /* CoreDataManager+Utils.swift in Sources */,
 				F397601823E742E000813BD8 /* PreviewData+AppStore.swift in Sources */,
 				F3D4FD6F23E60076000CF606 /* DiceRoll+CoreDataProperties.swift in Sources */,
 				F3CFFC6A23E77E22001A2E19 /* HorizontalDiceRollView.swift in Sources */,
+				F321F76F23F5B1F00059D5E9 /* DiceRollHistoryListView.swift in Sources */,
 				F3CFFC6423E74D43001A2E19 /* DiceGeneratorView+ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

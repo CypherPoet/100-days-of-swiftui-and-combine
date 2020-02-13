@@ -12,11 +12,6 @@ import CoreData
 
 
 extension DiceRoll {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<DiceRoll> {
-        return NSFetchRequest<DiceRoll>(entityName: "DiceRoll")
-    }
-
     @NSManaged public var createdAt: Date
     @NSManaged public var diceValues: [Int16]
 }

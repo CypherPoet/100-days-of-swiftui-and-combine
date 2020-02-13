@@ -37,6 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let entryView = DiceGeneratorContainerView()
                 .environment(\.managedObjectContext, context)
                 .environmentObject(store)
+                .accentColor(.purple)
 
             window.rootViewController = UIHostingController(rootView: entryView)
 

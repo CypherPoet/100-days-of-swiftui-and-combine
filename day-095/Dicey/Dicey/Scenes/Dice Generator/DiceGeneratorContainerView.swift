@@ -10,6 +10,7 @@ import SwiftUI
 
 
 struct DiceGeneratorContainerView {
+    @Environment(\.managedObjectContext) private var managedObjectContext
     @EnvironmentObject private var store: AppStore
 
     @State private var isShowingRollHistory = false
@@ -20,15 +21,21 @@ struct DiceGeneratorContainerView {
 extension DiceGeneratorContainerView: View {
 
     var body: some View {
-        DiceGeneratorView(
-            viewModel: .init(
-                diceCount: store.state.diceGeneratorState.rollSize,
-                diceCollection: store.state.diceGeneratorState.latestRoll?.diceArray
-            ),
-            onDiceRolled: onDiceRolled(_:)
-        )
+        NavigationView {
+            DiceGeneratorView(
+                viewModel: .init(
+                    diceCount: store.state.diceGeneratorState.rollSize,
+                    diceCollection: store.state.diceGeneratorState.latestRoll?.diceArray
+                ),
+                onDiceRolled: onDiceRolled(_:)
+            )
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarItems(trailing: historyButton)
+        }
         .sheet(isPresented: $isShowingRollHistory) {
-            Text("Roll History")
+            DiceRollHistoryContainerView()
+                .environment(\.managedObjectContext, self.managedObjectContext)
+                .accentColor(.purple)
         }
     }
 }
@@ -42,6 +49,14 @@ extension DiceGeneratorContainerView {
 
 // MARK: - View Variables
 extension DiceGeneratorContainerView {
+    
+    private var historyButton: some View {
+        Button(action: {
+            self.isShowingRollHistory = true
+        }) {
+            Text("History")
+        }
+    }
 }
 
 

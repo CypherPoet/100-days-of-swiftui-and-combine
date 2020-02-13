@@ -21,5 +21,15 @@ extension PreviewData {
             
             return diceRoll
         }()
+        
+        
+        static let sixDice: DiceRoll = {
+            let diceRoll = DiceRoll(context: CurrentApp.coreDataManager.mainContext)
+            
+            diceRoll.diceValues = [1, 2, 3, 4, 5, 6]
+            diceRoll.createdAt = Date().advanced(by: 1000)
+            
+            return diceRoll
+        }()
     }
 }

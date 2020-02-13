@@ -192,11 +192,15 @@ private extension DiceGeneratorView {
 struct DiceGeneratorView_Previews: PreviewProvider {
 
     static var previews: some View {
-        DiceGeneratorView(
-            viewModel: .init(
-                diceCount: 2
-            ),
-            onDiceRolled: { _ in }
-        )
+        NavigationView {
+            DiceGeneratorView(
+                viewModel: .init(
+                    diceCount: 2
+                ),
+                onDiceRolled: { _ in }
+            )
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarItems(trailing: Text("History"))
+        }
     }
 }

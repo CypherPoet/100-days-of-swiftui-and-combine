@@ -21,4 +21,8 @@ extension DiceRoll {
             accumulated + Int(current.rawValue)
         }
     }
+    
+    var listFormattedDateString: String {
+        DateFormatters.diceRollListItem.string(from: createdAt)
+    }
 }
