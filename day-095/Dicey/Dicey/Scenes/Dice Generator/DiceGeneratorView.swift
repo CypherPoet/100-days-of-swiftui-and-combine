@@ -10,14 +10,15 @@ import SwiftUI
 
 
 struct DiceGeneratorView {
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    @Environment(\.verticalSizeClass) var verticalSizeClass
-    
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
     private let diceCountRange = 1...6
     private let diceRollAnimationDuration = 0.76
     
+    
     @ObservedObject var viewModel: ViewModel
-    let onDiceRolled: ((DiceRoll) -> Void)?
+    let onDiceRolled: (([Dice]) -> Void)?
+    
     
     @State private var isShakingDice = false
     @State private var isShowingDice = true
@@ -56,18 +57,6 @@ extension DiceGeneratorView {
     }
     
     
-    var diceCollectionTransition: AnyTransition {
-        .asymmetric(
-            insertion: AnyTransition
-                .move(edge: .bottom)
-                .combined(with: .scale(scale: 0, anchor: .top)),
-                
-            removal: AnyTransition
-                .opacity
-        )
-    }
-    
-    
     var diceRollAnimation: Animation {
         Animation.spring(
             response: diceRollAnimationDuration,
@@ -85,7 +74,6 @@ extension DiceGeneratorView {
     }
   
     
-    // TODO: Improve this logic
     func offsetFromShake(in geometry: GeometryProxy) -> CGSize {
         .init(
             width: isShakingDice ? geometry.size.width / 2 : 0,
@@ -103,9 +91,9 @@ extension DiceGeneratorView {
         GeometryReader { geometry in
             Group {
                 if self.isShowingHorizontalDiceLayout {
-                    HorizontalDiceRollView(diceCollection: self.viewModel.diceCollection)
+                    HorizontalDiceRollView(diceCollection: self.viewModel.rollResults)
                 } else {
-                    VerticalDiceRollView(diceCollection: self.viewModel.diceCollection) { (index, dice, position, sideLength) in
+                    VerticalDiceRollView(diceCollection: self.viewModel.rollResults) { (index, dice, position, sideLength) in
                         DiceView(dice: dice)
                             .frame(
                                 width: sideLength,
@@ -129,13 +117,10 @@ extension DiceGeneratorView {
             .offset(self.offsetFromShake(in: geometry))
         }
     }
-    
 
     
     private var rollButton: some View {
         Button(action: {
-//            self.onDiceRolled?(viewModel.diceRollFromForm)
-            
             // Shake the current set
             withAnimation(
                 Animation
@@ -150,11 +135,10 @@ extension DiceGeneratorView {
                 self.isShakingDice = false
                 self.isShowingDice = false
                 self.diceRollCompletion = 0.0
+                self.onDiceRolled?(self.viewModel.generateRollResults())
                 
                 DispatchQueue.main.async {
                     self.isShowingDice = true
-                    
-                    // 📝 TODO: Compute and set the new dice values here
                     
                     withAnimation(self.diceRollAnimation) {
                         self.diceRollCompletion = 1.0
@@ -184,7 +168,8 @@ extension DiceGeneratorView {
                 Spacer()
                 
                 Text("\(viewModel.diceCount)")
-                Stepper("Dice Count", value: viewModel.$diceCount, in: diceCountRange)
+
+                Stepper("Dice Count", value: $viewModel.diceCount, in: diceCountRange)
                     .labelsHidden()
             }
         }
@@ -207,7 +192,8 @@ struct DiceGeneratorView_Previews: PreviewProvider {
     static var previews: some View {
         DiceGeneratorView(
             viewModel: .init(
-                diceCount: .constant(2)
+//                diceCount: .constant(2)
+                diceCount: 2
             ),
             onDiceRolled: { _ in }
         )

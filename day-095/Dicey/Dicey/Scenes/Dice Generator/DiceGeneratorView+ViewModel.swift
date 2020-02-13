@@ -11,25 +11,23 @@ import SwiftUI
 import Combine
 
 
-
 extension DiceGeneratorView {
     final class ViewModel: ObservableObject {
         private var subscriptions = Set<AnyCancellable>()
 
-        private var rollResults: [Dice] = []
-        
-        @Binding var diceCount: Int
-        
         
         // MARK: - Published Outputs
-        @Published var diceCollection: [Dice] = []
+        @Published var diceCount: Int
+        @Published var rollResults: [Dice] = []
 
 
         // MARK: - Init
         init(
-            diceCount: Binding<Int>
+            diceCount: Int,
+            diceCollection: [Dice]? = nil
         ) {
-            self._diceCount = diceCount
+            self.diceCount = diceCount
+            self.rollResults = diceCollection ?? (1...diceCount).map { _ in .one }
             
             setupSubscribers()
         }
@@ -41,16 +39,10 @@ extension DiceGeneratorView {
 // MARK: - Publishers
 extension DiceGeneratorView.ViewModel {
 
-    private var rollResultsPublisher: AnyPublisher<[Dice], Never> {
-        CurrentValueSubject(rollResults)
-            .eraseToAnyPublisher()
-    }
-    
-    
     private var diceCollectionPublisher: Publishers.Share<AnyPublisher<[Dice], Never>> {
         Publishers.CombineLatest(
-            CurrentValueSubject(diceCount),
-            rollResultsPublisher
+            $diceCount,
+            CurrentValueSubject(rollResults)
         )
         .print("diceCollectionPublisher")
         .map { (diceCount, results) in
@@ -74,12 +66,15 @@ extension DiceGeneratorView.ViewModel {
 
 // MARK: - Computeds
 extension DiceGeneratorView.ViewModel {
-    
 }
 
 
 // MARK: - Public Methods
 extension DiceGeneratorView.ViewModel {
+    
+    func generateRollResults() -> [Dice] {
+        (1...diceCount).map { _ in Dice(rawValue: Int16.random(in: 1...6))! }
+    }
 }
 
 
@@ -90,7 +85,7 @@ private extension DiceGeneratorView.ViewModel {
     func setupSubscribers() {
         diceCollectionPublisher
             .receive(on: DispatchQueue.main)
-            .assign(to: \.diceCollection, on: self)
+            .assign(to: \.rollResults, on: self)
             .store(in: &subscriptions)
     }
 }

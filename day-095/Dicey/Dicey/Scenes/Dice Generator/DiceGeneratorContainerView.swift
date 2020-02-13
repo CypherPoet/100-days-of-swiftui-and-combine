@@ -10,16 +10,8 @@ import SwiftUI
 
 
 struct DiceGeneratorContainerView {
-    @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject private var store: AppStore
 
-    private var diceCount: Binding<Int> {
-        store.binding(
-            for: \.diceGeneratorState.rollSize,
-            onChange: { .diceGenerator(.rollSizeSet($0)) }
-        )
-    }
-    
     @State private var isShowingRollHistory = false
 }
 
@@ -30,7 +22,8 @@ extension DiceGeneratorContainerView: View {
     var body: some View {
         DiceGeneratorView(
             viewModel: .init(
-                diceCount: diceCount
+                diceCount: store.state.diceGeneratorState.rollSize,
+                diceCollection: store.state.diceGeneratorState.latestRoll?.diceArray
             ),
             onDiceRolled: onDiceRolled(_:)
         )
@@ -55,10 +48,8 @@ extension DiceGeneratorContainerView {
 // MARK: - Private Helpers
 private extension DiceGeneratorContainerView {
     
-    func onDiceRolled(_ diceRoll: DiceRoll) {
-        guard let context = diceRoll.managedObjectContext else { preconditionFailure() }
-        
-        CurrentApp.coreDataManager.save(context)
+    func onDiceRolled(_ rollResults: [Dice]) {
+        store.send(DiceGeneratorSideEffect.recordNewRoll(rollResults))
     }
 }
 
