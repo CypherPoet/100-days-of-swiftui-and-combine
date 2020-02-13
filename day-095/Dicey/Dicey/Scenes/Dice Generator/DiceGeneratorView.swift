@@ -19,9 +19,9 @@ struct DiceGeneratorView {
     @ObservedObject var viewModel: ViewModel
     let onDiceRolled: (([Dice]) -> Void)?
     
-    
     @State private var isShakingDice = false
     @State private var isShowingDice = true
+    @State private var isShakeButtonEnabled = true
     
     @State private var diceRollCompletion: CGFloat = 1.0
 }
@@ -32,17 +32,19 @@ struct DiceGeneratorView {
 extension DiceGeneratorView: View {
 
     var body: some View {
-        VStack(spacing: 20) {
-            
-            if isShowingDice {
-                diceCollectionSection
-            } else {
-                Color.clear
+        VStack(spacing: 40) {
+            Group {
+                if isShowingDice {
+                    diceCollectionSection
+                } else {
+                    Color.clear
+                }
             }
             
-            rollButton
-            
-            controlPanel
+            VStack(spacing: 12) {
+                rollButton
+                controlPanel
+            }
         }
     }
 }
@@ -100,10 +102,7 @@ extension DiceGeneratorView {
                                 height: sideLength
                             )
                             .position(position)
-                            .rotation3DEffect(
-                                self.diceRollRotation,
-                                axis:  (x: 0.0, y: 0.0, z: 1.0)
-                            )
+                            .rotationEffect(self.diceRollRotation, anchor: .center)
                             .offset(
                                 x: 0,
                                 y: (
@@ -121,6 +120,8 @@ extension DiceGeneratorView {
     
     private var rollButton: some View {
         Button(action: {
+            self.isShakeButtonEnabled = false
+            
             // Shake the current set
             withAnimation(
                 Animation
@@ -142,6 +143,7 @@ extension DiceGeneratorView {
                     
                     withAnimation(self.diceRollAnimation) {
                         self.diceRollCompletion = 1.0
+                        self.isShakeButtonEnabled = true
                     }
                 }
             }
@@ -150,13 +152,13 @@ extension DiceGeneratorView {
                 .renderingMode(.original)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 50, height: 50)
+                .frame(width: 70, height: 70)
                 .padding()
                 .background(Color.accentColor)
                 .clipShape(Circle())
                 .shadow(color: .gray, radius: 4, x: 0, y: 0)
         }
-        .disabled(isShakingDice)
+        .disabled(isShakeButtonEnabled == false)
     }
     
     
@@ -192,7 +194,6 @@ struct DiceGeneratorView_Previews: PreviewProvider {
     static var previews: some View {
         DiceGeneratorView(
             viewModel: .init(
-//                diceCount: .constant(2)
                 diceCount: 2
             ),
             onDiceRolled: { _ in }
