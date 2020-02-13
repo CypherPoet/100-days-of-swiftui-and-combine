@@ -33,6 +33,6 @@ From the description:
 
 
 <div style="text-align: center;">
-  <img src="" width="400px"/>
+  <img src="./Dicey/Screenshots/recording-1.gif" width="400px"/>
 </div>
 
